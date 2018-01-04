@@ -196,6 +196,10 @@ pre {
   color: #00DF00;
   text-shadow: 0 0 20px #00DF00;
 }
+.dark-green {
+  color: #4f924f;
+  text-shadow: 0 0 20px #4f924f;
+}
 .white{
   color: white;
   text-shadow: 0 0 20px rgba(255,255,255,0.5);
