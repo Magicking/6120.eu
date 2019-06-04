@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/6l20
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://6120.eu
+  * I am 6l20 (https://keybase.io/6l20) on keybase.
+  * I have a public key ASAG60QAqMMRCFgkAqWCYVxipNCsBd8BbQEti13DpthdgAo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0101c6833df0c5595279829a77333a31defe6a05dac40eab4c1d37dbd83b90a3ab440a",
+      "host": "keybase.io",
+      "kid": "012006eb4400a8c31108582402a582615c62a4d0ac05df016d012d8b5dc3a6d85d800a",
+      "uid": "e3c126e619e8cb25ca0d845c7ce17e19",
+      "username": "6l20"
+    },
+    "merkle_root": {
+      "ctime": 1559611660,
+      "hash": "3c707cecf4995431b21de7c5231ead1068d0d7f51a8c0e33210017a83d7411de1d0391824176d05420c4cf8e9145c4342394e6381c4897f6878359903017d4c5",
+      "hash_meta": "b9b7de52020e72ebad677207b86892c9dd86506dfc0c1a8b793edf9b0087e13e",
+      "seqno": 5501900
+    },
+    "service": {
+      "entropy": "GIPxhfCfrJ1YimV809nR7xTB",
+      "hostname": "6120.eu",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "4.0.1"
+  },
+  "ctime": 1559611681,
+  "expire_in": 504576000,
+  "prev": "87c3d319bc79df3936e239c1bcd543287a626a7fcf0a96c67eecbbb5b136741d",
+  "seqno": 16,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgButEAKjDEQhYJAKlgmFcYqTQrAXfAW0BLYtdw6bYXYAKp3BheWxvYWTESpcCEMQgh8PTGbx53zk24jnBvNVDKHpian/PCpbGfuy7tbE2dB3EIH1nninX8gvJKuCOgoTg5uIcAp5Z63d7lgi/qQYeakd9AgHCo3NpZ8RAu6EvyDENJaZR3RHxvdBr+P2Ar++MyZx9mgCfdWQy1w52dYBfXAh5bT45ODUq3RdntigEq01TRr2anCCdncRlAKhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIBaF2xst9WcebILNnGxEaeS6aWjoO1XNqyfl0wDDscGuo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/6l20
+
+==================================================================
