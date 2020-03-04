@@ -184,6 +184,9 @@ pre {
   color: #0084b4;
   text-shadow: 0 0 20px #0084b4;
 }
+.disabled {
+  color: #557755;
+}
 .bitbucket {
   color: #0747A6;
   text-shadow: 0 0 20px #0747A6;
