@@ -1,0 +1,18 @@
+{
+   "title":"Asset Metadata",
+   "type":"object",
+   "properties":{
+      "name":{
+         "type":"string",
+         "description":"Mire"
+      },
+      "description":{
+         "type":"string",
+         "description":"https://fr.wikipedia.org/wiki/Mire_(t%C3%A9l%C3%A9vision)"
+      },
+      "image":{
+         "type":"string",
+         "description":"https://upload.wikimedia.org/wikipedia/commons/a/aa/Philips_PM5544.svg"
+      }
+   }
+}
