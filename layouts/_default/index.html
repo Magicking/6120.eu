@@ -1,0 +1,63 @@
+{{ define "main" }}
+  {{ if .Content }}
+    <div class="index-content {{ if .Params.framed -}}framed{{- end -}}">
+      {{ .Content }}
+    </div>
+  {{ end }}
+  <div class="instructions-wrapper">
+    <div class="instructions">
+        <ol>
+            <ul><span class="white">Social:</span>&nbsp;<a href="https://twitter.com/magicking_" class="twitter">Twitter</a></ul>
+            <ul><span class="white">Repositories:</span>&nbsp;<a href="https://github.com/Magicking" class="green">Github</a><span class="white">, </span><a href="https://bitbucket.org/magicking" class="bitbucket">Bitbucket</a></ul>
+            <ul><span class="white">LinkedIn:</span>&nbsp;<a href="https://www.linkedin.com/profile/view?id=AAMAAAQHTFABJ0XarL7f8LeK6xsWBsPhwaZkCgI" class="linkedin">Sylvain Laurent</a></ul>
+        </ol>
+    </div>
+</div>
+<div class="instructions-wrapper">
+  <div class="instructions">
+Articles:
+    {{ $isntDefault := not (or (eq (trim $.Site.Params.contentTypeName " ") "posts") (eq (trim $.Site.Params.contentTypeName " ") "")) }}
+    {{ $contentTypeName := cond $isntDefault (string $.Site.Params.contentTypeName) "posts" }}
+
+    {{ $PageContext := . }}
+    {{ if .IsHome }}
+      {{ $PageContext = .Site }}
+    {{ end }}
+    {{ $paginator := .Paginate (where $PageContext.RegularPages "Type" $contentTypeName) }}
+
+    <ol>
+    {{ range $paginator.Pages }}
+        <ul>
+          {{ if .Date }}
+            <time class="post-date">
+              {{ .Date.Format "2006-01-02" }} :: 
+            </time>
+          {{ end }}
+          <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a> :: 
+          {{ if .Params.tags }}
+          <span class="title-tag">
+            {{ range $index, $val := .Params.tags }}
+              {{ if eq 0 $index }}
+                #<a href="{{ (urlize (printf "tags/%s/" $val )) | absLangURL }}">
+                {{- $val -}}
+                </a>
+              {{ end }}
+            {{ end }}
+          </span> :: 
+          {{ end }}
+          {{ if and (.Param "readingTime") (eq (.Param "readingTime") true) }}
+            {{ .ReadingTime }} {{ $.Site.Params.minuteReadingTime | default "min read" }} :: 
+          {{ end }}
+          <a class="read-more button" href="{{.RelPermalink}}">{{ $.Site.Params.ReadMore }} →</a>
+        </ul>
+    {{ end }}
+    </ol>
+    Services:
+          <ol>
+              <ul><span class="disabled">Private</span>&nbsp;</ul>
+          </ol>
+
+        </div>
+      </div>
+    {{ partial "pagination.html" . }}
+{{ end }}
