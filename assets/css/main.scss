@@ -350,7 +350,7 @@ sup {
 .ghost {
   z-index: 100;
   position: absolute;
-  left: 27px;
+  left: 0px;
   top: 0;
   right: 0px;
   min-height: 100%;
@@ -358,7 +358,7 @@ sup {
 .ghost:last-child {
   z-index: 1;
   position: relative;
-  left: 25px;
+  left: -2px;
   opacity: 0.3;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -516,6 +516,11 @@ sup {
 
 .instructions {
   display: inline-block;
-  width: 40em;
   text-align: left;
+}
+
+.instructions-wrapper {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 10px;
 }
