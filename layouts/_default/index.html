@@ -15,7 +15,7 @@
 </div>
 <div class="instructions-wrapper">
   <div class="instructions">
-Articles:
+<span class="section-main">Articles:</span>
     {{ $isntDefault := not (or (eq (trim $.Site.Params.contentTypeName " ") "posts") (eq (trim $.Site.Params.contentTypeName " ") "")) }}
     {{ $contentTypeName := cond $isntDefault (string $.Site.Params.contentTypeName) "posts" }}
 
@@ -52,7 +52,7 @@ Articles:
         </ul>
     {{ end }}
     </ol>
-    Services:
+    <span class="section-main">Services:</span>
           <ol>
               <ul><span class="disabled">Private</span>&nbsp;</ul>
           </ol>
