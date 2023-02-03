@@ -1,4 +1,131 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>6120's Blog</title><link>/</link><description>Recent content on 6120's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright/><lastBuildDate>Tue, 31 Jan 2023 19:00:03 +0100</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Work in progress</title><link>/posts/wip/</link><pubDate>Tue, 31 Jan 2023 19:00:03 +0100</pubDate><guid>/posts/wip/</guid><description>Work in progress (soon) Work in progress™</description><content>&lt;h1 id="work-in-progress-soon">Work in progress (soon)&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>6120's Blog</title><link>/</link><description>Recent content on 6120's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright/><lastBuildDate>Fri, 03 Feb 2023 19:00:03 +0100</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>StarkNet &amp; Cairo significant changes dev. opinionated view</title><link>/posts/cairo-changelog-pov/</link><pubDate>Fri, 03 Feb 2023 19:00:03 +0100</pubDate><guid>/posts/cairo-changelog-pov/</guid><description>StarkNet &amp;amp; Cairo significant changes dev. opinionated view https://github.com/starkware-libs/cairo-lang/releases What&amp;rsquo;s new in Cairo? There have been a lot of changes since the Cairo language has been released. This is a developer opinionated list of the major changes since the 2021-12.
+StarkWareLtd last releas CairoLang v0.10 (Dec 5, 2022) First release covered: 0.6.2 (12-2021)
+v0.10 (Cairo 1.0) (breaking changes version) Aug. 29 2022 v0.10.0-pre Pre-release
+Starknet has its core language modified, it&amp;rsquo;s now a Rusty lang, Starknet foresaw the future of Rust based smart-contract ecosystem (Luna developers and Solana)</description><content>&lt;h1 id="starknet--cairo-significant-changes-dev-opinionated-view">StarkNet &amp;amp; Cairo significant changes dev. opinionated view&lt;/h1>
+&lt;p>&lt;a href="https://github.com/starkware-libs/cairo-lang/releases">https://github.com/starkware-libs/cairo-lang/releases&lt;/a>
+What&amp;rsquo;s new in Cairo? There have been a lot of changes since the Cairo language has been released. This is a developer opinionated list of the major changes since the 2021-12.&lt;/p>
+&lt;p>StarkWareLtd last releas CairoLang v0.10 (Dec 5, 2022)
+First release covered: 0.6.2 (12-2021)&lt;/p>
+&lt;h2 id="v010-cairo-10">v0.10 (Cairo 1.0)&lt;/h2>
+&lt;p>(breaking changes version)
+&lt;strong>Aug. 29 2022&lt;/strong> v0.10.0-pre Pre-release&lt;/p>
+&lt;p>Starknet has its core language modified, it&amp;rsquo;s now a Rusty lang, Starknet foresaw the future of Rust based smart-contract ecosystem (&lt;a href="https://news.coincu.com/90055-fall-of-terra/">Luna developers&lt;/a> and Solana)&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>End statements with ;&lt;/p>
+&lt;ul>
+&lt;li>Note that new lines are still part of the language at this point, and you cannot put more than one instruction per line. This will change in Cairo1.0.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Use { … } for code blocks (instead of : and end)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Add () around the condition of if statements&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Remove the member keyword in structs&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Change comment to use // instead of #&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Use &amp;hellip;, ap++ instead of &amp;hellip;; ap++ in low level Cairo code&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>New transaction version&lt;/p>
+&lt;ul>
+&lt;li>Nonce are enforced as part of the transaction (bye bye UTXO model)&lt;/li>
+&lt;li>Invoke execution object with &lt;a href="https://github.com/OpenZeppelin/cairo-contracts/blob/d12abf335f5c778fd19d6f99e91c099b40865deb/src/openzeppelin/account/presets/EthAccount.cairo#L81">&lt;strong>__validate__&lt;/strong>&lt;/a> and &lt;a href="https://github.com/OpenZeppelin/cairo-contracts/blob/d12abf335f5c778fd19d6f99e91c099b40865deb/src/openzeppelin/account/presets/EthAccount.cairo#L127">&lt;strong>__execute__&lt;/strong>&lt;/a> to differentiate between validation of the transaction (wether or not execution works (TODO: wild guess)) and execution that his pickup by another part of the process in the decentralized system(TODO: confirm)&lt;/li>
+&lt;li>Declare function to send implementation code for registration&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Bridge Layer1 to Layer2&lt;/p>
+&lt;ul>
+&lt;li>New &lt;strong>fee&lt;/strong> field in &lt;a href="https://github.com/starkware-libs/cairo-lang/blob/54d7e92a703b3b5a1e07e9389608178129946efc/src/starkware/starknet/solidity/IStarknetMessagingEvents.sol#L9">LogMessageToL2 event&lt;/a> when executing L2 contract from L1&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Tx simulation and fee estimation&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Support the EC-op builtin. to allows to verify ECDSA signatures&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>API: Remove entry_point_type field from transaction information&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="v09x">v0.9.x&lt;/h2>
+&lt;p>Fees are now enforced on StarkNet, no more free candy!&lt;/p>
+&lt;p>Contracts must be declared first and then instanciated through the new &lt;a href="https://starknet.io/docs/hello_starknet/deploying_from_contracts.html#the-deploy-system-call">deploy syscall&lt;/a> forcing 2 manual transactions for contracts deployed by EOA.&lt;/p>
+&lt;h2 id="v081">v0.8.1&lt;/h2>
+&lt;p>Fees are in now! What&amp;rsquo;s up with that &lt;a href="https://github.com/starkware-libs/cairo-lang/blob/4e233516f52477ad158bc81a86ec2760471c1b65/src/starkware/starknet/business_logic/transaction_fee.py">code&lt;/a> ? See more &lt;a href="https://starknet.io/documentation/fee-mechanism/#Introduction">here&lt;/a>.
+&lt;img src="https://i.imgur.com/G2ZidCf.png" alt="">&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>charge_fee &lt;img src="https://i.imgur.com/GnKEkFI.png" alt="">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>calculate_tx_fee_by_cairo_usage &lt;img src="https://i.imgur.com/wYIohf7.png" alt="">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://github.com/starkware-libs/cairo-lang/blob/master/src/starkware/starknet/eth/StarknetMessaging.sol">L1 -&amp;gt; L2 message cancellation&lt;/a>
+&lt;img src="https://i.imgur.com/P4UB8Wm.png" alt="">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>version&lt;/code> and &lt;code>max_fee&lt;/code> are part of the transaction structure now&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>__execute__&lt;/code> is now required mandatory entry point for account contract, see more &lt;a href="https://github.com/OpenZeppelin/cairo-contracts/blob/main/docs/Account.md#accounts">here&lt;/a>
+&lt;img src="https://i.imgur.com/gIcuAdK.png" alt="">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Added the cryptographic hash function &lt;a href="https://en.wikipedia.org/wiki/BLAKE_(hash_function)">blake2s&lt;/a> to the standard library&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="cairo">Cairo&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>Meaningful error messaging(v0.7.0) including local variables and arguments
+&lt;img src="https://i.imgur.com/AwjYaIV.png" alt="">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>High level memory allocation with the &lt;code>new&lt;/code> keyword in execution memory segment (whereas &lt;code>alloc&lt;/code> allocates a new memory segment)
+&lt;img src="https://i.imgur.com/gFPTHzw.png" alt="">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Tuples and type aliases, will increase the pythonic vibes of Cairo even further
+&lt;img src="https://i.imgur.com/Ya3bPcE.png" alt="">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Fix for python 3.9&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="v07x">v0.7.x&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/starkware-libs/cairo-lang/blob/4e233516f52477ad158bc81a86ec2760471c1b65/src/starkware/starknet/services/api/messages.py#L80">Added a nonce for L1 to L2 message&lt;/a> this prevents sending the same message twice from the EVM world, e.g: calling a function.
+&lt;img src="https://i.imgur.com/3SPa5Fz.png" alt="">&lt;/li>
+&lt;/ul>
+&lt;h3 id="addition-of-evm-compatibilities">Addition of EVM compatibilities&lt;/h3>
+&lt;ul>
+&lt;li>events are here !&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://i.imgur.com/rXdCLNc.png" alt="">
+&lt;img src="https://i.imgur.com/uOzGLmA.png" alt="">&lt;/p>
+&lt;p>(editor&amp;rsquo;s note: TheGraph but for StarkNet please.)&lt;/p>
+&lt;ul>
+&lt;li>delegate calls
+prepend delegate_ to external contract function name or &lt;code>l1_handler&lt;/code>&lt;/li>
+&lt;li>The &lt;code>__default__&lt;/code> entry point is introduced, it is similar to the Solidity fallback method as it is executed after missing on the function selector.&lt;/li>
+&lt;li>The &lt;code>__l1_default__&lt;/code> entry point same as &lt;code>__default__&lt;/code> but for in-protocol message from the L1.&lt;/li>
+&lt;/ul>
+&lt;h3 id="new-syscalls">New syscalls&lt;/h3>
+&lt;ul>
+&lt;li>get_block_timestamp()
+Returns a random number that sometimes appears to grow over time, currently around since 1970-01-01.
+Notice of deprecation for get_tx_signature(), get_tx_info() is now preferred.&lt;/li>
+&lt;/ul></content></item><item><title>Work in progress</title><link>/posts/wip/</link><pubDate>Tue, 31 Jan 2023 19:00:03 +0100</pubDate><guid>/posts/wip/</guid><description>Work in progress (soon) Work in progress™</description><content>&lt;h1 id="work-in-progress-soon">Work in progress (soon)&lt;/h1>
 &lt;p>Work in progress™&lt;/p></content></item><item><title>In on Chain</title><link>/drafts/in-on-chain/</link><pubDate>Sun, 29 Jan 2023 02:30:51 +0100</pubDate><guid>/drafts/in-on-chain/</guid><description>In-chain refers to something that is stored and processed on the blockchain, while on-chain refers to something that is stored on the blockchain but processed off-chain. In the case of NFT artwork, in-chain would refer to the media being processed to its final form by the first execution layer, such as the EVM in Ethereum. On-chain would refer to the media being stored on the blockchain, but the processing and rendering of the artwork happens off-chain using JavaScript, for example, in real-time.</description><content>&lt;p>In-chain refers to something that is stored and processed on the blockchain, while on-chain refers to something that is stored on the blockchain but processed off-chain. In the case of NFT artwork, in-chain would refer to the media being processed to its final form by the first execution layer, such as the EVM in Ethereum. On-chain would refer to the media being stored on the blockchain, but the processing and rendering of the artwork happens off-chain using JavaScript, for example, in real-time.&lt;/p>
 &lt;p>Some media formats, such as SVG, contain multiple data streams that may require different levels of processing, it can be rendered using rasterization techniques, but it can also be enhanced with CSS and/or JavaScript. This means that some parts of the image may be processed in-chain, while others may be processed off-chain.&lt;/p>
 &lt;p>Additionally, depending on the context, the final form of the media may be different, it can be a raster image or a interactive vector image, so the processing can be different for each context and each final form. This can make it challenging to determine the appropriate level of in-chain and off-chain processing for certain types of media, and may require careful consideration of the specific requirements and constraints of the use case.&lt;/p>

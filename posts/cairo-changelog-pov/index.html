@@ -1,0 +1,222 @@
+<!doctype html><html lang=en>
+<head>
+<title>StarkNet & Cairo significant changes dev. opinionated view :: 6120's Blog</title>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="StarkNet &amp;amp; Cairo significant changes dev. opinionated view https://github.com/starkware-libs/cairo-lang/releases What&amp;rsquo;s new in Cairo? There have been a lot of changes since the Cairo language has been released. This is a developer opinionated list of the major changes since the 2021-12.
+StarkWareLtd last releas CairoLang v0.10 (Dec 5, 2022) First release covered: 0.6.2 (12-2021)
+v0.10 (Cairo 1.0) (breaking changes version) Aug. 29 2022 v0.10.0-pre Pre-release
+Starknet has its core language modified, it&amp;rsquo;s now a Rusty lang, Starknet foresaw the future of Rust based smart-contract ecosystem (Luna developers and Solana)">
+<meta name=keywords content>
+<meta name=robots content="noodp">
+<link rel=canonical href=/posts/cairo-changelog-pov/>
+<link rel=stylesheet href=/styles.css>
+<link rel="shortcut icon" href=/img/theme-colors/black.png>
+<link rel=apple-touch-icon href=/img/theme-colors/black.png>
+<meta name=twitter:card content="summary">
+<meta name=twitter:site content="https://6120.eu">
+<meta name=twitter:creator content>
+<meta property="og:locale" content="en">
+<meta property="og:type" content="article">
+<meta property="og:title" content="StarkNet & Cairo significant changes dev. opinionated view">
+<meta property="og:description" content="StarkNet &amp;amp; Cairo significant changes dev. opinionated view https://github.com/starkware-libs/cairo-lang/releases What&amp;rsquo;s new in Cairo? There have been a lot of changes since the Cairo language has been released. This is a developer opinionated list of the major changes since the 2021-12.
+StarkWareLtd last releas CairoLang v0.10 (Dec 5, 2022) First release covered: 0.6.2 (12-2021)
+v0.10 (Cairo 1.0) (breaking changes version) Aug. 29 2022 v0.10.0-pre Pre-release
+Starknet has its core language modified, it&amp;rsquo;s now a Rusty lang, Starknet foresaw the future of Rust based smart-contract ecosystem (Luna developers and Solana)">
+<meta property="og:url" content="/posts/cairo-changelog-pov/">
+<meta property="og:site_name" content="6120's Blog">
+<meta property="og:image" content="/img/favicon/black.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta property="article:published_time" content="2023-02-03 19:00:03 +0100 +0100">
+</head>
+<body>
+<div class=black>
+<div class=fuzz></div>
+<div class="container center headings--one-size">
+<header class=header>
+<div class=header__inner>
+<div class=header__logo>
+<a href=/>
+<div class=logo>
+Magicking's notes
+</div>
+</a>
+</div>
+</div>
+</header>
+<div class=content>
+<article class=post>
+<h1 class=post-title>
+<a href=/posts/cairo-changelog-pov/>StarkNet & Cairo significant changes dev. opinionated view</a>
+</h1>
+<div class=post-meta>
+<time class=post-date>
+2023-02-03 ::
+[Updated :: 2023-02-03]
+</time>
+<span class=post-reading-time>:: 3 min read (512 words)</span>
+</div>
+<span class=post-tags>
+#<a href=/tags/starknet/>starknet</a>&nbsp;
+#<a href=/tags/cairo/>cairo</a>&nbsp;
+</span>
+<div class=post-content><div>
+<h1 id=starknet--cairo-significant-changes-dev-opinionated-view>StarkNet & Cairo significant changes dev. opinionated view<a href=#starknet--cairo-significant-changes-dev-opinionated-view class=hanchor arialabel=Anchor>&#8983;</a> </h1>
+<p><a href=https://github.com/starkware-libs/cairo-lang/releases>https://github.com/starkware-libs/cairo-lang/releases</a>
+What&rsquo;s new in Cairo? There have been a lot of changes since the Cairo language has been released. This is a developer opinionated list of the major changes since the 2021-12.</p>
+<p>StarkWareLtd last releas CairoLang v0.10 (Dec 5, 2022)
+First release covered: 0.6.2 (12-2021)</p>
+<h2 id=v010-cairo-10>v0.10 (Cairo 1.0)<a href=#v010-cairo-10 class=hanchor arialabel=Anchor>&#8983;</a> </h2>
+<p>(breaking changes version)
+<strong>Aug. 29 2022</strong> v0.10.0-pre Pre-release</p>
+<p>Starknet has its core language modified, it&rsquo;s now a Rusty lang, Starknet foresaw the future of Rust based smart-contract ecosystem (<a href=https://news.coincu.com/90055-fall-of-terra/>Luna developers</a> and Solana)</p>
+<ul>
+<li>
+<p>End statements with ;</p>
+<ul>
+<li>Note that new lines are still part of the language at this point, and you cannot put more than one instruction per line. This will change in Cairo1.0.</li>
+</ul>
+</li>
+<li>
+<p>Use { … } for code blocks (instead of : and end)</p>
+</li>
+<li>
+<p>Add () around the condition of if statements</p>
+</li>
+<li>
+<p>Remove the member keyword in structs</p>
+</li>
+<li>
+<p>Change comment to use // instead of #</p>
+</li>
+<li>
+<p>Use &mldr;, ap++ instead of &mldr;; ap++ in low level Cairo code</p>
+</li>
+<li>
+<p>New transaction version</p>
+<ul>
+<li>Nonce are enforced as part of the transaction (bye bye UTXO model)</li>
+<li>Invoke execution object with <a href=https://github.com/OpenZeppelin/cairo-contracts/blob/d12abf335f5c778fd19d6f99e91c099b40865deb/src/openzeppelin/account/presets/EthAccount.cairo#L81><strong>__validate__</strong></a> and <a href=https://github.com/OpenZeppelin/cairo-contracts/blob/d12abf335f5c778fd19d6f99e91c099b40865deb/src/openzeppelin/account/presets/EthAccount.cairo#L127><strong>__execute__</strong></a> to differentiate between validation of the transaction (wether or not execution works (TODO: wild guess)) and execution that his pickup by another part of the process in the decentralized system(TODO: confirm)</li>
+<li>Declare function to send implementation code for registration</li>
+</ul>
+</li>
+<li>
+<p>Bridge Layer1 to Layer2</p>
+<ul>
+<li>New <strong>fee</strong> field in <a href=https://github.com/starkware-libs/cairo-lang/blob/54d7e92a703b3b5a1e07e9389608178129946efc/src/starkware/starknet/solidity/IStarknetMessagingEvents.sol#L9>LogMessageToL2 event</a> when executing L2 contract from L1</li>
+</ul>
+</li>
+<li>
+<p>Tx simulation and fee estimation</p>
+</li>
+<li>
+<p>Support the EC-op builtin. to allows to verify ECDSA signatures</p>
+</li>
+<li>
+<p>API: Remove entry_point_type field from transaction information</p>
+</li>
+</ul>
+<h2 id=v09x>v0.9.x<a href=#v09x class=hanchor arialabel=Anchor>&#8983;</a> </h2>
+<p>Fees are now enforced on StarkNet, no more free candy!</p>
+<p>Contracts must be declared first and then instanciated through the new <a href=https://starknet.io/docs/hello_starknet/deploying_from_contracts.html#the-deploy-system-call>deploy syscall</a> forcing 2 manual transactions for contracts deployed by EOA.</p>
+<h2 id=v081>v0.8.1<a href=#v081 class=hanchor arialabel=Anchor>&#8983;</a> </h2>
+<p>Fees are in now! What&rsquo;s up with that <a href=https://github.com/starkware-libs/cairo-lang/blob/4e233516f52477ad158bc81a86ec2760471c1b65/src/starkware/starknet/business_logic/transaction_fee.py>code</a> ? See more <a href=https://starknet.io/documentation/fee-mechanism/#Introduction>here</a>.
+<img src=https://i.imgur.com/G2ZidCf.png alt></p>
+<ul>
+<li>
+<p>charge_fee <img src=https://i.imgur.com/GnKEkFI.png alt></p>
+</li>
+<li>
+<p>calculate_tx_fee_by_cairo_usage <img src=https://i.imgur.com/wYIohf7.png alt></p>
+</li>
+<li>
+<p><a href=https://github.com/starkware-libs/cairo-lang/blob/master/src/starkware/starknet/eth/StarknetMessaging.sol>L1 -> L2 message cancellation</a>
+<img src=https://i.imgur.com/P4UB8Wm.png alt></p>
+</li>
+<li>
+<p><code>version</code> and <code>max_fee</code> are part of the transaction structure now</p>
+</li>
+<li>
+<p><code>__execute__</code> is now required mandatory entry point for account contract, see more <a href=https://github.com/OpenZeppelin/cairo-contracts/blob/main/docs/Account.md#accounts>here</a>
+<img src=https://i.imgur.com/gIcuAdK.png alt></p>
+</li>
+<li>
+<p>Added the cryptographic hash function <a href=https://en.wikipedia.org/wiki/BLAKE_(hash_function)>blake2s</a> to the standard library</p>
+</li>
+</ul>
+<h3 id=cairo>Cairo<a href=#cairo class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<ul>
+<li>
+<p>Meaningful error messaging(v0.7.0) including local variables and arguments
+<img src=https://i.imgur.com/AwjYaIV.png alt></p>
+</li>
+<li>
+<p>High level memory allocation with the <code>new</code> keyword in execution memory segment (whereas <code>alloc</code> allocates a new memory segment)
+<img src=https://i.imgur.com/gFPTHzw.png alt></p>
+</li>
+<li>
+<p>Tuples and type aliases, will increase the pythonic vibes of Cairo even further
+<img src=https://i.imgur.com/Ya3bPcE.png alt></p>
+</li>
+<li>
+<p>Fix for python 3.9</p>
+</li>
+</ul>
+<h2 id=v07x>v0.7.x<a href=#v07x class=hanchor arialabel=Anchor>&#8983;</a> </h2>
+<ul>
+<li><a href=https://github.com/starkware-libs/cairo-lang/blob/4e233516f52477ad158bc81a86ec2760471c1b65/src/starkware/starknet/services/api/messages.py#L80>Added a nonce for L1 to L2 message</a> this prevents sending the same message twice from the EVM world, e.g: calling a function.
+<img src=https://i.imgur.com/3SPa5Fz.png alt></li>
+</ul>
+<h3 id=addition-of-evm-compatibilities>Addition of EVM compatibilities<a href=#addition-of-evm-compatibilities class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<ul>
+<li>events are here !</li>
+</ul>
+<p><img src=https://i.imgur.com/rXdCLNc.png alt>
+<img src=https://i.imgur.com/uOzGLmA.png alt></p>
+<p>(editor&rsquo;s note: TheGraph but for StarkNet please.)</p>
+<ul>
+<li>delegate calls
+prepend delegate_ to external contract function name or <code>l1_handler</code></li>
+<li>The <code>__default__</code> entry point is introduced, it is similar to the Solidity fallback method as it is executed after missing on the function selector.</li>
+<li>The <code>__l1_default__</code> entry point same as <code>__default__</code> but for in-protocol message from the L1.</li>
+</ul>
+<h3 id=new-syscalls>New syscalls<a href=#new-syscalls class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<ul>
+<li>get_block_timestamp()
+Returns a random number that sometimes appears to grow over time, currently around since 1970-01-01.
+Notice of deprecation for get_tx_signature(), get_tx_info() is now preferred.</li>
+</ul>
+</div></div>
+<div class=pagination>
+<div class=pagination__title>
+<span class=pagination__title-h>Read other posts</span>
+<hr>
+</div>
+<div class=pagination__buttons>
+<span class="button next">
+<a href=/posts/wip/>
+<span class=button__text>Work in progress</span>
+<span class=button__icon>→</span>
+</a>
+</span>
+</div>
+</div>
+<div id=disqus_thread></div>
+<script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return}var b=document,a=b.createElement('script');a.async=!0,a.src='//6120s-blog.disqus.com/embed.js',a.setAttribute('data-timestamp',+new Date),(b.head||b.body).appendChild(a)})()</script>
+<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript>
+<a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a>
+</article>
+</div>
+<footer class=footer>
+<div class=footer__inner>
+<div class="copyright copyright--user">
+<span> </span>
+</div>
+</div>
+</footer>
+<script type=text/javascript src=/bundle.min.js></script>
+</div>
+</div>
+</body>
+</html>
