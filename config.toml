@@ -84,5 +84,5 @@ disqusShortname = "6120s-blog"
     missingBackButtonLabel = "Back to home page"
 
     [languages.en.params.logo]
-      logoText = "Sylvain 6120 Laurent"
+      logoText = "Magicking's notes"
       logoHomeLink = "/"
