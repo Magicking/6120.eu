@@ -1,5 +1,5 @@
 +++
-title = "Support cours EVM"
+title = "Support cours Ethereum Virtual Machine"
 date = "2022-03-17T21:50:00+01:00"
 cover = ""
 tags = ["teaching", "french", "esilv", "evm", "ethereum"]
