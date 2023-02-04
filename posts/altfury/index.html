@@ -1,0 +1,347 @@
+<!doctype html><html lang=en>
+<head>
+<title>Altfury a remote wallet provider (GSaaS*) design document - Work In Progress :: 6120's Blog</title>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="Motivationale With around 2000 DApps and more than 60.000 users, the promise of 27.000 tx/s with Ethereum 2.0 and people arguing for Infura centralizing the public Ethereum world there is call for alternative! Altfury aims to provide to anyone the ability to interact with DApps and any smart contract without the need of paying gas.
+Your user don&amp;rsquo;t have a wallet?
+You can let us take care of your keys and the burden to not forget and secure them while enjoying the DeFi space faster than ever.">
+<meta name=keywords content>
+<meta name=robots content="noodp">
+<link rel=canonical href=/posts/altfury/>
+<link rel=stylesheet href=/styles.css>
+<link rel="shortcut icon" href=/img/theme-colors/black.png>
+<link rel=apple-touch-icon href=/img/theme-colors/black.png>
+<meta name=twitter:card content="summary">
+<meta name=twitter:site content="https://6120.eu">
+<meta name=twitter:creator content>
+<meta property="og:locale" content="en">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Altfury a remote wallet provider (GSaaS*) design document - Work In Progress">
+<meta property="og:description" content="Motivationale With around 2000 DApps and more than 60.000 users, the promise of 27.000 tx/s with Ethereum 2.0 and people arguing for Infura centralizing the public Ethereum world there is call for alternative! Altfury aims to provide to anyone the ability to interact with DApps and any smart contract without the need of paying gas.
+Your user don&amp;rsquo;t have a wallet?
+You can let us take care of your keys and the burden to not forget and secure them while enjoying the DeFi space faster than ever.">
+<meta property="og:url" content="/posts/altfury/">
+<meta property="og:site_name" content="6120's Blog">
+<meta property="og:image" content="/img/favicon/black.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta property="article:published_time" content="2021-02-13 19:00:03 +0100 +0100">
+</head>
+<body>
+<div class=black>
+<div class=fuzz></div>
+<div class="container center headings--one-size">
+<header class=header>
+<div class=header__inner>
+<div class=header__logo>
+<a href=/>
+<div class=logo>
+Magicking's notes
+</div>
+</a>
+</div>
+</div>
+</header>
+<div class=content>
+<article class=post>
+<h1 class=post-title>
+<a href=/posts/altfury/>Altfury a remote wallet provider (GSaaS*) design document - Work In Progress</a>
+</h1>
+<div class=post-meta>
+<time class=post-date>
+2021-02-13 ::
+[Updated :: 2021-02-13]
+</time>
+<span class=post-reading-time>:: 5 min read (955 words)</span>
+</div>
+<span class=post-tags>
+#<a href=/tags/ethereum/>ethereum</a>&nbsp;
+#<a href=/tags/rpc/>rpc</a>&nbsp;
+#<a href=/tags/gsaas/>gsaas</a>&nbsp;
+#<a href=/tags/altfury/>altfury</a>&nbsp;
+</span>
+<div class=post-content><div>
+<h2 id=motivationale>Motivationale<a href=#motivationale class=hanchor arialabel=Anchor>&#8983;</a> </h2>
+<p>With around <a href=https://dappradar.com/rankings/protocol/ethereum/87>2000 DApps</a> and more than <a href=https://dappradar.com/rankings/protocol/ethereum>60.000 users</a>, the promise of 27.000 tx/s with Ethereum 2.0 and people arguing for Infura centralizing the public Ethereum world there is call for alternative!
+Altfury aims to provide to anyone the ability to interact with DApps and any smart contract without the need of paying gas.</p>
+<p>Your user don&rsquo;t have a wallet?</p>
+<p>You can let us take care of your keys and the burden to not forget and secure them while enjoying the DeFi space faster than ever.
+DApp developers, the Ethereum world to your users with only the change of your endpoint URL address.
+Users, hassle free access to the DeFi world</p>
+<p>No burden to use a new SDK in your DApps, work with standard Wallet Connect (Uniswap & al)!
+Peepz, just to go the website (optional install browser extension) pair up and go!</p>
+<p>*Gas Station As A Service (GSAAS)</p>
+<p><img src=https://6120.eu/private/altfury.gif alt></p>
+<h1 id=intro>Intro<a href=#intro class=hanchor arialabel=Anchor>&#8983;</a> </h1>
+<p>The goal of this document is to provide a design of a high-available service providing Ethereum JSON RPC endpoints over HTTP and HTTP WebSocket and other related services such as fee (tx) management to act as a drop-in repleacement (or plugin to existing wallet connectors).</p>
+<h3 id=technical-note>Technical note<a href=#technical-note class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<p>In addition, the endpoint SHOULD allow:</p>
+<ul>
+<li>For unfunded Ethereum account to pass transaction on the blockchain under certain condition
+Withhold transaction then</li>
+<li>Guaranteed transaction inclusion with low gas price fee
+For this specific feature, there is multiple ways to achieve this
+Pass transaction off-band to a partner miner pool that would accept transaction with a <strong>gasPrice</strong> set at <strong>0</strong> <em>or</em> fund the account via a faucet to the <strong>gasLimit</strong> x <strong>gasPrice</strong> while withholding
+the transaction until funding is done and then propagate it.</li>
+</ul>
+<h2 id=definition>Definition<a href=#definition class=hanchor arialabel=Anchor>&#8983;</a> </h2>
+<p>A remote wallet provider is a service that aims to help distant services to execute(read calls), sign(key control) and transmit transaction(write calls)</p>
+<p>It integrate seamlessly by emulating a blockchain state with a balance corresponding for the credit of each account creating an ephemeral blockchain network (next_view(state, account_balances)->fork_view, a fork of the mainnet displaying accounts as if they have the corresponding amount making the experience seamless as</p>
+<h2 id=customers>Customers<a href=#customers class=hanchor arialabel=Anchor>&#8983;</a> </h2>
+<ul>
+<li>Bots</li>
+<li>NoCode users</li>
+<li>User that click on interface (browser extension, <a href="https://twitter.com/P3b7_/status/1361345964259352580?s=19">https://twitter.com/P3b7_/status/1361345964259352580?s=19</a>)</li>
+<li>User willing to invest to rely on this for automation</li>
+<li>User that do their on smart contract automation</li>
+</ul>
+<p>Todo do market research to describe personas</p>
+<h2 id=future-of-work>Future of work<a href=#future-of-work class=hanchor arialabel=Anchor>&#8983;</a> </h2>
+<ul>
+<li>Provide services about key usage (defi liquidity mining, &mldr;)</li>
+</ul>
+<h2 id=architecture>Architecture<a href=#architecture class=hanchor arialabel=Anchor>&#8983;</a> </h2>
+<p>SHOULD be as minimal as possible to have a low footprint/cost
+(front-end requests (administration, user management, &mldr;)).
+Use go-ethereum as library to avoid technical debt as much as possible.</p>
+<p>-> Wondering if serverless could be a benefit if it were handling execution read calls, this might be costly if not self-hosted</p>
+<p>-> Browser extention to change the RPC endpoint easily
+-> Ledger device with dedicated credit app
+-> Website where account can be toped-up by XXX means</p>
+<h1 id=security>Security<a href=#security class=hanchor arialabel=Anchor>&#8983;</a> </h1>
+<p>Per ethereum account (extracted from transaction signature) whitelisting.
+Per application(what), per logged user (who)
+Anonymous user SHOULD be limited by IP(Handle IPv6 per /64 block?):</p>
+<ul>
+<li>Rate in second</li>
+<li>Total number of concurrent connection</li>
+<li>Time limit on connection</li>
+</ul>
+<p>USER_TYPE:</p>
+<ul>
+<li>LOW_GASER</li>
+<li>TO_FUND_ACCOUNT</li>
+<li>ANONYMOUS</li>
+</ul>
+<h1 id=new-usages-possible-out-of-that>New usages possible out of that<a href=#new-usages-possible-out-of-that class=hanchor arialabel=Anchor>&#8983;</a> </h1>
+<ul>
+<li>Send NFT anonymously via TornadoCash integration</li>
+</ul>
+<h2 id=allowed-usage-pattern>Allowed usage pattern<a href=#allowed-usage-pattern class=hanchor arialabel=Anchor>&#8983;</a> </h2>
+<ul>
+<li>Authorize (max amount?)</li>
+<li>Trade</li>
+<li>Trade</li>
+<li>&mldr; max amount before security callbacks?</li>
+</ul>
+<h2 id=regulatory-limits>Regulatory limits<a href=#regulatory-limits class=hanchor arialabel=Anchor>&#8983;</a> </h2>
+<p>Is this such a thing for DeFi?
+Tax?</p>
+<h2 id=fraud-prevention--whitelisting-system>Fraud prevention / whitelisting system<a href=#fraud-prevention--whitelisting-system class=hanchor arialabel=Anchor>&#8983;</a> </h2>
+<p>Smart-contract based?</p>
+<h3 id=providing-an-ephemeral-ethereum-state>Providing an ephemeral ethereum state<a href=#providing-an-ephemeral-ethereum-state class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<ul>
+<li>Modify <a href=https://github.com/ledgerwatch/turbo-geth/blob/master/consensus/ethash/sealer.go#L166>https://github.com/ledgerwatch/turbo-geth/blob/master/consensus/ethash/sealer.go#L166</a> to wait on a channel instead of searching for the nonce and set a MAGIC MixDigest to permit identification of a special block to be included on the canonical chain without verification</li>
+<li>Prevent MAGIC block propagation throught</li>
+</ul>
+<h1 id=transaction-payment-to-miner>Transaction payment to miner<a href=#transaction-payment-to-miner class=hanchor arialabel=Anchor>&#8983;</a> </h1>
+<p>The payment is distributed to the block.coinbase each block containing private transaction (and potentially a lower than usual gas price)</p>
+<p>Todo expand idea of private transaction via on-chain payment -> find a settlement cost minimal (ticket+payment channel)</p>
+<h3 id=transaction-flow>Transaction flow<a href=#transaction-flow class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<h4 id=write-flows>Write flows<a href=#write-flows class=hanchor arialabel=Anchor>&#8983;</a> </h4>
+<pre tabindex=0><code class=language-mermaid data-lang=mermaid>sequenceDiagram
+    participant User
+    participant EVM Service
+    participant Eth node
+    activate EVM Service
+    User-&gt;&gt;EVM Service: eth_sendRawTransaction
+    EVM Service-&gt;&gt;EVM Service: Classify user type
+    EVM Service-&gt;EVM Service: Apply rate limit
+    opt if user is TO_FUND_ACCOUNT type
+    EVM Service-&gt;EVM Service: Apply funding TX to txpool
+    end
+    opt if user is LOW_GASER
+    EVM Service-&gt;EVM Service: Disable gasPrice limit
+    end
+    EVM Service-&gt;EVM Service: Verify TX against txpool
+    activate Eth node
+    EVM Service--&gt;&gt;Eth node: Propagate funding transaction for TO_FUND_ACCOUNT user
+    
+    EVM Service--&gt;&gt;EVM Service: Wait for funding settlement for TO_FUND_ACCOUNT user
+    
+    alt Private or public transaction
+        EVM Service-&gt;&gt;Eth node: Propagate user transaction
+    deactivate Eth node
+    else
+        EVM Service--&gt;&gt;Miner pool: Dispatch transaction for LOW_GASER user
+
+    end
+    deactivate EVM Service
+</code></pre><h4 id=read-flows>Read flows<a href=#read-flows class=hanchor arialabel=Anchor>&#8983;</a> </h4>
+<p>Todo</p>
+<h2 id=documentation>Documentation<a href=#documentation class=hanchor arialabel=Anchor>&#8983;</a> </h2>
+<p><a href="https://docs.google.com/spreadsheets/d/1iOHnC1MkwcXxN-Gisk9nWeWIRfR6ZaWAXLtYL37NCzE/edit?pli=1#gid=0">Pricing</a>
+<a href=https://github.com/ethereum/wiki/wiki/JSON-RPC>https://github.com/ethereum/wiki/wiki/JSON-RPC</a>
+<a href=https://www.stateofthedapps.com/stats>https://www.stateofthedapps.com/stats</a></p>
+<h2 id=ethereum-rpc>Ethereum RPC<a href=#ethereum-rpc class=hanchor arialabel=Anchor>&#8983;</a> </h2>
+<h3 id=modified-rpc>Modified RPC<a href=#modified-rpc class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<p><strong>eth_call</strong> due to <code>gasPrice</code> parameter
+<strong>eth_estimateGas</strong> due to <code>gasPrice</code> parameter</p>
+<h4 id=eth_gasprice>eth_gasPrice<a href=#eth_gasprice class=hanchor arialabel=Anchor>&#8983;</a> </h4>
+<p>Should reflect the gasPrice we want either low or high depending of the kind of transaction we expect to see either through a miner pool or pre-funding.</p>
+<h4 id=eth_sendrawtransaction>eth_sendRawTransaction<a href=#eth_sendrawtransaction class=hanchor arialabel=Anchor>&#8983;</a> </h4>
+<p>Custom implementation of this RPC, depending on USER_TYPE</p>
+<h3 id=non-stream-rpc>Non stream RPC<a href=#non-stream-rpc class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<ul>
+<li>
+<p>eth_accounts</p>
+</li>
+<li>
+<p>eth_blockNumber</p>
+</li>
+<li>
+<p>eth_call</p>
+</li>
+<li>
+<p>eth_chainId</p>
+</li>
+<li>
+<p>eth_getBalance</p>
+</li>
+<li>
+<p>eth_getBlockByHash</p>
+</li>
+<li>
+<p>eth_getBlockByNumber</p>
+</li>
+<li>
+<p>eth_getBlockTransactionCountByHash</p>
+</li>
+<li>
+<p>eth_getBlockTransactionCountByNumber</p>
+</li>
+<li>
+<p>eth_getCode</p>
+</li>
+<li>
+<p>eth_getLogs</p>
+</li>
+<li>
+<p>eth_getStorageAt</p>
+</li>
+<li>
+<p>eth_getTransactionByBlockHashAndIndex</p>
+</li>
+<li>
+<p>eth_getTransactionByBlockNumberAndIndex</p>
+</li>
+<li>
+<p>eth_getTransactionByHash</p>
+</li>
+<li>
+<p>eth_getTransactionCount</p>
+</li>
+<li>
+<p>eth_getTransactionReceipt</p>
+</li>
+<li>
+<p>eth_getUncleByBlockHashAndIndex</p>
+</li>
+<li>
+<p>eth_getUncleByBlockNumberAndIndex</p>
+</li>
+<li>
+<p>eth_getUncleCountByBlockHash</p>
+</li>
+<li>
+<p>eth_getUncleCountByBlockNumber</p>
+</li>
+<li>
+<p>eth_getWork</p>
+</li>
+<li>
+<p>eth_hashrate</p>
+</li>
+<li>
+<p>eth_mining</p>
+</li>
+<li>
+<p>eth_protocolVersion</p>
+</li>
+<li>
+<p>eth_submitWork</p>
+</li>
+<li>
+<p>eth_syncing</p>
+</li>
+<li>
+<p>net_listening</p>
+</li>
+<li>
+<p>net_peerCount</p>
+</li>
+<li>
+<p>net_version</p>
+</li>
+<li>
+<p>web3_clientVersion</p>
+</li>
+</ul>
+<h3 id=streams-rpc>Streams RPC<a href=#streams-rpc class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<ul>
+<li>eth_newFilter</li>
+<li>eth_newPendingTransactionFilter</li>
+<li>eth_getFilterChanges</li>
+<li>eth_getFilterLogs</li>
+<li>eth_uninstallFilter</li>
+<li>eth_subscribe</li>
+<li>eth_unsubscribe</li>
+</ul>
+<h2 id=notes>Notes<a href=#notes class=hanchor arialabel=Anchor>&#8983;</a> </h2>
+<ul>
+<li>Fast Transaction Pool, low latency viewer / transaction sender</li>
+<li>Connect to peers, fetch memory pool, behave as light relay node</li>
+<li>Provide transaction mempool view and fast transaction dispatching</li>
+<li>Populate a central database for constant time access via API (paid access ?)</li>
+<li>Monitor transaction to addresses, on update</li>
+<li>Callback to backend customers through a fast protocol (GRPC?REST?&mldr;?)</li>
+<li>Trigger registered function (e.g: send transaction)</li>
+<li>World infrastructure required (node in each world, potentially costly + dev ops)</li>
+<li>Dashboard with world view of ethereum compatible blockchain</li>
+<li>Speed transaction sending for quick transaction dispatching</li>
+<li>Would require ethereum node modification</li>
+</ul>
+</div></div>
+<div class=pagination>
+<div class=pagination__title>
+<span class=pagination__title-h>Read other posts</span>
+<hr>
+</div>
+<div class=pagination__buttons>
+<span class="button previous">
+<a href=/posts/wip/>
+<span class=button__icon>←</span>
+<span class=button__text>Work in progress</span>
+</a>
+</span>
+</div>
+</div>
+<div id=disqus_thread></div>
+<script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return}var b=document,a=b.createElement('script');a.async=!0,a.src='//6120s-blog.disqus.com/embed.js',a.setAttribute('data-timestamp',+new Date),(b.head||b.body).appendChild(a)})()</script>
+<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript>
+<a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a>
+</article>
+</div>
+<footer class=footer>
+<div class=footer__inner>
+<div class="copyright copyright--user">
+<span> </span>
+</div>
+</div>
+</footer>
+<script type=text/javascript src=/bundle.min.js></script>
+</div>
+</div>
+</body>
+</html>

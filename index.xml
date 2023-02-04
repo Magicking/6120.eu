@@ -1,12 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>6120's Blog</title><link>/</link><description>Recent content on 6120's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright/><lastBuildDate>Fri, 03 Feb 2023 19:00:03 +0100</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>StarkNet &amp; Cairo significant changes dev. opinionated view</title><link>/posts/cairo-changelog-pov/</link><pubDate>Fri, 03 Feb 2023 19:00:03 +0100</pubDate><guid>/posts/cairo-changelog-pov/</guid><description>StarkNet &amp;amp; Cairo significant changes dev. opinionated view https://github.com/starkware-libs/cairo-lang/releases What&amp;rsquo;s new in Cairo? There have been a lot of changes since the Cairo language has been released. This is a developer opinionated list of the major changes since the 2021-12.
-StarkWareLtd last releas CairoLang v0.10 (Dec 5, 2022) First release covered: 0.6.2 (12-2021)
-v0.10 (Cairo 1.0) (breaking changes version) Aug. 29 2022 v0.10.0-pre Pre-release
-Starknet has its core language modified, it&amp;rsquo;s now a Rusty lang, Starknet foresaw the future of Rust based smart-contract ecosystem (Luna developers and Solana)</description><content>&lt;h1 id="starknet--cairo-significant-changes-dev-opinionated-view">StarkNet &amp;amp; Cairo significant changes dev. opinionated view&lt;/h1>
-&lt;p>&lt;a href="https://github.com/starkware-libs/cairo-lang/releases">https://github.com/starkware-libs/cairo-lang/releases&lt;/a>
-What&amp;rsquo;s new in Cairo? There have been a lot of changes since the Cairo language has been released. This is a developer opinionated list of the major changes since the 2021-12.&lt;/p>
-&lt;p>StarkWareLtd last releas CairoLang v0.10 (Dec 5, 2022)
-First release covered: 0.6.2 (12-2021)&lt;/p>
-&lt;h2 id="v010-cairo-10">v0.10 (Cairo 1.0)&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>6120's Blog</title><link>/</link><description>Recent content on 6120's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright/><lastBuildDate>Fri, 03 Feb 2023 19:00:03 +0100</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>StarkNet &amp; Cairo significant changes developer opinionated view</title><link>/posts/cairo-changelog-pov/</link><pubDate>Fri, 03 Feb 2023 19:00:03 +0100</pubDate><guid>/posts/cairo-changelog-pov/</guid><description>What&amp;rsquo;s new in Cairo? There have been a lot of changes since the Cairo language has been released. This is a developer opinionated list of the major changes since the first release, 0.6.2 (Dec 2021).
+StarkWareLtd last release CairoLang v0.10.3 (Dec 5, 2022) also named Cairo 1.0.
+Useful links:
+CairoLang releases v0.10 (Cairo 1.0) (breaking changes version) Aug. 29 2022 v0.10.0-pre Pre-release
+Starknet has its core language modified, it&amp;rsquo;s now a Rusty lang, Starknet foresaw the future of Rust based smart-contract ecosystem (Luna developers and Solana)</description><content>&lt;h1 id="whats-new-in-cairo">What&amp;rsquo;s new in Cairo?&lt;/h1>
+&lt;p>There have been a lot of changes since the Cairo language has been released. This is a developer opinionated list of the major changes since the first release, 0.6.2 (Dec 2021).&lt;/p>
+&lt;p>StarkWareLtd last release CairoLang v0.10.3 (Dec 5, 2022) also named Cairo 1.0.&lt;/p>
+&lt;p>Useful links:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/starkware-libs/cairo-lang/releases">CairoLang releases&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h1 id="v010-cairo-10">v0.10 (Cairo 1.0)&lt;/h1>
 &lt;p>(breaking changes version)
 &lt;strong>Aug. 29 2022&lt;/strong> v0.10.0-pre Pre-release&lt;/p>
 &lt;p>Starknet has its core language modified, it&amp;rsquo;s now a Rusty lang, Starknet foresaw the future of Rust based smart-contract ecosystem (&lt;a href="https://news.coincu.com/90055-fall-of-terra/">Luna developers&lt;/a> and Solana)&lt;/p>
@@ -56,10 +59,10 @@ First release covered: 0.6.2 (12-2021)&lt;/p>
 &lt;p>API: Remove entry_point_type field from transaction information&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;h2 id="v09x">v0.9.x&lt;/h2>
+&lt;h1 id="v09x">v0.9.x&lt;/h1>
 &lt;p>Fees are now enforced on StarkNet, no more free candy!&lt;/p>
 &lt;p>Contracts must be declared first and then instanciated through the new &lt;a href="https://starknet.io/docs/hello_starknet/deploying_from_contracts.html#the-deploy-system-call">deploy syscall&lt;/a> forcing 2 manual transactions for contracts deployed by EOA.&lt;/p>
-&lt;h2 id="v081">v0.8.1&lt;/h2>
+&lt;h1 id="v081">v0.8.1&lt;/h1>
 &lt;p>Fees are in now! What&amp;rsquo;s up with that &lt;a href="https://github.com/starkware-libs/cairo-lang/blob/4e233516f52477ad158bc81a86ec2760471c1b65/src/starkware/starknet/business_logic/transaction_fee.py">code&lt;/a> ? See more &lt;a href="https://starknet.io/documentation/fee-mechanism/#Introduction">here&lt;/a>.
 &lt;img src="https://i.imgur.com/G2ZidCf.png" alt="">&lt;/p>
 &lt;ul>
@@ -84,7 +87,7 @@ First release covered: 0.6.2 (12-2021)&lt;/p>
 &lt;p>Added the cryptographic hash function &lt;a href="https://en.wikipedia.org/wiki/BLAKE_(hash_function)">blake2s&lt;/a> to the standard library&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;h3 id="cairo">Cairo&lt;/h3>
+&lt;h2 id="cairo">Cairo&lt;/h2>
 &lt;ul>
 &lt;li>
 &lt;p>Meaningful error messaging(v0.7.0) including local variables and arguments
@@ -102,12 +105,12 @@ First release covered: 0.6.2 (12-2021)&lt;/p>
 &lt;p>Fix for python 3.9&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;h2 id="v07x">v0.7.x&lt;/h2>
+&lt;h1 id="v07x">v0.7.x&lt;/h1>
 &lt;ul>
 &lt;li>&lt;a href="https://github.com/starkware-libs/cairo-lang/blob/4e233516f52477ad158bc81a86ec2760471c1b65/src/starkware/starknet/services/api/messages.py#L80">Added a nonce for L1 to L2 message&lt;/a> this prevents sending the same message twice from the EVM world, e.g: calling a function.
 &lt;img src="https://i.imgur.com/3SPa5Fz.png" alt="">&lt;/li>
 &lt;/ul>
-&lt;h3 id="addition-of-evm-compatibilities">Addition of EVM compatibilities&lt;/h3>
+&lt;h1 id="addition-of-evm-compatibilities">Addition of EVM compatibilities&lt;/h1>
 &lt;ul>
 &lt;li>events are here !&lt;/li>
 &lt;/ul>
@@ -120,7 +123,7 @@ prepend delegate_ to external contract function name or &lt;code>l1_handler&lt;/
 &lt;li>The &lt;code>__default__&lt;/code> entry point is introduced, it is similar to the Solidity fallback method as it is executed after missing on the function selector.&lt;/li>
 &lt;li>The &lt;code>__l1_default__&lt;/code> entry point same as &lt;code>__default__&lt;/code> but for in-protocol message from the L1.&lt;/li>
 &lt;/ul>
-&lt;h3 id="new-syscalls">New syscalls&lt;/h3>
+&lt;h2 id="new-syscalls">New syscalls&lt;/h2>
 &lt;ul>
 &lt;li>get_block_timestamp()
 Returns a random number that sometimes appears to grow over time, currently around since 1970-01-01.
@@ -227,4 +230,252 @@ In-chain WAV NFT is the &lt;a href="https://etherscan.deth.net/address/0xE114DCe
 &lt;p>More ressources:&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="https://blog.simondlr.com/posts/flavours-of-on-chain-svg-nfts-on-ethereum">Simon de la Rouviere&amp;rsquo;s Flavours of on-chain SVG blog post&lt;/a>&lt;/li>
+&lt;/ul></content></item><item><title>Altfury a remote wallet provider (GSaaS*) design document - Work In Progress</title><link>/posts/altfury/</link><pubDate>Sat, 13 Feb 2021 19:00:03 +0100</pubDate><guid>/posts/altfury/</guid><description>Motivationale With around 2000 DApps and more than 60.000 users, the promise of 27.000 tx/s with Ethereum 2.0 and people arguing for Infura centralizing the public Ethereum world there is call for alternative! Altfury aims to provide to anyone the ability to interact with DApps and any smart contract without the need of paying gas.
+Your user don&amp;rsquo;t have a wallet?
+You can let us take care of your keys and the burden to not forget and secure them while enjoying the DeFi space faster than ever.</description><content>&lt;h2 id="motivationale">Motivationale&lt;/h2>
+&lt;p>With around &lt;a href="https://dappradar.com/rankings/protocol/ethereum/87">2000 DApps&lt;/a> and more than &lt;a href="https://dappradar.com/rankings/protocol/ethereum">60.000 users&lt;/a>, the promise of 27.000 tx/s with Ethereum 2.0 and people arguing for Infura centralizing the public Ethereum world there is call for alternative!
+Altfury aims to provide to anyone the ability to interact with DApps and any smart contract without the need of paying gas.&lt;/p>
+&lt;p>Your user don&amp;rsquo;t have a wallet?&lt;/p>
+&lt;p>You can let us take care of your keys and the burden to not forget and secure them while enjoying the DeFi space faster than ever.
+DApp developers, the Ethereum world to your users with only the change of your endpoint URL address.
+Users, hassle free access to the DeFi world&lt;/p>
+&lt;p>No burden to use a new SDK in your DApps, work with standard Wallet Connect (Uniswap &amp;amp; al)!
+Peepz, just to go the website (optional install browser extension) pair up and go!&lt;/p>
+&lt;p>*Gas Station As A Service (GSAAS)&lt;/p>
+&lt;p>&lt;img src="https://6120.eu/private/altfury.gif" alt="">&lt;/p>
+&lt;h1 id="intro">Intro&lt;/h1>
+&lt;p>The goal of this document is to provide a design of a high-available service providing Ethereum JSON RPC endpoints over HTTP and HTTP WebSocket and other related services such as fee (tx) management to act as a drop-in repleacement (or plugin to existing wallet connectors).&lt;/p>
+&lt;h3 id="technical-note">Technical note&lt;/h3>
+&lt;p>In addition, the endpoint SHOULD allow:&lt;/p>
+&lt;ul>
+&lt;li>For unfunded Ethereum account to pass transaction on the blockchain under certain condition
+Withhold transaction then&lt;/li>
+&lt;li>Guaranteed transaction inclusion with low gas price fee
+For this specific feature, there is multiple ways to achieve this
+Pass transaction off-band to a partner miner pool that would accept transaction with a &lt;strong>gasPrice&lt;/strong> set at &lt;strong>0&lt;/strong> &lt;em>or&lt;/em> fund the account via a faucet to the &lt;strong>gasLimit&lt;/strong> x &lt;strong>gasPrice&lt;/strong> while withholding
+the transaction until funding is done and then propagate it.&lt;/li>
+&lt;/ul>
+&lt;h2 id="definition">Definition&lt;/h2>
+&lt;p>A remote wallet provider is a service that aims to help distant services to execute(read calls), sign(key control) and transmit transaction(write calls)&lt;/p>
+&lt;p>It integrate seamlessly by emulating a blockchain state with a balance corresponding for the credit of each account creating an ephemeral blockchain network (next_view(state, account_balances)-&amp;gt;fork_view, a fork of the mainnet displaying accounts as if they have the corresponding amount making the experience seamless as&lt;/p>
+&lt;h2 id="customers">Customers&lt;/h2>
+&lt;ul>
+&lt;li>Bots&lt;/li>
+&lt;li>NoCode users&lt;/li>
+&lt;li>User that click on interface (browser extension, &lt;a href="https://twitter.com/P3b7_/status/1361345964259352580?s=19">https://twitter.com/P3b7_/status/1361345964259352580?s=19&lt;/a>)&lt;/li>
+&lt;li>User willing to invest to rely on this for automation&lt;/li>
+&lt;li>User that do their on smart contract automation&lt;/li>
+&lt;/ul>
+&lt;p>Todo do market research to describe personas&lt;/p>
+&lt;h2 id="future-of-work">Future of work&lt;/h2>
+&lt;ul>
+&lt;li>Provide services about key usage (defi liquidity mining, &amp;hellip;)&lt;/li>
+&lt;/ul>
+&lt;h2 id="architecture">Architecture&lt;/h2>
+&lt;p>SHOULD be as minimal as possible to have a low footprint/cost
+(front-end requests (administration, user management, &amp;hellip;)).
+Use go-ethereum as library to avoid technical debt as much as possible.&lt;/p>
+&lt;p>-&amp;gt; Wondering if serverless could be a benefit if it were handling execution read calls, this might be costly if not self-hosted&lt;/p>
+&lt;p>-&amp;gt; Browser extention to change the RPC endpoint easily
+-&amp;gt; Ledger device with dedicated credit app
+-&amp;gt; Website where account can be toped-up by XXX means&lt;/p>
+&lt;h1 id="security">Security&lt;/h1>
+&lt;p>Per ethereum account (extracted from transaction signature) whitelisting.
+Per application(what), per logged user (who)
+Anonymous user SHOULD be limited by IP(Handle IPv6 per /64 block?):&lt;/p>
+&lt;ul>
+&lt;li>Rate in second&lt;/li>
+&lt;li>Total number of concurrent connection&lt;/li>
+&lt;li>Time limit on connection&lt;/li>
+&lt;/ul>
+&lt;p>USER_TYPE:&lt;/p>
+&lt;ul>
+&lt;li>LOW_GASER&lt;/li>
+&lt;li>TO_FUND_ACCOUNT&lt;/li>
+&lt;li>ANONYMOUS&lt;/li>
+&lt;/ul>
+&lt;h1 id="new-usages-possible-out-of-that">New usages possible out of that&lt;/h1>
+&lt;ul>
+&lt;li>Send NFT anonymously via TornadoCash integration&lt;/li>
+&lt;/ul>
+&lt;h2 id="allowed-usage-pattern">Allowed usage pattern&lt;/h2>
+&lt;ul>
+&lt;li>Authorize (max amount?)&lt;/li>
+&lt;li>Trade&lt;/li>
+&lt;li>Trade&lt;/li>
+&lt;li>&amp;hellip; max amount before security callbacks?&lt;/li>
+&lt;/ul>
+&lt;h2 id="regulatory-limits">Regulatory limits&lt;/h2>
+&lt;p>Is this such a thing for DeFi?
+Tax?&lt;/p>
+&lt;h2 id="fraud-prevention--whitelisting-system">Fraud prevention / whitelisting system&lt;/h2>
+&lt;p>Smart-contract based?&lt;/p>
+&lt;h3 id="providing-an-ephemeral-ethereum-state">Providing an ephemeral ethereum state&lt;/h3>
+&lt;ul>
+&lt;li>Modify &lt;a href="https://github.com/ledgerwatch/turbo-geth/blob/master/consensus/ethash/sealer.go#L166">https://github.com/ledgerwatch/turbo-geth/blob/master/consensus/ethash/sealer.go#L166&lt;/a> to wait on a channel instead of searching for the nonce and set a MAGIC MixDigest to permit identification of a special block to be included on the canonical chain without verification&lt;/li>
+&lt;li>Prevent MAGIC block propagation throught&lt;/li>
+&lt;/ul>
+&lt;h1 id="transaction-payment-to-miner">Transaction payment to miner&lt;/h1>
+&lt;p>The payment is distributed to the block.coinbase each block containing private transaction (and potentially a lower than usual gas price)&lt;/p>
+&lt;p>Todo expand idea of private transaction via on-chain payment -&amp;gt; find a settlement cost minimal (ticket+payment channel)&lt;/p>
+&lt;h3 id="transaction-flow">Transaction flow&lt;/h3>
+&lt;h4 id="write-flows">Write flows&lt;/h4>
+&lt;pre tabindex="0">&lt;code class="language-mermaid" data-lang="mermaid">sequenceDiagram
+participant User
+participant EVM Service
+participant Eth node
+activate EVM Service
+User-&amp;gt;&amp;gt;EVM Service: eth_sendRawTransaction
+EVM Service-&amp;gt;&amp;gt;EVM Service: Classify user type
+EVM Service-&amp;gt;EVM Service: Apply rate limit
+opt if user is TO_FUND_ACCOUNT type
+EVM Service-&amp;gt;EVM Service: Apply funding TX to txpool
+end
+opt if user is LOW_GASER
+EVM Service-&amp;gt;EVM Service: Disable gasPrice limit
+end
+EVM Service-&amp;gt;EVM Service: Verify TX against txpool
+activate Eth node
+EVM Service--&amp;gt;&amp;gt;Eth node: Propagate funding transaction for TO_FUND_ACCOUNT user
+EVM Service--&amp;gt;&amp;gt;EVM Service: Wait for funding settlement for TO_FUND_ACCOUNT user
+alt Private or public transaction
+EVM Service-&amp;gt;&amp;gt;Eth node: Propagate user transaction
+deactivate Eth node
+else
+EVM Service--&amp;gt;&amp;gt;Miner pool: Dispatch transaction for LOW_GASER user
+end
+deactivate EVM Service
+&lt;/code>&lt;/pre>&lt;h4 id="read-flows">Read flows&lt;/h4>
+&lt;p>Todo&lt;/p>
+&lt;h2 id="documentation">Documentation&lt;/h2>
+&lt;p>&lt;a href="https://docs.google.com/spreadsheets/d/1iOHnC1MkwcXxN-Gisk9nWeWIRfR6ZaWAXLtYL37NCzE/edit?pli=1#gid=0">Pricing&lt;/a>
+&lt;a href="https://github.com/ethereum/wiki/wiki/JSON-RPC">https://github.com/ethereum/wiki/wiki/JSON-RPC&lt;/a>
+&lt;a href="https://www.stateofthedapps.com/stats">https://www.stateofthedapps.com/stats&lt;/a>&lt;/p>
+&lt;h2 id="ethereum-rpc">Ethereum RPC&lt;/h2>
+&lt;h3 id="modified-rpc">Modified RPC&lt;/h3>
+&lt;p>&lt;strong>eth_call&lt;/strong> due to &lt;code>gasPrice&lt;/code> parameter
+&lt;strong>eth_estimateGas&lt;/strong> due to &lt;code>gasPrice&lt;/code> parameter&lt;/p>
+&lt;h4 id="eth_gasprice">eth_gasPrice&lt;/h4>
+&lt;p>Should reflect the gasPrice we want either low or high depending of the kind of transaction we expect to see either through a miner pool or pre-funding.&lt;/p>
+&lt;h4 id="eth_sendrawtransaction">eth_sendRawTransaction&lt;/h4>
+&lt;p>Custom implementation of this RPC, depending on USER_TYPE&lt;/p>
+&lt;h3 id="non-stream-rpc">Non stream RPC&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>eth_accounts&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>eth_blockNumber&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>eth_call&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>eth_chainId&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>eth_getBalance&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>eth_getBlockByHash&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>eth_getBlockByNumber&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>eth_getBlockTransactionCountByHash&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>eth_getBlockTransactionCountByNumber&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>eth_getCode&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>eth_getLogs&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>eth_getStorageAt&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>eth_getTransactionByBlockHashAndIndex&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>eth_getTransactionByBlockNumberAndIndex&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>eth_getTransactionByHash&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>eth_getTransactionCount&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>eth_getTransactionReceipt&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>eth_getUncleByBlockHashAndIndex&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>eth_getUncleByBlockNumberAndIndex&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>eth_getUncleCountByBlockHash&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>eth_getUncleCountByBlockNumber&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>eth_getWork&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>eth_hashrate&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>eth_mining&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>eth_protocolVersion&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>eth_submitWork&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>eth_syncing&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>net_listening&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>net_peerCount&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>net_version&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>web3_clientVersion&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="streams-rpc">Streams RPC&lt;/h3>
+&lt;ul>
+&lt;li>eth_newFilter&lt;/li>
+&lt;li>eth_newPendingTransactionFilter&lt;/li>
+&lt;li>eth_getFilterChanges&lt;/li>
+&lt;li>eth_getFilterLogs&lt;/li>
+&lt;li>eth_uninstallFilter&lt;/li>
+&lt;li>eth_subscribe&lt;/li>
+&lt;li>eth_unsubscribe&lt;/li>
+&lt;/ul>
+&lt;h2 id="notes">Notes&lt;/h2>
+&lt;ul>
+&lt;li>Fast Transaction Pool, low latency viewer / transaction sender&lt;/li>
+&lt;li>Connect to peers, fetch memory pool, behave as light relay node&lt;/li>
+&lt;li>Provide transaction mempool view and fast transaction dispatching&lt;/li>
+&lt;li>Populate a central database for constant time access via API (paid access ?)&lt;/li>
+&lt;li>Monitor transaction to addresses, on update&lt;/li>
+&lt;li>Callback to backend customers through a fast protocol (GRPC?REST?&amp;hellip;?)&lt;/li>
+&lt;li>Trigger registered function (e.g: send transaction)&lt;/li>
+&lt;li>World infrastructure required (node in each world, potentially costly + dev ops)&lt;/li>
+&lt;li>Dashboard with world view of ethereum compatible blockchain&lt;/li>
+&lt;li>Speed transaction sending for quick transaction dispatching&lt;/li>
+&lt;li>Would require ethereum node modification&lt;/li>
 &lt;/ul></content></item></channel></rss>

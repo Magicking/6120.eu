@@ -1,12 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>cairo on 6120's Blog</title><link>/tags/cairo/</link><description>Recent content in cairo on 6120's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright/><lastBuildDate>Fri, 03 Feb 2023 19:00:03 +0100</lastBuildDate><atom:link href="/tags/cairo/index.xml" rel="self" type="application/rss+xml"/><item><title>StarkNet &amp; Cairo significant changes dev. opinionated view</title><link>/posts/cairo-changelog-pov/</link><pubDate>Fri, 03 Feb 2023 19:00:03 +0100</pubDate><guid>/posts/cairo-changelog-pov/</guid><description>StarkNet &amp;amp; Cairo significant changes dev. opinionated view https://github.com/starkware-libs/cairo-lang/releases What&amp;rsquo;s new in Cairo? There have been a lot of changes since the Cairo language has been released. This is a developer opinionated list of the major changes since the 2021-12.
-StarkWareLtd last releas CairoLang v0.10 (Dec 5, 2022) First release covered: 0.6.2 (12-2021)
-v0.10 (Cairo 1.0) (breaking changes version) Aug. 29 2022 v0.10.0-pre Pre-release
-Starknet has its core language modified, it&amp;rsquo;s now a Rusty lang, Starknet foresaw the future of Rust based smart-contract ecosystem (Luna developers and Solana)</description><content>&lt;h1 id="starknet--cairo-significant-changes-dev-opinionated-view">StarkNet &amp;amp; Cairo significant changes dev. opinionated view&lt;/h1>
-&lt;p>&lt;a href="https://github.com/starkware-libs/cairo-lang/releases">https://github.com/starkware-libs/cairo-lang/releases&lt;/a>
-What&amp;rsquo;s new in Cairo? There have been a lot of changes since the Cairo language has been released. This is a developer opinionated list of the major changes since the 2021-12.&lt;/p>
-&lt;p>StarkWareLtd last releas CairoLang v0.10 (Dec 5, 2022)
-First release covered: 0.6.2 (12-2021)&lt;/p>
-&lt;h2 id="v010-cairo-10">v0.10 (Cairo 1.0)&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>cairo on 6120's Blog</title><link>/tags/cairo/</link><description>Recent content in cairo on 6120's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright/><lastBuildDate>Fri, 03 Feb 2023 19:00:03 +0100</lastBuildDate><atom:link href="/tags/cairo/index.xml" rel="self" type="application/rss+xml"/><item><title>StarkNet &amp; Cairo significant changes developer opinionated view</title><link>/posts/cairo-changelog-pov/</link><pubDate>Fri, 03 Feb 2023 19:00:03 +0100</pubDate><guid>/posts/cairo-changelog-pov/</guid><description>What&amp;rsquo;s new in Cairo? There have been a lot of changes since the Cairo language has been released. This is a developer opinionated list of the major changes since the first release, 0.6.2 (Dec 2021).
+StarkWareLtd last release CairoLang v0.10.3 (Dec 5, 2022) also named Cairo 1.0.
+Useful links:
+CairoLang releases v0.10 (Cairo 1.0) (breaking changes version) Aug. 29 2022 v0.10.0-pre Pre-release
+Starknet has its core language modified, it&amp;rsquo;s now a Rusty lang, Starknet foresaw the future of Rust based smart-contract ecosystem (Luna developers and Solana)</description><content>&lt;h1 id="whats-new-in-cairo">What&amp;rsquo;s new in Cairo?&lt;/h1>
+&lt;p>There have been a lot of changes since the Cairo language has been released. This is a developer opinionated list of the major changes since the first release, 0.6.2 (Dec 2021).&lt;/p>
+&lt;p>StarkWareLtd last release CairoLang v0.10.3 (Dec 5, 2022) also named Cairo 1.0.&lt;/p>
+&lt;p>Useful links:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/starkware-libs/cairo-lang/releases">CairoLang releases&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h1 id="v010-cairo-10">v0.10 (Cairo 1.0)&lt;/h1>
 &lt;p>(breaking changes version)
 &lt;strong>Aug. 29 2022&lt;/strong> v0.10.0-pre Pre-release&lt;/p>
 &lt;p>Starknet has its core language modified, it&amp;rsquo;s now a Rusty lang, Starknet foresaw the future of Rust based smart-contract ecosystem (&lt;a href="https://news.coincu.com/90055-fall-of-terra/">Luna developers&lt;/a> and Solana)&lt;/p>
@@ -56,10 +59,10 @@ First release covered: 0.6.2 (12-2021)&lt;/p>
 &lt;p>API: Remove entry_point_type field from transaction information&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;h2 id="v09x">v0.9.x&lt;/h2>
+&lt;h1 id="v09x">v0.9.x&lt;/h1>
 &lt;p>Fees are now enforced on StarkNet, no more free candy!&lt;/p>
 &lt;p>Contracts must be declared first and then instanciated through the new &lt;a href="https://starknet.io/docs/hello_starknet/deploying_from_contracts.html#the-deploy-system-call">deploy syscall&lt;/a> forcing 2 manual transactions for contracts deployed by EOA.&lt;/p>
-&lt;h2 id="v081">v0.8.1&lt;/h2>
+&lt;h1 id="v081">v0.8.1&lt;/h1>
 &lt;p>Fees are in now! What&amp;rsquo;s up with that &lt;a href="https://github.com/starkware-libs/cairo-lang/blob/4e233516f52477ad158bc81a86ec2760471c1b65/src/starkware/starknet/business_logic/transaction_fee.py">code&lt;/a> ? See more &lt;a href="https://starknet.io/documentation/fee-mechanism/#Introduction">here&lt;/a>.
 &lt;img src="https://i.imgur.com/G2ZidCf.png" alt="">&lt;/p>
 &lt;ul>
@@ -84,7 +87,7 @@ First release covered: 0.6.2 (12-2021)&lt;/p>
 &lt;p>Added the cryptographic hash function &lt;a href="https://en.wikipedia.org/wiki/BLAKE_(hash_function)">blake2s&lt;/a> to the standard library&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;h3 id="cairo">Cairo&lt;/h3>
+&lt;h2 id="cairo">Cairo&lt;/h2>
 &lt;ul>
 &lt;li>
 &lt;p>Meaningful error messaging(v0.7.0) including local variables and arguments
@@ -102,12 +105,12 @@ First release covered: 0.6.2 (12-2021)&lt;/p>
 &lt;p>Fix for python 3.9&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;h2 id="v07x">v0.7.x&lt;/h2>
+&lt;h1 id="v07x">v0.7.x&lt;/h1>
 &lt;ul>
 &lt;li>&lt;a href="https://github.com/starkware-libs/cairo-lang/blob/4e233516f52477ad158bc81a86ec2760471c1b65/src/starkware/starknet/services/api/messages.py#L80">Added a nonce for L1 to L2 message&lt;/a> this prevents sending the same message twice from the EVM world, e.g: calling a function.
 &lt;img src="https://i.imgur.com/3SPa5Fz.png" alt="">&lt;/li>
 &lt;/ul>
-&lt;h3 id="addition-of-evm-compatibilities">Addition of EVM compatibilities&lt;/h3>
+&lt;h1 id="addition-of-evm-compatibilities">Addition of EVM compatibilities&lt;/h1>
 &lt;ul>
 &lt;li>events are here !&lt;/li>
 &lt;/ul>
@@ -120,7 +123,7 @@ prepend delegate_ to external contract function name or &lt;code>l1_handler&lt;/
 &lt;li>The &lt;code>__default__&lt;/code> entry point is introduced, it is similar to the Solidity fallback method as it is executed after missing on the function selector.&lt;/li>
 &lt;li>The &lt;code>__l1_default__&lt;/code> entry point same as &lt;code>__default__&lt;/code> but for in-protocol message from the L1.&lt;/li>
 &lt;/ul>
-&lt;h3 id="new-syscalls">New syscalls&lt;/h3>
+&lt;h2 id="new-syscalls">New syscalls&lt;/h2>
 &lt;ul>
 &lt;li>get_block_timestamp()
 Returns a random number that sometimes appears to grow over time, currently around since 1970-01-01.
