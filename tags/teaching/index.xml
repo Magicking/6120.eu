@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>teaching on 6120's Blog</title><link>/tags/teaching/</link><description>Recent content in teaching on 6120's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright/><lastBuildDate>Thu, 17 Mar 2022 21:50:00 +0100</lastBuildDate><atom:link href="/tags/teaching/index.xml" rel="self" type="application/rss+xml"/><item><title>Support cours EVM</title><link>/posts/support-evm/</link><pubDate>Thu, 17 Mar 2022 21:50:00 +0100</pubDate><guid>/posts/support-evm/</guid><description>Ceci est un support de cours sur l&amp;rsquo;EVM (Ethereum Virtual Machine) pour le cours de l&amp;rsquo;Ecole Supérieure d&amp;rsquo;Ingénieurs Léonard de Vinci (ESILV).
+Il comprend du matériel de cours, des illustrations et des liens vers des ressources.
+La durée du cours est de 3h, séparé en une lesson de 1h15 et des travaux dirigés de 1h15. La première partie est une introduction à la machine de Turing et sa correspondance aux processeurs de nos jours (rappel des connaissances), la seconde partie est une introduction à l&amp;rsquo;EVM et sa correspondance avec la machine de Turing.</description><content>&lt;p>Ceci est un support de cours sur l&amp;rsquo;EVM (Ethereum Virtual Machine) pour le cours de l&amp;rsquo;Ecole Supérieure d&amp;rsquo;Ingénieurs Léonard de Vinci (ESILV).&lt;/p>
+&lt;p>Il comprend du matériel de cours, des illustrations et des liens vers des ressources.&lt;/p>
+&lt;p>La durée du cours est de 3h, séparé en une lesson de 1h15 et des travaux dirigés de 1h15.
+La première partie est une introduction à la machine de Turing et sa correspondance aux processeurs de nos jours (rappel des connaissances),
+la seconde partie est une introduction à l&amp;rsquo;EVM et sa correspondance avec la machine de Turing.&lt;/p>
+&lt;p>Les travaux pratiques consistent à observer le fonctionnement de l&amp;rsquo;EVM ainsi que la lecture des &lt;a href="https://www.evm.codes/">opcodes&lt;/a> au travers du debugger &lt;a href="https://remix.ethereum.org/">Remix&lt;/a> et à implémenter des opcodes directement dans un second temps.&lt;/p>
+&lt;p>NB: Tenderly peut-être utilisé pour une meilleure observervation du fonctionnement de l&amp;rsquo;EVM sur la blockchain Ethereum mais un peu plus long à mettre en place.&lt;/p>
+&lt;h1 id="machine-de-turing">Machine de Turing&lt;/h1>
+&lt;p>Machine de Turing
+&lt;img src="/img/posts/support-evm/mThs6b2.jpg" alt="">
+&lt;a href="https://www.youtube.com/watch?v=L5O04P2ASRc&amp;amp;t=647s">https://www.youtube.com/watch?v=L5O04P2ASRc&amp;amp;t=647s&lt;/a>&lt;/p>
+&lt;h1 id="ethereum-virtual-machine-evm">Ethereum Virtual Machine (EVM)&lt;/h1>
+&lt;p>&lt;img src="/img/posts/support-evm/ysIsVUG.png" alt="">&lt;/p>
+&lt;hr>
+&lt;p>&lt;img src="/img/posts/support-evm/Xba9Jwb.png" alt="">&lt;/p>
+&lt;hr>
+&lt;p>Lexiques
+&lt;a href="https://github.com/asseth/yellowpaper/blob/7dd3ed26b6fe4b7a1b0394194ef268d01f9955b4/Paper.pdf">https://github.com/asseth/yellowpaper/blob/7dd3ed26b6fe4b7a1b0394194ef268d01f9955b4/Paper.pdf&lt;/a> Page 17&lt;/p>
+&lt;hr>
+&lt;p>&lt;img src="/img/posts/support-evm/Lo0fP89.png" alt="">&lt;/p>
+&lt;hr>
+&lt;p>&lt;img src="/img/posts/support-evm/8cOg89m.png" alt="">&lt;/p>
+&lt;hr>
+&lt;p>&lt;img src="/img/posts/support-evm/vRJgorg.png" alt="">&lt;/p>
+&lt;hr>
+&lt;p>&lt;img src="/img/posts/support-evm/tMgjFeK.png" alt="">&lt;/p>
+&lt;hr>
+&lt;p>&lt;img src="/img/posts/support-evm/cnV0k5f.png" alt="">&lt;/p>
+&lt;hr>
+&lt;p>&lt;img src="/img/posts/support-evm/0J3imfd.png" alt="">&lt;/p>
+&lt;hr>
+&lt;p>Dive in &lt;a href="http://takenobu-hs.github.io/downloads/ethereum_evm_illustrated.pdf">http://takenobu-hs.github.io/downloads/ethereum_evm_illustrated.pdf&lt;/a>&lt;/p>
+&lt;h2 id="illustration">Illustration&lt;/h2>
+&lt;ul>
+&lt;li>Illustration Turing machine =&amp;gt; &lt;a href="https://medium.com/creative-automata/classic-turing-machine-with-tape-erasure-e14870ad154e">https://medium.com/creative-automata/classic-turing-machine-with-tape-erasure-e14870ad154e&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://takenobu-hs.github.io/downloads/ethereum_evm_illustrated.pdf">http://takenobu-hs.github.io/downloads/ethereum_evm_illustrated.pdf&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="bibliography">Bibliography&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>🇫🇷 &lt;a href="https://github.com/asseth/yellowpaper/blob/7dd3ed26b6fe4b7a1b0394194ef268d01f9955b4/Paper.pdf">EIP-150 Yellowpaper&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>🇬🇧 &lt;a href="https://ethereum.github.io/yellowpaper/paper.pdf">Updated Yellowpaper&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://github.com/benjaminion/YellowPaper_CheatSheet">Yellowpaper Cheat Sheet&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="http://takenobu-hs.github.io/downloads/ethereum_evm_illustrated.pdf">Ethereum EVM Illustrated&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Execution model Page 56&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="implementation">Implementation&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/ethereum/go-ethereum/blob/master/core/vm/interpreter.go#L138">Implementation allocation&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h1 id="travaux-dirigés">Travaux dirigés&lt;/h1>
+&lt;ul>
+&lt;li>&lt;a href="https://remix.ethereum.org/">Remix&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.evm.codes/">EVM opcodes&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Solidity sources to analyze:&lt;/p>
+&lt;ul>
+&lt;li>Goal, observe the behavior of the EVM between the differents implementation functions of the same algorithm:
+&lt;ul>
+&lt;li>Sum of an array of uint.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-solidity" data-lang="solidity">&lt;span style="color:#75715e">// SPDX-License-Identifier: GPL-3.0
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">pragma solidity&lt;/span> &lt;span style="color:#f92672">&amp;gt;=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>.&lt;span style="color:#ae81ff">4&lt;/span>.&lt;span style="color:#ae81ff">16&lt;/span> &lt;span style="color:#f92672">&amp;lt;&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>.&lt;span style="color:#ae81ff">9&lt;/span>.&lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;span style="color:#66d9ef">library&lt;/span> VectorSum {
+&lt;span style="color:#75715e">// This function is less efficient because the optimizer currently fails to
+&lt;/span>&lt;span style="color:#75715e">// remove the bounds checks in array access.
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">sumSolidity&lt;/span>(&lt;span style="color:#66d9ef">uint&lt;/span>[] &lt;span style="color:#66d9ef">memory&lt;/span> data) &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">pure&lt;/span> &lt;span style="color:#66d9ef">returns&lt;/span> (&lt;span style="color:#66d9ef">uint&lt;/span> sum) {
+&lt;span style="color:#66d9ef">for&lt;/span> (&lt;span style="color:#66d9ef">uint&lt;/span> i &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>; i &lt;span style="color:#f92672">&amp;lt;&lt;/span> data.length; &lt;span style="color:#f92672">++&lt;/span>i)
+sum &lt;span style="color:#f92672">+=&lt;/span> data[i];
+}
+&lt;span style="color:#75715e">// We know that we only access the array in bounds, so we can avoid the check.
+&lt;/span>&lt;span style="color:#75715e">// 0x20 needs to be added to an array because the first slot contains the
+&lt;/span>&lt;span style="color:#75715e">// array length.
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">sumAsm&lt;/span>(&lt;span style="color:#66d9ef">uint&lt;/span>[] &lt;span style="color:#66d9ef">memory&lt;/span> data) &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">pure&lt;/span> &lt;span style="color:#66d9ef">returns&lt;/span> (&lt;span style="color:#66d9ef">uint&lt;/span> sum) {
+&lt;span style="color:#66d9ef">for&lt;/span> (&lt;span style="color:#66d9ef">uint&lt;/span> i &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>; i &lt;span style="color:#f92672">&amp;lt;&lt;/span> data.length; &lt;span style="color:#f92672">++&lt;/span>i) {
+&lt;span style="color:#66d9ef">assembly&lt;/span> {
+sum &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">add&lt;/span>(sum, &lt;span style="color:#a6e22e">mload&lt;/span>(&lt;span style="color:#a6e22e">add&lt;/span>(&lt;span style="color:#a6e22e">add&lt;/span>(data, &lt;span style="color:#ae81ff">0x20&lt;/span>), &lt;span style="color:#a6e22e">mul&lt;/span>(i, &lt;span style="color:#ae81ff">0x20&lt;/span>))))
+}
+}
+}
+&lt;span style="color:#75715e">// Same as above, but accomplish the entire code within inline assembly.
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">sumPureAsm&lt;/span>(&lt;span style="color:#66d9ef">uint&lt;/span>[] &lt;span style="color:#66d9ef">memory&lt;/span> data) &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">pure&lt;/span> &lt;span style="color:#66d9ef">returns&lt;/span> (&lt;span style="color:#66d9ef">uint&lt;/span> sum) {
+&lt;span style="color:#66d9ef">assembly&lt;/span> {
+&lt;span style="color:#75715e">// Load the length (first 32 bytes)
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#f92672">let&lt;/span> len &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">mload&lt;/span>(data)
+&lt;span style="color:#75715e">// Skip over the length field.
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#75715e">//
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#75715e">// Keep temporary variable so it can be incremented in place.
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#75715e">//
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#75715e">// NOTE: incrementing data would result in an unusable
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#75715e">// data variable after this assembly block
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#f92672">let&lt;/span> dataElementLocation &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">add&lt;/span>(data, &lt;span style="color:#ae81ff">0x20&lt;/span>)
+&lt;span style="color:#75715e">// Iterate until the bound is not met.
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#a6e22e">for&lt;/span>
+{ &lt;span style="color:#f92672">let&lt;/span> end &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">add&lt;/span>(dataElementLocation, &lt;span style="color:#a6e22e">mul&lt;/span>(len, &lt;span style="color:#ae81ff">0x20&lt;/span>)) }
+&lt;span style="color:#a6e22e">lt&lt;/span>(dataElementLocation, end)
+{ data &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">add&lt;/span>(dataElementLocation, &lt;span style="color:#ae81ff">0x20&lt;/span>) }
+{
+sum &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">add&lt;/span>(sum, &lt;span style="color:#a6e22e">mload&lt;/span>(dataElementLocation))
+}
+}
+}
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="contact">Contact&lt;/h1>
+&lt;ul>
+&lt;li>&lt;a href="https://twitter.com/magicking_">@magicking_&lt;/a>&lt;/li>
+&lt;li>&lt;a href="mailto:s@6120.eu">s@6120.eu&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://6120.eu">https://6120.eu&lt;/a>&lt;/li>
+&lt;/ul></content></item></channel></rss>
