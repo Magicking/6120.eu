@@ -91,3 +91,4 @@ typings/
 
 /public
 .hugo_build.lock
+/resources
