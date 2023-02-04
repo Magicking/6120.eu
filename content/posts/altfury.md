@@ -25,8 +25,6 @@ Peepz, just to go the website (optional install browser extension) pair up and g
 
 *Gas Station As A Service (GSAAS)
 
-![](https://6120.eu/private/altfury.gif)
-
 # Intro
 
 The goal of this document is to provide a design of a high-available service providing Ethereum JSON RPC endpoints over HTTP and HTTP WebSocket and other related services such as fee (tx) management to act as a drop-in repleacement (or plugin to existing wallet connectors).
