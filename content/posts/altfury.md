@@ -1,7 +1,7 @@
 +++
 title = "Altfury a remote wallet provider (GSaaS*) design document - Work In Progress"
 date = "2021-02-13T19:00:03+01:00"
-tags = ["ethereum", "rpc", "gsaas", "altfury"]
+tags = ["ethereum", "rpc", "gsaas", "altfury", "idea"]
 description = ""
 showFullContent = false
 readingTime = true
