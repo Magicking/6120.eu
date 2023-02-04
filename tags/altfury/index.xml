@@ -10,7 +10,6 @@ Users, hassle free access to the DeFi world&lt;/p>
 &lt;p>No burden to use a new SDK in your DApps, work with standard Wallet Connect (Uniswap &amp;amp; al)!
 Peepz, just to go the website (optional install browser extension) pair up and go!&lt;/p>
 &lt;p>*Gas Station As A Service (GSAAS)&lt;/p>
-&lt;p>&lt;img src="https://6120.eu/private/altfury.gif" alt="">&lt;/p>
 &lt;h1 id="intro">Intro&lt;/h1>
 &lt;p>The goal of this document is to provide a design of a high-available service providing Ethereum JSON RPC endpoints over HTTP and HTTP WebSocket and other related services such as fee (tx) management to act as a drop-in repleacement (or plugin to existing wallet connectors).&lt;/p>
 &lt;h3 id="technical-note">Technical note&lt;/h3>
