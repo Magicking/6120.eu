@@ -1,5 +1,5 @@
 +++
-title = "StarkNet & Cairo significant changes dev. opinionated view"
+title = "StarkNet & Cairo significant changes developer opinionated view"
 date = "2023-02-03T19:00:03+01:00"
 tags = ["starknet", "cairo"]
 description = ""
@@ -10,15 +10,15 @@ color = "" #color from the theme settings
 +++
 
 
-# StarkNet & Cairo significant changes dev. opinionated view
+# What's new in Cairo?
+ There have been a lot of changes since the Cairo language has been released. This is a developer opinionated list of the major changes since the first release, 0.6.2 (Dec 2021).
 
-https://github.com/starkware-libs/cairo-lang/releases
-What's new in Cairo? There have been a lot of changes since the Cairo language has been released. This is a developer opinionated list of the major changes since the 2021-12.
+StarkWareLtd last release CairoLang v0.10.3 (Dec 5, 2022) also named Cairo 1.0.
 
-StarkWareLtd last releas CairoLang v0.10 (Dec 5, 2022)
-First release covered: 0.6.2 (12-2021)
+Useful links:
+ - [CairoLang releases](https://github.com/starkware-libs/cairo-lang/releases)
 
-## v0.10 (Cairo 1.0)
+# v0.10 (Cairo 1.0)
 (breaking changes version)
 **Aug. 29 2022** v0.10.0-pre Pre-release
 
@@ -41,13 +41,13 @@ Starknet has its core language modified, it's now a Rusty lang, Starknet foresaw
  - Support the EC-op builtin. to allows to verify ECDSA signatures
  - API: Remove entry_point_type field from transaction information
 
-## v0.9.x
+# v0.9.x
 
 Fees are now enforced on StarkNet, no more free candy!
 
 Contracts must be declared first and then instanciated through the new [deploy syscall](https://starknet.io/docs/hello_starknet/deploying_from_contracts.html#the-deploy-system-call) forcing 2 manual transactions for contracts deployed by EOA.
 
-## v0.8.1
+# v0.8.1
 
 Fees are in now! What's up with that [code](https://github.com/starkware-libs/cairo-lang/blob/4e233516f52477ad158bc81a86ec2760471c1b65/src/starkware/starknet/business_logic/transaction_fee.py) ? See more [here](https://starknet.io/documentation/fee-mechanism/#Introduction).
 ![](https://i.imgur.com/G2ZidCf.png)
@@ -66,7 +66,7 @@ Fees are in now! What's up with that [code](https://github.com/starkware-libs/ca
 
  - Added the cryptographic hash function [blake2s](https://en.wikipedia.org/wiki/BLAKE_(hash_function)) to the standard library
  
-### Cairo
+## Cairo
  - Meaningful error messaging(v0.7.0) including local variables and arguments
 ![](https://i.imgur.com/AwjYaIV.png)
  - High level memory allocation with the `new` keyword in execution memory segment (whereas `alloc` allocates a new memory segment)
@@ -77,12 +77,12 @@ Fees are in now! What's up with that [code](https://github.com/starkware-libs/ca
  
  - Fix for python 3.9
 
-## v0.7.x
+# v0.7.x
 
 - [Added a nonce for L1 to L2 message](https://github.com/starkware-libs/cairo-lang/blob/4e233516f52477ad158bc81a86ec2760471c1b65/src/starkware/starknet/services/api/messages.py#L80) this prevents sending the same message twice from the EVM world, e.g: calling a function.
 ![](https://i.imgur.com/3SPa5Fz.png)
 
-### Addition of EVM compatibilities
+# Addition of EVM compatibilities
  - events are here !
  
 ![](https://i.imgur.com/rXdCLNc.png)
@@ -95,7 +95,7 @@ Fees are in now! What's up with that [code](https://github.com/starkware-libs/ca
  - The `__default__` entry point is introduced, it is similar to the Solidity fallback method as it is executed after missing on the function selector.
  - The `__l1_default__` entry point same as `__default__` but for in-protocol message from the L1.
 
-### New syscalls
+## New syscalls
  - get_block_timestamp()
  Returns a random number that sometimes appears to grow over time, currently around since 1970-01-01.
 Notice of deprecation for get_tx_signature(), get_tx_info() is now preferred.
