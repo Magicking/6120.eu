@@ -6,8 +6,6 @@ languageCode = "en-us"
 theme = "terminal"
 paginate = 5
 twitter = "magicking_"
-twitterAuthor = "magicking_"
-authorTwitter = "magicking_"
 disqusShortname = "6120s-blog"
 enableEmoji = true
 googleAnalytics = "G-81JJNV4Z09"
@@ -68,14 +66,14 @@ enableRobotsTXT = true
   # set Twitter handles for Twitter cards
   # see https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started#card-and-content-attribution
   # do not include @
-  creator = "magicking_"
+  creator = "@magicking_"
   site = "https://6120.eu"
 
 [languages]
   [languages.en]
     languageName = "English"
-    title = "6120's Blog"
-    subtitle = "Magicking's Blog"
+    title = "6120's Notes"
+    subtitle = "Magicking's notes"
     owner = ""
     keywords = ""
     copyright = " "
