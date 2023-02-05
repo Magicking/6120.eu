@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>evm on 6120's Blog</title><link>/tags/evm/</link><description>Recent content in evm on 6120's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright/><lastBuildDate>Thu, 17 Mar 2022 21:50:00 +0100</lastBuildDate><atom:link href="/tags/evm/index.xml" rel="self" type="application/rss+xml"/><item><title>Support cours Ethereum Virtual Machine</title><link>/posts/support-evm/</link><pubDate>Thu, 17 Mar 2022 21:50:00 +0100</pubDate><guid>/posts/support-evm/</guid><description>Ceci est un support de cours sur l&amp;rsquo;EVM (Ethereum Virtual Machine) pour le cours de l&amp;rsquo;Ecole Supérieure d&amp;rsquo;Ingénieurs Léonard de Vinci (ESILV).
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>evm on 6120's Blog</title><link>https://6120.eu/tags/evm/</link><description>Recent content in evm on 6120's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright/><lastBuildDate>Thu, 17 Mar 2022 21:50:00 +0100</lastBuildDate><atom:link href="https://6120.eu/tags/evm/index.xml" rel="self" type="application/rss+xml"/><item><title>Support cours Ethereum Virtual Machine</title><link>https://6120.eu/posts/support-evm/</link><pubDate>Thu, 17 Mar 2022 21:50:00 +0100</pubDate><guid>https://6120.eu/posts/support-evm/</guid><description>Ceci est un support de cours sur l&amp;rsquo;EVM (Ethereum Virtual Machine) pour le cours de l&amp;rsquo;Ecole Supérieure d&amp;rsquo;Ingénieurs Léonard de Vinci (ESILV).
 Il comprend du matériel de cours, des illustrations et des liens vers des ressources.
 La durée du cours est de 3h, séparé en une lesson de 1h15 et des travaux dirigés de 1h15. La première partie est une introduction à la machine de Turing et sa correspondance aux processeurs de nos jours (rappel des connaissances), la seconde partie est une introduction à l&amp;rsquo;EVM et sa correspondance avec la machine de Turing.</description><content>&lt;p>Ceci est un support de cours sur l&amp;rsquo;EVM (Ethereum Virtual Machine) pour le cours de l&amp;rsquo;Ecole Supérieure d&amp;rsquo;Ingénieurs Léonard de Vinci (ESILV).&lt;/p>
 &lt;p>Il comprend du matériel de cours, des illustrations et des liens vers des ressources.&lt;/p>
@@ -9,27 +9,27 @@ la seconde partie est une introduction à l&amp;rsquo;EVM et sa correspondance a
 &lt;p>NB: Tenderly peut-être utilisé pour une meilleure observervation du fonctionnement de l&amp;rsquo;EVM sur la blockchain Ethereum mais un peu plus long à mettre en place.&lt;/p>
 &lt;h1 id="machine-de-turing">Machine de Turing&lt;/h1>
 &lt;p>Machine de Turing
-&lt;img src="/img/posts/support-evm/mThs6b2.jpg" alt="">
+&lt;img src="https://6120.eu/img/posts/support-evm/mThs6b2.jpg" alt="">
 &lt;a href="https://www.youtube.com/watch?v=L5O04P2ASRc&amp;amp;t=647s">https://www.youtube.com/watch?v=L5O04P2ASRc&amp;amp;t=647s&lt;/a>&lt;/p>
 &lt;h1 id="ethereum-virtual-machine-evm">Ethereum Virtual Machine (EVM)&lt;/h1>
-&lt;p>&lt;img src="/img/posts/support-evm/ysIsVUG.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://6120.eu/img/posts/support-evm/ysIsVUG.png" alt="">&lt;/p>
 &lt;hr>
-&lt;p>&lt;img src="/img/posts/support-evm/Xba9Jwb.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://6120.eu/img/posts/support-evm/Xba9Jwb.png" alt="">&lt;/p>
 &lt;hr>
 &lt;p>Lexiques
 &lt;a href="https://github.com/asseth/yellowpaper/blob/7dd3ed26b6fe4b7a1b0394194ef268d01f9955b4/Paper.pdf">https://github.com/asseth/yellowpaper/blob/7dd3ed26b6fe4b7a1b0394194ef268d01f9955b4/Paper.pdf&lt;/a> Page 17&lt;/p>
 &lt;hr>
-&lt;p>&lt;img src="/img/posts/support-evm/Lo0fP89.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://6120.eu/img/posts/support-evm/Lo0fP89.png" alt="">&lt;/p>
 &lt;hr>
-&lt;p>&lt;img src="/img/posts/support-evm/8cOg89m.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://6120.eu/img/posts/support-evm/8cOg89m.png" alt="">&lt;/p>
 &lt;hr>
-&lt;p>&lt;img src="/img/posts/support-evm/vRJgorg.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://6120.eu/img/posts/support-evm/vRJgorg.png" alt="">&lt;/p>
 &lt;hr>
-&lt;p>&lt;img src="/img/posts/support-evm/tMgjFeK.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://6120.eu/img/posts/support-evm/tMgjFeK.png" alt="">&lt;/p>
 &lt;hr>
-&lt;p>&lt;img src="/img/posts/support-evm/cnV0k5f.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://6120.eu/img/posts/support-evm/cnV0k5f.png" alt="">&lt;/p>
 &lt;hr>
-&lt;p>&lt;img src="/img/posts/support-evm/0J3imfd.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://6120.eu/img/posts/support-evm/0J3imfd.png" alt="">&lt;/p>
 &lt;hr>
 &lt;p>Dive in &lt;a href="http://takenobu-hs.github.io/downloads/ethereum_evm_illustrated.pdf">http://takenobu-hs.github.io/downloads/ethereum_evm_illustrated.pdf&lt;/a>&lt;/p>
 &lt;h2 id="illustration">Illustration&lt;/h2>

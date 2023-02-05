@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on 6120's Blog</title><link>/posts/</link><description>Recent content in Posts on 6120's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright/><lastBuildDate>Fri, 03 Feb 2023 19:00:03 +0100</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>StarkNet &amp; Cairo significant changes developer opinionated view</title><link>/posts/cairo-changelog-pov/</link><pubDate>Fri, 03 Feb 2023 19:00:03 +0100</pubDate><guid>/posts/cairo-changelog-pov/</guid><description>What&amp;rsquo;s new in Cairo? There have been a lot of changes since the Cairo language has been released. This is a developer opinionated list of the major changes since the first release, 0.6.2 (Dec 2021).
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on 6120's Blog</title><link>https://6120.eu/posts/</link><description>Recent content in Posts on 6120's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright/><lastBuildDate>Fri, 03 Feb 2023 19:00:03 +0100</lastBuildDate><atom:link href="https://6120.eu/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>StarkNet &amp; Cairo significant changes developer opinionated view</title><link>https://6120.eu/posts/cairo-changelog-pov/</link><pubDate>Fri, 03 Feb 2023 19:00:03 +0100</pubDate><guid>https://6120.eu/posts/cairo-changelog-pov/</guid><description>What&amp;rsquo;s new in Cairo? There have been a lot of changes since the Cairo language has been released. This is a developer opinionated list of the major changes since the first release, 0.6.2 (Dec 2021).
 StarkWareLtd last release CairoLang v0.10.3 (Dec 5, 2022) also named Cairo 1.0.
 Useful links:
 CairoLang releases v0.10 (Cairo 1.0) (breaking changes version) Aug. 29 2022 v0.10.0-pre Pre-release
@@ -128,7 +128,7 @@ prepend delegate_ to external contract function name or &lt;code>l1_handler&lt;/
 &lt;li>get_block_timestamp()
 Returns a random number that sometimes appears to grow over time, currently around since 1970-01-01.
 Notice of deprecation for get_tx_signature(), get_tx_info() is now preferred.&lt;/li>
-&lt;/ul></content></item><item><title>Support cours Ethereum Virtual Machine</title><link>/posts/support-evm/</link><pubDate>Thu, 17 Mar 2022 21:50:00 +0100</pubDate><guid>/posts/support-evm/</guid><description>Ceci est un support de cours sur l&amp;rsquo;EVM (Ethereum Virtual Machine) pour le cours de l&amp;rsquo;Ecole Supérieure d&amp;rsquo;Ingénieurs Léonard de Vinci (ESILV).
+&lt;/ul></content></item><item><title>Support cours Ethereum Virtual Machine</title><link>https://6120.eu/posts/support-evm/</link><pubDate>Thu, 17 Mar 2022 21:50:00 +0100</pubDate><guid>https://6120.eu/posts/support-evm/</guid><description>Ceci est un support de cours sur l&amp;rsquo;EVM (Ethereum Virtual Machine) pour le cours de l&amp;rsquo;Ecole Supérieure d&amp;rsquo;Ingénieurs Léonard de Vinci (ESILV).
 Il comprend du matériel de cours, des illustrations et des liens vers des ressources.
 La durée du cours est de 3h, séparé en une lesson de 1h15 et des travaux dirigés de 1h15. La première partie est une introduction à la machine de Turing et sa correspondance aux processeurs de nos jours (rappel des connaissances), la seconde partie est une introduction à l&amp;rsquo;EVM et sa correspondance avec la machine de Turing.</description><content>&lt;p>Ceci est un support de cours sur l&amp;rsquo;EVM (Ethereum Virtual Machine) pour le cours de l&amp;rsquo;Ecole Supérieure d&amp;rsquo;Ingénieurs Léonard de Vinci (ESILV).&lt;/p>
 &lt;p>Il comprend du matériel de cours, des illustrations et des liens vers des ressources.&lt;/p>
@@ -139,27 +139,27 @@ la seconde partie est une introduction à l&amp;rsquo;EVM et sa correspondance a
 &lt;p>NB: Tenderly peut-être utilisé pour une meilleure observervation du fonctionnement de l&amp;rsquo;EVM sur la blockchain Ethereum mais un peu plus long à mettre en place.&lt;/p>
 &lt;h1 id="machine-de-turing">Machine de Turing&lt;/h1>
 &lt;p>Machine de Turing
-&lt;img src="/img/posts/support-evm/mThs6b2.jpg" alt="">
+&lt;img src="https://6120.eu/img/posts/support-evm/mThs6b2.jpg" alt="">
 &lt;a href="https://www.youtube.com/watch?v=L5O04P2ASRc&amp;amp;t=647s">https://www.youtube.com/watch?v=L5O04P2ASRc&amp;amp;t=647s&lt;/a>&lt;/p>
 &lt;h1 id="ethereum-virtual-machine-evm">Ethereum Virtual Machine (EVM)&lt;/h1>
-&lt;p>&lt;img src="/img/posts/support-evm/ysIsVUG.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://6120.eu/img/posts/support-evm/ysIsVUG.png" alt="">&lt;/p>
 &lt;hr>
-&lt;p>&lt;img src="/img/posts/support-evm/Xba9Jwb.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://6120.eu/img/posts/support-evm/Xba9Jwb.png" alt="">&lt;/p>
 &lt;hr>
 &lt;p>Lexiques
 &lt;a href="https://github.com/asseth/yellowpaper/blob/7dd3ed26b6fe4b7a1b0394194ef268d01f9955b4/Paper.pdf">https://github.com/asseth/yellowpaper/blob/7dd3ed26b6fe4b7a1b0394194ef268d01f9955b4/Paper.pdf&lt;/a> Page 17&lt;/p>
 &lt;hr>
-&lt;p>&lt;img src="/img/posts/support-evm/Lo0fP89.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://6120.eu/img/posts/support-evm/Lo0fP89.png" alt="">&lt;/p>
 &lt;hr>
-&lt;p>&lt;img src="/img/posts/support-evm/8cOg89m.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://6120.eu/img/posts/support-evm/8cOg89m.png" alt="">&lt;/p>
 &lt;hr>
-&lt;p>&lt;img src="/img/posts/support-evm/vRJgorg.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://6120.eu/img/posts/support-evm/vRJgorg.png" alt="">&lt;/p>
 &lt;hr>
-&lt;p>&lt;img src="/img/posts/support-evm/tMgjFeK.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://6120.eu/img/posts/support-evm/tMgjFeK.png" alt="">&lt;/p>
 &lt;hr>
-&lt;p>&lt;img src="/img/posts/support-evm/cnV0k5f.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://6120.eu/img/posts/support-evm/cnV0k5f.png" alt="">&lt;/p>
 &lt;hr>
-&lt;p>&lt;img src="/img/posts/support-evm/0J3imfd.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://6120.eu/img/posts/support-evm/0J3imfd.png" alt="">&lt;/p>
 &lt;hr>
 &lt;p>Dive in &lt;a href="http://takenobu-hs.github.io/downloads/ethereum_evm_illustrated.pdf">http://takenobu-hs.github.io/downloads/ethereum_evm_illustrated.pdf&lt;/a>&lt;/p>
 &lt;h2 id="illustration">Illustration&lt;/h2>
@@ -249,7 +249,7 @@ sum &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">a
 &lt;li>&lt;a href="https://twitter.com/magicking_">@magicking_&lt;/a>&lt;/li>
 &lt;li>&lt;a href="mailto:s@6120.eu">s@6120.eu&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://6120.eu">https://6120.eu&lt;/a>&lt;/li>
-&lt;/ul></content></item><item><title>Altfury a remote wallet provider (GSaaS*) design document - Work In Progress</title><link>/posts/altfury/</link><pubDate>Sat, 13 Feb 2021 19:00:03 +0100</pubDate><guid>/posts/altfury/</guid><description>Motivationale With around 2000 DApps and more than 60.000 users, the promise of 27.000 tx/s with Ethereum 2.0 and people arguing for Infura centralizing the public Ethereum world there is call for alternative! Altfury aims to provide to anyone the ability to interact with DApps and any smart contract without the need of paying gas.
+&lt;/ul></content></item><item><title>Altfury a remote wallet provider (GSaaS*) design document - Work In Progress</title><link>https://6120.eu/posts/altfury/</link><pubDate>Sat, 13 Feb 2021 19:00:03 +0100</pubDate><guid>https://6120.eu/posts/altfury/</guid><description>Motivationale With around 2000 DApps and more than 60.000 users, the promise of 27.000 tx/s with Ethereum 2.0 and people arguing for Infura centralizing the public Ethereum world there is call for alternative! Altfury aims to provide to anyone the ability to interact with DApps and any smart contract without the need of paying gas.
 Your user don&amp;rsquo;t have a wallet?
 You can let us take care of your keys and the burden to not forget and secure them while enjoying the DeFi space faster than ever.</description><content>&lt;h2 id="motivationale">Motivationale&lt;/h2>
 &lt;p>With around &lt;a href="https://dappradar.com/rankings/protocol/ethereum/87">2000 DApps&lt;/a> and more than &lt;a href="https://dappradar.com/rankings/protocol/ethereum">60.000 users&lt;/a>, the promise of 27.000 tx/s with Ethereum 2.0 and people arguing for Infura centralizing the public Ethereum world there is call for alternative!
@@ -496,5 +496,5 @@ deactivate EVM Service
 &lt;li>Dashboard with world view of ethereum compatible blockchain&lt;/li>
 &lt;li>Speed transaction sending for quick transaction dispatching&lt;/li>
 &lt;li>Would require ethereum node modification&lt;/li>
-&lt;/ul></content></item><item><title>Update from last blog</title><link>/posts/wip/</link><pubDate>Fri, 03 Aug 2001 00:00:00 +0000</pubDate><guid>/posts/wip/</guid><description>Work in progress™ Work in progress™ since 2001.</description><content>&lt;h1 id="work-in-progress">Work in progress™&lt;/h1>
+&lt;/ul></content></item><item><title>Update from last blog</title><link>https://6120.eu/posts/wip/</link><pubDate>Fri, 03 Aug 2001 00:00:00 +0000</pubDate><guid>https://6120.eu/posts/wip/</guid><description>Work in progress™ Work in progress™ since 2001.</description><content>&lt;h1 id="work-in-progress">Work in progress™&lt;/h1>
 &lt;p>Work in progress™ since &lt;a href="https://web.archive.org/web/20011203211125/http://progcity.free.fr/">2001&lt;/a>.&lt;/p></content></item></channel></rss>
