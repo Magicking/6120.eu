@@ -1,7 +1,8 @@
 +++
 title = "Support cours Ethereum Virtual Machine"
 date = "2022-03-17T21:50:00+01:00"
-cover = ""
+cover = "/img/posts/support-evm/cover.jpg"
+showCover = false
 tags = ["teaching", "french", "esilv", "evm", "ethereum"]
 keywords = ["teaching", "french", "esilv", "evm", "ethereum"]
 description = ""
