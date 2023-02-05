@@ -33,7 +33,7 @@
               {{ .Date.Format "2006-01-02" }} :: 
             </time>
           {{ end }}
-          <a href="{{ .Permalink }}">{{ .Title | truncate 30 | markdownify }}</a> :: 
+          <a href="{{ .Permalink }}">{{ .Title | truncate 40 | markdownify }}</a> ::
           {{ if .Params.tags }}
           <span class="title-tag">
             {{ range $index, $val := .Params.tags }}
@@ -50,7 +50,7 @@
           {{ end }}
           <a class="read-more button" href="{{.RelPermalink}}">{{ $.Site.Params.ReadMore }} →</a>
         </ul>
-        <ul>&nbsp;</ul>
+      <hr></hr>
     {{ end }}
     </ol>
     <span class="section-main">Services:</span>
