@@ -11,6 +11,7 @@ authorTwitter = "magicking_"
 disqusShortname = "6120s-blog"
 enableEmoji = true
 googleAnalytics = "G-81JJNV4Z09"
+enableRobotsTXT = true
 
 [params]
   # dir name of your main content (default is `content/posts`).
