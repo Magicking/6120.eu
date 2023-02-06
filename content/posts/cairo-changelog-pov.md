@@ -17,6 +17,7 @@ StarkWareLtd last release CairoLang v0.10.3 (Dec 5, 2022) also named Cairo 1.0.
 
 Useful links:
  - [CairoLang releases](https://github.com/starkware-libs/cairo-lang/releases)
+ - [Useful info](https://docs.starknet.io/documentation/useful_info/) from StarkNet documentation
 
 # v0.10 (Cairo 1.0)
 (breaking changes version)
