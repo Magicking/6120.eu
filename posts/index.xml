@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on 6120's Notes</title><link>https://6120.eu/posts/</link><description>Recent content in Posts on 6120's Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright/><lastBuildDate>Fri, 03 Feb 2023 19:00:03 +0100</lastBuildDate><atom:link href="https://6120.eu/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>StarkNet &amp; Cairo significant changes developer opinionated view</title><link>https://6120.eu/posts/cairo-changelog-pov/</link><pubDate>Fri, 03 Feb 2023 19:00:03 +0100</pubDate><guid>https://6120.eu/posts/cairo-changelog-pov/</guid><description>What&amp;rsquo;s new in Cairo? There have been a lot of changes since the Cairo language has been released. This is a developer opinionated list of the major changes since the first release, 0.6.2 (Dec 2021).
 StarkWareLtd last release CairoLang v0.10.3 (Dec 5, 2022) also named Cairo 1.0.
 Useful links:
-CairoLang releases v0.10 (Cairo 1.0) (breaking changes version) Aug. 29 2022 v0.10.0-pre Pre-release
+CairoLang releases Useful info from StarkNet documentation v0.10 (Cairo 1.0) (breaking changes version) Aug. 29 2022 v0.10.0-pre Pre-release
 Starknet has its core language modified, it&amp;rsquo;s now a Rusty lang, Starknet foresaw the future of Rust based smart-contract ecosystem (Luna developers and Solana)</description><content>&lt;h1 id="whats-new-in-cairo">What&amp;rsquo;s new in Cairo?&lt;/h1>
 &lt;p>There have been a lot of changes since the Cairo language has been released. This is a developer opinionated list of the major changes since the first release, 0.6.2 (Dec 2021).&lt;/p>
 &lt;p>StarkWareLtd last release CairoLang v0.10.3 (Dec 5, 2022) also named Cairo 1.0.&lt;/p>
 &lt;p>Useful links:&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="https://github.com/starkware-libs/cairo-lang/releases">CairoLang releases&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.starknet.io/documentation/useful_info/">Useful info&lt;/a> from StarkNet documentation&lt;/li>
 &lt;/ul>
 &lt;h1 id="v010-cairo-10">v0.10 (Cairo 1.0)&lt;/h1>
 &lt;p>(breaking changes version)
