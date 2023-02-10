@@ -22,7 +22,7 @@ la seconde partie est une introduction à l'EVM et sa correspondance avec la mac
 
 Les travaux pratiques consistent à observer le fonctionnement de l'EVM ainsi que la lecture des [opcodes](https://www.evm.codes/) au travers du debugger [Remix](https://remix.ethereum.org/) et à implémenter des opcodes directement dans un second temps.
 
-NB: Tenderly peut-être utilisé pour une meilleure observervation du fonctionnement de l'EVM sur la blockchain Ethereum mais un peu plus long à mettre en place.
+NB: Tenderly peut-être utilisé pour une meilleure observervation du fonctionnement de l'EVM sur la blockchain Ethereum mais est un peu plus long à mettre en place.
 
 # Machine de Turing
 
