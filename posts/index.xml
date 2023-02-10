@@ -137,7 +137,7 @@ La durée du cours est de 3h, séparé en une lesson de 1h15 et des travaux diri
 La première partie est une introduction à la machine de Turing et sa correspondance aux processeurs de nos jours (rappel des connaissances),
 la seconde partie est une introduction à l&amp;rsquo;EVM et sa correspondance avec la machine de Turing.&lt;/p>
 &lt;p>Les travaux pratiques consistent à observer le fonctionnement de l&amp;rsquo;EVM ainsi que la lecture des &lt;a href="https://www.evm.codes/">opcodes&lt;/a> au travers du debugger &lt;a href="https://remix.ethereum.org/">Remix&lt;/a> et à implémenter des opcodes directement dans un second temps.&lt;/p>
-&lt;p>NB: Tenderly peut-être utilisé pour une meilleure observervation du fonctionnement de l&amp;rsquo;EVM sur la blockchain Ethereum mais un peu plus long à mettre en place.&lt;/p>
+&lt;p>NB: Tenderly peut-être utilisé pour une meilleure observervation du fonctionnement de l&amp;rsquo;EVM sur la blockchain Ethereum mais est un peu plus long à mettre en place.&lt;/p>
 &lt;h1 id="machine-de-turing">Machine de Turing&lt;/h1>
 &lt;p>Machine de Turing
 &lt;img src="https://6120.eu/img/posts/support-evm/mThs6b2.jpg" alt="">
