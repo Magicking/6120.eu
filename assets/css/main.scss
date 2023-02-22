@@ -500,6 +500,18 @@ sup {
   color: #4f924f;
   text-shadow: 0 0 20px #4f924f;
 }
+.sky{
+  color: hsl(281, 78%, 48%);
+  text-shadow: 0 0 20px hsl(281, 78%, 41%);
+}
+.skylight{
+  color: hsl(281, 78%, 45%);
+  text-shadow: 0 0 20px hsl(281, 78%, 45%);
+}
+.light{
+  color: hsl(281, 78%, 41%);
+  text-shadow: 0 0 20px hsl(281, 78%, 48%);
+}
 .white{
   color: white;
   text-shadow: 0 0 20px rgba(255,255,255,0.5);
