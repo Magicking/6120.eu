@@ -18,10 +18,12 @@ StarkWareLtd last release CairoLang v0.10.3 (Dec 5, 2022) also named Cairo 1.0.
 Useful links:
  - [CairoLang releases](https://github.com/starkware-libs/cairo-lang/releases)
  - [Useful info](https://docs.starknet.io/documentation/useful_info/) from StarkNet documentation
+ - [StarkNet Community Call #32](https://www.youtube.com/watch?v=CKYM25oicTA)
+ - [Upcoming versions](https://docs.starknet.io/documentation/starknet_versions/upcoming_versions/)
 
-# v0.10 (Cairo 1.0)
+# v0.10. (Cairo 1.0)
 (breaking changes version)
-**Aug. 29 2022** v0.10.0-pre Pre-release
+**Dec. 5 2022** v0.10.0-pre Pre-release
 
 Starknet has its core language modified, it's now a Rusty lang, Starknet foresaw the future of Rust based smart-contract ecosystem ([Luna developers](https://news.coincu.com/90055-fall-of-terra/) and Solana)
  - End statements with ;
@@ -35,7 +37,7 @@ Starknet has its core language modified, it's now a Rusty lang, Starknet foresaw
  - New transaction version
      - Nonce are enforced as part of the transaction (bye bye UTXO model)
      - Invoke execution object with [**\_\_validate__**](https://github.com/OpenZeppelin/cairo-contracts/blob/d12abf335f5c778fd19d6f99e91c099b40865deb/src/openzeppelin/account/presets/EthAccount.cairo#L81) and [**\_\_execute__**](https://github.com/OpenZeppelin/cairo-contracts/blob/d12abf335f5c778fd19d6f99e91c099b40865deb/src/openzeppelin/account/presets/EthAccount.cairo#L127) to differentiate between validation of the transaction (wether or not execution works (TODO: wild guess)) and execution that his pickup by another part of the process in the decentralized system(TODO: confirm)
-     - Declare function to send implementation code for registration
+     - Declare function to send implementation code for registration for future instantiation
  - Bridge Layer1 to Layer2
      - New **fee** field in [LogMessageToL2 event](https://github.com/starkware-libs/cairo-lang/blob/54d7e92a703b3b5a1e07e9389608178129946efc/src/starkware/starknet/solidity/IStarknetMessagingEvents.sol#L9) when executing L2 contract from L1
  - Tx simulation and fee estimation

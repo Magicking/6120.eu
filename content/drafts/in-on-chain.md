@@ -45,8 +45,9 @@ Examples projects by media type:
 
 Add OpenSea Link
 
-In-chain BMP NFT is [Brotchain](https://etherscan.deth.net/address/0xd31fc221d2b0e0321c43e9f6824b26ebfff01d7d#code) NFT processing  image
-In-chain WAV NFT is the [Bleeps](https://etherscan.deth.net/address/0xE114DCe59A333f8D351371F54188F92C287b73E6#code) NFT
+- In-chain BMP NFT is [Brotchain](https://etherscan.deth.net/address/0xd31fc221d2b0e0321c43e9f6824b26ebfff01d7d#code) NFT processing image
+
+- In-chain WAV NFT is the [Bleeps](https://etherscan.deth.net/address/0xE114DCe59A333f8D351371F54188F92C287b73E6#code) NFT Waveform synthetizer
 
 
 (It's worth noting that the table is not an exhaustive list of all media types that can be used for NFT artwork)
