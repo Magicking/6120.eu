@@ -6,8 +6,7 @@
 <meta name=description content="What&amp;rsquo;s new in Cairo? There have been a lot of changes since the Cairo language has been released. This is a developer opinionated list of the major changes since the first release, 0.6.2 (Dec 2021).
 StarkWareLtd last release CairoLang v0.10.3 (Dec 5, 2022) also named Cairo 1.0.
 Useful links:
- CairoLang releases Useful info from StarkNet documentation  v0.10 (Cairo 1.0) (breaking changes version) Aug. 29 2022 v0.10.0-pre Pre-release
-Starknet has its core language modified, it&amp;rsquo;s now a Rusty lang, Starknet foresaw the future of Rust based smart-contract ecosystem (Luna developers and Solana)">
+ CairoLang releases Useful info from StarkNet documentation StarkNet Community Call #32 Upcoming versions  v0.10. (Cairo 1.0) (breaking changes version) Dec.">
 <meta name=keywords content>
 <meta name=robots content="noodp">
 <link rel=canonical href=https://6120.eu/posts/cairo-changelog-pov/>
@@ -25,8 +24,7 @@ Starknet has its core language modified, it&amp;rsquo;s now a Rusty lang, Starkn
 <meta property="og:description" content="What&amp;rsquo;s new in Cairo? There have been a lot of changes since the Cairo language has been released. This is a developer opinionated list of the major changes since the first release, 0.6.2 (Dec 2021).
 StarkWareLtd last release CairoLang v0.10.3 (Dec 5, 2022) also named Cairo 1.0.
 Useful links:
- CairoLang releases Useful info from StarkNet documentation  v0.10 (Cairo 1.0) (breaking changes version) Aug. 29 2022 v0.10.0-pre Pre-release
-Starknet has its core language modified, it&amp;rsquo;s now a Rusty lang, Starknet foresaw the future of Rust based smart-contract ecosystem (Luna developers and Solana)">
+ CairoLang releases Useful info from StarkNet documentation StarkNet Community Call #32 Upcoming versions  v0.10. (Cairo 1.0) (breaking changes version) Dec.">
 <meta property="og:url" content="https://6120.eu/posts/cairo-changelog-pov/">
 <meta property="og:site_name" content="6120's Notes">
 <meta property="og:image" content="https://6120.eu/img/favicon/black.png">
@@ -59,7 +57,7 @@ Magicking's notes
 2023-02-03 ::
 [Updated :: 2023-02-03]
 </time>
-<span class=post-reading-time>:: 3 min read (515 words)</span>
+<span class=post-reading-time>:: 3 min read (524 words)</span>
 </div>
 <span class=post-tags>
 #<a href=https://6120.eu/tags/starknet/>starknet</a>&nbsp;
@@ -73,10 +71,12 @@ Magicking's notes
 <ul>
 <li><a href=https://github.com/starkware-libs/cairo-lang/releases>CairoLang releases</a></li>
 <li><a href=https://docs.starknet.io/documentation/useful_info/>Useful info</a> from StarkNet documentation</li>
+<li><a href="https://www.youtube.com/watch?v=CKYM25oicTA">StarkNet Community Call #32</a></li>
+<li><a href=https://docs.starknet.io/documentation/starknet_versions/upcoming_versions/>Upcoming versions</a></li>
 </ul>
-<h1 id=v010-cairo-10>v0.10 (Cairo 1.0)<a href=#v010-cairo-10 class=hanchor arialabel=Anchor>&#8983;</a> </h1>
+<h1 id=v010-cairo-10>v0.10. (Cairo 1.0)<a href=#v010-cairo-10 class=hanchor arialabel=Anchor>&#8983;</a> </h1>
 <p>(breaking changes version)
-<strong>Aug. 29 2022</strong> v0.10.0-pre Pre-release</p>
+<strong>Dec. 5 2022</strong> v0.10.0-pre Pre-release</p>
 <p>Starknet has its core language modified, it&rsquo;s now a Rusty lang, Starknet foresaw the future of Rust based smart-contract ecosystem (<a href=https://news.coincu.com/90055-fall-of-terra/>Luna developers</a> and Solana)</p>
 <ul>
 <li>
@@ -105,7 +105,7 @@ Magicking's notes
 <ul>
 <li>Nonce are enforced as part of the transaction (bye bye UTXO model)</li>
 <li>Invoke execution object with <a href=https://github.com/OpenZeppelin/cairo-contracts/blob/d12abf335f5c778fd19d6f99e91c099b40865deb/src/openzeppelin/account/presets/EthAccount.cairo#L81><strong>__validate__</strong></a> and <a href=https://github.com/OpenZeppelin/cairo-contracts/blob/d12abf335f5c778fd19d6f99e91c099b40865deb/src/openzeppelin/account/presets/EthAccount.cairo#L127><strong>__execute__</strong></a> to differentiate between validation of the transaction (wether or not execution works (TODO: wild guess)) and execution that his pickup by another part of the process in the decentralized system(TODO: confirm)</li>
-<li>Declare function to send implementation code for registration</li>
+<li>Declare function to send implementation code for registration for future instantiation</li>
 </ul>
 </li>
 <li>

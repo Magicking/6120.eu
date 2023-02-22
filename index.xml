@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>6120's Notes</title><link>https://6120.eu/</link><description>Recent content on 6120's Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright/><lastBuildDate>Fri, 03 Feb 2023 19:00:03 +0100</lastBuildDate><atom:link href="https://6120.eu/index.xml" rel="self" type="application/rss+xml"/><item><title>StarkNet &amp; Cairo significant changes developer opinionated view</title><link>https://6120.eu/posts/cairo-changelog-pov/</link><pubDate>Fri, 03 Feb 2023 19:00:03 +0100</pubDate><guid>https://6120.eu/posts/cairo-changelog-pov/</guid><description>What&amp;rsquo;s new in Cairo? There have been a lot of changes since the Cairo language has been released. This is a developer opinionated list of the major changes since the first release, 0.6.2 (Dec 2021).
 StarkWareLtd last release CairoLang v0.10.3 (Dec 5, 2022) also named Cairo 1.0.
 Useful links:
-CairoLang releases Useful info from StarkNet documentation v0.10 (Cairo 1.0) (breaking changes version) Aug. 29 2022 v0.10.0-pre Pre-release
-Starknet has its core language modified, it&amp;rsquo;s now a Rusty lang, Starknet foresaw the future of Rust based smart-contract ecosystem (Luna developers and Solana)</description><content>&lt;h1 id="whats-new-in-cairo">What&amp;rsquo;s new in Cairo?&lt;/h1>
+CairoLang releases Useful info from StarkNet documentation StarkNet Community Call #32 Upcoming versions v0.10. (Cairo 1.0) (breaking changes version) Dec.</description><content>&lt;h1 id="whats-new-in-cairo">What&amp;rsquo;s new in Cairo?&lt;/h1>
 &lt;p>There have been a lot of changes since the Cairo language has been released. This is a developer opinionated list of the major changes since the first release, 0.6.2 (Dec 2021).&lt;/p>
 &lt;p>StarkWareLtd last release CairoLang v0.10.3 (Dec 5, 2022) also named Cairo 1.0.&lt;/p>
 &lt;p>Useful links:&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="https://github.com/starkware-libs/cairo-lang/releases">CairoLang releases&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://docs.starknet.io/documentation/useful_info/">Useful info&lt;/a> from StarkNet documentation&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=CKYM25oicTA">StarkNet Community Call #32&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.starknet.io/documentation/starknet_versions/upcoming_versions/">Upcoming versions&lt;/a>&lt;/li>
 &lt;/ul>
-&lt;h1 id="v010-cairo-10">v0.10 (Cairo 1.0)&lt;/h1>
+&lt;h1 id="v010-cairo-10">v0.10. (Cairo 1.0)&lt;/h1>
 &lt;p>(breaking changes version)
-&lt;strong>Aug. 29 2022&lt;/strong> v0.10.0-pre Pre-release&lt;/p>
+&lt;strong>Dec. 5 2022&lt;/strong> v0.10.0-pre Pre-release&lt;/p>
 &lt;p>Starknet has its core language modified, it&amp;rsquo;s now a Rusty lang, Starknet foresaw the future of Rust based smart-contract ecosystem (&lt;a href="https://news.coincu.com/90055-fall-of-terra/">Luna developers&lt;/a> and Solana)&lt;/p>
 &lt;ul>
 &lt;li>
@@ -41,7 +42,7 @@ Starknet has its core language modified, it&amp;rsquo;s now a Rusty lang, Starkn
 &lt;ul>
 &lt;li>Nonce are enforced as part of the transaction (bye bye UTXO model)&lt;/li>
 &lt;li>Invoke execution object with &lt;a href="https://github.com/OpenZeppelin/cairo-contracts/blob/d12abf335f5c778fd19d6f99e91c099b40865deb/src/openzeppelin/account/presets/EthAccount.cairo#L81">&lt;strong>__validate__&lt;/strong>&lt;/a> and &lt;a href="https://github.com/OpenZeppelin/cairo-contracts/blob/d12abf335f5c778fd19d6f99e91c099b40865deb/src/openzeppelin/account/presets/EthAccount.cairo#L127">&lt;strong>__execute__&lt;/strong>&lt;/a> to differentiate between validation of the transaction (wether or not execution works (TODO: wild guess)) and execution that his pickup by another part of the process in the decentralized system(TODO: confirm)&lt;/li>
-&lt;li>Declare function to send implementation code for registration&lt;/li>
+&lt;li>Declare function to send implementation code for registration for future instantiation&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>
@@ -221,8 +222,14 @@ Notice of deprecation for get_tx_signature(), get_tx_info() is now preferred.&lt
 &lt;/table>
 &lt;p>Examples projects by media type:&lt;/p>
 &lt;p>Add OpenSea Link&lt;/p>
-&lt;p>In-chain BMP NFT is &lt;a href="https://etherscan.deth.net/address/0xd31fc221d2b0e0321c43e9f6824b26ebfff01d7d#code">Brotchain&lt;/a> NFT processing image
-In-chain WAV NFT is the &lt;a href="https://etherscan.deth.net/address/0xE114DCe59A333f8D351371F54188F92C287b73E6#code">Bleeps&lt;/a> NFT&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>In-chain BMP NFT is &lt;a href="https://etherscan.deth.net/address/0xd31fc221d2b0e0321c43e9f6824b26ebfff01d7d#code">Brotchain&lt;/a> NFT processing image&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In-chain WAV NFT is the &lt;a href="https://etherscan.deth.net/address/0xE114DCe59A333f8D351371F54188F92C287b73E6#code">Bleeps&lt;/a> NFT Waveform synthetizer&lt;/p>
+&lt;/li>
+&lt;/ul>
 &lt;p>(It&amp;rsquo;s worth noting that the table is not an exhaustive list of all media types that can be used for NFT artwork)&lt;/p>
 &lt;p>The concept of in-chain and on-chain NFTs refers to the storage and processing of digital artwork on the blockchain by smart-contracts following NFT standards. In-chain NFTs are those where the artwork does not require Post-Chain Processing and can be viewed using standard software or hardware. On the other hand, on-chain NFTs require post-chain processing, such as in browsers or desktop apps. The broad spectrum of possibilities for In-chain NFTs allows for greater compatibility across devices and opens up unexplored possibilities for on-chain computation, such as the ability to create more interactive and dynamic artwork, or the ability to use smart contracts to create unique, one-of-a-kind pieces.&lt;/p>
 &lt;p>INSERT DIAGRAM from DRAW.IO&lt;/p>

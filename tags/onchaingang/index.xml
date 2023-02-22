@@ -90,8 +90,14 @@
 &lt;/table>
 &lt;p>Examples projects by media type:&lt;/p>
 &lt;p>Add OpenSea Link&lt;/p>
-&lt;p>In-chain BMP NFT is &lt;a href="https://etherscan.deth.net/address/0xd31fc221d2b0e0321c43e9f6824b26ebfff01d7d#code">Brotchain&lt;/a> NFT processing image
-In-chain WAV NFT is the &lt;a href="https://etherscan.deth.net/address/0xE114DCe59A333f8D351371F54188F92C287b73E6#code">Bleeps&lt;/a> NFT&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>In-chain BMP NFT is &lt;a href="https://etherscan.deth.net/address/0xd31fc221d2b0e0321c43e9f6824b26ebfff01d7d#code">Brotchain&lt;/a> NFT processing image&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In-chain WAV NFT is the &lt;a href="https://etherscan.deth.net/address/0xE114DCe59A333f8D351371F54188F92C287b73E6#code">Bleeps&lt;/a> NFT Waveform synthetizer&lt;/p>
+&lt;/li>
+&lt;/ul>
 &lt;p>(It&amp;rsquo;s worth noting that the table is not an exhaustive list of all media types that can be used for NFT artwork)&lt;/p>
 &lt;p>The concept of in-chain and on-chain NFTs refers to the storage and processing of digital artwork on the blockchain by smart-contracts following NFT standards. In-chain NFTs are those where the artwork does not require Post-Chain Processing and can be viewed using standard software or hardware. On the other hand, on-chain NFTs require post-chain processing, such as in browsers or desktop apps. The broad spectrum of possibilities for In-chain NFTs allows for greater compatibility across devices and opens up unexplored possibilities for on-chain computation, such as the ability to create more interactive and dynamic artwork, or the ability to use smart contracts to create unique, one-of-a-kind pieces.&lt;/p>
 &lt;p>INSERT DIAGRAM from DRAW.IO&lt;/p>
