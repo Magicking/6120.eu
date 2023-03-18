@@ -61,6 +61,6 @@ Here it took me 6 hours to get a deliverable, the software to produce it while g
 &lt;h1 id="links">Links&lt;/h1>
 &lt;ul>
 &lt;li>&lt;a href="https://github.com/Magicking/openai-issues-analysis/">Source code&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://github.com/Magicking/openai-issues-analysis/blob/main/classifiedIssue.json">Raw output of the analysis&lt;/a>, you can use &lt;a href="https://stedolan.github.io/jq/">jq&lt;/a> to filter the output, see example below.
+&lt;li>&lt;a href="https://github.com/Magicking/openai-issues-analysis/blob/main/classifiedIssue.json">Raw output of the analysis&lt;/a>, you can use &lt;a href="https://jqplay.org/s/xUI6bC3ehx8">jq play&lt;/a> to filter the output, see example below.
 &lt;pre tabindex="0">&lt;code>.[] | select(.reactionGroups != {}) | &amp;quot;\(.number): \(.title): Reaction: \(.reactionGroups)&amp;quot;```)&lt;/code>&lt;/pre>&lt;/li>
 &lt;/ul></content></item></channel></rss>
