@@ -91,6 +91,6 @@ It's a simple tool to help get an overview of the issues in a repository. It hel
 
 # Links
   - [Source code](https://github.com/Magicking/openai-issues-analysis/)
-  - [Raw output of the analysis](https://github.com/Magicking/openai-issues-analysis/blob/main/classifiedIssue.json), you can use [jq](https://stedolan.github.io/jq/) to filter the output, see example below.
+  - [Raw output of the analysis](https://github.com/Magicking/openai-issues-analysis/blob/main/classifiedIssue.json), you can use [jq play](https://jqplay.org/s/xUI6bC3ehx8) to filter the output, see example below.
     ```
     .[] | select(.reactionGroups != {}) | "\(.number): \(.title): Reaction: \(.reactionGroups)"```)
