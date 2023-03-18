@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>gpt on 6120's Notes</title><link>https://6120.eu/tags/gpt/</link><description>Recent content in gpt on 6120's Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright/><lastBuildDate>Sat, 18 Mar 2023 08:38:51 +0100</lastBuildDate><atom:link href="https://6120.eu/tags/gpt/index.xml" rel="self" type="application/rss+xml"/><item><title>Analyzing Ordinal Github Issues Part 1</title><link>https://6120.eu/posts/analyzing-ordinal-github-issues/</link><pubDate>Sat, 18 Mar 2023 08:38:51 +0100</pubDate><guid>https://6120.eu/posts/analyzing-ordinal-github-issues/</guid><description>When discovering a new project in order to contribure, the issues are great places to start leaning in. So I went in the Ordinal Github repository to understand what @casey and other ordinals developers as well as other folks ideas and where they wanted to go.
+The list of issues is a bit long at the time of writing (2021-03-18) there is 329 issues and 46 pull requests. As a lazy sleep deprived developer I wanted to automate the process of getting the issues and pull requests and then analyze them.</description><content>&lt;p>When discovering a new project in order to contribure, the issues are great places to start leaning in.
+So I went in the &lt;a href="https://github.com/casey/ord">Ordinal Github repository&lt;/a> to understand what @casey and other ordinals developers as well as other folks ideas and where they wanted to go.&lt;/p>
+&lt;p>The list of issues is a bit long at the time of writing (2021-03-18) there is 329 issues and 46 pull requests. As a &lt;a href="https://en.wikipedia.org/wiki/Lazy_evaluation">lazy&lt;/a> sleep deprived developer I wanted to automate the process of getting the issues and pull requests and then analyze them. I also wanted to do it in a way that I could easily update the data and re-run the analysis. I decided to use the Github API to get the data and then use GPT-4 and GPT-3.5 to generate an overview analysis.&lt;/p>
+&lt;h2 id="getting-the-data">Getting the data&lt;/h2>
+&lt;p>Using the Github CLI I was able to get the 1MB of data in a json format. I used the following command:&lt;/p>
+&lt;p>&lt;img src="https://6120.eu/img/posts/analyzing-ordinal-github-issues/2023-03-18-090742_1308x84_scrot.png" alt="gh issue list &amp;ndash;json number,title,body,labels,updatedAt,comments,reactionGroups -L 400 | pv > issues.json">&lt;/p>
+&lt;p>The command is pretty simple, I used the GitHub Command Line Interface (GH CLI) to get the issues and then I used the json flag to get the data in json format. I also used the -L flag to limit the number of issues to 400. I then used pv to get a progress bar and then I redirected the output to a file called issues.json.&lt;/p>
+&lt;h2 id="analyzing-the-data">Analyzing the data&lt;/h2>
+&lt;p>Example issue:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json"> {
+&lt;span style="color:#f92672">&amp;#34;body&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;For the very first time, it was successful to create one inscription, now transactions are not confirmed, I suspect because of the small fee rate\r\n\r\n&amp;lt;img width=\&amp;#34;557\&amp;#34; alt=\&amp;#34;Снимок экрана 2023-03-11 в 21 30 29\&amp;#34; src=\&amp;#34;https://user-images.githubusercontent.com/53757772/224508408-186dad47-3935-4ad7-8032-5985409a87ff.png\&amp;#34;&amp;gt;\r\n\r\n&amp;lt;img width=\&amp;#34;804\&amp;#34; alt=\&amp;#34;Снимок экрана 2023-03-11 в 21 35 40\&amp;#34; src=\&amp;#34;https://user-images.githubusercontent.com/53757772/224508424-16d5f897-0e83-4a04-8c32-73930e2527fe.png\&amp;#34;&amp;gt;\r\n\r\nThe balance is completely debited\r\n\r\n&amp;lt;img width=\&amp;#34;563\&amp;#34; alt=\&amp;#34;Снимок экрана 2023-03-11 в 21 36 35\&amp;#34; src=\&amp;#34;https://user-images.githubusercontent.com/53757772/224508755-b202f4e0-dd2e-40cc-bea2-cdd10522bbe8.png\&amp;#34;&amp;gt;\r\n\r\n&amp;lt;img width=\&amp;#34;570\&amp;#34; alt=\&amp;#34;Снимок экрана 2023-03-11 в 21 37 04\&amp;#34; src=\&amp;#34;https://user-images.githubusercontent.com/53757772/224508790-e461a21c-8f2e-4a51-962f-cf6171d4b56e.png\&amp;#34;&amp;gt;\r\n\r\nhttps://mempool.space/tx/b8d7cd6ba8e2c3387d6c1dfd33ef542ed82aa36425a9a7c2f903a803aaca7015\r\n\r\n\r\n\r\n\r\n\r\nHelp me )&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;comments&amp;#34;&lt;/span>: [
+{
+&lt;span style="color:#f92672">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;IC_kwDOGhOAhc5XuYTN&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;author&amp;#34;&lt;/span>: {&lt;span style="color:#960050;background-color:#1e0010">H&lt;/span>
+&lt;span style="color:#f92672">&amp;#34;login&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;ysw1011&amp;#34;&lt;/span>
+},
+&lt;span style="color:#f92672">&amp;#34;authorAssociation&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;NONE&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;body&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;你需要设置fee：./ord --wallet tord wallet inscribe 1.html --fee-rate 6，但是你没有，所以你只能等，有一个清除本地内存池交易的bitcoin cli命令，但是我不建议你用，因为会把你钱包里数据给搞丢。所以你只能等。或者创建一个新钱包，把当前钱包余额转过去 同来产生新的UTXO&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;createdAt&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;2023-03-16T11:26:11Z&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;includesCreatedEdit&amp;#34;&lt;/span>: &lt;span style="color:#66d9ef">false&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;isMinimized&amp;#34;&lt;/span>: &lt;span style="color:#66d9ef">false&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;minimizedReason&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;reactionGroups&amp;#34;&lt;/span>: [{
+&lt;span style="color:#f92672">&amp;#34;content&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;THUMBS_UP&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;users&amp;#34;&lt;/span>: {
+&lt;span style="color:#f92672">&amp;#34;totalCount&amp;#34;&lt;/span>: &lt;span style="color:#ae81ff">1&lt;/span>
+}}],
+&lt;span style="color:#f92672">&amp;#34;url&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;https://github.com/casey/ord/issues/1917#issuecomment-1471775949&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;viewerDidAuthor&amp;#34;&lt;/span>: &lt;span style="color:#66d9ef">false&lt;/span>
+}
+],
+&lt;span style="color:#f92672">&amp;#34;labels&amp;#34;&lt;/span>: [],
+&lt;span style="color:#f92672">&amp;#34;number&amp;#34;&lt;/span>: &lt;span style="color:#ae81ff">1917&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;title&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;Transactions are not confirmed&amp;#34;&lt;/span>,
+&lt;span style="color:#f92672">&amp;#34;updatedAt&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;2023-03-16T11:26:11Z&amp;#34;&lt;/span>
+}&lt;span style="color:#960050;background-color:#1e0010">,&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This is what look a typical issue in global FOSS repository, where there is no strict guidelines for contributing and users can open issues for anything. The content of the issue contains also multiple languages which could be a challenge for the reviewer.&lt;/p>
+&lt;h1 id="ai-for-the-rescue">AI for the rescue&lt;/h1>
+&lt;p>After learning a lot about prompt engineering over the last months I decided to write myself the prompt to generate the overview analysis. After fidling with a few prompt for a while I was not able to get a decent result. I then decided to use GPT4 to generate the prompt for GPT3 analysis as unfortunatly, GPT4, is not available over the API yet.
+But who no better to talk to a robot than another robot?&lt;/p>
+&lt;p>&lt;img src="https://6120.eu/img/posts/analyzing-ordinal-github-issues/2023-03-18-090255_1180x1594_scrot.png" alt="Only robots can understand me.">&lt;/p>
+&lt;p>This gives a prompt that&amp;rsquo;s quite effective at generating a usable JSON outputs.
+With a few logics and a simple use of the OpenAI python package.
+&lt;img src="https://6120.eu/img/posts/analyzing-ordinal-github-issues/2023-03-18-094526_1579x209_scrot.png" alt="simple openai api call">&lt;/p>
+&lt;p>I was able to generate a nice overview of the issues.
+&lt;img src="https://6120.eu/img/posts/analyzing-ordinal-github-issues/2023-03-18-080232_3650x783_scrot.png" alt="">&lt;/p>
+&lt;p>And even get some insights about which issues are hot topics.
+&lt;img src="https://6120.eu/img/posts/analyzing-ordinal-github-issues/2023-03-18-090208_1272x258_scrot.png" alt="">&lt;/p>
+&lt;h1 id="conclusion">Conclusion&lt;/h1>
+&lt;p>It&amp;rsquo;s a simple tool to help get an overview of the issues in a repository. It helps to get in the know before diving the details but there are some limitation to this simple example:&lt;/p>
+&lt;ul>
+&lt;li>The limitation encountered was the model, the only one available is GPT3 which is the legacy one&lt;/li>
+&lt;li>The number of tokens you can feed the model, even with a larger model there is a limitation therefor a compression on the body and comments could be applied when number of token feed is close to the model limitation&lt;/li>
+&lt;li>The prompt is not perfect, sometimes it&amp;rsquo;s does not generate a valid JSON output, but it&amp;rsquo;s a good start.&lt;/li>
+&lt;/ul>
+&lt;p>Was it worth it? I think so, leaning in a project is a time consuming activity and not that much productive in terms of deliverables.
+Here it took me 6 hours to get a deliverable, the software to produce it while giving me a shareable quick overview of a large corpus of various issues in the repository. And the OPEX development cost was almost zero.&lt;/p>
+&lt;p>&lt;img src="https://6120.eu/img/posts/analyzing-ordinal-github-issues/2023-03-18-090227_857x138_scrot.png" alt="cost">&lt;/p>
+&lt;h1 id="links">Links&lt;/h1>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/Magicking/openai-issues-analysis/">Source code&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/Magicking/openai-issues-analysis/blob/main/classifiedIssue.json">Raw output of the analysis&lt;/a>, you can use &lt;a href="https://stedolan.github.io/jq/">jq&lt;/a> to filter the output, see example below.
+&lt;pre tabindex="0">&lt;code>.[] | select(.reactionGroups != {}) | &amp;quot;\(.number): \(.title): Reaction: \(.reactionGroups)&amp;quot;```)&lt;/code>&lt;/pre>&lt;/li>
+&lt;/ul></content></item></channel></rss>
