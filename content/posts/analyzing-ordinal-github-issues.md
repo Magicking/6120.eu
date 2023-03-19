@@ -31,7 +31,7 @@ Hence making our baby steps towards the reference implementation in to trying to
 When discovering a new project, the issues are usually a great places to start leaning in, as they are a source divers information related to the project.
 So we went in the [Ordinal Github repository](https://github.com/casey/ord) to understand what @casey, Ordinals developers and common folks had to say about it.
 
-At the time of writing (2021-03-18) there is [329 issues and 46 pull requests](https://github.com/casey/ord/issues). As [lazy](https://en.wikipedia.org/wiki/Lazy_evaluation) developers we wanted to automate the process of getting the issues and pull requests and have an initial analysis. We had to make it in such a way that we could easily update the issues and re-run the analysis if needed.
+At the time of writing (2023-03-18) there is [329 issues and 46 pull requests](https://github.com/casey/ord/issues). As [lazy](https://en.wikipedia.org/wiki/Lazy_evaluation) developers we wanted to automate the process of getting the issues and pull requests and have an initial analysis. We had to make it in such a way that we could easily update the issues and re-run the analysis if needed.
 
 # Getting the data
 
