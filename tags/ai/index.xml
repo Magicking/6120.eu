@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ai on 6120's Notes</title><link>https://6120.eu/tags/ai/</link><description>Recent content in ai on 6120's Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright/><lastBuildDate>Sat, 18 Mar 2023 08:38:51 +0100</lastBuildDate><atom:link href="https://6120.eu/tags/ai/index.xml" rel="self" type="application/rss+xml"/><item><title>Efficient Issue Analysis: Harnessing the Power of GPT-4 and GPT-3.5 for Github Repository Insights (Ordinal Github Issues analysis part 1)</title><link>https://6120.eu/posts/analyzing-ordinal-github-issues/</link><pubDate>Sat, 18 Mar 2023 08:38:51 +0100</pubDate><guid>https://6120.eu/posts/analyzing-ordinal-github-issues/</guid><description>TL;DR This post showcases a creative approach to analyzing issues in the Ordinal GitHub repository by leveraging the GitHub API, GPT-3.5, and GPT-4. The author demonstrates how to obtain the necessary data using the GitHub CLI, then uses GPT-4 to generate a prompt for GPT-3.5 to be used for further analysis of the repository&amp;rsquo;s issues.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ai on 6120's Notes</title><link>https://6120.eu/tags/ai/</link><description>Recent content in ai on 6120's Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright/><lastBuildDate>Sat, 18 Mar 2023 08:38:51 +0100</lastBuildDate><atom:link href="https://6120.eu/tags/ai/index.xml" rel="self" type="application/rss+xml"/><item><title>Efficient Issue Analysis: Harnessing the Power of GPT-4 and GPT-3.5 for Github Repository Insights (Ordinal Github Issues analysis part 1)</title><link>https://6120.eu/posts/analyzing-ordinal-github-issues/</link><pubDate>Sat, 18 Mar 2023 08:38:51 +0100</pubDate><guid>https://6120.eu/posts/analyzing-ordinal-github-issues/</guid><description>TL;DR This post showcases a creative approach to analyzing issues in the Ordinal GitHub repository by leveraging the GitHub API, GPT-3.5, and GPT-4. The author demonstrates how to obtain the necessary data using the GitHub CLI, then uses GPT-4 to generate a prompt for GPT-3.5 to analyze the repository&amp;rsquo;s issues further.
 Some key takeaways from this analysis include the following:
 Automating the collection and analysis of issues and pull requests can save time and effort.</description><content>&lt;h1 id="tldr">TL;DR&lt;/h1>
-&lt;p>This post showcases a creative approach to analyzing issues in the Ordinal GitHub repository by leveraging the GitHub API, GPT-3.5, and GPT-4. The author demonstrates how to obtain the necessary data using the GitHub CLI, then uses GPT-4 to generate a prompt for GPT-3.5 to be used for further analysis of the repository&amp;rsquo;s issues.&lt;/p>
+&lt;p>This post showcases a creative approach to analyzing issues in the Ordinal GitHub repository by leveraging the GitHub API, GPT-3.5, and GPT-4. The author demonstrates how to obtain the necessary data using the GitHub CLI, then uses GPT-4 to generate a prompt for GPT-3.5 to analyze the repository&amp;rsquo;s issues further.&lt;/p>
 &lt;p>Some key takeaways from this analysis include the following:&lt;/p>
 &lt;p>Automating the collection and analysis of issues and pull requests can save time and effort.
 AI models like GPT-4 and GPT-3.5 can help generate valuable insights and overviews of the issues.
@@ -60,10 +60,10 @@ It is a good issue as it showcases multiple difficulties, contains various langu
 It gives a prompt that&amp;rsquo;s quite effective at generating usable JSON outputs.
 With a few logic and simple use of the OpenAI python package.
 &lt;img src="https://6120.eu/img/posts/analyzing-ordinal-github-issues/2023-03-18-094526_1579x209_scrot.png" alt="simple openai api call">&lt;/p>
-&lt;p>We generated a nice overview of the issues.
-&lt;img src="https://6120.eu/img/posts/analyzing-ordinal-github-issues/2023-03-18-080232_3650x783_scrot.png" alt="">&lt;/p>
-&lt;p>And even get some insights about which issues are hot topics.
-&lt;img src="https://6120.eu/img/posts/analyzing-ordinal-github-issues/2023-03-18-090208_1272x258_scrot.png" alt="">&lt;/p>
+&lt;p>We generated an overview of the issues with the title rewrote to embed comments pieces of information.&lt;/p>
+&lt;p>&lt;img src="https://6120.eu/img/posts/analyzing-ordinal-github-issues/2023-03-18-080232_3650x783_scrot.png" alt="">&lt;/p>
+&lt;p>And even get some insights about which issues are hot topics.&lt;/p>
+&lt;p>&lt;img src="https://6120.eu/img/posts/analyzing-ordinal-github-issues/2023-03-18-090208_1272x258_scrot.png" alt="">&lt;/p>
 &lt;h1 id="conclusion">Conclusion&lt;/h1>
 &lt;p>It&amp;rsquo;s a simple tool to help get an overview of the issues in a repository. It helps to get in the know before diving into the details, but there is some limitation to this simple example:&lt;/p>
 &lt;ul>
@@ -71,7 +71,7 @@ With a few logic and simple use of the OpenAI python package.
 &lt;li>The number of tokens you can feed the model; even with a larger model, there is a limitation. Therefore a compression on the body and comments could be applied when the number of token fed is close to the model limitation or some chunking.&lt;/li>
 &lt;li>The prompt could be better, sometimes, it does not generate a valid JSON output, and labeling is too diverse, but it&amp;rsquo;s a good start; the required features are present.&lt;/li>
 &lt;/ul>
-&lt;p>Was it worth it? Yes, discovering a project is time-consuming and not very productive in terms of deliverables.
+&lt;p>Was it worth it? Yes, discovering a project is time-consuming and not very productive regarding deliverables.
 It took ~6 hours to get a deliverable (classification) and the software to produce it (another deliverable). It gave us a quick overview of a large corpus of various issues in the repository. And the OPEX development cost was almost zero.&lt;/p>
 &lt;p>&lt;img src="https://6120.eu/img/posts/analyzing-ordinal-github-issues/2023-03-18-090227_857x138_scrot.png" alt="cost">&lt;/p>
 &lt;h2 id="links">Links&lt;/h2>
