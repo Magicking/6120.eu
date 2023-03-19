@@ -13,7 +13,7 @@ color = "" #color from the theme settings
 
 # TL;DR
 
-This post showcases a creative approach to analyzing issues in the Ordinal GitHub repository by leveraging the GitHub API, GPT-3.5, and GPT-4. The author demonstrates how to obtain the necessary data using the GitHub CLI, then uses GPT-4 to generate a prompt for GPT-3.5 to be used for further analysis of the repository's issues.
+This post showcases a creative approach to analyzing issues in the Ordinal GitHub repository by leveraging the GitHub API, GPT-3.5, and GPT-4. The author demonstrates how to obtain the necessary data using the GitHub CLI, then uses GPT-4 to generate a prompt for GPT-3.5 to analyze the repository's issues further.
 
 Some key takeaways from this analysis include the following:
 
@@ -97,10 +97,12 @@ It gives a prompt that's quite effective at generating usable JSON outputs.
 With a few logic and simple use of the OpenAI python package.
 ![simple openai api call](/img/posts/analyzing-ordinal-github-issues/2023-03-18-094526_1579x209_scrot.png)
 
-We generated a nice overview of the issues.
+We generated an overview of the issues with the title rewrote to embed comments pieces of information.
+
 ![](/img/posts/analyzing-ordinal-github-issues/2023-03-18-080232_3650x783_scrot.png)
 
 And even get some insights about which issues are hot topics.
+
 ![](/img/posts/analyzing-ordinal-github-issues/2023-03-18-090208_1272x258_scrot.png)
 
 # Conclusion
@@ -110,8 +112,8 @@ It's a simple tool to help get an overview of the issues in a repository. It hel
  - The number of tokens you can feed the model; even with a larger model, there is a limitation. Therefore a compression on the body and comments could be applied when the number of token fed is close to the model limitation or some chunking.
  - The prompt could be better, sometimes, it does not generate a valid JSON output, and labeling is too diverse, but it's a good start; the required features are present.
 
- Was it worth it? Yes, discovering a project is time-consuming and not very productive in terms of deliverables.
- It took ~6 hours to get a deliverable (classification) and the software to produce it (another deliverable). It gave us a quick overview of a large corpus of various issues in the repository. And the OPEX development cost was almost zero.
+Was it worth it? Yes, discovering a project is time-consuming and not very productive regarding deliverables.
+It took ~6 hours to get a deliverable (classification) and the software to produce it (another deliverable). It gave us a quick overview of a large corpus of various issues in the repository. And the OPEX development cost was almost zero.
 
 ![cost](/img/posts/analyzing-ordinal-github-issues/2023-03-18-090227_857x138_scrot.png)
 
