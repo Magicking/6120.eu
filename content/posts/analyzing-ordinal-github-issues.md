@@ -1,5 +1,5 @@
 +++
-title = "Analyzing Ordinal Github Issues Part 1"
+title = "Efficient Issue Analysis: Harnessing the Power of GPT-4 and GPT-3.5 for Github Repository Insights (Ordinal Github Issues analysis part 1)"
 date = "2023-03-18T08:38:51+01:00"
 cover = ""
 tags = ["ai", "gpt", "ordinal"]
@@ -11,18 +11,39 @@ hideComments = false
 color = "" #color from the theme settings
 +++
 
-When discovering a new project in order to contribure, the issues are great places to start leaning in.
-So I went in the [Ordinal Github repository](https://github.com/casey/ord) to understand what @casey and other ordinals developers as well as other folks ideas and where they wanted to go.
+# TL;DR
 
-The list of issues is a bit long at the time of writing (2021-03-18) there is 329 issues and 46 pull requests. As a [lazy](https://en.wikipedia.org/wiki/Lazy_evaluation) sleep deprived developer I wanted to automate the process of getting the issues and pull requests and then analyze them. I also wanted to do it in a way that I could easily update the data and re-run the analysis. I decided to use the Github API to get the data and then use GPT-4 and GPT-3.5 to generate an overview analysis.
+This post showcases a creative approach to analyzing issues in the Ordinal Github repository by leveraging the Github API, GPT-3.5, and GPT-4. The author demonstrates how to obtain the necessary data using the Github CLI, then uses GPT-4 to generate a prompt for GPT-3.5, which is then utilized to create an overview analysis of the repository's issues.
+
+Some key takeaways from this analysis include:
+
+Automating the process of collecting and analyzing issues and pull requests can save time and effort.
+Utilizing AI models like GPT-4 and GPT-3.5 can help generate useful insights and overviews of the issues.
+There are certain limitations to this approach, such as model availability and token limits. However, overall, the method proves to be efficient and cost-effective.
+The author provides links to the source code and the raw output of the analysis, along with examples of how to filter the output using jq play. This solution offers a practical way to quickly gain an understanding of a large corpus of issues in a repository, making it easier to identify and prioritize tasks.
+
+If you are still here, follow alongs.
+
+# Why
+
+The [SkyLight](https://sky-light-sl.com/) collective is actively building on Ordinals, as part of our research in the creation of our artworks we like to contribute.
+Hence making our baby steps towards the reference implementation in to trying to understand where it is and where it goes.
+When discovering a new project, the issues are usually a great places to start leaning in, as they are a source divers information related to the project.
+So we went in the [Ordinal Github repository](https://github.com/casey/ord) to understand what @casey, Ordinals developers and common folks had to say about it.
+
+At the time of writing (2021-03-18) there is 329 issues and 46 pull requests. As [lazy](https://en.wikipedia.org/wiki/Lazy_evaluation) developers we wanted to automate the process of getting the issues and pull requests in order to analyze them. We had to make it in such a way that we could easily update the issues and re-run the analysis if needed.
 
 ## Getting the data
 
-Using the Github CLI I was able to get the 1MB of data in a json format. I used the following command:
+Using the Github CLI we fetch ~1MB worth of data related to the Ordinal repository issues in the JSON format extracting the information we while feed to our AI using the following format:
+
+```bash
+gh issue list --json number,title,body,labels,updatedAt,comments,reactionGroups -L 400 > issues.json
+```
 
 ![gh issue list --json number,title,body,labels,updatedAt,comments,reactionGroups -L 400 | pv > issues.json](/img/posts/analyzing-ordinal-github-issues/2023-03-18-090742_1308x84_scrot.png)
 
-The command is pretty simple, I used the GitHub Command Line Interface (GH CLI) to get the issues and then I used the json flag to get the data in json format. I also used the -L flag to limit the number of issues to 400. I then used pv to get a progress bar and then I redirected the output to a file called issues.json.
+The command is pretty simple, we used the GitHub Command Line Interface (gh cli) to get the issues and specified the flags to get the the issue number,title, body, comments,... in JSON format. The -L flag limits the number of issues to 400 and pv(screenshot) is used to get a progress bar, the output is then redirected to a file called issues.json.
 
 ## Analyzing the data
 
@@ -33,7 +54,7 @@ Example issue:
     "comments": [
       {
         "id": "IC_kwDOGhOAhc5XuYTN",
-        "author": {H
+        "author": {
           "login": "ysw1011"
         },
         "authorAssociation": "NONE",
@@ -58,12 +79,13 @@ Example issue:
   },
 ```
 
-This is what look a typical issue in global FOSS repository, where there is no strict guidelines for contributing and users can open issues for anything. The content of the issue contains also multiple languages which could be a challenge for the reviewer.
+This is a good issue as it showcase multiple difficulties, it containes multiple language and title is not explicit about the issue which could be a challenge for the reviewer. More defined guidelines and issues templating could help make an easier pathway for users to interacts with the project.
 
 # AI for the rescue
 
-After learning a lot about prompt engineering over the last months I decided to write myself the prompt to generate the overview analysis. After fidling with a few prompt for a while I was not able to get a decent result. I then decided to use GPT4 to generate the prompt for GPT3 analysis as unfortunatly, GPT4, is not available over the API yet.
-But who no better to talk to a robot than another robot?
+After learning a lot about prompt engineering over the last months we decided to write ourself the prompt to generate the overview analysis. But after fidling with [a few prompt](https://github.com/Magicking/awesome-chatgpt) for a while we were not able to get a decent result in the JSON output formating by GPT3. Instead we used GPT4 to generate the prompt to be use by GPT3 to produce the analysis, as unfortunatly, GPT4 is not available over the API yet.
+
+Who no better to talk to a robot than another robot?
 
 ![Only robots can understand me.](/img/posts/analyzing-ordinal-github-issues/2023-03-18-090255_1180x1594_scrot.png)
 
@@ -71,7 +93,7 @@ This gives a prompt that's quite effective at generating a usable JSON outputs.
 With a few logics and a simple use of the OpenAI python package.
 ![simple openai api call](/img/posts/analyzing-ordinal-github-issues/2023-03-18-094526_1579x209_scrot.png)
 
-I was able to generate a nice overview of the issues.
+We were able to generate a nice overview of the issues.
 ![](/img/posts/analyzing-ordinal-github-issues/2023-03-18-080232_3650x783_scrot.png)
 
 And even get some insights about which issues are hot topics.
@@ -80,12 +102,12 @@ And even get some insights about which issues are hot topics.
 # Conclusion
 
 It's a simple tool to help get an overview of the issues in a repository. It helps to get in the know before diving the details but there are some limitation to this simple example:
- - The limitation encountered was the model, the only one available is GPT3 which is the legacy one
- - The number of tokens you can feed the model, even with a larger model there is a limitation therefor a compression on the body and comments could be applied when number of token feed is close to the model limitation
- - The prompt is not perfect, sometimes it's does not generate a valid JSON output, but it's a good start.
+ - The limitation encountered was the model, the only one available is GPT3 which is the legacy one.
+ - The number of tokens you can feed the model, even with a larger model there is a limitation therefor a compression on the body and comments could be applied when number of token feed is close to the model limitation or some kind of chunking.
+ - The prompt is far from perfect, sometimes it's does not generate a valid JSON output, but it's a good start, the basic features are present.
 
- Was it worth it? I think so, leaning in a project is a time consuming activity and not that much productive in terms of deliverables.
- Here it took me 6 hours to get a deliverable, the software to produce it while giving me a shareable quick overview of a large corpus of various issues in the repository. And the OPEX development cost was almost zero.
+ Was it worth it? Yes, leaning in a project is a time consuming activity and not that much productive in terms of deliverables.
+ Here it took ~6 hours to get a deliverable, the software to produce it (another deliverable) while giving us a shareable quick overview of a large corpus of various issues in the repository. And the OPEX development cost was almost zero.
 
 ![cost](/img/posts/analyzing-ordinal-github-issues/2023-03-18-090227_857x138_scrot.png)
 
@@ -93,4 +115,4 @@ It's a simple tool to help get an overview of the issues in a repository. It hel
   - [Source code](https://github.com/Magicking/openai-issues-analysis/)
   - [Raw output of the analysis](https://github.com/Magicking/openai-issues-analysis/blob/main/classifiedIssue.json), you can use [jq play](https://jqplay.org/s/xUI6bC3ehx8) to filter the output, see example below.
     ```
-    .[] | select(.reactionGroups != {}) | "\(.number): \(.title): Reaction: \(.reactionGroups)"```)
+    .[] | select(.reactionGroups != {}) | "\(.number): \(.title): \(.summary)"```)
