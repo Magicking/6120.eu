@@ -1,5 +1,5 @@
 +++
-title = "Efficient Issue Analysis: Harnessing the Power of GPT-4 and GPT-3.5 for Github Repository Insights (Ordinal Github Issues analysis part 1)"
+title = "Efficient Issue Analysis: Harnessing the Power of GPT-4 and GPT-3.5 for Github Repository Insights"
 date = "2023-03-18T08:38:51+01:00"
 cover = ""
 tags = ["ai", "gpt", "ordinal"]
