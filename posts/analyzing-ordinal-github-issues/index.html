@@ -1,10 +1,11 @@
 <!doctype html><html lang=en>
 <head>
-<title>Analyzing Ordinal Github Issues Part 1 :: 6120's Notes</title>
+<title>Efficient Issue Analysis: Harnessing the Power of GPT-4 and GPT-3.5 for Github Repository Insights (Ordinal Github Issues analysis part 1) :: 6120's Notes</title>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content="When discovering a new project in order to contribure, the issues are great places to start leaning in. So I went in the Ordinal Github repository to understand what @casey and other ordinals developers as well as other folks ideas and where they wanted to go.
-The list of issues is a bit long at the time of writing (2021-03-18) there is 329 issues and 46 pull requests. As a lazy sleep deprived developer I wanted to automate the process of getting the issues and pull requests and then analyze them.">
+<meta name=description content="TL;DR This post showcases a creative approach to analyzing issues in the Ordinal Github repository by leveraging the Github API, GPT-3.5, and GPT-4. The author demonstrates how to obtain the necessary data using the Github CLI, then uses GPT-4 to generate a prompt for GPT-3.5, which is then utilized to create an overview analysis of the repository&amp;rsquo;s issues.
+Some key takeaways from this analysis include:
+Automating the process of collecting and analyzing issues and pull requests can save time and effort.">
 <meta name=keywords content=",">
 <meta name=robots content="noodp">
 <link rel=canonical href=https://6120.eu/posts/analyzing-ordinal-github-issues/>
@@ -18,9 +19,10 @@ The list of issues is a bit long at the time of writing (2021-03-18) there is 32
 <meta name=twitter:creator content>
 <meta property="og:locale" content="en">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Analyzing Ordinal Github Issues Part 1">
-<meta property="og:description" content="When discovering a new project in order to contribure, the issues are great places to start leaning in. So I went in the Ordinal Github repository to understand what @casey and other ordinals developers as well as other folks ideas and where they wanted to go.
-The list of issues is a bit long at the time of writing (2021-03-18) there is 329 issues and 46 pull requests. As a lazy sleep deprived developer I wanted to automate the process of getting the issues and pull requests and then analyze them.">
+<meta property="og:title" content="Efficient Issue Analysis: Harnessing the Power of GPT-4 and GPT-3.5 for Github Repository Insights (Ordinal Github Issues analysis part 1)">
+<meta property="og:description" content="TL;DR This post showcases a creative approach to analyzing issues in the Ordinal Github repository by leveraging the Github API, GPT-3.5, and GPT-4. The author demonstrates how to obtain the necessary data using the Github CLI, then uses GPT-4 to generate a prompt for GPT-3.5, which is then utilized to create an overview analysis of the repository&amp;rsquo;s issues.
+Some key takeaways from this analysis include:
+Automating the process of collecting and analyzing issues and pull requests can save time and effort.">
 <meta property="og:url" content="https://6120.eu/posts/analyzing-ordinal-github-issues/">
 <meta property="og:site_name" content="6120's Notes">
 <meta property="og:image" content="https://6120.eu/">
@@ -46,14 +48,14 @@ Magicking's notes
 <div class=content>
 <article class=post>
 <h1 class=post-title>
-<a href=https://6120.eu/posts/analyzing-ordinal-github-issues/>Analyzing Ordinal Github Issues Part 1</a>
+<a href=https://6120.eu/posts/analyzing-ordinal-github-issues/>Efficient Issue Analysis: Harnessing the Power of GPT-4 and GPT-3.5 for Github Repository Insights (Ordinal Github Issues analysis part 1)</a>
 </h1>
 <div class=post-meta>
 <time class=post-date>
 2023-03-18 ::
 [Updated :: 2023-03-18]
 </time>
-<span class=post-reading-time>:: 4 min read (735 words)</span>
+<span class=post-reading-time>:: 5 min read (979 words)</span>
 </div>
 <span class=post-tags>
 #<a href=https://6120.eu/tags/ai/>ai</a>&nbsp;
@@ -61,13 +63,25 @@ Magicking's notes
 #<a href=https://6120.eu/tags/ordinal/>ordinal</a>&nbsp;
 </span>
 <div class=post-content><div>
-<p>When discovering a new project in order to contribure, the issues are great places to start leaning in.
-So I went in the <a href=https://github.com/casey/ord>Ordinal Github repository</a> to understand what @casey and other ordinals developers as well as other folks ideas and where they wanted to go.</p>
-<p>The list of issues is a bit long at the time of writing (2021-03-18) there is 329 issues and 46 pull requests. As a <a href=https://en.wikipedia.org/wiki/Lazy_evaluation>lazy</a> sleep deprived developer I wanted to automate the process of getting the issues and pull requests and then analyze them. I also wanted to do it in a way that I could easily update the data and re-run the analysis. I decided to use the Github API to get the data and then use GPT-4 and GPT-3.5 to generate an overview analysis.</p>
+<h1 id=tldr>TL;DR<a href=#tldr class=hanchor arialabel=Anchor>&#8983;</a> </h1>
+<p>This post showcases a creative approach to analyzing issues in the Ordinal Github repository by leveraging the Github API, GPT-3.5, and GPT-4. The author demonstrates how to obtain the necessary data using the Github CLI, then uses GPT-4 to generate a prompt for GPT-3.5, which is then utilized to create an overview analysis of the repository&rsquo;s issues.</p>
+<p>Some key takeaways from this analysis include:</p>
+<p>Automating the process of collecting and analyzing issues and pull requests can save time and effort.
+Utilizing AI models like GPT-4 and GPT-3.5 can help generate useful insights and overviews of the issues.
+There are certain limitations to this approach, such as model availability and token limits. However, overall, the method proves to be efficient and cost-effective.
+The author provides links to the source code and the raw output of the analysis, along with examples of how to filter the output using jq play. This solution offers a practical way to quickly gain an understanding of a large corpus of issues in a repository, making it easier to identify and prioritize tasks.</p>
+<p>If you are still here, follow alongs.</p>
+<h1 id=why>Why<a href=#why class=hanchor arialabel=Anchor>&#8983;</a> </h1>
+<p>The <a href=https://sky-light-sl.com/>SkyLight</a> collective is actively building on Ordinals, as part of our research in the creation of our artworks we like to contribute.
+Hence making our baby steps towards the reference implementation in to trying to understand where it is and where it goes.
+When discovering a new project, the issues are usually a great places to start leaning in, as they are a source divers information related to the project.
+So we went in the <a href=https://github.com/casey/ord>Ordinal Github repository</a> to understand what @casey, Ordinals developers and common folks had to say about it.</p>
+<p>At the time of writing (2021-03-18) there is 329 issues and 46 pull requests. As <a href=https://en.wikipedia.org/wiki/Lazy_evaluation>lazy</a> developers we wanted to automate the process of getting the issues and pull requests in order to analyze them. We had to make it in such a way that we could easily update the issues and re-run the analysis if needed.</p>
 <h2 id=getting-the-data>Getting the data<a href=#getting-the-data class=hanchor arialabel=Anchor>&#8983;</a> </h2>
-<p>Using the Github CLI I was able to get the 1MB of data in a json format. I used the following command:</p>
-<p><img src=/img/posts/analyzing-ordinal-github-issues/2023-03-18-090742_1308x84_scrot.png alt="gh issue list &ndash;json number,title,body,labels,updatedAt,comments,reactionGroups -L 400 | pv > issues.json"></p>
-<p>The command is pretty simple, I used the GitHub Command Line Interface (GH CLI) to get the issues and then I used the json flag to get the data in json format. I also used the -L flag to limit the number of issues to 400. I then used pv to get a progress bar and then I redirected the output to a file called issues.json.</p>
+<p>Using the Github CLI we fetch ~1MB worth of data related to the Ordinal repository issues in the JSON format extracting the information we while feed to our AI using the following format:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>gh issue list --json number,title,body,labels,updatedAt,comments,reactionGroups -L <span style=color:#ae81ff>400</span> &gt; issues.json
+</code></pre></div><p><img src=/img/posts/analyzing-ordinal-github-issues/2023-03-18-090742_1308x84_scrot.png alt="gh issue list &ndash;json number,title,body,labels,updatedAt,comments,reactionGroups -L 400 | pv > issues.json"></p>
+<p>The command is pretty simple, we used the GitHub Command Line Interface (gh cli) to get the issues and specified the flags to get the the issue number,title, body, comments,&mldr; in JSON format. The -L flag limits the number of issues to 400 and pv(screenshot) is used to get a progress bar, the output is then redirected to a file called issues.json.</p>
 <h2 id=analyzing-the-data>Analyzing the data<a href=#analyzing-the-data class=hanchor arialabel=Anchor>&#8983;</a> </h2>
 <p>Example issue:</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>  {
@@ -75,7 +89,7 @@ So I went in the <a href=https://github.com/casey/ord>Ordinal Github repository<
     <span style=color:#f92672>&#34;comments&#34;</span>: [
       {
         <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#e6db74>&#34;IC_kwDOGhOAhc5XuYTN&#34;</span>,
-        <span style=color:#f92672>&#34;author&#34;</span>: {<span style=color:#960050;background-color:#1e0010>H</span>
+        <span style=color:#f92672>&#34;author&#34;</span>: {
           <span style=color:#f92672>&#34;login&#34;</span>: <span style=color:#e6db74>&#34;ysw1011&#34;</span>
         },
         <span style=color:#f92672>&#34;authorAssociation&#34;</span>: <span style=color:#e6db74>&#34;NONE&#34;</span>,
@@ -98,33 +112,33 @@ So I went in the <a href=https://github.com/casey/ord>Ordinal Github repository<
     <span style=color:#f92672>&#34;title&#34;</span>: <span style=color:#e6db74>&#34;Transactions are not confirmed&#34;</span>,
     <span style=color:#f92672>&#34;updatedAt&#34;</span>: <span style=color:#e6db74>&#34;2023-03-16T11:26:11Z&#34;</span>
   }<span style=color:#960050;background-color:#1e0010>,</span>
-</code></pre></div><p>This is what look a typical issue in global FOSS repository, where there is no strict guidelines for contributing and users can open issues for anything. The content of the issue contains also multiple languages which could be a challenge for the reviewer.</p>
+</code></pre></div><p>This is a good issue as it showcase multiple difficulties, it containes multiple language and title is not explicit about the issue which could be a challenge for the reviewer. More defined guidelines and issues templating could help make an easier pathway for users to interacts with the project.</p>
 <h1 id=ai-for-the-rescue>AI for the rescue<a href=#ai-for-the-rescue class=hanchor arialabel=Anchor>&#8983;</a> </h1>
-<p>After learning a lot about prompt engineering over the last months I decided to write myself the prompt to generate the overview analysis. After fidling with a few prompt for a while I was not able to get a decent result. I then decided to use GPT4 to generate the prompt for GPT3 analysis as unfortunatly, GPT4, is not available over the API yet.
-But who no better to talk to a robot than another robot?</p>
+<p>After learning a lot about prompt engineering over the last months we decided to write ourself the prompt to generate the overview analysis. But after fidling with <a href=https://github.com/Magicking/awesome-chatgpt>a few prompt</a> for a while we were not able to get a decent result in the JSON output formating by GPT3. Instead we used GPT4 to generate the prompt to be use by GPT3 to produce the analysis, as unfortunatly, GPT4 is not available over the API yet.</p>
+<p>Who no better to talk to a robot than another robot?</p>
 <p><img src=/img/posts/analyzing-ordinal-github-issues/2023-03-18-090255_1180x1594_scrot.png alt="Only robots can understand me."></p>
 <p>This gives a prompt that&rsquo;s quite effective at generating a usable JSON outputs.
 With a few logics and a simple use of the OpenAI python package.
 <img src=/img/posts/analyzing-ordinal-github-issues/2023-03-18-094526_1579x209_scrot.png alt="simple openai api call"></p>
-<p>I was able to generate a nice overview of the issues.
+<p>We were able to generate a nice overview of the issues.
 <img src=/img/posts/analyzing-ordinal-github-issues/2023-03-18-080232_3650x783_scrot.png alt></p>
 <p>And even get some insights about which issues are hot topics.
 <img src=/img/posts/analyzing-ordinal-github-issues/2023-03-18-090208_1272x258_scrot.png alt></p>
 <h1 id=conclusion>Conclusion<a href=#conclusion class=hanchor arialabel=Anchor>&#8983;</a> </h1>
 <p>It&rsquo;s a simple tool to help get an overview of the issues in a repository. It helps to get in the know before diving the details but there are some limitation to this simple example:</p>
 <ul>
-<li>The limitation encountered was the model, the only one available is GPT3 which is the legacy one</li>
-<li>The number of tokens you can feed the model, even with a larger model there is a limitation therefor a compression on the body and comments could be applied when number of token feed is close to the model limitation</li>
-<li>The prompt is not perfect, sometimes it&rsquo;s does not generate a valid JSON output, but it&rsquo;s a good start.</li>
+<li>The limitation encountered was the model, the only one available is GPT3 which is the legacy one.</li>
+<li>The number of tokens you can feed the model, even with a larger model there is a limitation therefor a compression on the body and comments could be applied when number of token feed is close to the model limitation or some kind of chunking.</li>
+<li>The prompt is far from perfect, sometimes it&rsquo;s does not generate a valid JSON output, but it&rsquo;s a good start, the basic features are present.</li>
 </ul>
-<p>Was it worth it? I think so, leaning in a project is a time consuming activity and not that much productive in terms of deliverables.
-Here it took me 6 hours to get a deliverable, the software to produce it while giving me a shareable quick overview of a large corpus of various issues in the repository. And the OPEX development cost was almost zero.</p>
+<p>Was it worth it? Yes, leaning in a project is a time consuming activity and not that much productive in terms of deliverables.
+Here it took ~6 hours to get a deliverable, the software to produce it (another deliverable) while giving us a shareable quick overview of a large corpus of various issues in the repository. And the OPEX development cost was almost zero.</p>
 <p><img src=/img/posts/analyzing-ordinal-github-issues/2023-03-18-090227_857x138_scrot.png alt=cost></p>
 <h1 id=links>Links<a href=#links class=hanchor arialabel=Anchor>&#8983;</a> </h1>
 <ul>
 <li><a href=https://github.com/Magicking/openai-issues-analysis/>Source code</a></li>
 <li><a href=https://github.com/Magicking/openai-issues-analysis/blob/main/classifiedIssue.json>Raw output of the analysis</a>, you can use <a href=https://jqplay.org/s/xUI6bC3ehx8>jq play</a> to filter the output, see example below.
-<pre tabindex=0><code>.[] | select(.reactionGroups != {}) | &quot;\(.number): \(.title): Reaction: \(.reactionGroups)&quot;```)</code></pre></li>
+<pre tabindex=0><code>.[] | select(.reactionGroups != {}) | &quot;\(.number): \(.title): \(.summary)&quot;```)</code></pre></li>
 </ul>
 </div></div>
 <div class=pagination>
