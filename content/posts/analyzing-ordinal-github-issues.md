@@ -26,7 +26,7 @@ If you are still here, follow alongs.
 
 # Why
 
-The [SkyLight](https://sky-light-sl.com/) collective is actively building on Ordinals, as part of our research in the creation of our artworks we like to contribute.
+The [SkyLight](https://sky-light-sl.com/) collective is actively building on Ordinals, as part of our R&D process in the creation of our artworks we contribute when we can.
 Hence making our baby steps towards the reference implementation in to trying to understand where it is and where it goes.
 When discovering a new project, the issues are usually a great places to start leaning in, as they are a source divers information related to the project.
 So we went in the [Ordinal Github repository](https://github.com/casey/ord) to understand what @casey, Ordinals developers and common folks had to say about it.
