@@ -113,6 +113,4 @@ It's a simple tool to help get an overview of the issues in a repository. It hel
 
 # Links
   - [Source code](https://github.com/Magicking/openai-issues-analysis/)
-  - [Raw output of the analysis](https://github.com/Magicking/openai-issues-analysis/blob/main/classifiedIssue.json), you can use [jq play](https://jqplay.org/s/xUI6bC3ehx8) to filter the output, see example below.
-    ```
-    .[] | select(.reactionGroups != {}) | "\(.number): \(.title): \(.summary)"```)
+  - [Raw output of the analysis](https://github.com/Magicking/openai-issues-analysis/blob/main/classifiedIssue.json), you can use [jq play](https://jqplay.org/s/6w5H0bE1uXi) to play with filtering to explore the data or your favorite JSON editor.
