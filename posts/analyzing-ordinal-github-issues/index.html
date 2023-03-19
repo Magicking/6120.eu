@@ -55,7 +55,7 @@ Magicking's notes
 2023-03-18 ::
 [Updated :: 2023-03-18]
 </time>
-<span class=post-reading-time>:: 5 min read (978 words)</span>
+<span class=post-reading-time>:: 5 min read (979 words)</span>
 </div>
 <span class=post-tags>
 #<a href=https://6120.eu/tags/ai/>ai</a>&nbsp;
@@ -76,13 +76,13 @@ The author provides links to the source code and the raw output of the analysis,
 Hence making our baby steps towards the reference implementation in to trying to understand where it is and where it goes.
 When discovering a new project, the issues are usually a great places to start leaning in, as they are a source divers information related to the project.
 So we went in the <a href=https://github.com/casey/ord>Ordinal Github repository</a> to understand what @casey, Ordinals developers and common folks had to say about it.</p>
-<p>At the time of writing (2021-03-18) there is 329 issues and 46 pull requests. As <a href=https://en.wikipedia.org/wiki/Lazy_evaluation>lazy</a> developers we wanted to automate the process of getting the issues and pull requests in order to analyze them. We had to make it in such a way that we could easily update the issues and re-run the analysis if needed.</p>
-<h2 id=getting-the-data>Getting the data<a href=#getting-the-data class=hanchor arialabel=Anchor>&#8983;</a> </h2>
-<p>Using the Github CLI we fetch ~1MB worth of data related to the Ordinal repository issues in the JSON format extracting the information we while feed to our AI using the following format:</p>
+<p>At the time of writing (2021-03-18) there is <a href=https://github.com/casey/ord/issues>329 issues and 46 pull requests</a>. As <a href=https://en.wikipedia.org/wiki/Lazy_evaluation>lazy</a> developers we wanted to automate the process of getting the issues and pull requests and have an initial analysis. We had to make it in such a way that we could easily update the issues and re-run the analysis if needed.</p>
+<h1 id=getting-the-data>Getting the data<a href=#getting-the-data class=hanchor arialabel=Anchor>&#8983;</a> </h1>
+<p>Using the <a href=https://cli.github.com/>Github CLI</a> we fetch ~1MB worth of data related to the Ordinal repository issues in the JSON format extracting the information we while feed to our AI using the following format:</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>gh issue list --json number,title,body,labels,updatedAt,comments,reactionGroups -L <span style=color:#ae81ff>400</span> &gt; issues.json
 </code></pre></div><p><img src=/img/posts/analyzing-ordinal-github-issues/2023-03-18-090742_1308x84_scrot.png alt="gh issue list &ndash;json number,title,body,labels,updatedAt,comments,reactionGroups -L 400 | pv > issues.json"></p>
 <p>The command is pretty simple, we used the GitHub Command Line Interface (gh cli) to get the issues and specified the flags to get the the issue number,title, body, comments,&mldr; in JSON format. The -L flag limits the number of issues to 400 and pv(screenshot) is used to get a progress bar, the output is then redirected to a file called issues.json.</p>
-<h2 id=analyzing-the-data>Analyzing the data<a href=#analyzing-the-data class=hanchor arialabel=Anchor>&#8983;</a> </h2>
+<h1 id=analyzing-the-json-data>Analyzing the JSON data<a href=#analyzing-the-json-data class=hanchor arialabel=Anchor>&#8983;</a> </h1>
 <p>Example issue:</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>  {
     <span style=color:#f92672>&#34;body&#34;</span>: <span style=color:#e6db74>&#34;For the very first time, it was successful to create one inscription, now transactions are not confirmed, I suspect because of the small fee rate\r\n\r\n&lt;img width=\&#34;557\&#34; alt=\&#34;Снимок экрана 2023-03-11 в 21 30 29\&#34; src=\&#34;https://user-images.githubusercontent.com/53757772/224508408-186dad47-3935-4ad7-8032-5985409a87ff.png\&#34;&gt;\r\n\r\n&lt;img width=\&#34;804\&#34; alt=\&#34;Снимок экрана 2023-03-11 в 21 35 40\&#34; src=\&#34;https://user-images.githubusercontent.com/53757772/224508424-16d5f897-0e83-4a04-8c32-73930e2527fe.png\&#34;&gt;\r\n\r\nThe balance is completely debited\r\n\r\n&lt;img width=\&#34;563\&#34; alt=\&#34;Снимок экрана 2023-03-11 в 21 36 35\&#34; src=\&#34;https://user-images.githubusercontent.com/53757772/224508755-b202f4e0-dd2e-40cc-bea2-cdd10522bbe8.png\&#34;&gt;\r\n\r\n&lt;img width=\&#34;570\&#34; alt=\&#34;Снимок экрана 2023-03-11 в 21 37 04\&#34; src=\&#34;https://user-images.githubusercontent.com/53757772/224508790-e461a21c-8f2e-4a51-962f-cf6171d4b56e.png\&#34;&gt;\r\n\r\nhttps://mempool.space/tx/b8d7cd6ba8e2c3387d6c1dfd33ef542ed82aa36425a9a7c2f903a803aaca7015\r\n\r\n\r\n\r\n\r\n\r\nHelp me )&#34;</span>,
@@ -134,7 +134,7 @@ With a few logics and a simple use of the OpenAI python package.
 <p>Was it worth it? Yes, leaning in a project is a time consuming activity and not that much productive in terms of deliverables.
 Here it took ~6 hours to get a deliverable, the software to produce it (another deliverable) while giving us a shareable quick overview of a large corpus of various issues in the repository. And the OPEX development cost was almost zero.</p>
 <p><img src=/img/posts/analyzing-ordinal-github-issues/2023-03-18-090227_857x138_scrot.png alt=cost></p>
-<h1 id=links>Links<a href=#links class=hanchor arialabel=Anchor>&#8983;</a> </h1>
+<h2 id=links>Links<a href=#links class=hanchor arialabel=Anchor>&#8983;</a> </h2>
 <ul>
 <li><a href=https://github.com/Magicking/openai-issues-analysis/>Source code</a></li>
 <li><a href=https://github.com/Magicking/openai-issues-analysis/blob/main/classifiedIssue.json>Raw output of the analysis</a>, you can use <a href=https://jqplay.org/s/6w5H0bE1uXi>jq play</a> to play with filtering to explore the data or your favorite JSON editor.</li>
