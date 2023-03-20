@@ -1,6 +1,6 @@
 <!doctype html><html lang=en>
 <head>
-<title>Efficient Issue Analysis: Harnessing the Power of GPT-4 and GPT-3.5 for Github Repository Insights :: 6120's Notes</title>
+<title>Efficient Issue Analysis: Harnessing the Power of GPT-4 and GPT-3.5 for GitHub Repository Insights :: 6120's Notes</title>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=description content="TL;DR This post showcases a creative approach to analyzing issues in the Ordinal GitHub repository by leveraging the GitHub API, GPT-3.5, and GPT-4. The author demonstrates how to obtain the necessary data using the GitHub CLI, then uses GPT-4 to generate a prompt for GPT-3.5 to analyze the repository&amp;rsquo;s issues further.
@@ -19,7 +19,7 @@ Automating the collection and analysis of issues and pull requests can save time
 <meta name=twitter:creator content>
 <meta property="og:locale" content="en">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Efficient Issue Analysis: Harnessing the Power of GPT-4 and GPT-3.5 for Github Repository Insights">
+<meta property="og:title" content="Efficient Issue Analysis: Harnessing the Power of GPT-4 and GPT-3.5 for GitHub Repository Insights">
 <meta property="og:description" content="TL;DR This post showcases a creative approach to analyzing issues in the Ordinal GitHub repository by leveraging the GitHub API, GPT-3.5, and GPT-4. The author demonstrates how to obtain the necessary data using the GitHub CLI, then uses GPT-4 to generate a prompt for GPT-3.5 to analyze the repository&amp;rsquo;s issues further.
 Some key takeaways from this analysis include the following:
 Automating the collection and analysis of issues and pull requests can save time and effort.">
@@ -48,14 +48,14 @@ Magicking's notes
 <div class=content>
 <article class=post>
 <h1 class=post-title>
-<a href=https://6120.eu/posts/analyzing-ordinal-github-issues/>Efficient Issue Analysis: Harnessing the Power of GPT-4 and GPT-3.5 for Github Repository Insights</a>
+<a href=https://6120.eu/posts/analyzing-ordinal-github-issues/>Efficient Issue Analysis: Harnessing the Power of GPT-4 and GPT-3.5 for GitHub Repository Insights</a>
 </h1>
 <div class=post-meta>
 <time class=post-date>
 2023-03-18 ::
 [Updated :: 2023-03-18]
 </time>
-<span class=post-reading-time>:: 5 min read (1014 words)</span>
+<span class=post-reading-time>:: 5 min read (1020 words)</span>
 </div>
 <span class=post-tags>
 #<a href=https://6120.eu/tags/ai/>ai</a>&nbsp;
@@ -73,57 +73,57 @@ The author provides links to the source code and the raw output of the analysis,
 <p>If you are still here, follow along.</p>
 <h1 id=why>Why<a href=#why class=hanchor arialabel=Anchor>&#8983;</a> </h1>
 <p>The <a href=https://sky-light-sl.com/>SkyLight</a> collective is actively building on Ordinals; as part of our R&D process in creating our artworks, we contribute when we can.
-It is making our baby steps in this land towards the reference implementation, trying to understand where it is and where it goes that we can plant the seeds of our work.
-When discovering a new project, the issues are great places to start leaning in, as they are an excellent diverse source of information related to the project.
-So we went into the <a href=https://github.com/casey/ord>Ordinal Github repository</a> to understand what @casey, Ordinals developers, and everyday folks had to say about it.</p>
+We are taking our first baby steps in this land towards the reference implementation, trying to understand where it is and where it goes so that we can plant the seeds of our work.
+When discovering a new project, the issues are great places to start leaning in, as they are an excellent and diverse source of information related to the project.
+So we went into the <a href=https://github.com/casey/ord>Ordinal GitHub repository</a> to understand what @casey, Ordinals developers, and everyday folks had to say about it.</p>
 <p>At the time of writing (2023-03-18), there are <a href=https://github.com/casey/ord/issues>329 issues and 46 pull requests</a>. As <a href=https://en.wikipedia.org/wiki/Lazy_evaluation>lazy</a> developers, we wanted to automate getting the issues, pull requests, and have an initial analysis. We had to make it so we could easily update the issues and re-run the analysis if needed.</p>
 <h1 id=getting-the-data>Getting the data<a href=#getting-the-data class=hanchor arialabel=Anchor>&#8983;</a> </h1>
-<p>Using the <a href=https://cli.github.com/>Github CLI</a>, we fetch ~1MB worth of data related to the Ordinal repository issues in the JSON format extracting the information we feed to our AI using the following format:</p>
+<p>Using the <a href=https://cli.github.com/>GitHub CLI</a>, we fetched ~1MB worth of data related to the Ordinal repository issues in the JSON format extracting the information we fed to our AI using the following format:</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>gh issue list --json number,title,body,labels,updatedAt,comments,reactionGroups -L <span style=color:#ae81ff>400</span> &gt; issues.json
 </code></pre></div><p><img src=/img/posts/analyzing-ordinal-github-issues/2023-03-18-090742_1308x84_scrot.png alt="gh issue list &ndash;json number,title,body,labels,updatedAt,comments,reactionGroups -L 400 | pv > issues.json"></p>
 <p>The how-to is pretty simple; we used the GitHub Command Line Interface (GH CLI) to get the issues and specified the flags to get the issue number, title, body, and comments,&mldr; in JSON format. The -L flag limits the number of issues to 400 items, and pv(screenshot) gets us a progress bar while we redirect the output to a file called issues.json.</p>
 <h1 id=analyzing-the-json-data>Analyzing the JSON data<a href=#analyzing-the-json-data class=hanchor arialabel=Anchor>&#8983;</a> </h1>
 <p>Example issue:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>  {
-    <span style=color:#f92672>&#34;body&#34;</span>: <span style=color:#e6db74>&#34;For the very first time, it was successful to create one inscription, now transactions are not confirmed, I suspect because of the small fee rate\r\n\r\n&lt;img width=\&#34;557\&#34; alt=\&#34;Снимок экрана 2023-03-11 в 21 30 29\&#34; src=\&#34;https://user-images.githubusercontent.com/53757772/224508408-186dad47-3935-4ad7-8032-5985409a87ff.png\&#34;&gt;\r\n\r\n&lt;img width=\&#34;804\&#34; alt=\&#34;Снимок экрана 2023-03-11 в 21 35 40\&#34; src=\&#34;https://user-images.githubusercontent.com/53757772/224508424-16d5f897-0e83-4a04-8c32-73930e2527fe.png\&#34;&gt;\r\n\r\nThe balance is completely debited\r\n\r\n&lt;img width=\&#34;563\&#34; alt=\&#34;Снимок экрана 2023-03-11 в 21 36 35\&#34; src=\&#34;https://user-images.githubusercontent.com/53757772/224508755-b202f4e0-dd2e-40cc-bea2-cdd10522bbe8.png\&#34;&gt;\r\n\r\n&lt;img width=\&#34;570\&#34; alt=\&#34;Снимок экрана 2023-03-11 в 21 37 04\&#34; src=\&#34;https://user-images.githubusercontent.com/53757772/224508790-e461a21c-8f2e-4a51-962f-cf6171d4b56e.png\&#34;&gt;\r\n\r\nhttps://mempool.space/tx/b8d7cd6ba8e2c3387d6c1dfd33ef542ed82aa36425a9a7c2f903a803aaca7015\r\n\r\n\r\n\r\n\r\n\r\nHelp me )&#34;</span>,
-    <span style=color:#f92672>&#34;comments&#34;</span>: [
-      {
-        <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#e6db74>&#34;IC_kwDOGhOAhc5XuYTN&#34;</span>,
-        <span style=color:#f92672>&#34;author&#34;</span>: {
-          <span style=color:#f92672>&#34;login&#34;</span>: <span style=color:#e6db74>&#34;ysw1011&#34;</span>
-        },
-        <span style=color:#f92672>&#34;authorAssociation&#34;</span>: <span style=color:#e6db74>&#34;NONE&#34;</span>,
-        <span style=color:#f92672>&#34;body&#34;</span>: <span style=color:#e6db74>&#34;你需要设置fee：./ord --wallet tord wallet inscribe 1.html --fee-rate 6，但是你没有，所以你只能等，有一个清除本地内存池交易的bitcoin cli命令，但是我不建议你用，因为会把你钱包里数据给搞丢。所以你只能等。或者创建一个新钱包，把当前钱包余额转过去 同来产生新的UTXO&#34;</span>,
-        <span style=color:#f92672>&#34;createdAt&#34;</span>: <span style=color:#e6db74>&#34;2023-03-16T11:26:11Z&#34;</span>,
-        <span style=color:#f92672>&#34;includesCreatedEdit&#34;</span>: <span style=color:#66d9ef>false</span>,
-        <span style=color:#f92672>&#34;isMinimized&#34;</span>: <span style=color:#66d9ef>false</span>,
-        <span style=color:#f92672>&#34;minimizedReason&#34;</span>: <span style=color:#e6db74>&#34;&#34;</span>,
-        <span style=color:#f92672>&#34;reactionGroups&#34;</span>: [{
-          <span style=color:#f92672>&#34;content&#34;</span>: <span style=color:#e6db74>&#34;THUMBS_UP&#34;</span>,
-          <span style=color:#f92672>&#34;users&#34;</span>: {
-            <span style=color:#f92672>&#34;totalCount&#34;</span>: <span style=color:#ae81ff>1</span>
-          }}],
-        <span style=color:#f92672>&#34;url&#34;</span>: <span style=color:#e6db74>&#34;https://github.com/casey/ord/issues/1917#issuecomment-1471775949&#34;</span>,
-        <span style=color:#f92672>&#34;viewerDidAuthor&#34;</span>: <span style=color:#66d9ef>false</span>
-      }
-    ],
-    <span style=color:#f92672>&#34;labels&#34;</span>: [],
-    <span style=color:#f92672>&#34;number&#34;</span>: <span style=color:#ae81ff>1917</span>,
-    <span style=color:#f92672>&#34;title&#34;</span>: <span style=color:#e6db74>&#34;Transactions are not confirmed&#34;</span>,
-    <span style=color:#f92672>&#34;updatedAt&#34;</span>: <span style=color:#e6db74>&#34;2023-03-16T11:26:11Z&#34;</span>
-  }<span style=color:#960050;background-color:#1e0010>,</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json> {
+   <span style=color:#f92672>&#34;body&#34;</span>: <span style=color:#e6db74>&#34;For the very first time, it was successful to create one inscription, now transactions are not confirmed, I suspect because of the small fee rate\r\n\r\n&lt;img width=\&#34;557\&#34; alt=\&#34;Снимок экрана 2023-03-11 в 21 30 29\&#34; src=\&#34;https://user-images.githubusercontent.com/53757772/224508408-186dad47-3935-4ad7-8032-5985409a87ff.png\&#34;&gt;\r\n\r\n&lt;img width=\&#34;804\&#34; alt=\&#34;Снимок экрана 2023-03-11 в 21 35 40\&#34; src=\&#34;https://user-images.githubusercontent.com/53757772/224508424-16d5f897-0e83-4a04-8c32-73930e2527fe.png\&#34;&gt;\r\n\r\nThe balance is completely debited\r\n\r\n&lt;img width=\&#34;563\&#34; alt=\&#34;Снимок экрана 2023-03-11 в 21 36 35\&#34; src=\&#34;https://user-images.githubusercontent.com/53757772/224508755-b202f4e0-dd2e-40cc-bea2-cdd10522bbe8.png\&#34;&gt;\r\n\r\n&lt;img width=\&#34;570\&#34; alt=\&#34;Снимок экрана 2023-03-11 в 21 37 04\&#34; src=\&#34;https://user-images.githubusercontent.com/53757772/224508790-e461a21c-8f2e-4a51-962f-cf6171d4b56e.png\&#34;&gt;\r\n\r\nhttps://mempool.space/tx/b8d7cd6ba8e2c3387d6c1dfd33ef542ed82aa36425a9a7c2f903a803aaca7015\r\n\r\n\r\n\r\n\r\n\r\nHelp me )&#34;</span>,
+   <span style=color:#f92672>&#34;comments&#34;</span>: [
+     {
+       <span style=color:#f92672>&#34;id&#34;</span>: <span style=color:#e6db74>&#34;IC_kwDOGhOAhc5XuYTN&#34;</span>,
+       <span style=color:#f92672>&#34;author&#34;</span>: {
+         <span style=color:#f92672>&#34;login&#34;</span>: <span style=color:#e6db74>&#34;ysw1011&#34;</span>
+       },
+       <span style=color:#f92672>&#34;authorAssociation&#34;</span>: <span style=color:#e6db74>&#34;NONE&#34;</span>,
+       <span style=color:#f92672>&#34;body&#34;</span>: <span style=color:#e6db74>&#34;你需要设置fee：./ord --wallet tord wallet inscribe 1.html --fee-rate 6，但是你没有，所以你只能等，有一个清除本地内存池交易的bitcoin cli命令，但是我不建议你用，因为会把你钱包里数据给搞丢。所以你只能等。或者创建一个新钱包，把当前钱包余额转过去 同来产生新的UTXO&#34;</span>,
+       <span style=color:#f92672>&#34;createdAt&#34;</span>: <span style=color:#e6db74>&#34;2023-03-16T11:26:11Z&#34;</span>,
+       <span style=color:#f92672>&#34;includesCreatedEdit&#34;</span>: <span style=color:#66d9ef>false</span>,
+       <span style=color:#f92672>&#34;isMinimized&#34;</span>: <span style=color:#66d9ef>false</span>,
+       <span style=color:#f92672>&#34;minimizedReason&#34;</span>: <span style=color:#e6db74>&#34;&#34;</span>,
+       <span style=color:#f92672>&#34;reactionGroups&#34;</span>: [{
+         <span style=color:#f92672>&#34;content&#34;</span>: <span style=color:#e6db74>&#34;THUMBS_UP&#34;</span>,
+         <span style=color:#f92672>&#34;users&#34;</span>: {
+           <span style=color:#f92672>&#34;totalCount&#34;</span>: <span style=color:#ae81ff>1</span>
+         }}],
+       <span style=color:#f92672>&#34;url&#34;</span>: <span style=color:#e6db74>&#34;https://github.com/casey/ord/issues/1917#issuecomment-1471775949&#34;</span>,
+       <span style=color:#f92672>&#34;viewerDidAuthor&#34;</span>: <span style=color:#66d9ef>false</span>
+     }
+   ],
+   <span style=color:#f92672>&#34;labels&#34;</span>: [],
+   <span style=color:#f92672>&#34;number&#34;</span>: <span style=color:#ae81ff>1917</span>,
+   <span style=color:#f92672>&#34;title&#34;</span>: <span style=color:#e6db74>&#34;Transactions are not confirmed&#34;</span>,
+   <span style=color:#f92672>&#34;updatedAt&#34;</span>: <span style=color:#e6db74>&#34;2023-03-16T11:26:11Z&#34;</span>
+ }<span style=color:#960050;background-color:#1e0010>,</span>
 </code></pre></div><p>The above JSON data explicit long strings of text containing the issue&rsquo;s body, comments, and reaction 👍.
 It is a good issue as it showcases multiple difficulties, contains various languages, and the title needs to be more explicit about the problem, which could be a challenge for the reviewer at first glance. More defined guidelines and issues templating could help make a more straightforward pathway for users to interact with the project.</p>
 <h1 id=ai-for-the-rescue>AI for the rescue<a href=#ai-for-the-rescue class=hanchor arialabel=Anchor>&#8983;</a> </h1>
 <p>After learning much about prompt engineering over the last months, we wrote the prompt to generate the overview analysis. But after fiddling with <a href=https://github.com/Magicking/awesome-chatgpt>a few prompt(s)</a> for a while, we were not able to get a decent result in the JSON output formatting by GPT-3.5; sentiment and labeling were working fine, though.</p>
 <p>Instead, we used GPT-4 to generate the prompt to be used by GPT-3.5 to produce the analysis, as, unfortunately, GPT-4 is yet to be available over the API.</p>
-<p>Who no better to talk to a robot than another robot?</p>
+<p>Who knows better to talk to a robot than another robot?</p>
 <p><img src=/img/posts/analyzing-ordinal-github-issues/2023-03-18-090255_1180x1594_scrot.png alt="Only robots can understand me."></p>
 <p>The above ChatGPT-GPT-4 conversation showcases the ask and the returned prompt proposed as input for GPT-3.5.
 It gives a prompt that&rsquo;s quite effective at generating usable JSON outputs.
-With a few logic and simple use of the OpenAI python package.
+With a few logic rules and simple use of the OpenAI python package.
 <img src=/img/posts/analyzing-ordinal-github-issues/2023-03-18-094526_1579x209_scrot.png alt="simple openai api call"></p>
-<p>We generated an overview of the issues with the title rewrote to embed comments pieces of information.</p>
+<p>We generated an overview of the issues with the title rewritten to embed comments and other pieces of information.</p>
 <p><img src=/img/posts/analyzing-ordinal-github-issues/2023-03-18-080232_3650x783_scrot.png alt></p>
 <p>And even get some insights about which issues are hot topics.</p>
 <p><img src=/img/posts/analyzing-ordinal-github-issues/2023-03-18-090208_1272x258_scrot.png alt></p>
@@ -131,7 +131,7 @@ With a few logic and simple use of the OpenAI python package.
 <p>It&rsquo;s a simple tool to help get an overview of the issues in a repository. It helps to get in the know before diving into the details, but there is some limitation to this simple example:</p>
 <ul>
 <li>The limitation encountered was the model, the only one available is GPT-3.5 which is the legacy one.</li>
-<li>The number of tokens you can feed the model; even with a larger model, there is a limitation. Therefore a compression on the body and comments could be applied when the number of token fed is close to the model limitation or some chunking.</li>
+<li>The number of tokens you can feed the model; even with a larger model, there is a limitation. Therefore a compression on the body and comments could be applied when the number of tokens fed is close to the model limitation or some chunking.</li>
 <li>The prompt could be better, sometimes, it does not generate a valid JSON output, and labeling is too diverse, but it&rsquo;s a good start; the required features are present.</li>
 </ul>
 <p>Was it worth it? Yes, discovering a project is time-consuming and not very productive regarding deliverables.
