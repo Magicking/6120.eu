@@ -119,6 +119,17 @@ And even get some insights about which issues are hot topics.
 
 ![](/img/posts/analyzing-ordinal-github-issues/2023-03-18-090208_1272x258_scrot.png)
 
+And give a quick overview of the above issue, which is much more understandable.
+
+```json
+{
+  "number": 1917,
+  "title": "Transactions are not confirmed",
+  "summary": "{\"summary\": \"User is experiencing issues with unconfirmed transactions due to small fee rate\", \"sentiment\": \"frustrated\", \"labels\": [\"wallet\", \"user-support\", \"transaction\"]}
+  The user is frustrated because their transactions are not confirmed due to a small fee rate. They have included screenshots of their balance being debited without confirmation. The comment suggests setting the fee rate and waiting for confirmation, but the user is still looking for assistance. Relevant labels would be wallet, user-support, and transaction.",
+  "reactionGroups": {}
+}
+```
 
 # Conclusion
 
