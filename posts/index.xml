@@ -64,7 +64,7 @@ With a few logic rules and simple use of the OpenAI python package.
 &lt;p>&lt;img src="https://6120.eu/img/posts/analyzing-ordinal-github-issues/2023-03-18-080232_3650x783_scrot.png" alt="">&lt;/p>
 &lt;p>And even get some insights about which issues are hot topics.&lt;/p>
 &lt;p>&lt;img src="https://6120.eu/img/posts/analyzing-ordinal-github-issues/2023-03-18-090208_1272x258_scrot.png" alt="">&lt;/p>
-&lt;p>And give a quick overview of the above issue, which is much more understandable.&lt;/p>
+&lt;p>And give a clearer short overview of the above issue.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
 &lt;span style="color:#f92672">&amp;#34;number&amp;#34;&lt;/span>: &lt;span style="color:#ae81ff">1917&lt;/span>,
 &lt;span style="color:#f92672">&amp;#34;title&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;Transactions are not confirmed&amp;#34;&lt;/span>,
