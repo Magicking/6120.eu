@@ -55,7 +55,7 @@ Magicking's notes
 2023-03-18 ::
 [Updated :: 2023-03-18]
 </time>
-<span class=post-reading-time>:: 5 min read (1020 words)</span>
+<span class=post-reading-time>:: 6 min read (1119 words)</span>
 </div>
 <span class=post-tags>
 #<a href=https://6120.eu/tags/ai/>ai</a>&nbsp;
@@ -127,7 +127,15 @@ With a few logic rules and simple use of the OpenAI python package.
 <p><img src=/img/posts/analyzing-ordinal-github-issues/2023-03-18-080232_3650x783_scrot.png alt></p>
 <p>And even get some insights about which issues are hot topics.</p>
 <p><img src=/img/posts/analyzing-ordinal-github-issues/2023-03-18-090208_1272x258_scrot.png alt></p>
-<h1 id=conclusion>Conclusion<a href=#conclusion class=hanchor arialabel=Anchor>&#8983;</a> </h1>
+<p>And give a quick overview of the above issue, which is much more understandable.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+  <span style=color:#f92672>&#34;number&#34;</span>: <span style=color:#ae81ff>1917</span>,
+  <span style=color:#f92672>&#34;title&#34;</span>: <span style=color:#e6db74>&#34;Transactions are not confirmed&#34;</span>,
+  <span style=color:#f92672>&#34;summary&#34;</span>: <span style=color:#e6db74>&#34;{\&#34;summary\&#34;: \&#34;User is experiencing issues with unconfirmed transactions due to small fee rate\&#34;, \&#34;sentiment\&#34;: \&#34;frustrated\&#34;, \&#34;labels\&#34;: [\&#34;wallet\&#34;, \&#34;user-support\&#34;, \&#34;transaction\&#34;]}
+</span><span style=color:#e6db74>  The user is frustrated because their transactions are not confirmed due to a small fee rate. They have included screenshots of their balance being debited without confirmation. The comment suggests setting the fee rate and waiting for confirmation, but the user is still looking for assistance. Relevant labels would be wallet, user-support, and transaction.&#34;</span>,
+  <span style=color:#f92672>&#34;reactionGroups&#34;</span>: {}
+}
+</code></pre></div><h1 id=conclusion>Conclusion<a href=#conclusion class=hanchor arialabel=Anchor>&#8983;</a> </h1>
 <p>It&rsquo;s a simple tool to help get an overview of the issues in a repository. It helps to get in the know before diving into the details, but there is some limitation to this simple example:</p>
 <ul>
 <li>The limitation encountered was the model, the only one available is GPT-3.5 which is the legacy one.</li>
