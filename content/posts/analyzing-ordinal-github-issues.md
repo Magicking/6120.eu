@@ -119,7 +119,7 @@ And even get some insights about which issues are hot topics.
 
 ![](/img/posts/analyzing-ordinal-github-issues/2023-03-18-090208_1272x258_scrot.png)
 
-And give a quick overview of the above issue, which is much more understandable.
+And give a clearer short overview of the above issue.
 
 ```json
 {
