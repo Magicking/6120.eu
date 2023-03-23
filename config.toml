@@ -88,3 +88,8 @@ enableRobotsTXT = true
     [languages.en.params.logo]
       logoText = "Magicking's notes"
       logoHomeLink = "/"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
