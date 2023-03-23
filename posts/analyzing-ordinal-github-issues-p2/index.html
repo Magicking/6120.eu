@@ -1,0 +1,138 @@
+<!doctype html><html lang=en>
+<head>
+<title>Analyzing Ordinal GitHub issues :: 6120's Notes</title>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="This article is a working draft; I will update it as I go.
+If you have yet to read the first part of this series, you can find it here.
+We built a tool to help us analyze GitHub issues. Below is the result in action or a page.
+ Regarding the output:
+ Titles are not passed through GPT, and they are raw user entries. Normalizing the title is a good next step.">
+<meta name=keywords content=",">
+<meta name=robots content="noodp">
+<link rel=canonical href=https://6120.eu/posts/analyzing-ordinal-github-issues-p2/>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-81JJNV4Z09"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-81JJNV4Z09',{anonymize_ip:!1})}</script>
+<link rel=stylesheet href=https://6120.eu/styles.css>
+<link rel="shortcut icon" href=https://6120.eu/img/theme-colors/black.png>
+<link rel=apple-touch-icon href=https://6120.eu/img/theme-colors/black.png>
+<meta name=twitter:card content="summary">
+<meta name=twitter:site content="https://6120.eu">
+<meta name=twitter:creator content>
+<meta property="og:locale" content="en">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Analyzing Ordinal GitHub issues">
+<meta property="og:description" content="This article is a working draft; I will update it as I go.
+If you have yet to read the first part of this series, you can find it here.
+We built a tool to help us analyze GitHub issues. Below is the result in action or a page.
+ Regarding the output:
+ Titles are not passed through GPT, and they are raw user entries. Normalizing the title is a good next step.">
+<meta property="og:url" content="https://6120.eu/posts/analyzing-ordinal-github-issues-p2/">
+<meta property="og:site_name" content="6120's Notes">
+<meta property="og:image" content="https://6120.eu/">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta property="article:published_time" content="2023-03-23 04:19:55 +0100 +0100">
+</head>
+<body>
+<div class=black>
+<div class=fuzz></div>
+<div class="container center headings--one-size">
+<header class=header>
+<div class=header__inner>
+<div class=header__logo>
+<a href=/>
+<div class=logo>
+Magicking's notes
+</div>
+</a>
+</div>
+</div>
+</header>
+<div class=content>
+<article class=post>
+<h1 class=post-title>
+<a href=https://6120.eu/posts/analyzing-ordinal-github-issues-p2/>Analyzing Ordinal GitHub issues</a>
+</h1>
+<div class=post-meta>
+<time class=post-date>
+2023-03-23 ::
+[Updated :: 2023-03-23]
+</time>
+<span class=post-reading-time>:: 2 min read (264 words)</span>
+</div>
+<span class=post-tags>
+#<a href=https://6120.eu/tags/ordinal/>ordinal</a>&nbsp;
+#<a href=https://6120.eu/tags/gpt/>gpt</a>&nbsp;
+#<a href=https://6120.eu/tags/ai/>ai</a>&nbsp;
+</span>
+<div class=post-content><div>
+<p>This article is a working draft; I will update it as I go.</p>
+<p>If you have yet to read the first part of this series, you can find it <a href=/posts/analyzing-ordinal-github-issues/>here</a>.</p>
+<p>We built a tool to help us analyze GitHub issues. Below is the result in action or a <a href=/codes/analyzing-ordinal-github-issues-p2/issues-display.html>page</a>.</p>
+<iframe width=600 height=600 frameborder=0 src=/codes/analyzing-ordinal-github-issues-p2/issues-display.html allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>Regarding the output:</p>
+<ul>
+<li>Titles are not passed through GPT, and they are raw user entries. Normalizing the title is a good next step.</li>
+<li>The body is more evident than the title most of the time.</li>
+<li>Red boxes are issues that need to be classified correctly.</li>
+</ul>
+<p>Sampling over 31 issues &ldquo;user-support&rdquo; (10%) and doing this classification manually, assisted by
+the AI tool, we make this classification:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#f92672>documentation</span>: <span style=color:#ae81ff>1062</span>,<span style=color:#ae81ff>1575</span>,<span style=color:#ae81ff>1675</span>,<span style=color:#ae81ff>1709</span>,<span style=color:#ae81ff>1770</span>,<span style=color:#ae81ff>1816</span>,<span style=color:#ae81ff>1845</span>,<span style=color:#ae81ff>1924</span>
+<span style=color:#f92672>new-feature</span>: <span style=color:#ae81ff>1322</span>,<span style=color:#ae81ff>1071</span>,<span style=color:#ae81ff>1519</span>,<span style=color:#ae81ff>1764</span>,<span style=color:#ae81ff>1333</span>
+<span style=color:#f92672>wallet</span>: <span style=color:#ae81ff>1071</span>,<span style=color:#ae81ff>1519</span>
+<span style=color:#f92672>api</span>: <span style=color:#ae81ff>1322</span>
+<span style=color:#f92672>user-support</span>: <span style=color:#ae81ff>1379</span>,<span style=color:#ae81ff>1623</span>,<span style=color:#ae81ff>1672</span>,<span style=color:#ae81ff>1770</span>,<span style=color:#ae81ff>1774</span>,<span style=color:#ae81ff>1796</span>,<span style=color:#ae81ff>1837</span>,<span style=color:#ae81ff>1850</span>,<span style=color:#ae81ff>1915</span>,<span style=color:#ae81ff>1930</span>,<span style=color:#ae81ff>1932</span>
+<span style=color:#f92672>packaging</span>: <span style=color:#ae81ff>1379</span>
+<span style=color:#f92672>frontend</span>: <span style=color:#ae81ff>1437</span>
+<span style=color:#f92672>mime-content</span>: <span style=color:#ae81ff>1468</span>,<span style=color:#ae81ff>1438</span>
+<span style=color:#f92672>naming</span>: <span style=color:#ae81ff>1518</span>,<span style=color:#ae81ff>1709</span>
+
+<span style=color:#f92672>to-be-closed</span>: <span style=color:#ae81ff>1709</span>,<span style=color:#ae81ff>1779</span>,<span style=color:#ae81ff>1816</span>,<span style=color:#ae81ff>1925</span>
+</code></pre></div><p>We see that the classification could be better. The model is not able to classify issues accurately. We have only ~10 out of ~30 issues classified correctly over a sample of 10% in the « user-support » label. It does help to read quickly over an issue; direct integration of this kind of tool is to be expected soon.</p>
+<p>The prompt of the model needs to be reworked to get the model to classify issues more accurately.</p>
+<p>Recommendations:</p>
+<ul>
+<li>Closure of old issues of non-contributor if there is no activity up to a determined amount of time.
+<ul>
+<li>A gitbot could help with this.</li>
+</ul>
+</li>
+<li>Labelling seems to be useful, at least for filtering.</li>
+<li>Issues templating with different models with an example of what to include could fast-track issue triaging in the future.</li>
+</ul>
+</div></div>
+<div class=pagination>
+<div class=pagination__title>
+<span class=pagination__title-h>Read other posts</span>
+<hr>
+</div>
+<div class=pagination__buttons>
+<span class="button next">
+<a href=https://6120.eu/posts/analyzing-ordinal-github-issues/>
+<span class=button__text>Efficient Issue Analysis: Harnessing the Power of GPT-4 and GPT-3.5 for GitHub Repository Insights</span>
+<span class=button__icon>→</span>
+</a>
+</span>
+</div>
+</div>
+<div id=disqus_thread></div>
+<script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return}var b=document,a=b.createElement('script');a.async=!0,a.src='//6120s-blog.disqus.com/embed.js',a.setAttribute('data-timestamp',+new Date),(b.head||b.body).appendChild(a)})()</script>
+<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript>
+<a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a>
+</article>
+</div>
+<footer class=footer>
+<div class=footer__inner>
+<div class="copyright copyright--user">
+<span> </span>
+</div>
+</div>
+</footer>
+<script type=text/javascript src=/bundle.min.js></script>
+</div>
+</div>
+</body>
+<script></script>
+</html>

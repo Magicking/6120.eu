@@ -1,4 +1,41 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>gpt on 6120's Notes</title><link>https://6120.eu/tags/gpt/</link><description>Recent content in gpt on 6120's Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright/><lastBuildDate>Sat, 18 Mar 2023 08:38:51 +0100</lastBuildDate><atom:link href="https://6120.eu/tags/gpt/index.xml" rel="self" type="application/rss+xml"/><item><title>Efficient Issue Analysis: Harnessing the Power of GPT-4 and GPT-3.5 for GitHub Repository Insights</title><link>https://6120.eu/posts/analyzing-ordinal-github-issues/</link><pubDate>Sat, 18 Mar 2023 08:38:51 +0100</pubDate><guid>https://6120.eu/posts/analyzing-ordinal-github-issues/</guid><description>TL;DR This post showcases a creative approach to analyzing issues in the Ordinal GitHub repository by leveraging the GitHub API, GPT-3.5, and GPT-4. The author demonstrates how to obtain the necessary data using the GitHub CLI, then uses GPT-4 to generate a prompt for GPT-3.5 to analyze the repository&amp;rsquo;s issues further.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>gpt on 6120's Notes</title><link>https://6120.eu/tags/gpt/</link><description>Recent content in gpt on 6120's Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright/><lastBuildDate>Thu, 23 Mar 2023 04:19:55 +0100</lastBuildDate><atom:link href="https://6120.eu/tags/gpt/index.xml" rel="self" type="application/rss+xml"/><item><title>Analyzing Ordinal GitHub issues</title><link>https://6120.eu/posts/analyzing-ordinal-github-issues-p2/</link><pubDate>Thu, 23 Mar 2023 04:19:55 +0100</pubDate><guid>https://6120.eu/posts/analyzing-ordinal-github-issues-p2/</guid><description>This article is a working draft; I will update it as I go.
+If you have yet to read the first part of this series, you can find it here.
+We built a tool to help us analyze GitHub issues. Below is the result in action or a page.
+Regarding the output:
+Titles are not passed through GPT, and they are raw user entries. Normalizing the title is a good next step.</description><content>&lt;p>This article is a working draft; I will update it as I go.&lt;/p>
+&lt;p>If you have yet to read the first part of this series, you can find it &lt;a href="https://6120.eu/posts/analyzing-ordinal-github-issues/">here&lt;/a>.&lt;/p>
+&lt;p>We built a tool to help us analyze GitHub issues. Below is the result in action or a &lt;a href="https://6120.eu/codes/analyzing-ordinal-github-issues-p2/issues-display.html">page&lt;/a>.&lt;/p>
+&lt;iframe width="600" height="600" frameborder="0" src="https://6120.eu/codes/analyzing-ordinal-github-issues-p2/issues-display.html" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>&lt;/iframe>
+&lt;p>Regarding the output:&lt;/p>
+&lt;ul>
+&lt;li>Titles are not passed through GPT, and they are raw user entries. Normalizing the title is a good next step.&lt;/li>
+&lt;li>The body is more evident than the title most of the time.&lt;/li>
+&lt;li>Red boxes are issues that need to be classified correctly.&lt;/li>
+&lt;/ul>
+&lt;p>Sampling over 31 issues &amp;ldquo;user-support&amp;rdquo; (10%) and doing this classification manually, assisted by
+the AI tool, we make this classification:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="color:#f92672">documentation&lt;/span>: &lt;span style="color:#ae81ff">1062&lt;/span>,&lt;span style="color:#ae81ff">1575&lt;/span>,&lt;span style="color:#ae81ff">1675&lt;/span>,&lt;span style="color:#ae81ff">1709&lt;/span>,&lt;span style="color:#ae81ff">1770&lt;/span>,&lt;span style="color:#ae81ff">1816&lt;/span>,&lt;span style="color:#ae81ff">1845&lt;/span>,&lt;span style="color:#ae81ff">1924&lt;/span>
+&lt;span style="color:#f92672">new-feature&lt;/span>: &lt;span style="color:#ae81ff">1322&lt;/span>,&lt;span style="color:#ae81ff">1071&lt;/span>,&lt;span style="color:#ae81ff">1519&lt;/span>,&lt;span style="color:#ae81ff">1764&lt;/span>,&lt;span style="color:#ae81ff">1333&lt;/span>
+&lt;span style="color:#f92672">wallet&lt;/span>: &lt;span style="color:#ae81ff">1071&lt;/span>,&lt;span style="color:#ae81ff">1519&lt;/span>
+&lt;span style="color:#f92672">api&lt;/span>: &lt;span style="color:#ae81ff">1322&lt;/span>
+&lt;span style="color:#f92672">user-support&lt;/span>: &lt;span style="color:#ae81ff">1379&lt;/span>,&lt;span style="color:#ae81ff">1623&lt;/span>,&lt;span style="color:#ae81ff">1672&lt;/span>,&lt;span style="color:#ae81ff">1770&lt;/span>,&lt;span style="color:#ae81ff">1774&lt;/span>,&lt;span style="color:#ae81ff">1796&lt;/span>,&lt;span style="color:#ae81ff">1837&lt;/span>,&lt;span style="color:#ae81ff">1850&lt;/span>,&lt;span style="color:#ae81ff">1915&lt;/span>,&lt;span style="color:#ae81ff">1930&lt;/span>,&lt;span style="color:#ae81ff">1932&lt;/span>
+&lt;span style="color:#f92672">packaging&lt;/span>: &lt;span style="color:#ae81ff">1379&lt;/span>
+&lt;span style="color:#f92672">frontend&lt;/span>: &lt;span style="color:#ae81ff">1437&lt;/span>
+&lt;span style="color:#f92672">mime-content&lt;/span>: &lt;span style="color:#ae81ff">1468&lt;/span>,&lt;span style="color:#ae81ff">1438&lt;/span>
+&lt;span style="color:#f92672">naming&lt;/span>: &lt;span style="color:#ae81ff">1518&lt;/span>,&lt;span style="color:#ae81ff">1709&lt;/span>
+&lt;span style="color:#f92672">to-be-closed&lt;/span>: &lt;span style="color:#ae81ff">1709&lt;/span>,&lt;span style="color:#ae81ff">1779&lt;/span>,&lt;span style="color:#ae81ff">1816&lt;/span>,&lt;span style="color:#ae81ff">1925&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>We see that the classification could be better. The model is not able to classify issues accurately. We have only ~10 out of ~30 issues classified correctly over a sample of 10% in the « user-support » label. It does help to read quickly over an issue; direct integration of this kind of tool is to be expected soon.&lt;/p>
+&lt;p>The prompt of the model needs to be reworked to get the model to classify issues more accurately.&lt;/p>
+&lt;p>Recommendations:&lt;/p>
+&lt;ul>
+&lt;li>Closure of old issues of non-contributor if there is no activity up to a determined amount of time.
+&lt;ul>
+&lt;li>A gitbot could help with this.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Labelling seems to be useful, at least for filtering.&lt;/li>
+&lt;li>Issues templating with different models with an example of what to include could fast-track issue triaging in the future.&lt;/li>
+&lt;/ul></content></item><item><title>Efficient Issue Analysis: Harnessing the Power of GPT-4 and GPT-3.5 for GitHub Repository Insights</title><link>https://6120.eu/posts/analyzing-ordinal-github-issues/</link><pubDate>Sat, 18 Mar 2023 08:38:51 +0100</pubDate><guid>https://6120.eu/posts/analyzing-ordinal-github-issues/</guid><description>TL;DR This post showcases a creative approach to analyzing issues in the Ordinal GitHub repository by leveraging the GitHub API, GPT-3.5, and GPT-4. The author demonstrates how to obtain the necessary data using the GitHub CLI, then uses GPT-4 to generate a prompt for GPT-3.5 to analyze the repository&amp;rsquo;s issues further.
 Some key takeaways from this analysis include the following:
 Automating the collection and analysis of issues and pull requests can save time and effort.</description><content>&lt;h1 id="tldr">TL;DR&lt;/h1>
 &lt;p>This post showcases a creative approach to analyzing issues in the Ordinal GitHub repository by leveraging the GitHub API, GPT-3.5, and GPT-4. The author demonstrates how to obtain the necessary data using the GitHub CLI, then uses GPT-4 to generate a prompt for GPT-3.5 to analyze the repository&amp;rsquo;s issues further.&lt;/p>

@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON Data Showcase</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+  <div class="container">
+    <div class="mt-5">
+      <label for="filter" class="form-label">Filter by Label:</label>
+      <select id="filter" class="form-select">
+        <option value="" selected>All</option>
+      </select>
+          </div>
+    <div id="content" class="mt-5"></div>
+  </div>
+  <script>
+    const filterSelect = document.getElementById("filter");
+    const contentDiv = document.getElementById("content");
+    let jsonData = [];
+    async function fetchData() {
+      const response = await fetch("https://raw.githubusercontent.com/Magicking/openai-issues-analysis/main/classifiedIssue.json");
+      jsonData = await response.json();
+      displayData(jsonData);
+      populateFilterOptions(jsonData);
+    }
+
+    function displayData(data) {
+      contentDiv.innerHTML = "";
+      data.forEach(item => {
+        const card = document.createElement("div");
+        card.classList.add("card", "mb-3");
+
+        const cardBody = document.createElement("div");
+        cardBody.classList.add("card-body");
+
+        const cardTitle = document.createElement("h5");
+        cardTitle.classList.add("card-title");
+
+        const titleText = document.createElement("span");
+        titleText.textContent = `#${item.number} - ${item.title}`;
+        
+        const issueLink = document.createElement("a");
+        issueLink.href = `https://github.com/casey/ord/issues/${item.number}`;
+        issueLink.textContent = " (View on GitHub)";
+        issueLink.target = "_blank";
+        issueLink.rel = "noopener noreferrer";
+        issueLink.style.textDecoration = "none";
+        
+        cardTitle.appendChild(titleText);
+        cardTitle.appendChild(issueLink);
+
+        const cardText = document.createElement("p");
+        cardText.classList.add("card-text");
+
+        if (typeof item.summaryJson !== 'undefined') {
+          cardText.textContent = item.summaryJson.summary 
+        } else {
+          card.style.borderColor = 'red';
+          cardText.textContent = "No summary available, please check the issue.";
+        }
+
+        const cardFooter = document.createElement("div");
+        cardFooter.classList.add("card-footer");
+
+        const reactionCount = document.createElement("span");
+        const reactionsCount = Object.values(item.reactionGroups).reduce((accumulator, currentValue) => {
+  return accumulator + currentValue;
+}, 0);
+        reactionCount.textContent = `Reactions: ${reactionsCount}`;
+
+        const labels = document.createElement("span");
+        labels.classList.add("ms-3");
+
+        if (typeof item.summaryJson !== 'undefined') {
+          const labelsArray = item.summaryJson.labels;
+          labels.textContent = `Labels: ${labelsArray.join(", ")}`;
+        }
+
+        cardFooter.appendChild(reactionCount);
+        cardFooter.appendChild(labels);
+
+        cardBody.appendChild(cardTitle);
+        cardBody.appendChild(cardText);
+        card.appendChild(cardBody);
+        card.appendChild(cardFooter);
+
+        contentDiv.appendChild(card);
+      });
+    }
+
+    function populateFilterOptions(data) {
+      const allLabels = new Set();
+      data.forEach(item => {
+        if (typeof item.summaryJson == 'undefined') return;
+        const labelsArray = item.summaryJson.labels;
+        labelsArray.forEach(label => allLabels.add(label));
+      });
+      allLabels.forEach(label => {
+        const option = document.createElement("option");
+        option.value = label;
+        option.textContent = label;
+        filterSelect.appendChild(option);
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const filterSelect = document.getElementById("filter");
+      const contentDiv = document.getElementById("content");
+      const sortBtn = document.getElementById("sortBtn");
+      let filteredData = [];
+
+      filterSelect.addEventListener("change", () => {
+        const selectedLabel = filterSelect.value;
+        if (selectedLabel) {
+          filteredData = jsonData.filter(item => {
+            if (typeof item.summaryJson == 'undefined') return false;
+            const labelsArray = item.summaryJson.labels;
+            return labelsArray.includes(selectedLabel);
+          });
+          displayData(filteredData);
+        } else {
+          displayData(jsonData);
+        }
+      });
+
+      fetchData();
+    });
+  </script>
+</body>
+</html>
