@@ -1,4 +1,96 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ethereum on 6120's Notes</title><link>https://6120.eu/tags/ethereum/</link><description>Recent content in ethereum on 6120's Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright/><lastBuildDate>Thu, 17 Mar 2022 21:50:00 +0100</lastBuildDate><atom:link href="https://6120.eu/tags/ethereum/index.xml" rel="self" type="application/rss+xml"/><item><title>Support cours Ethereum Virtual Machine</title><link>https://6120.eu/posts/support-evm/</link><pubDate>Thu, 17 Mar 2022 21:50:00 +0100</pubDate><guid>https://6120.eu/posts/support-evm/</guid><description>Ceci est un support de cours sur l&amp;rsquo;EVM (Ethereum Virtual Machine) pour le cours de l&amp;rsquo;Ecole Supérieure d&amp;rsquo;Ingénieurs Léonard de Vinci (ESILV).
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ethereum on 6120's Notes</title><link>https://6120.eu/tags/ethereum/</link><description>Recent content in ethereum on 6120's Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright/><lastBuildDate>Mon, 07 Aug 2023 21:50:00 +0100</lastBuildDate><atom:link href="https://6120.eu/tags/ethereum/index.xml" rel="self" type="application/rss+xml"/><item><title>Note technique du paypal coin</title><link>https://6120.eu/drafts/pyusd/</link><pubDate>Mon, 07 Aug 2023 21:50:00 +0100</pubDate><guid>https://6120.eu/drafts/pyusd/</guid><description>Introduction Après être tombé sur la news https://newsroom.paypal-corp.com/2023-08-07-PayPal-Launches-U-S-Dollar-Stablecoin qui annonce la sortie d&amp;rsquo;un jeton ERC20 par PayPal et Paxos ainsi qu&amp;rsquo;après une recherche sur Twitter on tombe sur quelques informations techniques intéressantes.
+C&amp;rsquo;est un jeton de type ERC20 qui peut-être mis en pause, dont la destruction (Burn) et la création (Mint) de sa quantité est régi par une entitée centralisée.
+Composition du jeton Le proxy du jeton avec lequel les utilisateurs vont interragir est 0x6c3ea9036406852006290770BEdFcAbA0e23A0e8, en oscultant un peu plus le smart-contract, on s&amp;rsquo;aperçoit qu&amp;rsquo;il y&amp;rsquo;a eu plusieurs implémentation du jeton au cours du passé</description><content>&lt;h1 id="introduction">Introduction&lt;/h1>
+&lt;p>Après être tombé sur la news &lt;a href="https://newsroom.paypal-corp.com/2023-08-07-PayPal-Launches-U-S-Dollar-Stablecoin">https://newsroom.paypal-corp.com/2023-08-07-PayPal-Launches-U-S-Dollar-Stablecoin&lt;/a> qui annonce la sortie d&amp;rsquo;un jeton ERC20 par PayPal et Paxos ainsi qu&amp;rsquo;après une recherche sur Twitter on tombe sur quelques informations techniques intéressantes.&lt;/p>
+&lt;p>C&amp;rsquo;est un jeton de type ERC20 qui peut-être mis en pause, dont la destruction (Burn) et la création (Mint) de sa quantité est régi par une entitée centralisée.&lt;/p>
+&lt;h1 id="composition-du-jeton">Composition du jeton&lt;/h1>
+&lt;p>Le &lt;a href="https://ethereum.org/en/developers/docs/smart-contracts/upgrading/">proxy&lt;/a> du jeton avec lequel les utilisateurs vont interragir est &lt;a href="https://etherscan.io/token/0x6c3ea9036406852006290770bedfcaba0e23a0e8">0x6c3ea9036406852006290770BEdFcAbA0e23A0e8&lt;/a>, en oscultant un peu plus le smart-contract, on s&amp;rsquo;aperçoit qu&amp;rsquo;il y&amp;rsquo;a eu plusieurs implémentation du jeton au cours du passé&lt;/p>
+&lt;p>&lt;img src="https://6120.eu/img/posts/pyusd/1.png" alt="">&lt;/p>
+&lt;p>et que l&amp;rsquo;ensemble des smart-contracts existent depuis environ 1 an, probablement une phase test avant l&amp;rsquo;annonce du 2023-08-07 étant donné un volume important de transaction précédant celle-ci.&lt;/p>
+&lt;p>TODO SCREENSHOT OF PROXY DEPLOYMENT&lt;/p>
+&lt;p>L&amp;rsquo;implémentation actuel du jeton étant &lt;a href="https://etherscan.io/address/0xe17b8adf8e46b15f3f9ab4bb9e3b6e31db09126e">0xe17b8adf8e46b15f3f9ab4bb9e3b6e31db09126e&lt;/a> la différence majeure avec le code source de l&amp;rsquo;implémentation précédente était le masquage des termes PayPal/PYUSD par Hopper USD/XYZ.&lt;/p>
+&lt;p>C&amp;rsquo;est cette dernière que nous allons étudier, le proxy ne servant qu&amp;rsquo;à stocker l&amp;rsquo;état du smart-contract en lieu et place de l&amp;rsquo;implémentation.&lt;/p>
+&lt;h1 id="analyse-technique">Analyse technique&lt;/h1>
+&lt;p>En préambule, on observe que le contrat utilise une très ancienne version du langage Solidity &lt;code>0.4.24&lt;/code> en spécifiant la nécéssité des fonctions expérimentales de la version &lt;code>0.5&lt;/code>.&lt;/p>
+&lt;p>Le smart-contract est plutôt généreux en commentaire notamment avec une annotation &lt;a href="">NatSpec&lt;/a> orienté développeur et plusieurs lignes au sein de chaque fonction.&lt;/p>
+&lt;h2 id="fonctions">Fonctions&lt;/h2>
+&lt;p>Les fonctionnalités présentes dans le smart-contract peuvent être regroupées en 6 familles différentes détaillé ci-dessous.&lt;/p>
+&lt;h3 id="proxy">Proxy&lt;/h3>
+&lt;h4 id="constructor">constructor&lt;/h4>
+&lt;p>Fonction executée lors du déploiement de l&amp;rsquo;implémentation du smart-contract, ici l&amp;rsquo;implémentation est initializé puis mis en pause pour éviter toute erreur.&lt;/p>
+&lt;h4 id="initialize">initialize&lt;/h4>
+&lt;p>Fonction initialisant l&amp;rsquo;état du smart-contract tout en prévenant une ré-initialisation lors d&amp;rsquo;une mise à jour, appelle notamment une autre fonction privée &lt;code>initializeDomainSeparator&lt;/code> en charge de définir le prefix de délégation (le smart-contract et son nom).&lt;/p>
+&lt;h3 id="erc20">ERC20&lt;/h3>
+&lt;p>Les fonctions ci-desous ne sont pas utilisables si l&amp;rsquo;émetteur ou le récepteur des fonds ont été gelé.&lt;/p>
+&lt;h4 id="allowance">allowance&lt;/h4>
+&lt;p>Accesseur sur la limite de dépense d&amp;rsquo;un compte Ethereum pour un autre compte.&lt;/p>
+&lt;h4 id="approve">approve&lt;/h4>
+&lt;p>Définie la limite de dépense d&amp;rsquo;un compte Ethereum pour un autre compte.&lt;/p>
+&lt;h4 id="decreaseapproval">decreaseApproval&lt;/h4>
+&lt;p>Décroie la limite de dépense d&amp;rsquo;un compte Ethereum pour un autre compte.&lt;/p>
+&lt;h4 id="increaseapproval">increaseApproval&lt;/h4>
+&lt;p>Accroie la limite de dépense d&amp;rsquo;un compte Ethereum pour un autre compte.&lt;/p>
+&lt;h4 id="balanceof">balanceOf&lt;/h4>
+&lt;p>Retourne la quantité de jeton pour un compte Ethereum.&lt;/p>
+&lt;h4 id="totalsupply">totalSupply&lt;/h4>
+&lt;p>Retourne la quantité total de jeton.&lt;/p>
+&lt;h4 id="transfer">transfer&lt;/h4>
+&lt;p>Transfère la quantité de jeton d&amp;rsquo;un compte Ethereum vers un autre compte.&lt;/p>
+&lt;h4 id="transferfrom">transferFrom&lt;/h4>
+&lt;p>Transfère la quantité de jeton d&amp;rsquo;un compte Ethereum vers un autre compte au travers par le biais d&amp;rsquo;un tiers compte autorisé.&lt;/p>
+&lt;h3 id="owner-admin">Owner Admin&lt;/h3>
+&lt;p>Toutes les fonctions ci-dessous sont accessibles uniquement par le possesseur du smart-contract.&lt;/p>
+&lt;h4 id="proposeowner">proposeOwner&lt;/h4>
+&lt;p>Définie le potentiel nouveau compte possesseur du smart-contract.&lt;/p>
+&lt;h4 id="disregardproposeowner">disregardProposeOwner&lt;/h4>
+&lt;p>Annule le potentiel nouveau compte possesseur du smart-contract&lt;/p>
+&lt;h4 id="claimownership">claimOwnership&lt;/h4>
+&lt;p>Promeut le potentiel compte possesseur en nouveau possesseur.&lt;/p>
+&lt;h4 id="reclaimpyusd">reclaimPYUSD&lt;/h4>
+&lt;p>Transfère les jetons affectés au contrat au possesseur.&lt;/p>
+&lt;h4 id="pause">pause&lt;/h4>
+&lt;p>Mets en pause&lt;/p>
+&lt;h4 id="unpause">unpause&lt;/h4>
+&lt;h3 id="asset-protection-owner">Asset protection owner&lt;/h3>
+&lt;pre>&lt;code>setAssetProtectionRole
+- Définie le gestionnaire de protection des biens
+freeze
+- Gèle une addresse
+unfreeze
+- Dégèle une addresse
+wipeFrozenAddress
+- Détruit les fonds d'une addresse gelée
+isFrozen
+- Accesseur des addresses gelées
+&lt;/code>&lt;/pre>
+&lt;h3 id="gestion-de-la-quantité">Gestion de la quantité&lt;/h3>
+&lt;pre>&lt;code>setSupplyController
+- Définie le gestionnaire de quantité
+increaseSupply
+- Créé et transfère des jetons au gestionnaire de quantité
+decreaseSupply
+- Détruit des jetons du gestionnaire de quantité.
+&lt;/code>&lt;/pre>
+&lt;h3 id="gestion-de-la-délégation">Gestion de la délégation&lt;/h3>
+&lt;pre>&lt;code>nextSeqOf
+- Accesseur du nonce (nombre )
+betaDelegatedTransfer
+- Transfère des fonds au travers d'un tiers
+- Le tiers n'est pas enforce par le protocole
+- Il est possible de faire des transfères de 0 du moment que l'on paie des fees, cela semble être un
+betaDelegatedTransferBatch
+- Trans
+isWhitelistedBetaDelegate
+setBetaDelegateWhitelister
+whitelistBetaDelegate
+unwhitelistBetaDelegate
+&lt;/code>&lt;/pre>
+&lt;h2 id="notes">Notes&lt;/h2>
+&lt;ul>
+&lt;li>Utilisation d&amp;rsquo;accesseur qui sont déjà rajouté par défaut&lt;/li>
+&lt;li>Fonction qui retourne toujours les mêmes constantes (vrai)&lt;/li>
+&lt;/ul>
+&lt;h1 id="conclusion">Conclusion&lt;/h1></content></item><item><title>Support cours Ethereum Virtual Machine</title><link>https://6120.eu/posts/support-evm/</link><pubDate>Thu, 17 Mar 2022 21:50:00 +0100</pubDate><guid>https://6120.eu/posts/support-evm/</guid><description>Ceci est un support de cours sur l&amp;rsquo;EVM (Ethereum Virtual Machine) pour le cours de l&amp;rsquo;Ecole Supérieure d&amp;rsquo;Ingénieurs Léonard de Vinci (ESILV).
 Il comprend du matériel de cours, des illustrations et des liens vers des ressources.
 La durée du cours est de 3h, séparé en une lesson de 1h15 et des travaux dirigés de 1h15. La première partie est une introduction à la machine de Turing et sa correspondance aux processeurs de nos jours (rappel des connaissances), la seconde partie est une introduction à l&amp;rsquo;EVM et sa correspondance avec la machine de Turing.</description><content>&lt;p>Ceci est un support de cours sur l&amp;rsquo;EVM (Ethereum Virtual Machine) pour le cours de l&amp;rsquo;Ecole Supérieure d&amp;rsquo;Ingénieurs Léonard de Vinci (ESILV).&lt;/p>
 &lt;p>Il comprend du matériel de cours, des illustrations et des liens vers des ressources.&lt;/p>

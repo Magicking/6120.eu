@@ -1,0 +1,176 @@
+<!doctype html><html lang=en>
+<head>
+<title>Note technique du paypal coin :: 6120's Notes</title>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="Introduction Après être tombé sur la news https://newsroom.paypal-corp.com/2023-08-07-PayPal-Launches-U-S-Dollar-Stablecoin qui annonce la sortie d&amp;rsquo;un jeton ERC20 par PayPal et Paxos ainsi qu&amp;rsquo;après une recherche sur Twitter on tombe sur quelques informations techniques intéressantes.
+C&amp;rsquo;est un jeton de type ERC20 qui peut-être mis en pause, dont la destruction (Burn) et la création (Mint) de sa quantité est régi par une entitée centralisée.
+Composition du jeton Le proxy du jeton avec lequel les utilisateurs vont interragir est 0x6c3ea9036406852006290770BEdFcAbA0e23A0e8, en oscultant un peu plus le smart-contract, on s&amp;rsquo;aperçoit qu&amp;rsquo;il y&amp;rsquo;a eu plusieurs implémentation du jeton au cours du passé">
+<meta name=keywords content="stable,erc20,ethereum">
+<meta name=robots content="noodp">
+<link rel=canonical href=https://6120.eu/drafts/pyusd/>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-81JJNV4Z09"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-81JJNV4Z09',{anonymize_ip:!1})}</script>
+<link rel=stylesheet href=https://6120.eu/styles.css>
+<link rel="shortcut icon" href=https://6120.eu/img/theme-colors/black.png>
+<link rel=apple-touch-icon href=https://6120.eu/img/theme-colors/black.png>
+<meta name=twitter:card content="summary">
+<meta name=twitter:site content="https://6120.eu">
+<meta name=twitter:creator content>
+<meta property="og:locale" content="en">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Note technique du paypal coin">
+<meta property="og:description" content="Introduction Après être tombé sur la news https://newsroom.paypal-corp.com/2023-08-07-PayPal-Launches-U-S-Dollar-Stablecoin qui annonce la sortie d&amp;rsquo;un jeton ERC20 par PayPal et Paxos ainsi qu&amp;rsquo;après une recherche sur Twitter on tombe sur quelques informations techniques intéressantes.
+C&amp;rsquo;est un jeton de type ERC20 qui peut-être mis en pause, dont la destruction (Burn) et la création (Mint) de sa quantité est régi par une entitée centralisée.
+Composition du jeton Le proxy du jeton avec lequel les utilisateurs vont interragir est 0x6c3ea9036406852006290770BEdFcAbA0e23A0e8, en oscultant un peu plus le smart-contract, on s&amp;rsquo;aperçoit qu&amp;rsquo;il y&amp;rsquo;a eu plusieurs implémentation du jeton au cours du passé">
+<meta property="og:url" content="https://6120.eu/drafts/pyusd/">
+<meta property="og:site_name" content="6120's Notes">
+<meta property="og:image" content="https://6120.eu/img/favicon/black.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta property="article:published_time" content="2023-08-07 21:50:00 +0100 +0100">
+</head>
+<body>
+<div class=black>
+<div class=fuzz></div>
+<div class="container center headings--one-size">
+<header class=header>
+<div class=header__inner>
+<div class=header__logo>
+<a href=/>
+<div class=logo>
+Magicking's notes
+</div>
+</a>
+</div>
+</div>
+</header>
+<div class=content>
+<article class=post>
+<h1 class=post-title>
+<a href=https://6120.eu/drafts/pyusd/>Note technique du paypal coin</a>
+</h1>
+<div class=post-meta>
+<time class=post-date>
+2023-08-07 ::
+[Updated :: 2023-08-07]
+</time>
+<span class=post-reading-time>:: 3 min read (620 words)</span>
+</div>
+<span class=post-tags>
+#<a href=https://6120.eu/tags/stable/>stable</a>&nbsp;
+#<a href=https://6120.eu/tags/erc20/>erc20</a>&nbsp;
+#<a href=https://6120.eu/tags/ethereum/>ethereum</a>&nbsp;
+</span>
+<div class=post-content><div>
+<h1 id=introduction>Introduction<a href=#introduction class=hanchor arialabel=Anchor>&#8983;</a> </h1>
+<p>Après être tombé sur la news <a href=https://newsroom.paypal-corp.com/2023-08-07-PayPal-Launches-U-S-Dollar-Stablecoin>https://newsroom.paypal-corp.com/2023-08-07-PayPal-Launches-U-S-Dollar-Stablecoin</a> qui annonce la sortie d&rsquo;un jeton ERC20 par PayPal et Paxos ainsi qu&rsquo;après une recherche sur Twitter on tombe sur quelques informations techniques intéressantes.</p>
+<p>C&rsquo;est un jeton de type ERC20 qui peut-être mis en pause, dont la destruction (Burn) et la création (Mint) de sa quantité est régi par une entitée centralisée.</p>
+<h1 id=composition-du-jeton>Composition du jeton<a href=#composition-du-jeton class=hanchor arialabel=Anchor>&#8983;</a> </h1>
+<p>Le <a href=https://ethereum.org/en/developers/docs/smart-contracts/upgrading/>proxy</a> du jeton avec lequel les utilisateurs vont interragir est <a href=https://etherscan.io/token/0x6c3ea9036406852006290770bedfcaba0e23a0e8>0x6c3ea9036406852006290770BEdFcAbA0e23A0e8</a>, en oscultant un peu plus le smart-contract, on s&rsquo;aperçoit qu&rsquo;il y&rsquo;a eu plusieurs implémentation du jeton au cours du passé</p>
+<p><img src=/img/posts/pyusd/1.png alt></p>
+<p>et que l&rsquo;ensemble des smart-contracts existent depuis environ 1 an, probablement une phase test avant l&rsquo;annonce du 2023-08-07 étant donné un volume important de transaction précédant celle-ci.</p>
+<p>TODO SCREENSHOT OF PROXY DEPLOYMENT</p>
+<p>L&rsquo;implémentation actuel du jeton étant <a href=https://etherscan.io/address/0xe17b8adf8e46b15f3f9ab4bb9e3b6e31db09126e>0xe17b8adf8e46b15f3f9ab4bb9e3b6e31db09126e</a> la différence majeure avec le code source de l&rsquo;implémentation précédente était le masquage des termes PayPal/PYUSD par Hopper USD/XYZ.</p>
+<p>C&rsquo;est cette dernière que nous allons étudier, le proxy ne servant qu&rsquo;à stocker l&rsquo;état du smart-contract en lieu et place de l&rsquo;implémentation.</p>
+<h1 id=analyse-technique>Analyse technique<a href=#analyse-technique class=hanchor arialabel=Anchor>&#8983;</a> </h1>
+<p>En préambule, on observe que le contrat utilise une très ancienne version du langage Solidity <code>0.4.24</code> en spécifiant la nécéssité des fonctions expérimentales de la version <code>0.5</code>.</p>
+<p>Le smart-contract est plutôt généreux en commentaire notamment avec une annotation <a href>NatSpec</a> orienté développeur et plusieurs lignes au sein de chaque fonction.</p>
+<h2 id=fonctions>Fonctions<a href=#fonctions class=hanchor arialabel=Anchor>&#8983;</a> </h2>
+<p>Les fonctionnalités présentes dans le smart-contract peuvent être regroupées en 6 familles différentes détaillé ci-dessous.</p>
+<h3 id=proxy>Proxy<a href=#proxy class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<h4 id=constructor>constructor<a href=#constructor class=hanchor arialabel=Anchor>&#8983;</a> </h4>
+<p>Fonction executée lors du déploiement de l&rsquo;implémentation du smart-contract, ici l&rsquo;implémentation est initializé puis mis en pause pour éviter toute erreur.</p>
+<h4 id=initialize>initialize<a href=#initialize class=hanchor arialabel=Anchor>&#8983;</a> </h4>
+<p>Fonction initialisant l&rsquo;état du smart-contract tout en prévenant une ré-initialisation lors d&rsquo;une mise à jour, appelle notamment une autre fonction privée <code>initializeDomainSeparator</code> en charge de définir le prefix de délégation (le smart-contract et son nom).</p>
+<h3 id=erc20>ERC20<a href=#erc20 class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<p>Les fonctions ci-desous ne sont pas utilisables si l&rsquo;émetteur ou le récepteur des fonds ont été gelé.</p>
+<h4 id=allowance>allowance<a href=#allowance class=hanchor arialabel=Anchor>&#8983;</a> </h4>
+<p>Accesseur sur la limite de dépense d&rsquo;un compte Ethereum pour un autre compte.</p>
+<h4 id=approve>approve<a href=#approve class=hanchor arialabel=Anchor>&#8983;</a> </h4>
+<p>Définie la limite de dépense d&rsquo;un compte Ethereum pour un autre compte.</p>
+<h4 id=decreaseapproval>decreaseApproval<a href=#decreaseapproval class=hanchor arialabel=Anchor>&#8983;</a> </h4>
+<p>Décroie la limite de dépense d&rsquo;un compte Ethereum pour un autre compte.</p>
+<h4 id=increaseapproval>increaseApproval<a href=#increaseapproval class=hanchor arialabel=Anchor>&#8983;</a> </h4>
+<p>Accroie la limite de dépense d&rsquo;un compte Ethereum pour un autre compte.</p>
+<h4 id=balanceof>balanceOf<a href=#balanceof class=hanchor arialabel=Anchor>&#8983;</a> </h4>
+<p>Retourne la quantité de jeton pour un compte Ethereum.</p>
+<h4 id=totalsupply>totalSupply<a href=#totalsupply class=hanchor arialabel=Anchor>&#8983;</a> </h4>
+<p>Retourne la quantité total de jeton.</p>
+<h4 id=transfer>transfer<a href=#transfer class=hanchor arialabel=Anchor>&#8983;</a> </h4>
+<p>Transfère la quantité de jeton d&rsquo;un compte Ethereum vers un autre compte.</p>
+<h4 id=transferfrom>transferFrom<a href=#transferfrom class=hanchor arialabel=Anchor>&#8983;</a> </h4>
+<p>Transfère la quantité de jeton d&rsquo;un compte Ethereum vers un autre compte au travers par le biais d&rsquo;un tiers compte autorisé.</p>
+<h3 id=owner-admin>Owner Admin<a href=#owner-admin class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<p>Toutes les fonctions ci-dessous sont accessibles uniquement par le possesseur du smart-contract.</p>
+<h4 id=proposeowner>proposeOwner<a href=#proposeowner class=hanchor arialabel=Anchor>&#8983;</a> </h4>
+<p>Définie le potentiel nouveau compte possesseur du smart-contract.</p>
+<h4 id=disregardproposeowner>disregardProposeOwner<a href=#disregardproposeowner class=hanchor arialabel=Anchor>&#8983;</a> </h4>
+<p>Annule le potentiel nouveau compte possesseur du smart-contract</p>
+<h4 id=claimownership>claimOwnership<a href=#claimownership class=hanchor arialabel=Anchor>&#8983;</a> </h4>
+<p>Promeut le potentiel compte possesseur en nouveau possesseur.</p>
+<h4 id=reclaimpyusd>reclaimPYUSD<a href=#reclaimpyusd class=hanchor arialabel=Anchor>&#8983;</a> </h4>
+<p>Transfère les jetons affectés au contrat au possesseur.</p>
+<h4 id=pause>pause<a href=#pause class=hanchor arialabel=Anchor>&#8983;</a> </h4>
+<p>Mets en pause</p>
+<h4 id=unpause>unpause<a href=#unpause class=hanchor arialabel=Anchor>&#8983;</a> </h4>
+<h3 id=asset-protection-owner>Asset protection owner<a href=#asset-protection-owner class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<pre><code>setAssetProtectionRole
+ - Définie le gestionnaire de protection des biens
+freeze
+ - Gèle une addresse
+unfreeze
+ - Dégèle une addresse
+wipeFrozenAddress
+ - Détruit les fonds d'une addresse gelée
+isFrozen
+ - Accesseur des addresses gelées
+</code></pre>
+<h3 id=gestion-de-la-quantité>Gestion de la quantité<a href=#gestion-de-la-quantité class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<pre><code>setSupplyController
+ - Définie le gestionnaire de quantité
+increaseSupply
+ - Créé et transfère des jetons au gestionnaire de quantité
+decreaseSupply
+ - Détruit des jetons du gestionnaire de quantité.
+</code></pre>
+<h3 id=gestion-de-la-délégation>Gestion de la délégation<a href=#gestion-de-la-délégation class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<pre><code>nextSeqOf
+ - Accesseur du nonce (nombre )
+betaDelegatedTransfer
+ - Transfère des fonds au travers d'un tiers
+ - Le tiers n'est pas enforce par le protocole
+ - Il est possible de faire des transfères de 0 du moment que l'on paie des fees, cela semble être un
+betaDelegatedTransferBatch
+ - Trans
+isWhitelistedBetaDelegate
+setBetaDelegateWhitelister
+whitelistBetaDelegate
+unwhitelistBetaDelegate
+</code></pre>
+<h2 id=notes>Notes<a href=#notes class=hanchor arialabel=Anchor>&#8983;</a> </h2>
+<ul>
+<li>Utilisation d&rsquo;accesseur qui sont déjà rajouté par défaut</li>
+<li>Fonction qui retourne toujours les mêmes constantes (vrai)</li>
+</ul>
+<h1 id=conclusion>Conclusion<a href=#conclusion class=hanchor arialabel=Anchor>&#8983;</a> </h1>
+</div></div>
+<div id=disqus_thread></div>
+<script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return}var b=document,a=b.createElement('script');a.async=!0,a.src='//6120s-blog.disqus.com/embed.js',a.setAttribute('data-timestamp',+new Date),(b.head||b.body).appendChild(a)})()</script>
+<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript>
+<a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a>
+</article>
+</div>
+<footer class=footer>
+<div class=footer__inner>
+<div class="copyright copyright--user">
+<span> </span>
+</div>
+</div>
+</footer>
+<script type=text/javascript src=/bundle.min.js></script>
+</div>
+</div>
+</body>
+<script></script>
+</html>
