@@ -97,7 +97,7 @@ Regarding the output:
 Titles are not passed through GPT, and they are raw user entries. Normalizing the title is a good next step.</description><content>&lt;p>This article is a working draft; I will update it as I go.&lt;/p>
 &lt;p>If you have yet to read the first part of this series, you can find it &lt;a href="https://6120.eu/posts/analyzing-ordinal-github-issues/">here&lt;/a>.&lt;/p>
 &lt;p>We built a tool to help us analyze GitHub issues. Below is the result in action or a &lt;a href="https://6120.eu/codes/analyzing-ordinal-github-issues-p2/issues-display.html">page&lt;/a>.&lt;/p>
-&lt;iframe width="600" height="600" frameborder="0" src="https://6120.eu/codes/analyzing-ordinal-github-issues-p2/issues-display.html" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>&lt;/iframe>
+&lt;iframe width="600" height="600" frameborder="0" src="https://6120.eu/codes/analyzing-ordinal-github-issues-p2/issues-display.html" allowfullscreen>&lt;/iframe>
 &lt;p>Regarding the output:&lt;/p>
 &lt;ul>
 &lt;li>Titles are not passed through GPT, and they are raw user entries. Normalizing the title is a good next step.&lt;/li>
