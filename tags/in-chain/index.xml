@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>in-chain on 6120's Notes</title><link>https://6120.eu/tags/in-chain/</link><description>Recent content in in-chain on 6120's Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright/><lastBuildDate>Sat, 03 Feb 2024 13:22:00 +0100</lastBuildDate><atom:link href="https://6120.eu/tags/in-chain/index.xml" rel="self" type="application/rss+xml"/><item><title>{In,On}-Chain</title><link>https://6120.eu/posts/in-on-chain/</link><pubDate>Sat, 03 Feb 2024 13:22:00 +0100</pubDate><guid>https://6120.eu/posts/in-on-chain/</guid><description>In the rapidly evolving realm of Non-Fungible Tokens (NFTs), distinguishing between &amp;ldquo;in-chain&amp;rdquo; and &amp;ldquo;on-chain&amp;rdquo; is crucial for understanding how digital artworks are stored and processed within the blockchain ecosystem. This article delves into the nuanced differences between these two concepts, shedding light on their implications for NFT artwork and its interaction with blockchain technology.
+In-Chain vs. On-Chain: Definitions and Distinctions In-Chain refers to data that is both stored and processed on the blockchain.</description><content>&lt;p>In the rapidly evolving realm of Non-Fungible Tokens (NFTs), distinguishing between &amp;ldquo;in-chain&amp;rdquo; and &amp;ldquo;on-chain&amp;rdquo; is crucial for understanding how digital artworks are stored and processed within the blockchain ecosystem. This article delves into the nuanced differences between these two concepts, shedding light on their implications for NFT artwork and its interaction with blockchain technology.&lt;/p>
+&lt;h1 id="in-chain-vs-on-chain-definitions-and-distinctions">In-Chain vs. On-Chain: Definitions and Distinctions&lt;/h1>
+&lt;p>In-Chain refers to data that is both stored and processed on the blockchain. When applied to NFT artwork, this means that the media is processed into its displayable form by the blockchain&amp;rsquo;s first execution layer, such as the Ethereum Virtual Machine (EVM) for Ethereum. This process ensures that the artwork does not require Turing complete processing after the initial on-chain execution, making it directly observable from the blockchain without additional post-chain processing.&lt;/p>
+&lt;p>On-Chain, in contrast, pertains to data that is stored on the blockchain but processed off-chain. This means that while the media is stored within the blockchain, the actual rendering and processing of the artwork occur off-chain, often in real-time and using external technologies like JavaScript. NFTs that necessitate such Post-Chain Processing (PCP) include those that are displayed or interacted with through browsers, desktop applications, or games.&lt;/p>
+&lt;h2 id="challenges-and-considerations">Challenges and Considerations&lt;/h2>
+&lt;p>Selecting the appropriate level of in-chain versus on-chain processing for a specific media type involves navigating multiple challenges. These include considering the media&amp;rsquo;s format (e.g., raster image, interactive vector image, sound) and the processing capabilities required at each layer (EVM to JavaScript, Equalizer, etc.). The decision hinges on the unique requirements and constraints of each use case, aiming to strike a balance between on-chain storage efficiency and off-chain processing flexibility.&lt;/p>
+&lt;h2 id="media-types-and-post-chain-processing">Media Types and Post-Chain Processing&lt;/h2>
+&lt;p>The following table highlights various media types and their requirements for Post-Chain Processing (PCP):&lt;/p>
+&lt;p>Media types with Post-Chain Processing:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Media&lt;/th>
+&lt;th>Audio&lt;/th>
+&lt;th>Image&lt;/th>
+&lt;th>PCP&lt;/th>
+&lt;th>Example&lt;/th>
+&lt;th>Comments&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;a href="https://en.wikipedia.org/wiki/BMP_file_format">BMP&lt;/a>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>X&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;a href="https://opensea.io/fr/assets/ethereum/0x23581767a106ae21c074b2276d25e5c3e136a68b/8173">MoonBirds&lt;/a>, &lt;a href="https://opensea.io/assets/ethereum/0x46d0d00e847ed9c2756cfd941e70d99e9152a22f/0">ReaperGambitEpitaph&lt;/a>&lt;/td>
+&lt;td>Stored on Ethereum mainnet&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://en.wikipedia.org/wiki/GIF#File_format">GIF&lt;/a>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>X&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>n/a&lt;/td>
+&lt;td>n/a&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://www.khronos.org/assets/uploads/developers/library/overview/gltf-overview.pdf">GLTF&lt;/a>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>X&lt;/td>
+&lt;td>?&lt;/td>
+&lt;td>&lt;a href="https://www.ord.io/489270">SkyLight&lt;/a>&lt;/td>
+&lt;td>Bitcoin Ordinal 489270&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://en.wikipedia.org/wiki/JPEG#Syntax_and_structure">JPG&lt;/a>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>X&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>n/a&lt;/td>
+&lt;td>n/a&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://https://en.wikipedia.org/wiki/MP4_file_format#Data_streams">MP4&lt;/a>&lt;/td>
+&lt;td>X&lt;/td>
+&lt;td>X&lt;/td>
+&lt;td>?&lt;/td>
+&lt;td>n/a&lt;/td>
+&lt;td>May contains multiple media streams&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://en.wikipedia.org/wiki/WAV#">WAV&lt;/a>&lt;/td>
+&lt;td>X&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;a href="https://opensea.io/assets/ethereum/0x9d27527ada2cf29fbdab2973cfa243845a08bd3f/405">Bleeps&lt;/a>&lt;/td>
+&lt;td>On-chain sound note&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://en.wikipedia.org/wiki/Ogg#">OGG&lt;/a>&lt;/td>
+&lt;td>X&lt;/td>
+&lt;td>X&lt;/td>
+&lt;td>&lt;a href="https://en.wikipedia.org/wiki/Continuous_Media_Markup_Language">X&lt;/a>&lt;/td>
+&lt;td>n/a&lt;/td>
+&lt;td>n/a&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://en.wikipedia.org/wiki/HTML#">HTML&lt;/a>&lt;/td>
+&lt;td>X&lt;/td>
+&lt;td>X&lt;/td>
+&lt;td>X&lt;/td>
+&lt;td>&lt;a href="https://ordinals.com/content/521f8eccffa4c41a3a7728dd012ea5a4a02feed81f41159231251ecf1e5c79dai0">Yet Another Doom Clone&lt;/a>&lt;/td>
+&lt;td>Ordinal 466&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://en.wikipedia.org/wiki/SVG">SVG&lt;/a>&lt;/td>
+&lt;td>X&lt;/td>
+&lt;td>X&lt;/td>
+&lt;td>&lt;a href="https://en.wikipedia.org/wiki/SVG_animation">X&lt;/a>&lt;/td>
+&lt;td>n/a&lt;/td>
+&lt;td>n/a&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>These examples underscore the versatility and potential of in-chain NFTs for ensuring compatibility across various devices and platforms, opening new avenues for interactive and dynamic artwork creation via smart contracts.&lt;/p>
+&lt;h1 id="conclusion">Conclusion&lt;/h1>
+&lt;p>The distinction between in-chain and on-chain NFTs lies at the heart of how digital artworks are stored, processed, and experienced within the blockchain framework. While in-chain NFTs offer a seamless experience without the need for additional processing, on-chain NFTs provide a canvas for more complex and interactive artworks, albeit with the requirement for external processing resources. As the NFT landscape continues to evolve, understanding these nuances becomes paramount for creators, collectors, and technologists alike.&lt;/p>
+&lt;h2 id="mind-map-nft-dynamism">Mind map NFT dynamism&lt;/h2>
+&lt;iframe frameborder="0" style="min-width:1024px; min-height:768px; width:1024px;height:768px;" src="https://viewer.diagrams.net/?target=blank&amp;highlight=0000ff&amp;nav=1&amp;title=Dynamic%20NFT%20disambiguation.drawio#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1EKwLBN6kVsxHzujLLU3eX9c4ReQ2EUXX%26export%3Ddownload">&lt;/iframe>
+&lt;p>More ressources:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://www.fullyonchain.art/">Discover On-Chain NFT Projects&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://blog.simondlr.com/posts/flavours-of-on-chain-svg-nfts-on-ethereum">Simon de la Rouviere&amp;rsquo;s Flavours of on-chain SVG blog post&lt;/a>&lt;/li>
+&lt;/ul></content></item></channel></rss>
