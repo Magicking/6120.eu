@@ -17,7 +17,7 @@ If you have yet to read the first part of this series, you can find it [here](/p
 
 We built a tool to help us analyze GitHub issues. Below is the result in action or a [page](/codes/analyzing-ordinal-github-issues-p2/issues-display.html).
 
-<iframe width="600" height="600" frameborder="0" src="/codes/analyzing-ordinal-github-issues-p2/issues-display.html" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="600" height="600" frameborder="0" src="/codes/analyzing-ordinal-github-issues-p2/issues-display.html" allowfullscreen></iframe>
 
 Regarding the output:
  - Titles are not passed through GPT, and they are raw user entries. Normalizing the title is a good next step.
