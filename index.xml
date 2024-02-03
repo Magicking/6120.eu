@@ -1,4 +1,109 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>6120's Notes</title><link>https://6120.eu/</link><description>Recent content on 6120's Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright/><lastBuildDate>Mon, 07 Aug 2023 21:50:00 +0100</lastBuildDate><atom:link href="https://6120.eu/index.xml" rel="self" type="application/rss+xml"/><item><title>Note technique du paypal coin</title><link>https://6120.eu/drafts/pyusd/</link><pubDate>Mon, 07 Aug 2023 21:50:00 +0100</pubDate><guid>https://6120.eu/drafts/pyusd/</guid><description>Introduction Après être tombé sur la news https://newsroom.paypal-corp.com/2023-08-07-PayPal-Launches-U-S-Dollar-Stablecoin qui annonce la sortie d&amp;rsquo;un jeton ERC20 par PayPal et Paxos ainsi qu&amp;rsquo;après une recherche sur Twitter on tombe sur quelques informations techniques intéressantes.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>6120's Notes</title><link>https://6120.eu/</link><description>Recent content on 6120's Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright/><lastBuildDate>Sat, 03 Feb 2024 13:22:00 +0100</lastBuildDate><atom:link href="https://6120.eu/index.xml" rel="self" type="application/rss+xml"/><item><title>{In,On}-Chain</title><link>https://6120.eu/posts/in-on-chain/</link><pubDate>Sat, 03 Feb 2024 13:22:00 +0100</pubDate><guid>https://6120.eu/posts/in-on-chain/</guid><description>In-chain refers to data stored and processed on the blockchain, while on-chain relates to data stored on the blockchain but processed off-chain. In the case of NFT artwork, in-chain would refer to the media being processed in its displayable form by the first execution layer, such as the EVM in Ethereum. On-chain would refer to the media stored on the blockchain, but the processing and rendering of the artwork happens off-chain using JavaScript, for example, in real-time.</description><content>&lt;p>In-chain refers to data stored and processed on the blockchain, while on-chain relates to data stored on the blockchain but processed off-chain. In the case of NFT artwork, in-chain would refer to the media being processed in its displayable form by the first execution layer, such as the EVM in Ethereum. On-chain would refer to the media stored on the blockchain, but the processing and rendering of the artwork happens off-chain using JavaScript, for example, in real-time.&lt;/p>
+&lt;p>Some media formats, such as SVG, contain multiple data streams that may require different levels of processing; the primary data stream can be rendered using rasterization techniques and enhanced with CSS and JavaScript. Parts of the image may be processed in-chain, while others may be processed off-chain.&lt;/p>
+&lt;p>Depending on the context, the data type may be of multiple formats; it can be a raster image, an interactive vector image, or a sound so that the processing can be different for each context, and each processing layer may process it differently (EVM-&amp;gt;JavaScript, Equalizer, &amp;hellip;).
+Determining the appropriate in-chain and off-chain processing level for specific media types is challenging. It requires careful consideration of the particular requirements and constraints of the use case.&lt;/p>
+&lt;p>Thus, we can define in-chain NFT processing where the artwork does not require* turing complete processing after the first on-chain execution (e.g., when the tokenURI function returns embed audio/video/&amp;hellip; in metadata)
+(as in mandatory). The user&amp;rsquo;s processing capability for observing an NFT from the blockchain resident source is in-chain when it does not require post-chain processing (e.g., Twitter PFP, Wallet, Browser, Smart-Watches, &amp;hellip;).
+On the other hand, NFTs that require Post-Chain Processing (PCP), for example, in browsers, desktop apps, or games, are considered on-chain NFTs.&lt;/p>
+&lt;p>Media types with Post-Chain Processing:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Media&lt;/th>
+&lt;th>Audio&lt;/th>
+&lt;th>Image&lt;/th>
+&lt;th>PCP&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;a href="https://en.wikipedia.org/wiki/Audio_Video_Interleave#">AVI&lt;/a>&lt;/td>
+&lt;td>X&lt;/td>
+&lt;td>X&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://en.wikipedia.org/wiki/BMP_file_format">BMP&lt;/a>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>X&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://en.wikipedia.org/wiki/GIF#File_format">GIF&lt;/a>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>X&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://en.wikipedia.org/wiki/GlTF#GLB">GLB&lt;/a>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>X&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://www.khronos.org/assets/uploads/developers/library/overview/gltf-overview.pdf">GLTF&lt;/a>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>X&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://en.wikipedia.org/wiki/JPEG#Syntax_and_structure">JPG&lt;/a>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>X&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://https://en.wikipedia.org/wiki/MP4_file_format#Data_streams">MP4&lt;/a>&lt;/td>
+&lt;td>X&lt;/td>
+&lt;td>X&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://en.wikipedia.org/wiki/WAV#">WAV&lt;/a>&lt;/td>
+&lt;td>X&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://en.wikipedia.org/wiki/WebM#">WebM&lt;/a>&lt;/td>
+&lt;td>X&lt;/td>
+&lt;td>X&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://en.wikipedia.org/wiki/Ogg#">OGG&lt;/a>&lt;/td>
+&lt;td>X&lt;/td>
+&lt;td>X&lt;/td>
+&lt;td>&lt;a href="https://en.wikipedia.org/wiki/Continuous_Media_Markup_Language">X&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://en.wikipedia.org/wiki/HTML#">HTML&lt;/a>&lt;/td>
+&lt;td>X&lt;/td>
+&lt;td>X&lt;/td>
+&lt;td>X&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://en.wikipedia.org/wiki/SVG">SVG&lt;/a>&lt;/td>
+&lt;td>X&lt;/td>
+&lt;td>X&lt;/td>
+&lt;td>&lt;a href="https://en.wikipedia.org/wiki/SVG_animation">X&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="example-projects">Example projects&lt;/h2>
+&lt;p>In-chain BMP NFT is &lt;a href="https://vscode.blockscan.com/ethereum/0x46d0d00e847ed9c2756cfd941e70d99e9152a22f">ReaperGambitEpitaph&lt;/a> NFT processing image(&lt;a href="https://opensea.io/assets/ethereum/0x46d0d00e847ed9c2756cfd941e70d99e9152a22f/0">Artwork&lt;/a>)&lt;/p>
+&lt;p>In-chain WAV NFT is the &lt;a href="https://etherscan.deth.net/address/0xE114DCe59A333f8D351371F54188F92C287b73E6#code">Bleeps&lt;/a> NFT (&lt;a href="https://opensea.io/assets/ethereum/0x9d27527ada2cf29fbdab2973cfa243845a08bd3f/405">Artwork&lt;/a>)&lt;/p>
+&lt;p>(This is not an exhaustive list of all media types used for NFT artworks)&lt;/p>
+&lt;p>The concept of in-chain and on-chain NFTs refers to storing and processing digital artwork within the blockchain context by smart contracts following NFT standards*.
+In-chain NFT artworks do not require Post-Chain Processing; common standard hardware and software process them.
+On-chain NFT artworks require post-chain processing, such as browsers or desktop apps. The broad spectrum of possibilities for In-chain NFTs allows for excellent compatibility across devices. It opens up unexplored possibilities for on-chain computation, such as creating more interactive and dynamic artwork or using smart contracts to create unique, one-of-a-kind pieces.&lt;/p>
+&lt;p>*and other forms.&lt;/p>
+&lt;h2 id="mind-map">Mind map&lt;/h2>
+&lt;iframe frameborder="0" style="min-width:1024px; min-height:768px; width:1024px;height:768px;" src="https://viewer.diagrams.net/?target=blank&amp;highlight=0000ff&amp;nav=1&amp;title=Dynamic%20NFT%20disambiguation.drawio#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1EKwLBN6kVsxHzujLLU3eX9c4ReQ2EUXX%26export%3Ddownload">&lt;/iframe>
+&lt;p>More ressources:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://blog.simondlr.com/posts/flavours-of-on-chain-svg-nfts-on-ethereum">Simon de la Rouviere&amp;rsquo;s Flavours of on-chain SVG blog post&lt;/a>&lt;/li>
+&lt;/ul></content></item><item><title>Note technique du paypal coin</title><link>https://6120.eu/drafts/pyusd/</link><pubDate>Mon, 07 Aug 2023 21:50:00 +0100</pubDate><guid>https://6120.eu/drafts/pyusd/</guid><description>Introduction Après être tombé sur la news https://newsroom.paypal-corp.com/2023-08-07-PayPal-Launches-U-S-Dollar-Stablecoin qui annonce la sortie d&amp;rsquo;un jeton ERC20 par PayPal et Paxos ainsi qu&amp;rsquo;après une recherche sur Twitter on tombe sur quelques informations techniques intéressantes.
 C&amp;rsquo;est un jeton de type ERC20 qui peut-être mis en pause, dont la destruction (Burn) et la création (Mint) de sa quantité est régi par une entitée centralisée.
 Composition du jeton Le proxy du jeton avec lequel les utilisateurs vont interragir est 0x6c3ea9036406852006290770BEdFcAbA0e23A0e8, en oscultant un peu plus le smart-contract, on s&amp;rsquo;aperçoit qu&amp;rsquo;il y&amp;rsquo;a eu plusieurs implémentation du jeton au cours du passé</description><content>&lt;h1 id="introduction">Introduction&lt;/h1>
 &lt;p>Après être tombé sur la news &lt;a href="https://newsroom.paypal-corp.com/2023-08-07-PayPal-Launches-U-S-Dollar-Stablecoin">https://newsroom.paypal-corp.com/2023-08-07-PayPal-Launches-U-S-Dollar-Stablecoin&lt;/a> qui annonce la sortie d&amp;rsquo;un jeton ERC20 par PayPal et Paxos ainsi qu&amp;rsquo;après une recherche sur Twitter on tombe sur quelques informations techniques intéressantes.&lt;/p>
