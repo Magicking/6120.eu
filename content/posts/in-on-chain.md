@@ -1,5 +1,5 @@
 +++
-title = "{In,On}-Chain"
+title = "{In,On}-Chain discussion"
 date = "2024-02-03T13:22:00+01:00"
 author = "Magicking"
 authorTwitter = "magicking_" #do not include @
@@ -44,14 +44,25 @@ Media types with Post-Chain Processing:
 
 These examples underscore the versatility and potential of in-chain NFTs for ensuring compatibility across various devices and platforms, opening new avenues for interactive and dynamic artwork creation via smart contracts.
 
+# Costs
+
+In-chain data insertion typically incurs lower costs compared to on-chain methods due to the ability to leverage RPC provider execution to optimize the final artwork. The specifics of cost reduction may vary across different implementations. Additionally, storage maintenance is often provided at no additional cost on most blockchains.
+
+Conversely, off-chain storage solutions are significantly more cost-effective but require ongoing maintenance. Over an extended period, these maintenance expenses can accumulate, potentially surpassing the initial cost savings.
+
 # Conclusion
 
 The distinction between in-chain and on-chain NFTs lies at the heart of how digital artworks are stored, processed, and experienced within the blockchain framework. While in-chain NFTs offer a seamless experience without the need for additional processing, on-chain NFTs provide a canvas for more complex and interactive artworks, albeit with the requirement for external processing resources. As the NFT landscape continues to evolve, understanding these nuances becomes paramount for creators, collectors, and technologists alike.
 
-## Mind map NFT dynamism
+## Future work - NFT Dynamism
+
+NFT can be interactive and evolve, here is a mind map laying out the disambiugation work.
+
+Click [here](https://viewer.diagrams.net/index.html?target=blank&highlight=0000ff&nav=1&title=Dynamic%20NFT%20disambiguation.drawio#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1EKwLBN6kVsxHzujLLU3eX9c4ReQ2EUXX%26export%3Ddownload) if you have trouble navigating the document.
 
 <iframe frameborder="0" style="min-width:1024px; min-height:768px; width:1024px;height:768px;" src="https://viewer.diagrams.net/?target=blank&highlight=0000ff&nav=1&title=Dynamic%20NFT%20disambiguation.drawio#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1EKwLBN6kVsxHzujLLU3eX9c4ReQ2EUXX%26export%3Ddownload"></iframe>
 
 More ressources:
- - [Discover On-Chain NFT Projects](https://www.fullyonchain.art/)
+ - [On-Chain Checker](https://onchainchecker.xyz/)
  - [Simon de la Rouviere's Flavours of on-chain SVG blog post](https://blog.simondlr.com/posts/flavours-of-on-chain-svg-nfts-on-ethereum)
+ - [Discover On-Chain NFT Projects](https://www.fullyonchain.art/)
