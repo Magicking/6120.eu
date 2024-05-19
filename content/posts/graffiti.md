@@ -61,4 +61,7 @@ Gold points will be redistributed to the minters and Pay-to-gain enjoyers.
  - XXXX-XX-XX: Anonymous minting
  - 2024-07-14: Update of the tokenomics
 
-[Paint your Graffiti](https://g.6120.eu/mint)
+### [Paint your Graffiti](https://g.6120.eu/mint)
+### [Sky.Light](sky-light-sl.com)
+
+### [X/Twitter](https://x.com/GraffitiBLKCHN)
