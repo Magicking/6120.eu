@@ -1,5 +1,5 @@
 +++
-title = "Graffiti"
+title = "Graffiti NFT"
 date = "2024-05-06T14:32:03+01:00"
 tags = ["ethereum", "on-chain", "nft", "graffiti", "AI generated"]
 description = "Graffiti NFT is a new frontier in digital art. It combines creativity, accessibility, and interactivity in a way that sets it apart from other NFT projects."
@@ -11,13 +11,13 @@ color = "" #color from the theme settings
 
 [Graffiti NFT](https://g.6120.eu)
 
-# Graffiti NFT
+# About The Project
 
-## Introducing Graffiti NFT: A New Frontier in Digital Art
+## Introducing Graffiti NFT: A New Frontier in Digital Graffiti NFT Art
 Welcome to Graffiti NFT, an innovative project revolutionizing the nft digital art world! With our unique approach, we combine creativity, accessibility, and interactivity in a way that sets us apart from other NFT projects. Let’s dive into the core aspects that make Graffiti NFT a game-changer.
 
 ## Make Graffiti: Unleash Your Creativity
-At the heart of Graffiti NFT is the 'Make Art' feature. This feature offers a 128-pixel square canvas on which you can create your masterpiece using a single color from the entire RGB palette. This minimalist approach challenges artists to think outside the box and create truly unique and expressive works of art. The simplicity of the tools amplifies creativity, pushing artists to explore new possibilities within tight constraints.
+At the heart of Graffiti NFT is the 'Make Art' feature. This feature offers a 128-pixel square canvas on which you can create your masterpiece using a single color from the entire RGB palette. This minimalist approach challenges graffiters to think outside the box and create truly unique and expressive works of a graffiti. The simplicity of the tools amplifies creativity, pushing artists to explore new possibilities within tight constraints.
 
 @TODO: ADD VIDEO OF THE MAKING OF AN ARTWORK
 
@@ -25,17 +25,17 @@ At the heart of Graffiti NFT is the 'Make Art' feature. This feature offers a 12
 We believe that art should be accessible to everyone. That’s why we’ve made minting nfts on Graffiti NFT completely free (except gas). You can mint your creations without worrying about upfront costs. By lowering the barrier to entry, we aim to foster a diverse and vibrant community of creators.
 
 ## Pay-to-Gain: The Thrill of the Chase
-Our 'Pay-to-Steal' feature introduces a thrilling dynamic to the nft marketplace. Here's how it works: nfts can be bought, sold, or traded like on any other platform, but there's a twist. Until 2024-07-14, someone can pay the floor price to claim your NFT. This adds an exciting layer of competition and strategy, encouraging users to stay engaged and keep an eye on their favorite pieces.
+Our 'Pay-to-Steal' feature introduces a thrilling dynamic to the nft marketplace. Here's how it works: nfts can be bought, sold, or traded like on any other platform, but there's a twist. Someone can pay the collection floor price to claim your NFT. This adds an exciting layer of competition and strategy, encouraging users to stay engaged and keep an eye on their favorite pieces.
 
 ## Farm Gold: Rewarding Creativity
-In Graffiti NFT, creating art isn’t just about expression; it’s also about earning rewards. Enter 'Farm Gold,' our unique point system that rewards artists based on the popularity and engagement of their NFTs. Gold points are redistributed to creators when there's sufficient activity, providing ongoing incentives for artists to continue producing amazing work. It's our way of ensuring that creativity and effort are continually recognized and rewarded.
+Creating Graffitis isn’t just about expression; it’s also about earning rewards. Enter 'Farm Gold,' our unique point system that rewards artists based on the popularity and engagement of their NFTs. Gold points are redistributed to creators when there's sufficient activity, providing ongoing incentives for artists to continue producing amazing work. It's our way of ensuring that creativity and effort are continually recognized and rewarded.
 
 ## Why Graffiti NFT?
 In a rapidly evolving NFT landscape, Graffiti NFT stands out by making art creation and ownership more interactive and rewarding. Our project is built on the principles of accessibility, creativity, and community. By offering free minting, dynamic market interactions, and continuous rewards, we’re creating a platform where artists and collectors alike can thrive.
 
 
 ## Get Involved
-Are you ready to be part of this exciting new venture? Whether you're an artist eager to showcase your work or a collector looking for unique pieces, Graffiti NFT has something for everyone. Stay tuned for more updates, and get ready to unleash your creativity in the world of Graffiti NFT!
+Are you ready to be part of this exciting new venture? Whether you're a graffiter eager to showcase your work or a collector looking for unique pieces, Graffiti NFT has something for everyone. Stay tuned for more updates, and get ready to unleash your creativity in the world of Graffiti NFT!
 
 [Paint your Graffiti](https://g.6120.eu/mint)
 
@@ -61,4 +61,7 @@ Gold points will be redistributed to the minters and Pay-to-gain enjoyers.
  - XXXX-XX-XX: Anonymous minting
  - 2024-07-14: Update of the tokenomics
 
-[Paint your Graffiti](https://g.6120.eu/mint)
+### [Paint your Graffiti](https://g.6120.eu/mint)
+### [Sky.Light](https://sky-light-sl.com)
+
+### [X/Twitter](https://x.com/GraffitiBLKCHN)

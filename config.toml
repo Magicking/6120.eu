@@ -73,21 +73,22 @@ enableRobotsTXT = true
   [languages.en]
     languageName = "English"
     title = "6120's Notes"
-    subtitle = "Magicking's notes"
-    owner = ""
-    keywords = ""
     copyright = " "
-    menuMore = "Show more"
-    readMore = "Read more"
-    readOtherPosts = "Read other posts"
-    newerPosts = "Newer posts"
-    olderPosts = "Older posts"
-    missingContentMessage = "Page not found..."
-    missingBackButtonLabel = "Back to home page"
 
-    [languages.en.params.logo]
-      logoText = "Magicking's notes"
-      logoHomeLink = "/"
+    [languages.en.params]
+      subtitle = "Magicking's notes"
+      owner = ""
+      keywords = ""
+      menuMore = "Show more"
+      readMore = "Read more"
+      readOtherPosts = "Read other posts"
+      newerPosts = "Newer posts"
+      olderPosts = "Older posts"
+      missingContentMessage = "Page not found..."
+      missingBackButtonLabel = "Back to home page"
+      [languages.en.params.logo]
+        logoText = "Magicking's notes"
+        logoHomeLink = "/"
 
 [markup]
   [markup.goldmark]
