@@ -16,20 +16,20 @@ color = "" #color from the theme settings
 In the rapidly evolving realm of Non-Fungible Tokens (NFTs), distinguishing between "inchain" and "onchain" is crucial for understanding how digital artworks are stored and processed within the blockchain ecosystem. This article delves into the nuanced differences between these two concepts, shedding light on their implications for NFT artwork and its interaction with blockchain technology.
 
 # Inchain vs. Onchain: Definitions and Distinctions
-In-Chain refers to data that is both stored and processed on the blockchain. When applied to NFT artwork, this means that the media is processed into its displayable form by the blockchain's first execution layer, such as the Ethereum Virtual Machine (EVM) for Ethereum. This process ensures that the artwork does not require Turing complete processing after the initial onchain execution, making it directly observable from the blockchain without additional postchain processing.
+Inchain refers to data that is both stored and processed on the blockchain. When applied to NFT artwork, this means that the media is processed into its displayable form by the blockchain's first execution layer, such as the Ethereum Virtual Machine (EVM) for Ethereum. This process ensures that the artwork does not require Turing complete processing after the initial onchain execution, making it directly observable from the blockchain without additional postchain processing.
 
-On-Chain, in contrast, pertains to data that is stored on the blockchain but processed offchain. This means that while the media is stored within the blockchain, the actual rendering and processing of the artwork occur offchain, often in real-time and using external technologies like JavaScript. NFTs that necessitate such Post-Chain Processing (PCP) include those that are displayed or interacted with through browsers, desktop applications, or games.
+Onchain, in contrast, pertains to data that is stored on the blockchain but processed offchain. This means that while the media is stored within the blockchain, the actual rendering and processing of the artwork occur offchain, often in real-time and using external technologies like JavaScript. NFTs that necessitate such Postchain Processing (PCP) include those that are displayed or interacted with through browsers, desktop applications, or games.
 
 ## Challenges and Considerations
 Selecting the appropriate level of inchain versus onchain processing for a specific media type involves navigating multiple challenges. These include considering the media's format (e.g., raster image, interactive vector image, sound) and the processing capabilities required at each layer (EVM to JavaScript, Equalizer, etc.). The decision hinges on the unique requirements and constraints of each use case, aiming to strike a balance between onchain storage efficiency and offchain processing flexibility.
 
 Differentiating between pure SVG/HTML and Turing-complete languages highlights a conceptual challenge due to the inherent nature of SVG (Scalable Vector Graphics) and HTML (HyperText Markup Language) as descriptive languages, rather than computational or programming languages. SVG and HTML are fundamentally designed to describe the layout, structure, and presentation of content on the web, lacking the ability to perform arbitrary computations or algorithmic processes that define Turing completeness. This distinction becomes blurred when considering the interactive and dynamic capabilities that can be embedded within SVG and HTML documents through the use of JavaScript and CSS. While SVG and HTML alone do not possess the computational capabilities to be considered Turing complete, their integration with scripting languages enables them to support complex interactions and behaviors, making it difficult to separate their descriptive nature from the potential for Turing-complete operations facilitated by external scripts. This complexity underscores the challenge in categorizing SVG and HTML strictly as non-Turing-complete languages, especially in the context of modern web applications where the lines between content description and computational logic increasingly intersect.
 
-## Media Types and Post-Chain Processing
+## Media Types and Postchain Processing
 
-The following table highlights various media types and their requirements for Post-Chain Processing (PCP):
+The following table highlights various media types and their requirements for PostChain Processing (PCP):
 
-Media types with Post-Chain Processing:
+Media types with Postchain Processing:
 
 | Media | Audio | Image | PCP | Example | Comments |
 | ----- | ------| ----- | ----| --------| ---------|
