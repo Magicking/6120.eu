@@ -11,4 +11,16 @@ hideComments = false
 color = "" #color from the theme settings
 +++
 
-# WIP
+# Ethernal Graffiti Onchain On Base
+
+It offers the solution to let a digital drawing similar as street tag onchain the Base blockchain as part of its state.
+As long as the Base blockchain exists, the picture and the mean to display it will work.
+Removing the most commonly unplanned maintenance cost of NFT artworks for cheaper than the price of spray paint can.
+
+# Stacks
+
+ - Base Blockchain
+ - Forge
+ - Solidity
+ - Svelte
+ - Tenderly
