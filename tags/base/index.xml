@@ -1,1 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>base on 6120's Notes</title><link>https://6120.eu/tags/base/</link><description>Recent content in base on 6120's Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright/><lastBuildDate>Sun, 30 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://6120.eu/tags/base/index.xml" rel="self" type="application/rss+xml"/><item><title>Onchain Summer Hackaton porting Graffiti NFT to Base Blockchain</title><link>https://6120.eu/posts/graffiti-base/</link><pubDate>Sun, 30 Jun 2024 00:00:00 +0000</pubDate><guid>https://6120.eu/posts/graffiti-base/</guid><description>WIP</description><content>&lt;h1 id="wip">WIP&lt;/h1></content></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>base on 6120's Notes</title><link>https://6120.eu/tags/base/</link><description>Recent content in base on 6120's Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright/><lastBuildDate>Sun, 30 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://6120.eu/tags/base/index.xml" rel="self" type="application/rss+xml"/><item><title>Onchain Summer Hackaton porting Graffiti NFT to Base Blockchain</title><link>https://6120.eu/posts/graffiti-base/</link><pubDate>Sun, 30 Jun 2024 00:00:00 +0000</pubDate><guid>https://6120.eu/posts/graffiti-base/</guid><description>Ethernal Graffiti Onchain On Base It offers the solution to let a digital drawing similar as street tag onchain the Base blockchain as part of its state. As long as the Base blockchain exists, the picture and the mean to display it will work. Removing the most commonly unplanned maintenance cost of NFT artworks for cheaper than the price of spray paint can.
+Stacks Base Blockchain Forge Solidity Svelte Tenderly</description><content>&lt;h1 id="ethernal-graffiti-onchain-on-base">Ethernal Graffiti Onchain On Base&lt;/h1>
+&lt;p>It offers the solution to let a digital drawing similar as street tag onchain the Base blockchain as part of its state.
+As long as the Base blockchain exists, the picture and the mean to display it will work.
+Removing the most commonly unplanned maintenance cost of NFT artworks for cheaper than the price of spray paint can.&lt;/p>
+&lt;h1 id="stacks">Stacks&lt;/h1>
+&lt;ul>
+&lt;li>Base Blockchain&lt;/li>
+&lt;li>Forge&lt;/li>
+&lt;li>Solidity&lt;/li>
+&lt;li>Svelte&lt;/li>
+&lt;li>Tenderly&lt;/li>
+&lt;/ul></content></item></channel></rss>
