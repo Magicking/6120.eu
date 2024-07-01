@@ -21,9 +21,10 @@ Removing the most commonly unplanned maintenance cost of NFT artworks for cheape
 
 ## License: Creative Commons
 
- - Link: https://6120.eu/posts/graffiti-base/
-
  - Usage: https://youtu.be/tZ01D_xwHCk
+
+ - Code source: https://github.com/Magicking/g-base
+
 
 # Previous work
 
