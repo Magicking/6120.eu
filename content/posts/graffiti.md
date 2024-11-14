@@ -19,7 +19,7 @@ Welcome to Graffiti NFT, an innovative project revolutionizing the nft digital a
 ## Make Graffiti: Unleash Your Creativity
 At the heart of Graffiti NFT is the 'Make Art' feature. This feature offers a 128-pixel square canvas on which you can create your masterpiece using a single color from the entire RGB palette. This minimalist approach challenges graffiters to think outside the box and create truly unique and expressive works of a graffiti. The simplicity of the tools amplifies creativity, pushing artists to explore new possibilities within tight constraints.
 
-@TODO: ADD VIDEO OF THE MAKING OF AN ARTWORK
+{{< video autoplay="true" loop="true" src="/img/posts/graffiti/photoshoot.mp4" style="width: 200px;" >}}
 
 ## Free-to-Mint: Art for Everyone
 We believe that art should be accessible to everyone. That’s why we’ve made minting nfts on Graffiti NFT completely free (except gas). You can mint your creations without worrying about upfront costs. By lowering the barrier to entry, we aim to foster a diverse and vibrant community of creators.
