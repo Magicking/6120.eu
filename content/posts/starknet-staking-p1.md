@@ -25,11 +25,13 @@ Getting the StarkNet full node up and running on the Freebox was an exercise in 
 
 ## Validator Implementation
 
-The validator setup was surprisingly straightforward once the full node was operational as there was no implementation existing (Note, there are now 2 implementation existing). Monitoring was handled through a combination of Prometheus and Grafana, giving us real-time insights into the node's performance and health.
+The validator setup was surprisingly straightforward once the full node was operational as there was no implementation existing (Note, there are now 2 implementations existing). Monitoring was handled through a combination of Prometheus and Grafana, giving us real-time insights into the node's performance and health.
 
 ## Performance Analysis
 
-During normal operation, the Freebox validator handled block processing adequately, maintaining sync with the network without issues. However, the limitations became apparent during high transaction volume periods. The quad-core ARM processor, while efficient, struggled to keep up with the computational demands of processing large blocks during network congestion. This was particularly evident during High TPS events(TBD screenshot), where transaction throughput would spike dramatically.
+During normal operation, the Freebox validator handled block processing adequately, maintaining sync with the network without issues. However, the limitations became apparent during high transaction volume periods. The quad-core ARM processor, while efficient, struggled to keep up with the computational demands of processing large blocks during network congestion. This was particularly evident during High TPS events, where transaction throughput would spike dramatically.
+
+![](/img/posts/starknet-p1/429125323-b6be1679-d88a-418a-a90e-24104370007e.png)
 
 ## Lessons Learned
 
