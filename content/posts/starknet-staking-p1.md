@@ -1,6 +1,6 @@
 +++
 title = "StarkNet Phase 1 - Freebox Validator"
-date = "2023-02-03T19:00:03+01:00"
+date = "2025-03-31T19:00:03+01:00"
 tags = ["starknet", "cairo"]
 description = "My experience running a StarkNet validator on a Freebox router during Phase 1, including challenges and learnings"
 showFullContent = false
