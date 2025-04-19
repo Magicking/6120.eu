@@ -31,7 +31,7 @@ The validator setup was surprisingly straightforward once the full node was oper
 
 During normal operation, the Freebox validator handled block processing adequately, maintaining sync with the network without issues. However, the limitations became apparent during high transaction volume periods. The quad-core ARM processor, while efficient, struggled to keep up with the computational demands of processing large blocks during network congestion. This was particularly evident during High TPS events, where transaction throughput would spike dramatically.
 
-![](/img/posts/starknet-p1/429125323-b6be1679-d88a-418a-a90e-24104370007e.png)
+![](/img/posts/starknet-p1/rpc-grafana-head.png)
 
 ## Lessons Learned
 
