@@ -51,7 +51,7 @@ Magicking's notes
 2025-03-31 ::
 [Updated :: 2025-03-31]
 </time>
-<span class=post-reading-time>:: 3 min read (521 words)</span>
+<span class=post-reading-time>:: 3 min read (602 words)</span>
 </div>
 <span class=post-tags>
 #<a href=https://6120.eu/tags/starknet/>starknet</a>&nbsp;
@@ -59,12 +59,14 @@ Magicking's notes
 </span>
 <div class=post-content><div>
 <h2 id=introduction>Introduction<a href=#introduction class=hanchor arialabel=Anchor>&#8983;</a> </h2>
+<p>This post is the beginning of a series of blog posts on hosting Starknet nodes. I always enjoy the challenges of hosting high-availability infrastructures and blockchain nodes always have their own set of problematics: large underlying databases, reactivity, syncing & signing speed&mldr; May this series help the path towards decentralization of Starknet. It begins with the cheapest system I could put my hands on.</p>
+<h1 id=phase-1>Phase 1<a href=#phase-1 class=hanchor arialabel=Anchor>&#8983;</a> </h1>
 <p><a href=https://www.starknet.io/blog/staking-phase-1/>StarkNet staking 1st phase</a> consist of solely running a full RPC node, at the time of writing, staking ask for 20_000 Strk tokens (~3700$). As there is no validator duties linking performance and reward it&rsquo;s an ideal moment to start scaling from the bottom.</p>
 <p>As a minimum viable product I choose a Virtual Machine (VM) running on my Internet Service Provider(ISP) router Freebox, because it&rsquo;s a system that cost me almost nothing, always running and can host VMs.</p>
 <h2 id=hardware-setup>Hardware Setup<a href=#hardware-setup class=hanchor arialabel=Anchor>&#8983;</a> </h2>
 <p>The Freebox Delta router, while primarily designed for home networking, surprisingly packs enough punch for our needs. Under the hood, it features a Quad-Core Armv8 Cortex A-72 processor and 2GB of RAM, which while modest, proved sufficient for our initial testing phase. The storage setup: two Crucial BX500 SATA SSDs in a 1TB RAID1 configuration.</p>
 <h2 id=initial-setup-and-challenges>Initial Setup and Challenges<a href=#initial-setup-and-challenges class=hanchor arialabel=Anchor>&#8983;</a> </h2>
-<p>Getting the StarkNet full node up and running on the Freebox was an exercise in resource optimization. The initial state synchronization proved to be the first major hurdle, with the limited RAM requiring careful memory management. The process took several days to complete, with the node frequently hitting memory limits during peak synchronization periods. Network bandwidth, while not a primary concern give the Freebox&rsquo;s gigabit connection a low latency, and needed careful monitoring to ensure it didn&rsquo;t impact household internet usage.</p>
+<p>Getting the StarkNet full node up and running on the Freebox was an exercise in resource optimization. The initial state synchronization proved to be the first major hurdle using a combination of snapshot and desktop computer, with the limited CPU & RAM. The process took several days to complete, with the node frequently hitting memory limits during peak synchronization periods. Network bandwidth, while not a primary concern give the Freebox&rsquo;s gigabit connection a low latency, and careful monitoring to ensure it didn&rsquo;t impact household internet usage.</p>
 <h2 id=validator-implementation>Validator Implementation<a href=#validator-implementation class=hanchor arialabel=Anchor>&#8983;</a> </h2>
 <p>The validator setup was surprisingly straightforward once the full node was operational as there was no implementation existing (Note, there are now 2 implementations existing). Monitoring was handled through a combination of Prometheus and Grafana, giving us real-time insights into the node&rsquo;s performance and health.</p>
 <h2 id=performance-analysis>Performance Analysis<a href=#performance-analysis class=hanchor arialabel=Anchor>&#8983;</a> </h2>
@@ -76,6 +78,11 @@ Magicking's notes
 <p>Moving forward, we&rsquo;re considering several options to improve our setup. A dedicated mini-PC with more RAM and a more powerful processor would be the logical next step, while still maintaining the cost-effectiveness that made the Freebox experiment appealing. We&rsquo;re also exploring ways to optimize the node software to better handle high-throughput periods.</p>
 <h2 id=conclusion>Conclusion<a href=#conclusion class=hanchor arialabel=Anchor>&#8983;</a> </h2>
 <p>The Freebox validator experiment was a valuable learning experience in Phase 1 of StarkNet&rsquo;s staking journey. While the hardware limitations prevented optimal performance during high-stress periods, it successfully demonstrated that running a validator doesn&rsquo;t require expensive enterprise-grade equipment. The experience has given us valuable insights into the minimum requirements for future phases and helped us identify areas for improvement in our setup.</p>
+<h1 id=artifacts>Artifacts<a href=#artifacts class=hanchor arialabel=Anchor>&#8983;</a> </h1>
+<ul>
+<li>A <a href=https://gist.github.com/Magicking/73cc2802da9cd6c76905dac670b72cac>Grafana JSON Dashboard</a> to monitor your Pathfinder instances.</li>
+</ul>
+<p><img src=/img/posts/starknet-p1/pathfinder-metrics.png alt></p>
 </div></div>
 <div class=pagination>
 <div class=pagination__title>
