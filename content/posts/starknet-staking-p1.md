@@ -11,6 +11,10 @@ color = "" #color from the theme settings
 
 ## Introduction
 
+This post is the beginning of a series of blog posts on hosting Starknet nodes. I always enjoy the challenges of hosting high-availability infrastructures and blockchain nodes always have their own set of problematics: large underlying databases, reactivity, syncing & signing speed... May this series help the path towards decentralization of Starknet. It begins with the cheapest system I could put my hands on.
+
+# Phase 1
+
 [StarkNet staking 1st phase](https://www.starknet.io/blog/staking-phase-1/) consist of solely running a full RPC node, at the time of writing, staking ask for 20_000 Strk tokens (~3700$). As there is no validator duties linking performance and reward it's an ideal moment to start scaling from the bottom.
 
 As a minimum viable product I choose a Virtual Machine (VM) running on my Internet Service Provider(ISP) router Freebox, because it's a system that cost me almost nothing, always running and can host VMs.
@@ -21,7 +25,7 @@ The Freebox Delta router, while primarily designed for home networking, surprisi
 
 ## Initial Setup and Challenges
 
-Getting the StarkNet full node up and running on the Freebox was an exercise in resource optimization. The initial state synchronization proved to be the first major hurdle, with the limited RAM requiring careful memory management. The process took several days to complete, with the node frequently hitting memory limits during peak synchronization periods. Network bandwidth, while not a primary concern give the Freebox's gigabit connection a low latency, and needed careful monitoring to ensure it didn't impact household internet usage.
+Getting the StarkNet full node up and running on the Freebox was an exercise in resource optimization. The initial state synchronization proved to be the first major hurdle using a combination of snapshot and desktop computer, with the limited CPU & RAM. The process took several days to complete, with the node frequently hitting memory limits during peak synchronization periods. Network bandwidth, while not a primary concern give the Freebox's gigabit connection a low latency, and careful monitoring to ensure it didn't impact household internet usage.
 
 ## Validator Implementation
 
@@ -45,3 +49,8 @@ Moving forward, we're considering several options to improve our setup. A dedica
 
 The Freebox validator experiment was a valuable learning experience in Phase 1 of StarkNet's staking journey. While the hardware limitations prevented optimal performance during high-stress periods, it successfully demonstrated that running a validator doesn't require expensive enterprise-grade equipment. The experience has given us valuable insights into the minimum requirements for future phases and helped us identify areas for improvement in our setup.
 
+# Artifacts
+
+- A [Grafana JSON Dashboard](https://gist.github.com/Magicking/73cc2802da9cd6c76905dac670b72cac) to monitor your Pathfinder instances.
+
+![](/img/posts/starknet-p1/pathfinder-metrics.png)
