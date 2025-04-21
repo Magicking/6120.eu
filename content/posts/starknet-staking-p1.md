@@ -41,16 +41,42 @@ During normal operation, the Freebox validator handled block processing adequate
 
 The Freebox experiment taught us several valuable lessons about validator requirements. While the setup worked for Phase 1's basic requirements, it highlighted the importance of having headroom for processing power during network stress. The RAID1 storage setup proved fine, but the 2GB RAM limitation was a constant challenge. For future phases, we'll need to consider more powerful hardware for full node, and separate signers particularly as validator duties become active.
 
-## Next Steps
-
-Moving forward, we're considering several options to improve our setup. A dedicated mini-PC with more RAM and a more powerful processor would be the logical next step, while still maintaining the cost-effectiveness that made the Freebox experiment appealing. We're also exploring ways to optimize the node software to better handle high-throughput periods.
-
 ## Conclusion
 
 The Freebox validator experiment was a valuable learning experience in Phase 1 of StarkNet's staking journey. While the hardware limitations prevented optimal performance during high-stress periods, it successfully demonstrated that running a validator doesn't require expensive enterprise-grade equipment. The experience has given us valuable insights into the minimum requirements for future phases and helped us identify areas for improvement in our setup.
 
-# Artifacts
+# Usefuls links
 
-- A [Grafana JSON Dashboard](https://gist.github.com/Magicking/73cc2802da9cd6c76905dac670b72cac) to monitor your Pathfinder instances.
+Divers elements to help operate and setup the first phase 1.
+
+ - [Pathfinder v0.16.4](https://gist.github.com/Magicking/422a868e446564912eaa3f362b44f62f)
+
+- An optional [Grafana JSON Dashboard](https://gist.github.com/Magicking/73cc2802da9cd6c76905dac670b72cac) to monitor your Pathfinder instances.
 
 ![](/img/posts/starknet-p1/pathfinder-metrics.png)
+
+- [Starknet Testnet Faucet](https://starknet-faucet.vercel.app/)
+
+- Approve and stake Starknet token CLIs commands works also via browser via [1](https://sepolia.starkscan.co/token/0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d#read-write-contract-sub-write) and [2](https://sepolia.starkscan.co/contract/0x03745ab04a431fc02871a139be6b93d9260b0ff3e779ad9c8b377183b23109f1#read-write-contract-sub-write)
+
+```starkli invoke 0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d \
+approve \
+0x03745ab04a431fc02871a139be6b93d9260b0ff3e779ad9c8b377183b23109f1 \
+u256:1000000000000000000 \
+--network=sepolia
+
+starkli invoke 0x03745ab04a431fc02871a139be6b93d9260b0ff3e779ad9c8b377183b23109f1 \
+stake \
+<reward_address> <operational_address> 1000000000000000000 1 100 \
+--network=sepolia
+```
+
+- docker compose
+ - [node-exporter](https://hub.docker.com/r/prom/node-exporter)
+ - Pathfinder
+
+ - [Issue dump](https://github.com/Magicking/aarch64-starknet-validator/issues/1)
+
+## Next Steps
+
+Moving forward, we're considering several options to improve our setup. A dedicated mini-PC with more RAM and a more powerful processor would be the logical next step, while still maintaining the cost-effectiveness that made the Freebox experiment appealing. We're also exploring ways to optimize the node software to better handle high-throughput periods. And keep the Freebox as a passerel to a secure element.
