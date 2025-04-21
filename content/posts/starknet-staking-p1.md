@@ -57,7 +57,7 @@ Divers elements to help operate and setup the first phase 1.
 
 - [Starknet Testnet Faucet](https://starknet-faucet.vercel.app/)
 
-- Approve and stake Starknet token CLIs commands works also via browser via [1](https://sepolia.starkscan.co/token/0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d#read-write-contract-sub-write) and [2](https://sepolia.starkscan.co/contract/0x03745ab04a431fc02871a139be6b93d9260b0ff3e779ad9c8b377183b23109f1#read-write-contract-sub-write)
+- Approve and stake Starknet token using [starkli](https://book.starkli.rs/installation#install-from-source) CLIs commands works also via browser via [1](https://sepolia.starkscan.co/token/0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d#read-write-contract-sub-write) and [2](https://sepolia.starkscan.co/contract/0x03745ab04a431fc02871a139be6b93d9260b0ff3e779ad9c8b377183b23109f1#read-write-contract-sub-write)
 
 ```starkli invoke 0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d \
 approve \
