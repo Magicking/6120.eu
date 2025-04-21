@@ -33,7 +33,7 @@ Phase 1 StarkNet staking 1st phase consist of solely running a full RPC node, at
 &lt;p>&lt;a href="https://starknet-faucet.vercel.app/">Starknet Testnet Faucet&lt;/a>&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Approve and stake Starknet token CLIs commands works also via browser via &lt;a href="https://sepolia.starkscan.co/token/0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d#read-write-contract-sub-write">1&lt;/a> and &lt;a href="https://sepolia.starkscan.co/contract/0x03745ab04a431fc02871a139be6b93d9260b0ff3e779ad9c8b377183b23109f1#read-write-contract-sub-write">2&lt;/a>&lt;/p>
+&lt;p>Approve and stake Starknet token using &lt;a href="https://book.starkli.rs/installation#install-from-source">starkli&lt;/a> CLIs commands works also via browser via &lt;a href="https://sepolia.starkscan.co/token/0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d#read-write-contract-sub-write">1&lt;/a> and &lt;a href="https://sepolia.starkscan.co/contract/0x03745ab04a431fc02871a139be6b93d9260b0ff3e779ad9c8b377183b23109f1#read-write-contract-sub-write">2&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;pre tabindex="0">&lt;code class="language-starkli" data-lang="starkli">approve \
