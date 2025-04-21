@@ -51,7 +51,7 @@ Magicking's notes
 2025-03-31 ::
 [Updated :: 2025-03-31]
 </time>
-<span class=post-reading-time>:: 3 min read (602 words)</span>
+<span class=post-reading-time>:: 4 min read (672 words)</span>
 </div>
 <span class=post-tags>
 #<a href=https://6120.eu/tags/starknet/>starknet</a>&nbsp;
@@ -74,15 +74,52 @@ Magicking's notes
 <p><img src=/img/posts/starknet-p1/rpc-grafana-head.png alt></p>
 <h2 id=lessons-learned>Lessons Learned<a href=#lessons-learned class=hanchor arialabel=Anchor>&#8983;</a> </h2>
 <p>The Freebox experiment taught us several valuable lessons about validator requirements. While the setup worked for Phase 1&rsquo;s basic requirements, it highlighted the importance of having headroom for processing power during network stress. The RAID1 storage setup proved fine, but the 2GB RAM limitation was a constant challenge. For future phases, we&rsquo;ll need to consider more powerful hardware for full node, and separate signers particularly as validator duties become active.</p>
-<h2 id=next-steps>Next Steps<a href=#next-steps class=hanchor arialabel=Anchor>&#8983;</a> </h2>
-<p>Moving forward, we&rsquo;re considering several options to improve our setup. A dedicated mini-PC with more RAM and a more powerful processor would be the logical next step, while still maintaining the cost-effectiveness that made the Freebox experiment appealing. We&rsquo;re also exploring ways to optimize the node software to better handle high-throughput periods.</p>
 <h2 id=conclusion>Conclusion<a href=#conclusion class=hanchor arialabel=Anchor>&#8983;</a> </h2>
 <p>The Freebox validator experiment was a valuable learning experience in Phase 1 of StarkNet&rsquo;s staking journey. While the hardware limitations prevented optimal performance during high-stress periods, it successfully demonstrated that running a validator doesn&rsquo;t require expensive enterprise-grade equipment. The experience has given us valuable insights into the minimum requirements for future phases and helped us identify areas for improvement in our setup.</p>
-<h1 id=artifacts>Artifacts<a href=#artifacts class=hanchor arialabel=Anchor>&#8983;</a> </h1>
+<h1 id=usefuls-links>Usefuls links<a href=#usefuls-links class=hanchor arialabel=Anchor>&#8983;</a> </h1>
+<p>Divers elements to help operate and setup the first phase 1.</p>
 <ul>
-<li>A <a href=https://gist.github.com/Magicking/73cc2802da9cd6c76905dac670b72cac>Grafana JSON Dashboard</a> to monitor your Pathfinder instances.</li>
+<li>
+<p><a href=https://gist.github.com/Magicking/422a868e446564912eaa3f362b44f62f>Pathfinder v0.16.4</a></p>
+</li>
+<li>
+<p>An optional <a href=https://gist.github.com/Magicking/73cc2802da9cd6c76905dac670b72cac>Grafana JSON Dashboard</a> to monitor your Pathfinder instances.</p>
+</li>
 </ul>
 <p><img src=/img/posts/starknet-p1/pathfinder-metrics.png alt></p>
+<ul>
+<li>
+<p><a href=https://starknet-faucet.vercel.app/>Starknet Testnet Faucet</a></p>
+</li>
+<li>
+<p>Approve and stake Starknet token CLIs commands works also via browser via <a href=https://sepolia.starkscan.co/token/0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d#read-write-contract-sub-write>1</a> and <a href=https://sepolia.starkscan.co/contract/0x03745ab04a431fc02871a139be6b93d9260b0ff3e779ad9c8b377183b23109f1#read-write-contract-sub-write>2</a></p>
+</li>
+</ul>
+<pre tabindex=0><code class=language-starkli data-lang=starkli>approve \
+0x03745ab04a431fc02871a139be6b93d9260b0ff3e779ad9c8b377183b23109f1 \
+u256:1000000000000000000 \
+--network=sepolia
+
+starkli invoke 0x03745ab04a431fc02871a139be6b93d9260b0ff3e779ad9c8b377183b23109f1 \
+stake \
+&lt;reward_address&gt; &lt;operational_address&gt; 1000000000000000000 1 100 \
+--network=sepolia
+</code></pre><ul>
+<li>
+<p>docker compose</p>
+</li>
+<li>
+<p><a href=https://hub.docker.com/r/prom/node-exporter>node-exporter</a></p>
+</li>
+<li>
+<p>Pathfinder</p>
+</li>
+<li>
+<p><a href=https://github.com/Magicking/aarch64-starknet-validator/issues/1>Issue dump</a></p>
+</li>
+</ul>
+<h2 id=next-steps>Next Steps<a href=#next-steps class=hanchor arialabel=Anchor>&#8983;</a> </h2>
+<p>Moving forward, we&rsquo;re considering several options to improve our setup. A dedicated mini-PC with more RAM and a more powerful processor would be the logical next step, while still maintaining the cost-effectiveness that made the Freebox experiment appealing. We&rsquo;re also exploring ways to optimize the node software to better handle high-throughput periods. And keep the Freebox as a passerel to a secure element.</p>
 </div></div>
 <div class=pagination>
 <div class=pagination__title>

@@ -15,15 +15,51 @@ Phase 1 StarkNet staking 1st phase consist of solely running a full RPC node, at
 &lt;p>&lt;img src="https://6120.eu/img/posts/starknet-p1/rpc-grafana-head.png" alt="">&lt;/p>
 &lt;h2 id="lessons-learned">Lessons Learned&lt;/h2>
 &lt;p>The Freebox experiment taught us several valuable lessons about validator requirements. While the setup worked for Phase 1&amp;rsquo;s basic requirements, it highlighted the importance of having headroom for processing power during network stress. The RAID1 storage setup proved fine, but the 2GB RAM limitation was a constant challenge. For future phases, we&amp;rsquo;ll need to consider more powerful hardware for full node, and separate signers particularly as validator duties become active.&lt;/p>
-&lt;h2 id="next-steps">Next Steps&lt;/h2>
-&lt;p>Moving forward, we&amp;rsquo;re considering several options to improve our setup. A dedicated mini-PC with more RAM and a more powerful processor would be the logical next step, while still maintaining the cost-effectiveness that made the Freebox experiment appealing. We&amp;rsquo;re also exploring ways to optimize the node software to better handle high-throughput periods.&lt;/p>
 &lt;h2 id="conclusion">Conclusion&lt;/h2>
 &lt;p>The Freebox validator experiment was a valuable learning experience in Phase 1 of StarkNet&amp;rsquo;s staking journey. While the hardware limitations prevented optimal performance during high-stress periods, it successfully demonstrated that running a validator doesn&amp;rsquo;t require expensive enterprise-grade equipment. The experience has given us valuable insights into the minimum requirements for future phases and helped us identify areas for improvement in our setup.&lt;/p>
-&lt;h1 id="artifacts">Artifacts&lt;/h1>
+&lt;h1 id="usefuls-links">Usefuls links&lt;/h1>
+&lt;p>Divers elements to help operate and setup the first phase 1.&lt;/p>
 &lt;ul>
-&lt;li>A &lt;a href="https://gist.github.com/Magicking/73cc2802da9cd6c76905dac670b72cac">Grafana JSON Dashboard&lt;/a> to monitor your Pathfinder instances.&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://gist.github.com/Magicking/422a868e446564912eaa3f362b44f62f">Pathfinder v0.16.4&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>An optional &lt;a href="https://gist.github.com/Magicking/73cc2802da9cd6c76905dac670b72cac">Grafana JSON Dashboard&lt;/a> to monitor your Pathfinder instances.&lt;/p>
+&lt;/li>
 &lt;/ul>
-&lt;p>&lt;img src="https://6120.eu/img/posts/starknet-p1/pathfinder-metrics.png" alt="">&lt;/p></content></item><item><title>Onchain Summer Hackaton porting Graffiti NFT to Base Blockchain</title><link>https://6120.eu/posts/graffiti-base/</link><pubDate>Sun, 30 Jun 2024 00:00:00 +0000</pubDate><guid>https://6120.eu/posts/graffiti-base/</guid><description>Ethernal Graffiti Onchain On Base It offers the solution to let a digital drawing similar as street tag onchain the Base blockchain as part of its state.
+&lt;p>&lt;img src="https://6120.eu/img/posts/starknet-p1/pathfinder-metrics.png" alt="">&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://starknet-faucet.vercel.app/">Starknet Testnet Faucet&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Approve and stake Starknet token CLIs commands works also via browser via &lt;a href="https://sepolia.starkscan.co/token/0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d#read-write-contract-sub-write">1&lt;/a> and &lt;a href="https://sepolia.starkscan.co/contract/0x03745ab04a431fc02871a139be6b93d9260b0ff3e779ad9c8b377183b23109f1#read-write-contract-sub-write">2&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;pre tabindex="0">&lt;code class="language-starkli" data-lang="starkli">approve \
+0x03745ab04a431fc02871a139be6b93d9260b0ff3e779ad9c8b377183b23109f1 \
+u256:1000000000000000000 \
+--network=sepolia
+starkli invoke 0x03745ab04a431fc02871a139be6b93d9260b0ff3e779ad9c8b377183b23109f1 \
+stake \
+&amp;lt;reward_address&amp;gt; &amp;lt;operational_address&amp;gt; 1000000000000000000 1 100 \
+--network=sepolia
+&lt;/code>&lt;/pre>&lt;ul>
+&lt;li>
+&lt;p>docker compose&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://hub.docker.com/r/prom/node-exporter">node-exporter&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Pathfinder&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://github.com/Magicking/aarch64-starknet-validator/issues/1">Issue dump&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="next-steps">Next Steps&lt;/h2>
+&lt;p>Moving forward, we&amp;rsquo;re considering several options to improve our setup. A dedicated mini-PC with more RAM and a more powerful processor would be the logical next step, while still maintaining the cost-effectiveness that made the Freebox experiment appealing. We&amp;rsquo;re also exploring ways to optimize the node software to better handle high-throughput periods. And keep the Freebox as a passerel to a secure element.&lt;/p></content></item><item><title>Onchain Summer Hackaton porting Graffiti NFT to Base Blockchain</title><link>https://6120.eu/posts/graffiti-base/</link><pubDate>Sun, 30 Jun 2024 00:00:00 +0000</pubDate><guid>https://6120.eu/posts/graffiti-base/</guid><description>Ethernal Graffiti Onchain On Base It offers the solution to let a digital drawing similar as street tag onchain the Base blockchain as part of its state.
 As long as the Base blockchain exists, the picture and the mean to display it will work.
 Removing the most commonly unplanned maintenance cost of NFT artworks for cheaper than the price of spray paint can.
 License: Creative Commons Usage: https://youtu.be/tZ01D_xwHCk</description><content>&lt;h1 id="ethernal-graffiti-onchain-on-base">Ethernal Graffiti Onchain On Base&lt;/h1>
