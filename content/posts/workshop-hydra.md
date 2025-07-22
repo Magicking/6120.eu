@@ -1,4 +1,3 @@
-
 +++
 title = "Hydra Workshop"
 date = "2025-07-22T14:01:50+01:00"
