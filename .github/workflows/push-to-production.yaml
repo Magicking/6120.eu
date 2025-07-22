@@ -36,7 +36,7 @@ jobs:
         run: |
           mv public /tmp
           git checkout -f build
-          rm -rf posts content
+          rm -rf posts content themes
           cp -av /tmp/public/* .
           git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
           git config --global user.email "username@users.noreply.github.com"
