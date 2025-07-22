@@ -1,4 +1,400 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>6120's Notes</title><link>https://6120.eu/</link><description>Recent content on 6120's Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright/><lastBuildDate>Mon, 31 Mar 2025 19:00:03 +0100</lastBuildDate><atom:link href="https://6120.eu/index.xml" rel="self" type="application/rss+xml"/><item><title>StarkNet Phase 1 - Freebox Validator</title><link>https://6120.eu/posts/starknet-staking-p1/</link><pubDate>Mon, 31 Mar 2025 19:00:03 +0100</pubDate><guid>https://6120.eu/posts/starknet-staking-p1/</guid><description>Introduction This post is the beginning of a series of blog posts on hosting Starknet nodes. I always enjoy the challenges of hosting high-availability infrastructures and blockchain nodes always have their own set of problematics: large underlying databases, reactivity, syncing &amp;amp; signing speed&amp;hellip; May this series help the path towards decentralization of Starknet. It begins with the cheapest system I could put my hands on.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>6120's Notes</title><link>https://6120.eu/</link><description>Recent content on 6120's Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright/><lastBuildDate>Tue, 22 Jul 2025 01:01:50 +0100</lastBuildDate><atom:link href="https://6120.eu/index.xml" rel="self" type="application/rss+xml"/><item><title>Hydra Workshop</title><link>https://6120.eu/posts/workshop-hydra/</link><pubDate>Tue, 22 Jul 2025 01:01:50 +0100</pubDate><guid>https://6120.eu/posts/workshop-hydra/</guid><description>Hydra Visual Coding Workshop Duration: 2 hours + 1 hour bonus
+Format: 5 lessons (30min each) with 10min teaching + 15-20min workshop
+Lesson 1: Hydra 101 (10min + 20min) Teaching (10min) Objective: Get familiar with Hydra interface and basic workflow Navigate to https://hydra.ojack.xyz Interface tour (2min): Play/Stop button Clear button Examples dropdown Settings gear Documentation overview: Quick look at built-in help Basic workflow demonstration: osc(40, 0.</description><content>&lt;h1 id="hydra-visual-coding-workshop">Hydra Visual Coding Workshop&lt;/h1>
+&lt;p>&lt;strong>Duration:&lt;/strong> 2 hours + 1 hour bonus&lt;br>
+&lt;strong>Format:&lt;/strong> 5 lessons (30min each) with 10min teaching + 15-20min workshop&lt;/p>
+&lt;hr>
+&lt;h2 id="lesson-1-hydra-101-10min--20min">Lesson 1: Hydra 101 (10min + 20min)&lt;/h2>
+&lt;h3 id="teaching-10min">Teaching (10min)&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>Objective:&lt;/strong> Get familiar with Hydra interface and basic workflow&lt;/li>
+&lt;li>Navigate to &lt;a href="https://hydra.ojack.xyz">https://hydra.ojack.xyz&lt;/a>&lt;/li>
+&lt;li>&lt;strong>Interface tour (2min):&lt;/strong>
+&lt;ul>
+&lt;li>Play/Stop button&lt;/li>
+&lt;li>Clear button&lt;/li>
+&lt;li>Examples dropdown&lt;/li>
+&lt;li>Settings gear&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Documentation overview:&lt;/strong> Quick look at built-in help&lt;/li>
+&lt;li>&lt;strong>Basic workflow demonstration:&lt;/strong>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">osc&lt;/span>(&lt;span style="color:#ae81ff">40&lt;/span>, &lt;span style="color:#ae81ff">0.1&lt;/span>, &lt;span style="color:#ae81ff">1.2&lt;/span>).&lt;span style="color:#a6e22e">out&lt;/span>()
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>Show simple texture → output chain&lt;/li>
+&lt;/ul>
+&lt;h3 id="workshop-1-20min">Workshop 1 (20min)&lt;/h3>
+&lt;p>&lt;strong>Goal:&lt;/strong> Get your first visual output working&lt;/p>
+&lt;ul>
+&lt;li>Navigate to &lt;a href="https://hydra.ojack.xyz">https://hydra.ojack.xyz&lt;/a>&lt;/li>
+&lt;li>Try these basic generators:
+&lt;ul>
+&lt;li>&lt;code>osc().out()&lt;/code>&lt;/li>
+&lt;li>&lt;code>noise().out()&lt;/code>&lt;/li>
+&lt;li>&lt;code>solid(1,0,0).out()&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Experiment with changing numbers&lt;/li>
+&lt;li>Bookmark useful resources page (see cheatsheet)&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="lesson-2-experimenting-with-hydra-10min--20min">Lesson 2: Experimenting with Hydra (10min + 20min)&lt;/h2>
+&lt;h3 id="teaching-10min-1">Teaching (10min)&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>Core principle:&lt;/strong> &amp;ldquo;You always get a result, no matter what numbers you use&amp;rdquo;&lt;/li>
+&lt;li>&lt;strong>Math.PI exploration:&lt;/strong>
+&lt;ul>
+&lt;li>&lt;code>osc(40, 0.1, Math.PI).out()&lt;/code>&lt;/li>
+&lt;li>Show how Math.PI affects colors and scaling&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Number ranges:&lt;/strong> Demonstrate different parameter ranges&lt;/li>
+&lt;li>&lt;strong>Happy accidents:&lt;/strong> Show how random experimentation leads to discoveries&lt;/li>
+&lt;/ul>
+&lt;h3 id="workshop-2-20min">Workshop 2 (20min)&lt;/h3>
+&lt;p>&lt;strong>Goal:&lt;/strong> Understand parameter experimentation&lt;/p>
+&lt;ul>
+&lt;li>Navigate to &lt;a href="https://hydra.ojack.xyz/functions">https://hydra.ojack.xyz/functions&lt;/a>&lt;/li>
+&lt;li>Use this as reference while experimenting&lt;/li>
+&lt;li>Try:
+&lt;ul>
+&lt;li>Different frequency values: &lt;code>osc(10).out()&lt;/code> vs &lt;code>osc(100).out()&lt;/code>&lt;/li>
+&lt;li>Color experiments with Math.PI&lt;/li>
+&lt;li>Scaling with various numbers&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="lesson-3-mastering-the-chain--10min--20min">Lesson 3: Mastering the Chain &amp;ldquo;.&amp;rdquo; (10min + 20min)&lt;/h2>
+&lt;h3 id="teaching-10min-2">Teaching (10min)&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>The power of chaining:&lt;/strong> Everything connects with &amp;ldquo;.&amp;rdquo;&lt;/li>
+&lt;li>&lt;strong>Write slowly and deliberately&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Basic chain structure:&lt;/strong> &lt;code>source().transform().output()&lt;/code>&lt;/li>
+&lt;li>&lt;strong>Example progression:&lt;/strong>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">osc&lt;/span>() &lt;span style="color:#75715e">// just a source
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#a6e22e">osc&lt;/span>().&lt;span style="color:#a6e22e">rotate&lt;/span>() &lt;span style="color:#75715e">// add transformation
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#a6e22e">osc&lt;/span>().&lt;span style="color:#a6e22e">rotate&lt;/span>(&lt;span style="color:#ae81ff">0.1&lt;/span>).&lt;span style="color:#a6e22e">out&lt;/span>() &lt;span style="color:#75715e">// complete chain
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>Keep function reference page open&lt;/li>
+&lt;/ul>
+&lt;h3 id="workshop-3-20min">Workshop 3 (20min)&lt;/h3>
+&lt;p>&lt;strong>Goal:&lt;/strong> Practice chaining functions confidently&lt;/p>
+&lt;ul>
+&lt;li>Navigate to blank canvas &lt;a href="https://hydra.ojack.xyz">https://hydra.ojack.xyz&lt;/a>&lt;/li>
+&lt;li>Build chains step by step:
+&lt;ul>
+&lt;li>Start simple: &lt;code>noise().out()&lt;/code>&lt;/li>
+&lt;li>Add transforms: &lt;code>noise().color(1,0,0).out()&lt;/code>&lt;/li>
+&lt;li>Try combinations: &lt;code>osc().rotate().scale().out()&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Keep it simple, focus on the flow&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="lesson-4-hyper-hydra-modules-10min--20min">Lesson 4: Hyper-Hydra Modules (10min + 20min)&lt;/h2>
+&lt;h3 id="teaching-10min-3">Teaching (10min)&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>Introduction to external modules&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>ShaderPark (glsl) integration demo:&lt;/strong>
+&lt;ul>
+&lt;li>Navigate to: &lt;a href="https://hydra.ojack.xyz/?code=Y29uc3QlMjAlN0IlMjBzY3VscHRUb0h5ZHJhUmVuZGVyZXIlMjAlN0QlMjAlM0QlMjBhd2FpdCUyMGltcG9ydCglMjJodHRwcyUzQSUyRiUyRnVucGtnLmNvbSUyRnNoYWRlci1wYXJrLWNvcmUlMkZkaXN0JTJGc2hhZGVyLXBhcmstY29yZS5lc20uanMlMjIp">ShaderPark Example&lt;/a>&lt;/li>
+&lt;li>Show 3D sculptural possibilities&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Extensibility of Hydra&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;h3 id="workshop-4-20min">Workshop 4 (20min)&lt;/h3>
+&lt;p>&lt;strong>Goal:&lt;/strong> Explore advanced modules and understand performance&lt;/p>
+&lt;ul>
+&lt;li>Reference: &lt;a href="https://github.com/geikha/hyper-hydra">Hyper-Hydra GitHub&lt;/a>&lt;/li>
+&lt;li>Try the ShaderPark example&lt;/li>
+&lt;li>Experiment with:
+&lt;ul>
+&lt;li>Image loading functions&lt;/li>
+&lt;li>Canvas size modifications&lt;/li>
+&lt;li>CPU-intensive operations&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Notice performance differences&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="lesson-5-hydra-midi-integration-10min--20min">Lesson 5: Hydra-MIDI Integration (10min + 20min)&lt;/h2>
+&lt;h3 id="teaching-10min-4">Teaching (10min)&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>Real-time control with MIDI&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Music visualization possibilities&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Demo setup:&lt;/strong>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#66d9ef">await&lt;/span> &lt;span style="color:#a6e22e">loadScript&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;https://6120.eu/public/midi.js&amp;#34;&lt;/span>)
+&lt;span style="color:#66d9ef">await&lt;/span> &lt;span style="color:#a6e22e">midi&lt;/span>.&lt;span style="color:#a6e22e">start&lt;/span>({ &lt;span style="color:#a6e22e">channel&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#39;*&amp;#39;&lt;/span>, &lt;span style="color:#a6e22e">input&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#39;*&amp;#39;&lt;/span> })
+&lt;span style="color:#a6e22e">midi&lt;/span>.&lt;span style="color:#a6e22e">show&lt;/span>()
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>Show how MIDI values can control visual parameters&lt;/li>
+&lt;/ul>
+&lt;h3 id="workshop-5-20min">Workshop 5 (20min)&lt;/h3>
+&lt;p>&lt;strong>Goal:&lt;/strong> Connect MIDI to visuals&lt;/p>
+&lt;ul>
+&lt;li>Navigate to: &lt;a href="https://hydra.ojack.xyz/?code=YXdhaXQlMjBsb2FkU2NyaXB0KCUyMmh0dHBzJTNBJTJGJTJGNjEyMC5ldSUyRnB1YmxpYyUyRm1pZGkuanMlMjIp">MIDI Example&lt;/a>&lt;/li>
+&lt;li>Set up MIDI connection (virtual MIDI if no hardware)&lt;/li>
+&lt;li>Try: &lt;code>solid(note('*'), 0, 1).out()&lt;/code>&lt;/li>
+&lt;li>Link different MIDI controls to visual parameters&lt;/li>
+&lt;li>Create responsive audio-visual performances&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h1 id="bonus-content-1-hour">BONUS CONTENT (1 hour)&lt;/h1>
+&lt;h2 id="lesson-6-collaborative-coding-with-flok-10min--20min">Lesson 6: Collaborative Coding with Flok (10min + 20min)&lt;/h2>
+&lt;h3 id="teaching-10min-5">Teaching (10min)&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>Collaborative live coding concept&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Flok platform introduction&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Sharing sessions and real-time collaboration&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Community aspect of live coding&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;h3 id="workshop-6-20min">Workshop 6 (20min)&lt;/h3>
+&lt;p>&lt;strong>Goal:&lt;/strong> Experience collaborative visual coding&lt;/p>
+&lt;ul>
+&lt;li>Set up shared Flok session&lt;/li>
+&lt;li>Practice collaborative etiquette&lt;/li>
+&lt;li>Create group visual performances&lt;/li>
+&lt;li>Share and iterate on each other&amp;rsquo;s code&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="key-resources-to-keep-handy">Key Resources to Keep Handy:&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://hydra.ojack.xyz/functions">Hydra Functions Reference&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/geikha/hyper-hydra">Hyper-Hydra Extensions&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://hydra.ojack.xyz">Main Hydra Site&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="workshop-philosophy">Workshop Philosophy:&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Experimentation over perfection&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Happy accidents are learning opportunities&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Community and sharing enhances creativity&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Start simple, build complexity gradually&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;h1 id="hydra-functions-cheat-sheet">Hydra Functions Cheat Sheet&lt;/h1>
+&lt;h2 id="sources">Sources&lt;/h2>
+&lt;h3 id="osc">osc()&lt;/h3>
+&lt;p>&lt;strong>Description:&lt;/strong> Generates an oscillating wave pattern.
+&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">osc&lt;/span>(&lt;span style="color:#ae81ff">10&lt;/span>, &lt;span style="color:#ae81ff">0.1&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>).&lt;span style="color:#a6e22e">out&lt;/span>()
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="noise">noise()&lt;/h3>
+&lt;p>&lt;strong>Description:&lt;/strong> Creates a noise texture.
+&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">noise&lt;/span>(&lt;span style="color:#ae81ff">3&lt;/span>, &lt;span style="color:#ae81ff">0.5&lt;/span>).&lt;span style="color:#a6e22e">out&lt;/span>()
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="voronoi">voronoi()&lt;/h3>
+&lt;p>&lt;strong>Description:&lt;/strong> Generates a Voronoi pattern.
+&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">voronoi&lt;/span>(&lt;span style="color:#ae81ff">5&lt;/span>, &lt;span style="color:#ae81ff">0.3&lt;/span>, &lt;span style="color:#ae81ff">0.8&lt;/span>).&lt;span style="color:#a6e22e">out&lt;/span>()
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="shape">shape()&lt;/h3>
+&lt;p>&lt;strong>Description:&lt;/strong> Renders a geometric shape.
+&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">shape&lt;/span>(&lt;span style="color:#ae81ff">4&lt;/span>, &lt;span style="color:#ae81ff">0.5&lt;/span>, &lt;span style="color:#ae81ff">0.1&lt;/span>).&lt;span style="color:#a6e22e">out&lt;/span>()
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="gradient">gradient()&lt;/h3>
+&lt;p>&lt;strong>Description:&lt;/strong> Creates a gradient pattern.
+&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">gradient&lt;/span>(&lt;span style="color:#ae81ff">1&lt;/span>).&lt;span style="color:#a6e22e">out&lt;/span>()
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="solid">solid()&lt;/h3>
+&lt;p>&lt;strong>Description:&lt;/strong> Generates a solid color.
+&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">solid&lt;/span>(&lt;span style="color:#ae81ff">1&lt;/span>, &lt;span style="color:#ae81ff">0&lt;/span>, &lt;span style="color:#ae81ff">0&lt;/span>).&lt;span style="color:#a6e22e">out&lt;/span>()
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="modulation">Modulation&lt;/h2>
+&lt;h3 id="modulate">modulate()&lt;/h3>
+&lt;p>&lt;strong>Description:&lt;/strong> Modulates the source using another texture.
+&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">osc&lt;/span>(&lt;span style="color:#ae81ff">10&lt;/span>, &lt;span style="color:#ae81ff">0.1&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>).&lt;span style="color:#a6e22e">modulate&lt;/span>(&lt;span style="color:#a6e22e">noise&lt;/span>(&lt;span style="color:#ae81ff">3&lt;/span>)).&lt;span style="color:#a6e22e">out&lt;/span>()
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="modulatescale">modulateScale()&lt;/h3>
+&lt;p>&lt;strong>Description:&lt;/strong> Modulates the scale of the source.
+&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">osc&lt;/span>(&lt;span style="color:#ae81ff">10&lt;/span>, &lt;span style="color:#ae81ff">0.1&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>).&lt;span style="color:#a6e22e">modulateScale&lt;/span>(&lt;span style="color:#a6e22e">noise&lt;/span>(&lt;span style="color:#ae81ff">3&lt;/span>)).&lt;span style="color:#a6e22e">out&lt;/span>()
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="modulaterotate">modulateRotate()&lt;/h3>
+&lt;p>&lt;strong>Description:&lt;/strong> Modulates the rotation of the source.
+&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">osc&lt;/span>(&lt;span style="color:#ae81ff">10&lt;/span>, &lt;span style="color:#ae81ff">0.1&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>).&lt;span style="color:#a6e22e">modulateRotate&lt;/span>(&lt;span style="color:#a6e22e">noise&lt;/span>(&lt;span style="color:#ae81ff">3&lt;/span>)).&lt;span style="color:#a6e22e">out&lt;/span>()
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="modulatepixelate">modulatePixelate()&lt;/h3>
+&lt;p>&lt;strong>Description:&lt;/strong> Modulates the pixelation of the source.
+&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">osc&lt;/span>(&lt;span style="color:#ae81ff">10&lt;/span>, &lt;span style="color:#ae81ff">0.1&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>).&lt;span style="color:#a6e22e">modulatePixelate&lt;/span>(&lt;span style="color:#a6e22e">noise&lt;/span>(&lt;span style="color:#ae81ff">3&lt;/span>)).&lt;span style="color:#a6e22e">out&lt;/span>()
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="modulaterepeat">modulateRepeat()&lt;/h3>
+&lt;p>&lt;strong>Description:&lt;/strong> Modulates the repetition of the source.
+&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">osc&lt;/span>(&lt;span style="color:#ae81ff">10&lt;/span>, &lt;span style="color:#ae81ff">0.1&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>).&lt;span style="color:#a6e22e">modulateRepeat&lt;/span>(&lt;span style="color:#a6e22e">noise&lt;/span>(&lt;span style="color:#ae81ff">3&lt;/span>)).&lt;span style="color:#a6e22e">out&lt;/span>()
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="modulatescrollx">modulateScrollX()&lt;/h3>
+&lt;p>&lt;strong>Description:&lt;/strong> Modulates horizontal scrolling.
+&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">osc&lt;/span>(&lt;span style="color:#ae81ff">10&lt;/span>, &lt;span style="color:#ae81ff">0.1&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>).&lt;span style="color:#a6e22e">modulateScrollX&lt;/span>(&lt;span style="color:#a6e22e">noise&lt;/span>(&lt;span style="color:#ae81ff">3&lt;/span>)).&lt;span style="color:#a6e22e">out&lt;/span>()
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="modulatescrolly">modulateScrollY()&lt;/h3>
+&lt;p>&lt;strong>Description:&lt;/strong> Modulates vertical scrolling.
+&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">osc&lt;/span>(&lt;span style="color:#ae81ff">10&lt;/span>, &lt;span style="color:#ae81ff">0.1&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>).&lt;span style="color:#a6e22e">modulateScrollY&lt;/span>(&lt;span style="color:#a6e22e">noise&lt;/span>(&lt;span style="color:#ae81ff">3&lt;/span>)).&lt;span style="color:#a6e22e">out&lt;/span>()
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="modulatehue">modulateHue()&lt;/h3>
+&lt;p>&lt;strong>Description:&lt;/strong> Modulates the hue of the source.
+&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">osc&lt;/span>(&lt;span style="color:#ae81ff">10&lt;/span>, &lt;span style="color:#ae81ff">0.1&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>).&lt;span style="color:#a6e22e">modulateHue&lt;/span>(&lt;span style="color:#a6e22e">noise&lt;/span>(&lt;span style="color:#ae81ff">3&lt;/span>)).&lt;span style="color:#a6e22e">out&lt;/span>()
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="color">Color&lt;/h2>
+&lt;h3 id="color-1">color()&lt;/h3>
+&lt;p>&lt;strong>Description:&lt;/strong> Applies color to the source.
+&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">osc&lt;/span>(&lt;span style="color:#ae81ff">10&lt;/span>, &lt;span style="color:#ae81ff">0.1&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>).&lt;span style="color:#a6e22e">color&lt;/span>(&lt;span style="color:#ae81ff">1&lt;/span>, &lt;span style="color:#ae81ff">0&lt;/span>, &lt;span style="color:#ae81ff">0&lt;/span>).&lt;span style="color:#a6e22e">out&lt;/span>()
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="colorama">colorama()&lt;/h3>
+&lt;p>&lt;strong>Description:&lt;/strong> Applies a colorama effect.
+&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">osc&lt;/span>(&lt;span style="color:#ae81ff">10&lt;/span>, &lt;span style="color:#ae81ff">0.1&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>).&lt;span style="color:#a6e22e">colorama&lt;/span>(&lt;span style="color:#ae81ff">0.5&lt;/span>).&lt;span style="color:#a6e22e">out&lt;/span>()
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="saturate">saturate()&lt;/h3>
+&lt;p>&lt;strong>Description:&lt;/strong> Adjusts the saturation.
+&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">osc&lt;/span>(&lt;span style="color:#ae81ff">10&lt;/span>, &lt;span style="color:#ae81ff">0.1&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>).&lt;span style="color:#a6e22e">saturate&lt;/span>(&lt;span style="color:#ae81ff">1.5&lt;/span>).&lt;span style="color:#a6e22e">out&lt;/span>()
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="contrast">contrast()&lt;/h3>
+&lt;p>&lt;strong>Description:&lt;/strong> Adjusts the contrast.
+&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">osc&lt;/span>(&lt;span style="color:#ae81ff">10&lt;/span>, &lt;span style="color:#ae81ff">0.1&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>).&lt;span style="color:#a6e22e">contrast&lt;/span>(&lt;span style="color:#ae81ff">1.5&lt;/span>).&lt;span style="color:#a6e22e">out&lt;/span>()
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="brightness">brightness()&lt;/h3>
+&lt;p>&lt;strong>Description:&lt;/strong> Adjusts the brightness.
+&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">osc&lt;/span>(&lt;span style="color:#ae81ff">10&lt;/span>, &lt;span style="color:#ae81ff">0.1&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>).&lt;span style="color:#a6e22e">brightness&lt;/span>(&lt;span style="color:#ae81ff">0.5&lt;/span>).&lt;span style="color:#a6e22e">out&lt;/span>()
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="invert">invert()&lt;/h3>
+&lt;p>&lt;strong>Description:&lt;/strong> Inverts the colors.
+&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">osc&lt;/span>(&lt;span style="color:#ae81ff">10&lt;/span>, &lt;span style="color:#ae81ff">0.1&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>).&lt;span style="color:#a6e22e">invert&lt;/span>().&lt;span style="color:#a6e22e">out&lt;/span>()
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="luma">luma()&lt;/h3>
+&lt;p>&lt;strong>Description:&lt;/strong> Applies a luma key.
+&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">osc&lt;/span>(&lt;span style="color:#ae81ff">10&lt;/span>, &lt;span style="color:#ae81ff">0.1&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>).&lt;span style="color:#a6e22e">luma&lt;/span>(&lt;span style="color:#ae81ff">0.5&lt;/span>).&lt;span style="color:#a6e22e">out&lt;/span>()
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="posterize">posterize()&lt;/h3>
+&lt;p>&lt;strong>Description:&lt;/strong> Applies a posterization effect.
+&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">osc&lt;/span>(&lt;span style="color:#ae81ff">10&lt;/span>, &lt;span style="color:#ae81ff">0.1&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>).&lt;span style="color:#a6e22e">posterize&lt;/span>(&lt;span style="color:#ae81ff">3&lt;/span>, &lt;span style="color:#ae81ff">0.5&lt;/span>).&lt;span style="color:#a6e22e">out&lt;/span>()
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="geometry">Geometry&lt;/h2>
+&lt;h3 id="rotate">rotate()&lt;/h3>
+&lt;p>&lt;strong>Description:&lt;/strong> Rotates the source.
+&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">osc&lt;/span>(&lt;span style="color:#ae81ff">10&lt;/span>, &lt;span style="color:#ae81ff">0.1&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>).&lt;span style="color:#a6e22e">rotate&lt;/span>(&lt;span style="color:#ae81ff">0.5&lt;/span>).&lt;span style="color:#a6e22e">out&lt;/span>()
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="scale">scale()&lt;/h3>
+&lt;p>&lt;strong>Description:&lt;/strong> Scales the source.
+&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">osc&lt;/span>(&lt;span style="color:#ae81ff">10&lt;/span>, &lt;span style="color:#ae81ff">0.1&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>).&lt;span style="color:#a6e22e">scale&lt;/span>(&lt;span style="color:#ae81ff">1.5&lt;/span>).&lt;span style="color:#a6e22e">out&lt;/span>()
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="pixelate">pixelate()&lt;/h3>
+&lt;p>&lt;strong>Description:&lt;/strong> Applies a pixelation effect.
+&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">osc&lt;/span>(&lt;span style="color:#ae81ff">10&lt;/span>, &lt;span style="color:#ae81ff">0.1&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>).&lt;span style="color:#a6e22e">pixelate&lt;/span>(&lt;span style="color:#ae81ff">10&lt;/span>, &lt;span style="color:#ae81ff">10&lt;/span>).&lt;span style="color:#a6e22e">out&lt;/span>()
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="repeat">repeat()&lt;/h3>
+&lt;p>&lt;strong>Description:&lt;/strong> Repeats the source.
+&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">osc&lt;/span>(&lt;span style="color:#ae81ff">10&lt;/span>, &lt;span style="color:#ae81ff">0.1&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>).&lt;span style="color:#a6e22e">repeat&lt;/span>(&lt;span style="color:#ae81ff">3&lt;/span>, &lt;span style="color:#ae81ff">3&lt;/span>).&lt;span style="color:#a6e22e">out&lt;/span>()
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="repeatx">repeatX()&lt;/h3>
+&lt;p>&lt;strong>Description:&lt;/strong> Repeats the source horizontally.
+&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">osc&lt;/span>(&lt;span style="color:#ae81ff">10&lt;/span>, &lt;span style="color:#ae81ff">0.1&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>).&lt;span style="color:#a6e22e">repeatX&lt;/span>(&lt;span style="color:#ae81ff">3&lt;/span>).&lt;span style="color:#a6e22e">out&lt;/span>()
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="repeaty">repeatY()&lt;/h3>
+&lt;p>&lt;strong>Description:&lt;/strong> Repeats the source vertically.
+&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">osc&lt;/span>(&lt;span style="color:#ae81ff">10&lt;/span>, &lt;span style="color:#ae81ff">0.1&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>).&lt;span style="color:#a6e22e">repeatY&lt;/span>(&lt;span style="color:#ae81ff">3&lt;/span>).&lt;span style="color:#a6e22e">out&lt;/span>()
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="scroll">scroll()&lt;/h3>
+&lt;p>&lt;strong>Description:&lt;/strong> Scrolls the source.
+&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">osc&lt;/span>(&lt;span style="color:#ae81ff">10&lt;/span>, &lt;span style="color:#ae81ff">0.1&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>).&lt;span style="color:#a6e22e">scroll&lt;/span>(&lt;span style="color:#ae81ff">0.1&lt;/span>, &lt;span style="color:#ae81ff">0.1&lt;/span>).&lt;span style="color:#a6e22e">out&lt;/span>()
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="scrollx">scrollX()&lt;/h3>
+&lt;p>&lt;strong>Description:&lt;/strong> Scrolls the source horizontally.
+&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">osc&lt;/span>(&lt;span style="color:#ae81ff">10&lt;/span>, &lt;span style="color:#ae81ff">0.1&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>).&lt;span style="color:#a6e22e">scrollX&lt;/span>(&lt;span style="color:#ae81ff">0.1&lt;/span>).&lt;span style="color:#a6e22e">out&lt;/span>()
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="scrolly">scrollY()&lt;/h3>
+&lt;p>&lt;strong>Description:&lt;/strong> Scrolls the source vertically.
+&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">osc&lt;/span>(&lt;span style="color:#ae81ff">10&lt;/span>, &lt;span style="color:#ae81ff">0.1&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>).&lt;span style="color:#a6e22e">scrollY&lt;/span>(&lt;span style="color:#ae81ff">0.1&lt;/span>).&lt;span style="color:#a6e22e">out&lt;/span>()
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="kaleid">kaleid()&lt;/h3>
+&lt;p>&lt;strong>Description:&lt;/strong> Applies a kaleidoscope effect.
+&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">osc&lt;/span>(&lt;span style="color:#ae81ff">10&lt;/span>, &lt;span style="color:#ae81ff">0.1&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>).&lt;span style="color:#a6e22e">kaleid&lt;/span>(&lt;span style="color:#ae81ff">4&lt;/span>).&lt;span style="color:#a6e22e">out&lt;/span>()
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="blending">Blending&lt;/h2>
+&lt;h3 id="add">add()&lt;/h3>
+&lt;p>&lt;strong>Description:&lt;/strong> Adds two sources.
+&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">osc&lt;/span>(&lt;span style="color:#ae81ff">10&lt;/span>, &lt;span style="color:#ae81ff">0.1&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>).&lt;span style="color:#a6e22e">add&lt;/span>(&lt;span style="color:#a6e22e">noise&lt;/span>(&lt;span style="color:#ae81ff">3&lt;/span>)).&lt;span style="color:#a6e22e">out&lt;/span>()
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="sub">sub()&lt;/h3>
+&lt;p>&lt;strong>Description:&lt;/strong> Subtracts one source from another.
+&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">osc&lt;/span>(&lt;span style="color:#ae81ff">10&lt;/span>, &lt;span style="color:#ae81ff">0.1&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>).&lt;span style="color:#a6e22e">sub&lt;/span>(&lt;span style="color:#a6e22e">noise&lt;/span>(&lt;span style="color:#ae81ff">3&lt;/span>)).&lt;span style="color:#a6e22e">out&lt;/span>()
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="layer">layer()&lt;/h3>
+&lt;p>&lt;strong>Description:&lt;/strong> Overlays one source on another.
+&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">osc&lt;/span>(&lt;span style="color:#ae81ff">10&lt;/span>, &lt;span style="color:#ae81ff">0.1&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>).&lt;span style="color:#a6e22e">layer&lt;/span>(&lt;span style="color:#a6e22e">noise&lt;/span>(&lt;span style="color:#ae81ff">3&lt;/span>)).&lt;span style="color:#a6e22e">out&lt;/span>()
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="blend">blend()&lt;/h3>
+&lt;p>&lt;strong>Description:&lt;/strong> Blends two sources.
+&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">osc&lt;/span>(&lt;span style="color:#ae81ff">10&lt;/span>, &lt;span style="color:#ae81ff">0.1&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>).&lt;span style="color:#a6e22e">blend&lt;/span>(&lt;span style="color:#a6e22e">noise&lt;/span>(&lt;span style="color:#ae81ff">3&lt;/span>)).&lt;span style="color:#a6e22e">out&lt;/span>()
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="mult">mult()&lt;/h3>
+&lt;p>&lt;strong>Description:&lt;/strong> Multiplies two sources.
+&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">osc&lt;/span>(&lt;span style="color:#ae81ff">10&lt;/span>, &lt;span style="color:#ae81ff">0.1&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>).&lt;span style="color:#a6e22e">mult&lt;/span>(&lt;span style="color:#a6e22e">noise&lt;/span>(&lt;span style="color:#ae81ff">3&lt;/span>)).&lt;span style="color:#a6e22e">out&lt;/span>()
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="diff">diff()&lt;/h3>
+&lt;p>&lt;strong>Description:&lt;/strong> Calculates the difference between two sources.
+&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">osc&lt;/span>(&lt;span style="color:#ae81ff">10&lt;/span>, &lt;span style="color:#ae81ff">0.1&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>).&lt;span style="color:#a6e22e">diff&lt;/span>(&lt;span style="color:#a6e22e">noise&lt;/span>(&lt;span style="color:#ae81ff">3&lt;/span>)).&lt;span style="color:#a6e22e">out&lt;/span>()
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="mask">mask()&lt;/h3>
+&lt;p>&lt;strong>Description:&lt;/strong> Applies a mask to the source.
+&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">osc&lt;/span>(&lt;span style="color:#ae81ff">10&lt;/span>, &lt;span style="color:#ae81ff">0.1&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>).&lt;span style="color:#a6e22e">mask&lt;/span>(&lt;span style="color:#a6e22e">shape&lt;/span>(&lt;span style="color:#ae81ff">4&lt;/span>, &lt;span style="color:#ae81ff">0.5&lt;/span>, &lt;span style="color:#ae81ff">0.1&lt;/span>)).&lt;span style="color:#a6e22e">out&lt;/span>()
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="utilities">Utilities&lt;/h2>
+&lt;h3 id="out">out()&lt;/h3>
+&lt;p>&lt;strong>Description:&lt;/strong> Outputs the current buffer.
+&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">osc&lt;/span>(&lt;span style="color:#ae81ff">10&lt;/span>, &lt;span style="color:#ae81ff">0.1&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>).&lt;span style="color:#a6e22e">out&lt;/span>()
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="render">render()&lt;/h3>
+&lt;p>&lt;strong>Description:&lt;/strong> Renders the specified buffer.
+&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">render&lt;/span>(&lt;span style="color:#a6e22e">o1&lt;/span>)
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="initcam">initCam()&lt;/h3>
+&lt;p>&lt;strong>Description:&lt;/strong> Initializes the webcam.
+&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">s0&lt;/span>.&lt;span style="color:#a6e22e">initCam&lt;/span>()
+&lt;span style="color:#a6e22e">src&lt;/span>(&lt;span style="color:#a6e22e">s0&lt;/span>).&lt;span style="color:#a6e22e">out&lt;/span>()
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="initvideo">initVideo()&lt;/h3>
+&lt;p>&lt;strong>Description:&lt;/strong> Initializes a video source.
+&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">s0&lt;/span>.&lt;span style="color:#a6e22e">initVideo&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;path/to/video.mp4&amp;#34;&lt;/span>)
+&lt;span style="color:#a6e22e">src&lt;/span>(&lt;span style="color:#a6e22e">s0&lt;/span>).&lt;span style="color:#a6e22e">out&lt;/span>()
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="initimage">initImage()&lt;/h3>
+&lt;p>&lt;strong>Description:&lt;/strong> Initializes an image source.
+&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">s0&lt;/span>.&lt;span style="color:#a6e22e">initImage&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;path/to/image.jpg&amp;#34;&lt;/span>)
+&lt;span style="color:#a6e22e">src&lt;/span>(&lt;span style="color:#a6e22e">s0&lt;/span>).&lt;span style="color:#a6e22e">out&lt;/span>()
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="src">src()&lt;/h3>
+&lt;p>&lt;strong>Description:&lt;/strong> Sets the source for the pipeline.
+&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">src&lt;/span>(&lt;span style="color:#a6e22e">o0&lt;/span>).&lt;span style="color:#a6e22e">out&lt;/span>()
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="time">time&lt;/h3>
+&lt;p>&lt;strong>Description:&lt;/strong> Global variable representing elapsed time.
+&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">osc&lt;/span>(&lt;span style="color:#ae81ff">10&lt;/span>, &lt;span style="color:#ae81ff">0.1&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>).&lt;span style="color:#a6e22e">rotate&lt;/span>(() =&amp;gt; &lt;span style="color:#a6e22e">time&lt;/span>).&lt;span style="color:#a6e22e">out&lt;/span>()
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="speed">speed&lt;/h3>
+&lt;p>&lt;strong>Description:&lt;/strong> Global variable controlling playback speed.
+&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">speed&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0.5&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="mouse">mouse&lt;/h3>
+&lt;p>&lt;strong>Description:&lt;/strong> Global variable representing mouse position.
+&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">osc&lt;/span>(&lt;span style="color:#ae81ff">10&lt;/span>, &lt;span style="color:#ae81ff">0.1&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>).&lt;span style="color:#a6e22e">rotate&lt;/span>(() =&amp;gt; &lt;span style="color:#a6e22e">mouse&lt;/span>.&lt;span style="color:#a6e22e">x&lt;/span> &lt;span style="color:#f92672">*&lt;/span> &lt;span style="color:#ae81ff">0.01&lt;/span>).&lt;span style="color:#a6e22e">out&lt;/span>()
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="afft">a.fft&lt;/h3>
+&lt;p>&lt;strong>Description:&lt;/strong> Array representing audio frequency data.
+&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">osc&lt;/span>(&lt;span style="color:#ae81ff">10&lt;/span>, &lt;span style="color:#ae81ff">0.1&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>).&lt;span style="color:#a6e22e">modulate&lt;/span>(&lt;span style="color:#a6e22e">noise&lt;/span>(() =&amp;gt; &lt;span style="color:#a6e22e">a&lt;/span>.&lt;span style="color:#a6e22e">fft&lt;/span>[&lt;span style="color:#ae81ff">0&lt;/span>] &lt;span style="color:#f92672">*&lt;/span> &lt;span style="color:#ae81ff">10&lt;/span>)).&lt;span style="color:#a6e22e">out&lt;/span>()
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="asetsmooth">a.setSmooth()&lt;/h3>
+&lt;p>&lt;strong>Description:&lt;/strong> Sets the smoothing for audio analysis.
+&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">a&lt;/span>.&lt;span style="color:#a6e22e">setSmooth&lt;/span>(&lt;span style="color:#ae81ff">0.8&lt;/span>)
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="asetbins">a.setBins()&lt;/h3>
+&lt;p>&lt;strong>Description:&lt;/strong> Sets the number of frequency bins for audio analysis.
+&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">a&lt;/span>.&lt;span style="color:#a6e22e">setBins&lt;/span>(&lt;span style="color:#ae81ff">4&lt;/span>)
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="asetcutoff">a.setCutoff()&lt;/h3>
+&lt;p>&lt;strong>Description:&lt;/strong> Sets the cutoff frequency for audio analysis.
+&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">a&lt;/span>.&lt;span style="color:#a6e22e">setCutoff&lt;/span>(&lt;span style="color:#ae81ff">2&lt;/span>)
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="asetscale">a.setScale()&lt;/h3>
+&lt;p>&lt;strong>Description:&lt;/strong> Sets the scale for audio analysis.
+&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">a&lt;/span>.&lt;span style="color:#a6e22e">setScale&lt;/span>(&lt;span style="color:#ae81ff">2&lt;/span>)
+&lt;/code>&lt;/pre>&lt;/div></content></item><item><title>StarkNet Phase 1 - Freebox Validator</title><link>https://6120.eu/posts/starknet-staking-p1/</link><pubDate>Mon, 31 Mar 2025 19:00:03 +0100</pubDate><guid>https://6120.eu/posts/starknet-staking-p1/</guid><description>Introduction This post is the beginning of a series of blog posts on hosting Starknet nodes. I always enjoy the challenges of hosting high-availability infrastructures and blockchain nodes always have their own set of problematics: large underlying databases, reactivity, syncing &amp;amp; signing speed&amp;hellip; May this series help the path towards decentralization of Starknet. It begins with the cheapest system I could put my hands on.
 Phase 1 StarkNet staking 1st phase consist of solely running a full RPC node, at the time of writing, staking ask for 20_000 Strk tokens (~3700$).</description><content>&lt;h2 id="introduction">Introduction&lt;/h2>
 &lt;p>This post is the beginning of a series of blog posts on hosting Starknet nodes. I always enjoy the challenges of hosting high-availability infrastructures and blockchain nodes always have their own set of problematics: large underlying databases, reactivity, syncing &amp;amp; signing speed&amp;hellip; May this series help the path towards decentralization of Starknet. It begins with the cheapest system I could put my hands on.&lt;/p>
 &lt;h1 id="phase-1">Phase 1&lt;/h1>
