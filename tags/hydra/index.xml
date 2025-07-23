@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>hydra on 6120's Notes</title><link>https://6120.eu/tags/hydra/</link><description>Recent content in hydra on 6120's Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright/><lastBuildDate>Tue, 22 Jul 2025 01:01:50 +0100</lastBuildDate><atom:link href="https://6120.eu/tags/hydra/index.xml" rel="self" type="application/rss+xml"/><item><title>Hydra Workshop</title><link>https://6120.eu/posts/workshop-hydra/</link><pubDate>Tue, 22 Jul 2025 01:01:50 +0100</pubDate><guid>https://6120.eu/posts/workshop-hydra/</guid><description>Hydra Visual Coding Workshop Duration: 2 hours + 1 hour bonus
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>hydra on 6120's Notes</title><link>https://6120.eu/tags/hydra/</link><description>Recent content in hydra on 6120's Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright/><lastBuildDate>Tue, 22 Jul 2025 01:01:50 +0100</lastBuildDate><atom:link href="https://6120.eu/tags/hydra/index.xml" rel="self" type="application/rss+xml"/><item><title>Hydra Workshop Plan</title><link>https://6120.eu/posts/workshop-hydra/</link><pubDate>Tue, 22 Jul 2025 01:01:50 +0100</pubDate><guid>https://6120.eu/posts/workshop-hydra/</guid><description>Hydra Visual Coding Workshop Duration: 2 hours + 1 hour bonus
 Format: 5 lessons (30min each) with 10min teaching + 15-20min workshop
 Lesson 1: Hydra 101 (10min + 20min) Teaching (10min) Objective: Get familiar with Hydra interface and basic workflow Navigate to https://hydra.ojack.xyz Interface tour (2min): Play/Stop button Clear button Examples dropdown Settings gear Documentation overview: Quick look at built-in help Basic workflow demonstration: osc(40, 0.</description><content>&lt;h1 id="hydra-visual-coding-workshop">Hydra Visual Coding Workshop&lt;/h1>
 &lt;p>&lt;strong>Duration:&lt;/strong> 2 hours + 1 hour bonus&lt;br>
@@ -42,6 +42,7 @@ Lesson 1: Hydra 101 (10min + 20min) Teaching (10min) Objective: Get familiar wit
 &lt;h3 id="teaching-10min-1">Teaching (10min)&lt;/h3>
 &lt;ul>
 &lt;li>&lt;strong>Core principle:&lt;/strong> &amp;ldquo;You always get a result, no matter what numbers you use&amp;rdquo;&lt;/li>
+&lt;li>&lt;strong>Dynamism:&lt;/strong> Array and arrow function add fun&lt;/li>
 &lt;li>&lt;strong>Math.PI exploration:&lt;/strong>
 &lt;ul>
 &lt;li>&lt;code>osc(40, 0.1, Math.PI).out()&lt;/code>&lt;/li>
