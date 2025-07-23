@@ -1,5 +1,5 @@
 +++
-title = "Hydra Workshop"
+title = "Hydra Workshop Plan"
 date = "2025-07-22T01:01:50+01:00"
 author = "Sylvain Laurent"
 authorTwitter = "magicking_" #do not include @
@@ -53,6 +53,7 @@ color = "" #color from the theme settings
 
 ### Teaching (10min)
 - **Core principle:** "You always get a result, no matter what numbers you use"
+- **Dynamism:** Array and arrow function add fun
 - **Math.PI exploration:**
   - `osc(40, 0.1, Math.PI).out()`
   - Show how Math.PI affects colors and scaling
