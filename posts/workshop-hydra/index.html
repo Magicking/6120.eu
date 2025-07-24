@@ -52,7 +52,7 @@ Magicking's notes
 [Updated :: 2025-07-22]
 </time>
 <span class=post-author>Sylvain Laurent</span>
-<span class=post-reading-time>:: 5 min read (1058 words)</span>
+<span class=post-reading-time>:: 6 min read (1080 words)</span>
 </div>
 <span class=post-tags>
 #<a href=https://6120.eu/tags/hydra/>hydra</a>&nbsp;
@@ -234,225 +234,172 @@ Magicking's notes
 </ul>
 <h1 id=hydra-functions-cheat-sheet>Hydra Functions Cheat Sheet<a href=#hydra-functions-cheat-sheet class=hanchor arialabel=Anchor>&#8983;</a> </h1>
 <h2 id=sources>Sources<a href=#sources class=hanchor arialabel=Anchor>&#8983;</a> </h2>
-<h3 id=osc>osc()<a href=#osc class=hanchor arialabel=Anchor>&#8983;</a> </h3>
-<p><strong>Description:</strong> Generates an oscillating wave pattern.
-<strong>Example:</strong></p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>out</span>()
-</code></pre></div><h3 id=noise>noise()<a href=#noise class=hanchor arialabel=Anchor>&#8983;</a> </h3>
-<p><strong>Description:</strong> Creates a noise texture.
-<strong>Example:</strong></p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>noise</span>(<span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>0.5</span>).<span style=color:#a6e22e>out</span>()
-</code></pre></div><h3 id=voronoi>voronoi()<a href=#voronoi class=hanchor arialabel=Anchor>&#8983;</a> </h3>
-<p><strong>Description:</strong> Generates a Voronoi pattern.
-<strong>Example:</strong></p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>voronoi</span>(<span style=color:#ae81ff>5</span>, <span style=color:#ae81ff>0.3</span>, <span style=color:#ae81ff>0.8</span>).<span style=color:#a6e22e>out</span>()
-</code></pre></div><h3 id=shape>shape()<a href=#shape class=hanchor arialabel=Anchor>&#8983;</a> </h3>
-<p><strong>Description:</strong> Renders a geometric shape.
-<strong>Example:</strong></p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>shape</span>(<span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>0.5</span>, <span style=color:#ae81ff>0.1</span>).<span style=color:#a6e22e>out</span>()
-</code></pre></div><h3 id=gradient>gradient()<a href=#gradient class=hanchor arialabel=Anchor>&#8983;</a> </h3>
-<p><strong>Description:</strong> Creates a gradient pattern.
-<strong>Example:</strong></p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>gradient</span>(<span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>out</span>()
-</code></pre></div><h3 id=solid>solid()<a href=#solid class=hanchor arialabel=Anchor>&#8983;</a> </h3>
-<p><strong>Description:</strong> Generates a solid color.
-<strong>Example:</strong></p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>solid</span>(<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>).<span style=color:#a6e22e>out</span>()
+<h3 id=oscfrequency-sync-offset>osc(frequency, sync, offset)<a href=#oscfrequency-sync-offset class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<p><strong>Description:</strong> Generates an oscillating wave pattern.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>60</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>out</span>()
+</code></pre></div><h3 id=noisescale-offset>noise(scale, offset)<a href=#noisescale-offset class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<p><strong>Description:</strong> Creates a noise texture.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>noise</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>).<span style=color:#a6e22e>out</span>()
+</code></pre></div><h3 id=voronoiscale-speed-blending>voronoi(scale, speed, blending)<a href=#voronoiscale-speed-blending class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<p><strong>Description:</strong> Generates a Voronoi pattern.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>voronoi</span>(<span style=color:#ae81ff>5</span>, <span style=color:#ae81ff>0.3</span>, <span style=color:#ae81ff>0.3</span>).<span style=color:#a6e22e>out</span>()
+</code></pre></div><h3 id=shapesides-radius-smoothing>shape(sides, radius, smoothing)<a href=#shapesides-radius-smoothing class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<p><strong>Description:</strong> Renders a geometric shape.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>shape</span>(<span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>0.3</span>, <span style=color:#ae81ff>0.01</span>).<span style=color:#a6e22e>out</span>()
+</code></pre></div><h3 id=gradientspeed>gradient(speed)<a href=#gradientspeed class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<p><strong>Description:</strong> Creates a gradient pattern.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>gradient</span>(<span style=color:#ae81ff>0</span>).<span style=color:#a6e22e>out</span>()
+</code></pre></div><h3 id=solidr-g-b-a>solid(r, g, b, a)<a href=#solidr-g-b-a class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<p><strong>Description:</strong> Generates a solid color.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>solid</span>(<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>out</span>()
 </code></pre></div><h2 id=modulation>Modulation<a href=#modulation class=hanchor arialabel=Anchor>&#8983;</a> </h2>
-<h3 id=modulate>modulate()<a href=#modulate class=hanchor arialabel=Anchor>&#8983;</a> </h3>
-<p><strong>Description:</strong> Modulates the source using another texture.
-<strong>Example:</strong></p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>modulate</span>(<span style=color:#a6e22e>noise</span>(<span style=color:#ae81ff>3</span>)).<span style=color:#a6e22e>out</span>()
-</code></pre></div><h3 id=modulatescale>modulateScale()<a href=#modulatescale class=hanchor arialabel=Anchor>&#8983;</a> </h3>
-<p><strong>Description:</strong> Modulates the scale of the source.
-<strong>Example:</strong></p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>modulateScale</span>(<span style=color:#a6e22e>noise</span>(<span style=color:#ae81ff>3</span>)).<span style=color:#a6e22e>out</span>()
-</code></pre></div><h3 id=modulaterotate>modulateRotate()<a href=#modulaterotate class=hanchor arialabel=Anchor>&#8983;</a> </h3>
-<p><strong>Description:</strong> Modulates the rotation of the source.
-<strong>Example:</strong></p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>modulateRotate</span>(<span style=color:#a6e22e>noise</span>(<span style=color:#ae81ff>3</span>)).<span style=color:#a6e22e>out</span>()
-</code></pre></div><h3 id=modulatepixelate>modulatePixelate()<a href=#modulatepixelate class=hanchor arialabel=Anchor>&#8983;</a> </h3>
-<p><strong>Description:</strong> Modulates the pixelation of the source.
-<strong>Example:</strong></p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>modulatePixelate</span>(<span style=color:#a6e22e>noise</span>(<span style=color:#ae81ff>3</span>)).<span style=color:#a6e22e>out</span>()
-</code></pre></div><h3 id=modulaterepeat>modulateRepeat()<a href=#modulaterepeat class=hanchor arialabel=Anchor>&#8983;</a> </h3>
-<p><strong>Description:</strong> Modulates the repetition of the source.
-<strong>Example:</strong></p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>modulateRepeat</span>(<span style=color:#a6e22e>noise</span>(<span style=color:#ae81ff>3</span>)).<span style=color:#a6e22e>out</span>()
-</code></pre></div><h3 id=modulatescrollx>modulateScrollX()<a href=#modulatescrollx class=hanchor arialabel=Anchor>&#8983;</a> </h3>
-<p><strong>Description:</strong> Modulates horizontal scrolling.
-<strong>Example:</strong></p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>modulateScrollX</span>(<span style=color:#a6e22e>noise</span>(<span style=color:#ae81ff>3</span>)).<span style=color:#a6e22e>out</span>()
-</code></pre></div><h3 id=modulatescrolly>modulateScrollY()<a href=#modulatescrolly class=hanchor arialabel=Anchor>&#8983;</a> </h3>
-<p><strong>Description:</strong> Modulates vertical scrolling.
-<strong>Example:</strong></p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>modulateScrollY</span>(<span style=color:#a6e22e>noise</span>(<span style=color:#ae81ff>3</span>)).<span style=color:#a6e22e>out</span>()
-</code></pre></div><h3 id=modulatehue>modulateHue()<a href=#modulatehue class=hanchor arialabel=Anchor>&#8983;</a> </h3>
-<p><strong>Description:</strong> Modulates the hue of the source.
-<strong>Example:</strong></p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>modulateHue</span>(<span style=color:#a6e22e>noise</span>(<span style=color:#ae81ff>3</span>)).<span style=color:#a6e22e>out</span>()
+<h3 id=modulateamount>modulate(amount)<a href=#modulateamount class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<p><strong>Description:</strong> Modulates the source using another texture.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>modulate</span>(<span style=color:#a6e22e>noise</span>(<span style=color:#ae81ff>3</span>), <span style=color:#ae81ff>0.1</span>).<span style=color:#a6e22e>out</span>()
+</code></pre></div><h3 id=modulatescalemultiple-offset>modulateScale(multiple, offset)<a href=#modulatescalemultiple-offset class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<p><strong>Description:</strong> Modulates the scale of the source.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>modulateScale</span>(<span style=color:#a6e22e>noise</span>(<span style=color:#ae81ff>3</span>), <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>out</span>()
+</code></pre></div><h3 id=modulaterotatemultiple-offset>modulateRotate(multiple, offset)<a href=#modulaterotatemultiple-offset class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<p><strong>Description:</strong> Modulates the rotation of the source.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>modulateRotate</span>(<span style=color:#a6e22e>noise</span>(<span style=color:#ae81ff>3</span>), <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>0</span>).<span style=color:#a6e22e>out</span>()
+</code></pre></div><h3 id=modulatepixelatemultiple-offset>modulatePixelate(multiple, offset)<a href=#modulatepixelatemultiple-offset class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<p><strong>Description:</strong> Modulates the pixelation of the source.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>modulatePixelate</span>(<span style=color:#a6e22e>noise</span>(<span style=color:#ae81ff>3</span>), <span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>3</span>).<span style=color:#a6e22e>out</span>()
+</code></pre></div><h3 id=modulaterepeatrepeatx-repeaty-offsetx-offsety>modulateRepeat(repeatX, repeatY, offsetX, offsetY)<a href=#modulaterepeatrepeatx-repeaty-offsetx-offsety class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<p><strong>Description:</strong> Modulates the repetition of the source.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>modulateRepeat</span>(<span style=color:#a6e22e>noise</span>(<span style=color:#ae81ff>3</span>), <span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>0.5</span>, <span style=color:#ae81ff>0.5</span>).<span style=color:#a6e22e>out</span>()
+</code></pre></div><h3 id=modulatescrollxscrollx-speed>modulateScrollX(scrollX, speed)<a href=#modulatescrollxscrollx-speed class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<p><strong>Description:</strong> Modulates horizontal scrolling.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>modulateScrollX</span>(<span style=color:#a6e22e>noise</span>(<span style=color:#ae81ff>3</span>), <span style=color:#ae81ff>0.5</span>, <span style=color:#ae81ff>0</span>).<span style=color:#a6e22e>out</span>()
+</code></pre></div><h3 id=modulatescrollyscrolly-speed>modulateScrollY(scrollY, speed)<a href=#modulatescrollyscrolly-speed class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<p><strong>Description:</strong> Modulates vertical scrolling.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>modulateScrollY</span>(<span style=color:#a6e22e>noise</span>(<span style=color:#ae81ff>3</span>), <span style=color:#ae81ff>0.5</span>, <span style=color:#ae81ff>0</span>).<span style=color:#a6e22e>out</span>()
+</code></pre></div><h3 id=modulatehueamount>modulateHue(amount)<a href=#modulatehueamount class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<p><strong>Description:</strong> Modulates the hue of the source.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>modulateHue</span>(<span style=color:#a6e22e>noise</span>(<span style=color:#ae81ff>3</span>), <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>out</span>()
 </code></pre></div><h2 id=color>Color<a href=#color class=hanchor arialabel=Anchor>&#8983;</a> </h2>
-<h3 id=color-1>color()<a href=#color-1 class=hanchor arialabel=Anchor>&#8983;</a> </h3>
-<p><strong>Description:</strong> Applies color to the source.
-<strong>Example:</strong></p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>color</span>(<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>).<span style=color:#a6e22e>out</span>()
-</code></pre></div><h3 id=colorama>colorama()<a href=#colorama class=hanchor arialabel=Anchor>&#8983;</a> </h3>
-<p><strong>Description:</strong> Applies a colorama effect.
-<strong>Example:</strong></p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>colorama</span>(<span style=color:#ae81ff>0.5</span>).<span style=color:#a6e22e>out</span>()
-</code></pre></div><h3 id=saturate>saturate()<a href=#saturate class=hanchor arialabel=Anchor>&#8983;</a> </h3>
-<p><strong>Description:</strong> Adjusts the saturation.
-<strong>Example:</strong></p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>saturate</span>(<span style=color:#ae81ff>1.5</span>).<span style=color:#a6e22e>out</span>()
-</code></pre></div><h3 id=contrast>contrast()<a href=#contrast class=hanchor arialabel=Anchor>&#8983;</a> </h3>
-<p><strong>Description:</strong> Adjusts the contrast.
-<strong>Example:</strong></p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>contrast</span>(<span style=color:#ae81ff>1.5</span>).<span style=color:#a6e22e>out</span>()
-</code></pre></div><h3 id=brightness>brightness()<a href=#brightness class=hanchor arialabel=Anchor>&#8983;</a> </h3>
-<p><strong>Description:</strong> Adjusts the brightness.
-<strong>Example:</strong></p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>brightness</span>(<span style=color:#ae81ff>0.5</span>).<span style=color:#a6e22e>out</span>()
-</code></pre></div><h3 id=invert>invert()<a href=#invert class=hanchor arialabel=Anchor>&#8983;</a> </h3>
-<p><strong>Description:</strong> Inverts the colors.
-<strong>Example:</strong></p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>invert</span>().<span style=color:#a6e22e>out</span>()
-</code></pre></div><h3 id=luma>luma()<a href=#luma class=hanchor arialabel=Anchor>&#8983;</a> </h3>
-<p><strong>Description:</strong> Applies a luma key.
-<strong>Example:</strong></p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>luma</span>(<span style=color:#ae81ff>0.5</span>).<span style=color:#a6e22e>out</span>()
-</code></pre></div><h3 id=posterize>posterize()<a href=#posterize class=hanchor arialabel=Anchor>&#8983;</a> </h3>
-<p><strong>Description:</strong> Applies a posterization effect.
-<strong>Example:</strong></p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>posterize</span>(<span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>0.5</span>).<span style=color:#a6e22e>out</span>()
+<h3 id=colorr-g-b-a>color(r, g, b, a)<a href=#colorr-g-b-a class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<p><strong>Description:</strong> Applies color to the source.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>color</span>(<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>out</span>()
+</code></pre></div><h3 id=coloramaamount>colorama(amount)<a href=#coloramaamount class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<p><strong>Description:</strong> Applies a colorama effect.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>colorama</span>(<span style=color:#ae81ff>0.005</span>).<span style=color:#a6e22e>out</span>()
+</code></pre></div><h3 id=saturateamount>saturate(amount)<a href=#saturateamount class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<p><strong>Description:</strong> Adjusts the saturation.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>saturate</span>(<span style=color:#ae81ff>2</span>).<span style=color:#a6e22e>out</span>()
+</code></pre></div><h3 id=contrastamount>contrast(amount)<a href=#contrastamount class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<p><strong>Description:</strong> Adjusts the contrast.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>contrast</span>(<span style=color:#ae81ff>1.6</span>).<span style=color:#a6e22e>out</span>()
+</code></pre></div><h3 id=brightnessamount>brightness(amount)<a href=#brightnessamount class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<p><strong>Description:</strong> Adjusts the brightness.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>brightness</span>(<span style=color:#ae81ff>0.4</span>).<span style=color:#a6e22e>out</span>()
+</code></pre></div><h3 id=invertamount>invert(amount)<a href=#invertamount class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<p><strong>Description:</strong> Inverts the colors.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>invert</span>(<span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>out</span>()
+</code></pre></div><h3 id=lumathreshold-tolerance>luma(threshold, tolerance)<a href=#lumathreshold-tolerance class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<p><strong>Description:</strong> Applies a luma key.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>luma</span>(<span style=color:#ae81ff>0.5</span>, <span style=color:#ae81ff>0.1</span>).<span style=color:#a6e22e>out</span>()
+</code></pre></div><h3 id=posterizebins-gamma>posterize(bins, gamma)<a href=#posterizebins-gamma class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<p><strong>Description:</strong> Applies a posterization effect.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>posterize</span>(<span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>0.6</span>).<span style=color:#a6e22e>out</span>()
 </code></pre></div><h2 id=geometry>Geometry<a href=#geometry class=hanchor arialabel=Anchor>&#8983;</a> </h2>
-<h3 id=rotate>rotate()<a href=#rotate class=hanchor arialabel=Anchor>&#8983;</a> </h3>
-<p><strong>Description:</strong> Rotates the source.
-<strong>Example:</strong></p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>rotate</span>(<span style=color:#ae81ff>0.5</span>).<span style=color:#a6e22e>out</span>()
-</code></pre></div><h3 id=scale>scale()<a href=#scale class=hanchor arialabel=Anchor>&#8983;</a> </h3>
-<p><strong>Description:</strong> Scales the source.
-<strong>Example:</strong></p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>scale</span>(<span style=color:#ae81ff>1.5</span>).<span style=color:#a6e22e>out</span>()
-</code></pre></div><h3 id=pixelate>pixelate()<a href=#pixelate class=hanchor arialabel=Anchor>&#8983;</a> </h3>
-<p><strong>Description:</strong> Applies a pixelation effect.
-<strong>Example:</strong></p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>pixelate</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>10</span>).<span style=color:#a6e22e>out</span>()
-</code></pre></div><h3 id=repeat>repeat()<a href=#repeat class=hanchor arialabel=Anchor>&#8983;</a> </h3>
-<p><strong>Description:</strong> Repeats the source.
-<strong>Example:</strong></p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>repeat</span>(<span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>3</span>).<span style=color:#a6e22e>out</span>()
-</code></pre></div><h3 id=repeatx>repeatX()<a href=#repeatx class=hanchor arialabel=Anchor>&#8983;</a> </h3>
-<p><strong>Description:</strong> Repeats the source horizontally.
-<strong>Example:</strong></p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>repeatX</span>(<span style=color:#ae81ff>3</span>).<span style=color:#a6e22e>out</span>()
-</code></pre></div><h3 id=repeaty>repeatY()<a href=#repeaty class=hanchor arialabel=Anchor>&#8983;</a> </h3>
-<p><strong>Description:</strong> Repeats the source vertically.
-<strong>Example:</strong></p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>repeatY</span>(<span style=color:#ae81ff>3</span>).<span style=color:#a6e22e>out</span>()
-</code></pre></div><h3 id=scroll>scroll()<a href=#scroll class=hanchor arialabel=Anchor>&#8983;</a> </h3>
-<p><strong>Description:</strong> Scrolls the source.
-<strong>Example:</strong></p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>scroll</span>(<span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>0.1</span>).<span style=color:#a6e22e>out</span>()
-</code></pre></div><h3 id=scrollx>scrollX()<a href=#scrollx class=hanchor arialabel=Anchor>&#8983;</a> </h3>
-<p><strong>Description:</strong> Scrolls the source horizontally.
-<strong>Example:</strong></p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>scrollX</span>(<span style=color:#ae81ff>0.1</span>).<span style=color:#a6e22e>out</span>()
-</code></pre></div><h3 id=scrolly>scrollY()<a href=#scrolly class=hanchor arialabel=Anchor>&#8983;</a> </h3>
-<p><strong>Description:</strong> Scrolls the source vertically.
-<strong>Example:</strong></p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>scrollY</span>(<span style=color:#ae81ff>0.1</span>).<span style=color:#a6e22e>out</span>()
-</code></pre></div><h3 id=kaleid>kaleid()<a href=#kaleid class=hanchor arialabel=Anchor>&#8983;</a> </h3>
-<p><strong>Description:</strong> Applies a kaleidoscope effect.
-<strong>Example:</strong></p>
+<h3 id=rotateangle-speed>rotate(angle, speed)<a href=#rotateangle-speed class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<p><strong>Description:</strong> Rotates the source.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>rotate</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0</span>).<span style=color:#a6e22e>out</span>()
+</code></pre></div><h3 id=scaleamount-xmult-ymult-offsetx-offsety>scale(amount, xMult, yMult, offsetX, offsetY)<a href=#scaleamount-xmult-ymult-offsetx-offsety class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<p><strong>Description:</strong> Scales the source.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>scale</span>(<span style=color:#ae81ff>1.5</span>, <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>0.5</span>, <span style=color:#ae81ff>0.5</span>).<span style=color:#a6e22e>out</span>()
+</code></pre></div><h3 id=pixelatepixelx-pixely>pixelate(pixelX, pixelY)<a href=#pixelatepixelx-pixely class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<p><strong>Description:</strong> Applies a pixelation effect.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>pixelate</span>(<span style=color:#ae81ff>20</span>, <span style=color:#ae81ff>20</span>).<span style=color:#a6e22e>out</span>()
+</code></pre></div><h3 id=repeatrepeatx-repeaty-offsetx-offsety>repeat(repeatX, repeatY, offsetX, offsetY)<a href=#repeatrepeatx-repeaty-offsetx-offsety class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<p><strong>Description:</strong> Repeats the source.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>repeat</span>(<span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>).<span style=color:#a6e22e>out</span>()
+</code></pre></div><h3 id=repeatxreps-offset>repeatX(reps, offset)<a href=#repeatxreps-offset class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<p><strong>Description:</strong> Repeats the source horizontally.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>repeatX</span>(<span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>0</span>).<span style=color:#a6e22e>out</span>()
+</code></pre></div><h3 id=repeatyreps-offset>repeatY(reps, offset)<a href=#repeatyreps-offset class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<p><strong>Description:</strong> Repeats the source vertically.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>repeatY</span>(<span style=color:#ae81ff>3</span>, <span style=color:#ae81ff>0</span>).<span style=color:#a6e22e>out</span>()
+</code></pre></div><h3 id=scrollscrollx-scrolly-speedx-speedy>scroll(scrollX, scrollY, speedX, speedY)<a href=#scrollscrollx-scrolly-speedx-speedy class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<p><strong>Description:</strong> Scrolls the source.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>scroll</span>(<span style=color:#ae81ff>0.5</span>, <span style=color:#ae81ff>0.5</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>).<span style=color:#a6e22e>out</span>()
+</code></pre></div><h3 id=scrollxscrollx-speed>scrollX(scrollX, speed)<a href=#scrollxscrollx-speed class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<p><strong>Description:</strong> Scrolls the source horizontally.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>scrollX</span>(<span style=color:#ae81ff>0.5</span>, <span style=color:#ae81ff>0</span>).<span style=color:#a6e22e>out</span>()
+</code></pre></div><h3 id=scrollyscrolly-speed>scrollY(scrollY, speed)<a href=#scrollyscrolly-speed class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<p><strong>Description:</strong> Scrolls the source vertically.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>scrollY</span>(<span style=color:#ae81ff>0.5</span>, <span style=color:#ae81ff>0</span>).<span style=color:#a6e22e>out</span>()
+</code></pre></div><h3 id=kaleidnsides>kaleid(nSides)<a href=#kaleidnsides class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<p><strong>Description:</strong> Applies a kaleidoscope effect.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>kaleid</span>(<span style=color:#ae81ff>4</span>).<span style=color:#a6e22e>out</span>()
 </code></pre></div><h2 id=blending>Blending<a href=#blending class=hanchor arialabel=Anchor>&#8983;</a> </h2>
-<h3 id=add>add()<a href=#add class=hanchor arialabel=Anchor>&#8983;</a> </h3>
-<p><strong>Description:</strong> Adds two sources.
-<strong>Example:</strong></p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>add</span>(<span style=color:#a6e22e>noise</span>(<span style=color:#ae81ff>3</span>)).<span style=color:#a6e22e>out</span>()
-</code></pre></div><h3 id=sub>sub()<a href=#sub class=hanchor arialabel=Anchor>&#8983;</a> </h3>
-<p><strong>Description:</strong> Subtracts one source from another.
-<strong>Example:</strong></p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>sub</span>(<span style=color:#a6e22e>noise</span>(<span style=color:#ae81ff>3</span>)).<span style=color:#a6e22e>out</span>()
+<h3 id=addamount>add(amount)<a href=#addamount class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<p><strong>Description:</strong> Adds two sources.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>add</span>(<span style=color:#a6e22e>noise</span>(<span style=color:#ae81ff>3</span>), <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>out</span>()
+</code></pre></div><h3 id=subamount>sub(amount)<a href=#subamount class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<p><strong>Description:</strong> Subtracts one source from another.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>sub</span>(<span style=color:#a6e22e>noise</span>(<span style=color:#ae81ff>3</span>), <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>out</span>()
 </code></pre></div><h3 id=layer>layer()<a href=#layer class=hanchor arialabel=Anchor>&#8983;</a> </h3>
-<p><strong>Description:</strong> Overlays one source on another.
-<strong>Example:</strong></p>
+<p><strong>Description:</strong> Overlays one source on another.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>layer</span>(<span style=color:#a6e22e>noise</span>(<span style=color:#ae81ff>3</span>)).<span style=color:#a6e22e>out</span>()
-</code></pre></div><h3 id=blend>blend()<a href=#blend class=hanchor arialabel=Anchor>&#8983;</a> </h3>
-<p><strong>Description:</strong> Blends two sources.
-<strong>Example:</strong></p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>blend</span>(<span style=color:#a6e22e>noise</span>(<span style=color:#ae81ff>3</span>)).<span style=color:#a6e22e>out</span>()
-</code></pre></div><h3 id=mult>mult()<a href=#mult class=hanchor arialabel=Anchor>&#8983;</a> </h3>
-<p><strong>Description:</strong> Multiplies two sources.
-<strong>Example:</strong></p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>mult</span>(<span style=color:#a6e22e>noise</span>(<span style=color:#ae81ff>3</span>)).<span style=color:#a6e22e>out</span>()
+</code></pre></div><h3 id=blendamount>blend(amount)<a href=#blendamount class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<p><strong>Description:</strong> Blends two sources.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>blend</span>(<span style=color:#a6e22e>noise</span>(<span style=color:#ae81ff>3</span>), <span style=color:#ae81ff>0.5</span>).<span style=color:#a6e22e>out</span>()
+</code></pre></div><h3 id=multamount>mult(amount)<a href=#multamount class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<p><strong>Description:</strong> Multiplies two sources.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>mult</span>(<span style=color:#a6e22e>noise</span>(<span style=color:#ae81ff>3</span>), <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>out</span>()
 </code></pre></div><h3 id=diff>diff()<a href=#diff class=hanchor arialabel=Anchor>&#8983;</a> </h3>
-<p><strong>Description:</strong> Calculates the difference between two sources.
-<strong>Example:</strong></p>
+<p><strong>Description:</strong> Calculates the difference between two sources.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>diff</span>(<span style=color:#a6e22e>noise</span>(<span style=color:#ae81ff>3</span>)).<span style=color:#a6e22e>out</span>()
 </code></pre></div><h3 id=mask>mask()<a href=#mask class=hanchor arialabel=Anchor>&#8983;</a> </h3>
-<p><strong>Description:</strong> Applies a mask to the source.
-<strong>Example:</strong></p>
+<p><strong>Description:</strong> Applies a mask to the source.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>mask</span>(<span style=color:#a6e22e>shape</span>(<span style=color:#ae81ff>4</span>, <span style=color:#ae81ff>0.5</span>, <span style=color:#ae81ff>0.1</span>)).<span style=color:#a6e22e>out</span>()
 </code></pre></div><h2 id=utilities>Utilities<a href=#utilities class=hanchor arialabel=Anchor>&#8983;</a> </h2>
 <h3 id=out>out()<a href=#out class=hanchor arialabel=Anchor>&#8983;</a> </h3>
-<p><strong>Description:</strong> Outputs the current buffer.
-<strong>Example:</strong></p>
+<p><strong>Description:</strong> Outputs the current buffer.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>out</span>()
 </code></pre></div><h3 id=render>render()<a href=#render class=hanchor arialabel=Anchor>&#8983;</a> </h3>
-<p><strong>Description:</strong> Renders the specified buffer.
-<strong>Example:</strong></p>
+<p><strong>Description:</strong> Renders the specified buffer.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>render</span>(<span style=color:#a6e22e>o1</span>)
 </code></pre></div><h3 id=initcam>initCam()<a href=#initcam class=hanchor arialabel=Anchor>&#8983;</a> </h3>
-<p><strong>Description:</strong> Initializes the webcam.
-<strong>Example:</strong></p>
+<p><strong>Description:</strong> Initializes the webcam.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>s0</span>.<span style=color:#a6e22e>initCam</span>()
 <span style=color:#a6e22e>src</span>(<span style=color:#a6e22e>s0</span>).<span style=color:#a6e22e>out</span>()
 </code></pre></div><h3 id=initvideo>initVideo()<a href=#initvideo class=hanchor arialabel=Anchor>&#8983;</a> </h3>
-<p><strong>Description:</strong> Initializes a video source.
-<strong>Example:</strong></p>
+<p><strong>Description:</strong> Initializes a video source.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>s0</span>.<span style=color:#a6e22e>initVideo</span>(<span style=color:#e6db74>&#34;path/to/video.mp4&#34;</span>)
 <span style=color:#a6e22e>src</span>(<span style=color:#a6e22e>s0</span>).<span style=color:#a6e22e>out</span>()
 </code></pre></div><h3 id=initimage>initImage()<a href=#initimage class=hanchor arialabel=Anchor>&#8983;</a> </h3>
-<p><strong>Description:</strong> Initializes an image source.
-<strong>Example:</strong></p>
+<p><strong>Description:</strong> Initializes an image source.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>s0</span>.<span style=color:#a6e22e>initImage</span>(<span style=color:#e6db74>&#34;path/to/image.jpg&#34;</span>)
 <span style=color:#a6e22e>src</span>(<span style=color:#a6e22e>s0</span>).<span style=color:#a6e22e>out</span>()
-</code></pre></div><h3 id=src>src()<a href=#src class=hanchor arialabel=Anchor>&#8983;</a> </h3>
-<p><strong>Description:</strong> Sets the source for the pipeline.
-<strong>Example:</strong></p>
+</code></pre></div><h3 id=srctexture>src(texture)<a href=#srctexture class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<p><strong>Description:</strong> Sets the source for the pipeline.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>src</span>(<span style=color:#a6e22e>o0</span>).<span style=color:#a6e22e>out</span>()
 </code></pre></div><h3 id=time>time<a href=#time class=hanchor arialabel=Anchor>&#8983;</a> </h3>
-<p><strong>Description:</strong> Global variable representing elapsed time.
-<strong>Example:</strong></p>
+<p><strong>Description:</strong> Global variable representing elapsed time.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>rotate</span>(() =&gt; <span style=color:#a6e22e>time</span>).<span style=color:#a6e22e>out</span>()
 </code></pre></div><h3 id=speed>speed<a href=#speed class=hanchor arialabel=Anchor>&#8983;</a> </h3>
-<p><strong>Description:</strong> Global variable controlling playback speed.
-<strong>Example:</strong></p>
+<p><strong>Description:</strong> Global variable controlling playback speed.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>speed</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.5</span>
 </code></pre></div><h3 id=mouse>mouse<a href=#mouse class=hanchor arialabel=Anchor>&#8983;</a> </h3>
-<p><strong>Description:</strong> Global variable representing mouse position.
-<strong>Example:</strong></p>
+<p><strong>Description:</strong> Global variable representing mouse position.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>rotate</span>(() =&gt; <span style=color:#a6e22e>mouse</span>.<span style=color:#a6e22e>x</span> <span style=color:#f92672>*</span> <span style=color:#ae81ff>0.01</span>).<span style=color:#a6e22e>out</span>()
 </code></pre></div><h3 id=afft>a.fft<a href=#afft class=hanchor arialabel=Anchor>&#8983;</a> </h3>
-<p><strong>Description:</strong> Array representing audio frequency data.
-<strong>Example:</strong></p>
+<p><strong>Description:</strong> Array representing audio frequency data.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>osc</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>modulate</span>(<span style=color:#a6e22e>noise</span>(() =&gt; <span style=color:#a6e22e>a</span>.<span style=color:#a6e22e>fft</span>[<span style=color:#ae81ff>0</span>] <span style=color:#f92672>*</span> <span style=color:#ae81ff>10</span>)).<span style=color:#a6e22e>out</span>()
 </code></pre></div><h3 id=asetsmooth>a.setSmooth()<a href=#asetsmooth class=hanchor arialabel=Anchor>&#8983;</a> </h3>
-<p><strong>Description:</strong> Sets the smoothing for audio analysis.
-<strong>Example:</strong></p>
+<p><strong>Description:</strong> Sets the smoothing for audio analysis.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>a</span>.<span style=color:#a6e22e>setSmooth</span>(<span style=color:#ae81ff>0.8</span>)
 </code></pre></div><h3 id=asetbins>a.setBins()<a href=#asetbins class=hanchor arialabel=Anchor>&#8983;</a> </h3>
-<p><strong>Description:</strong> Sets the number of frequency bins for audio analysis.
-<strong>Example:</strong></p>
+<p><strong>Description:</strong> Sets the number of frequency bins for audio analysis.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>a</span>.<span style=color:#a6e22e>setBins</span>(<span style=color:#ae81ff>4</span>)
 </code></pre></div><h3 id=asetcutoff>a.setCutoff()<a href=#asetcutoff class=hanchor arialabel=Anchor>&#8983;</a> </h3>
-<p><strong>Description:</strong> Sets the cutoff frequency for audio analysis.
-<strong>Example:</strong></p>
+<p><strong>Description:</strong> Sets the cutoff frequency for audio analysis.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>a</span>.<span style=color:#a6e22e>setCutoff</span>(<span style=color:#ae81ff>2</span>)
 </code></pre></div><h3 id=asetscale>a.setScale()<a href=#asetscale class=hanchor arialabel=Anchor>&#8983;</a> </h3>
-<p><strong>Description:</strong> Sets the scale for audio analysis.
-<strong>Example:</strong></p>
+<p><strong>Description:</strong> Sets the scale for audio analysis.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>a</span>.<span style=color:#a6e22e>setScale</span>(<span style=color:#ae81ff>2</span>)
 </code></pre></div>
 </div></div>
