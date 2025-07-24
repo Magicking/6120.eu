@@ -174,283 +174,244 @@ color = "" #color from the theme settings
 
 ## Sources
 
-### osc()
+### osc(frequency, sync, offset)
 **Description:** Generates an oscillating wave pattern.
-**Example:**
 ```javascript
-osc(10, 0.1, 1).out()
+osc(60, 0.1, 1).out()
 ```
 
-### noise()
+### noise(scale, offset)
 **Description:** Creates a noise texture.
-**Example:**
 ```javascript
-noise(3, 0.5).out()
+noise(10, 0.1).out()
 ```
 
-### voronoi()
+### voronoi(scale, speed, blending)
 **Description:** Generates a Voronoi pattern.
-**Example:**
 ```javascript
-voronoi(5, 0.3, 0.8).out()
+voronoi(5, 0.3, 0.3).out()
 ```
 
-### shape()
+### shape(sides, radius, smoothing)
 **Description:** Renders a geometric shape.
-**Example:**
 ```javascript
-shape(4, 0.5, 0.1).out()
+shape(3, 0.3, 0.01).out()
 ```
 
-### gradient()
+### gradient(speed)
 **Description:** Creates a gradient pattern.
-**Example:**
 ```javascript
-gradient(1).out()
+gradient(0).out()
 ```
 
-### solid()
+### solid(r, g, b, a)
 **Description:** Generates a solid color.
-**Example:**
 ```javascript
-solid(1, 0, 0).out()
+solid(0, 0, 0, 1).out()
 ```
 
 ## Modulation
 
-### modulate()
+### modulate(amount)
 **Description:** Modulates the source using another texture.
-**Example:**
 ```javascript
-osc(10, 0.1, 1).modulate(noise(3)).out()
+osc(10, 0.1, 1).modulate(noise(3), 0.1).out()
 ```
 
-### modulateScale()
+### modulateScale(multiple, offset)
 **Description:** Modulates the scale of the source.
-**Example:**
 ```javascript
-osc(10, 0.1, 1).modulateScale(noise(3)).out()
+osc(10, 0.1, 1).modulateScale(noise(3), 1, 1).out()
 ```
 
-### modulateRotate()
+### modulateRotate(multiple, offset)
 **Description:** Modulates the rotation of the source.
-**Example:**
 ```javascript
-osc(10, 0.1, 1).modulateRotate(noise(3)).out()
+osc(10, 0.1, 1).modulateRotate(noise(3), 1, 0).out()
 ```
 
-### modulatePixelate()
+### modulatePixelate(multiple, offset)
 **Description:** Modulates the pixelation of the source.
-**Example:**
 ```javascript
-osc(10, 0.1, 1).modulatePixelate(noise(3)).out()
+osc(10, 0.1, 1).modulatePixelate(noise(3), 10, 3).out()
 ```
 
-### modulateRepeat()
+### modulateRepeat(repeatX, repeatY, offsetX, offsetY)
 **Description:** Modulates the repetition of the source.
-**Example:**
 ```javascript
-osc(10, 0.1, 1).modulateRepeat(noise(3)).out()
+osc(10, 0.1, 1).modulateRepeat(noise(3), 3, 3, 0.5, 0.5).out()
 ```
 
-### modulateScrollX()
+### modulateScrollX(scrollX, speed)
 **Description:** Modulates horizontal scrolling.
-**Example:**
 ```javascript
-osc(10, 0.1, 1).modulateScrollX(noise(3)).out()
+osc(10, 0.1, 1).modulateScrollX(noise(3), 0.5, 0).out()
 ```
 
-### modulateScrollY()
+### modulateScrollY(scrollY, speed)
 **Description:** Modulates vertical scrolling.
-**Example:**
 ```javascript
-osc(10, 0.1, 1).modulateScrollY(noise(3)).out()
+osc(10, 0.1, 1).modulateScrollY(noise(3), 0.5, 0).out()
 ```
 
-### modulateHue()
+### modulateHue(amount)
 **Description:** Modulates the hue of the source.
-**Example:**
 ```javascript
-osc(10, 0.1, 1).modulateHue(noise(3)).out()
+osc(10, 0.1, 1).modulateHue(noise(3), 1).out()
 ```
 
 ## Color
 
-### color()
+### color(r, g, b, a)
 **Description:** Applies color to the source.
-**Example:**
 ```javascript
-osc(10, 0.1, 1).color(1, 0, 0).out()
+osc(10, 0.1, 1).color(1, 0, 0, 1).out()
 ```
 
-### colorama()
+### colorama(amount)
 **Description:** Applies a colorama effect.
-**Example:**
 ```javascript
-osc(10, 0.1, 1).colorama(0.5).out()
+osc(10, 0.1, 1).colorama(0.005).out()
 ```
 
-### saturate()
+### saturate(amount)
 **Description:** Adjusts the saturation.
-**Example:**
 ```javascript
-osc(10, 0.1, 1).saturate(1.5).out()
+osc(10, 0.1, 1).saturate(2).out()
 ```
 
-### contrast()
+### contrast(amount)
 **Description:** Adjusts the contrast.
-**Example:**
 ```javascript
-osc(10, 0.1, 1).contrast(1.5).out()
+osc(10, 0.1, 1).contrast(1.6).out()
 ```
 
-### brightness()
+### brightness(amount)
 **Description:** Adjusts the brightness.
-**Example:**
 ```javascript
-osc(10, 0.1, 1).brightness(0.5).out()
+osc(10, 0.1, 1).brightness(0.4).out()
 ```
 
-### invert()
+### invert(amount)
 **Description:** Inverts the colors.
-**Example:**
 ```javascript
-osc(10, 0.1, 1).invert().out()
+osc(10, 0.1, 1).invert(1).out()
 ```
 
-### luma()
+### luma(threshold, tolerance)
 **Description:** Applies a luma key.
-**Example:**
 ```javascript
-osc(10, 0.1, 1).luma(0.5).out()
+osc(10, 0.1, 1).luma(0.5, 0.1).out()
 ```
 
-### posterize()
+### posterize(bins, gamma)
 **Description:** Applies a posterization effect.
-**Example:**
 ```javascript
-osc(10, 0.1, 1).posterize(3, 0.5).out()
+osc(10, 0.1, 1).posterize(3, 0.6).out()
 ```
 
 ## Geometry
 
-### rotate()
+### rotate(angle, speed)
 **Description:** Rotates the source.
-**Example:**
 ```javascript
-osc(10, 0.1, 1).rotate(0.5).out()
+osc(10, 0.1, 1).rotate(10, 0).out()
 ```
 
-### scale()
+### scale(amount, xMult, yMult, offsetX, offsetY)
 **Description:** Scales the source.
-**Example:**
 ```javascript
-osc(10, 0.1, 1).scale(1.5).out()
+osc(10, 0.1, 1).scale(1.5, 1, 1, 0.5, 0.5).out()
 ```
 
-### pixelate()
+### pixelate(pixelX, pixelY)
 **Description:** Applies a pixelation effect.
-**Example:**
 ```javascript
-osc(10, 0.1, 1).pixelate(10, 10).out()
+osc(10, 0.1, 1).pixelate(20, 20).out()
 ```
 
-### repeat()
+### repeat(repeatX, repeatY, offsetX, offsetY)
 **Description:** Repeats the source.
-**Example:**
 ```javascript
-osc(10, 0.1, 1).repeat(3, 3).out()
+osc(10, 0.1, 1).repeat(3, 3, 0, 0).out()
 ```
 
-### repeatX()
+### repeatX(reps, offset)
 **Description:** Repeats the source horizontally.
-**Example:**
 ```javascript
-osc(10, 0.1, 1).repeatX(3).out()
+osc(10, 0.1, 1).repeatX(3, 0).out()
 ```
 
-### repeatY()
+### repeatY(reps, offset)
 **Description:** Repeats the source vertically.
-**Example:**
 ```javascript
-osc(10, 0.1, 1).repeatY(3).out()
+osc(10, 0.1, 1).repeatY(3, 0).out()
 ```
 
-### scroll()
+### scroll(scrollX, scrollY, speedX, speedY)
 **Description:** Scrolls the source.
-**Example:**
 ```javascript
-osc(10, 0.1, 1).scroll(0.1, 0.1).out()
+osc(10, 0.1, 1).scroll(0.5, 0.5, 0, 0).out()
 ```
 
-### scrollX()
+### scrollX(scrollX, speed)
 **Description:** Scrolls the source horizontally.
-**Example:**
 ```javascript
-osc(10, 0.1, 1).scrollX(0.1).out()
+osc(10, 0.1, 1).scrollX(0.5, 0).out()
 ```
 
-### scrollY()
+### scrollY(scrollY, speed)
 **Description:** Scrolls the source vertically.
-**Example:**
 ```javascript
-osc(10, 0.1, 1).scrollY(0.1).out()
+osc(10, 0.1, 1).scrollY(0.5, 0).out()
 ```
 
-### kaleid()
+### kaleid(nSides)
 **Description:** Applies a kaleidoscope effect.
-**Example:**
 ```javascript
 osc(10, 0.1, 1).kaleid(4).out()
 ```
 
 ## Blending
 
-### add()
+### add(amount)
 **Description:** Adds two sources.
-**Example:**
 ```javascript
-osc(10, 0.1, 1).add(noise(3)).out()
+osc(10, 0.1, 1).add(noise(3), 1).out()
 ```
 
-### sub()
+### sub(amount)
 **Description:** Subtracts one source from another.
-**Example:**
 ```javascript
-osc(10, 0.1, 1).sub(noise(3)).out()
+osc(10, 0.1, 1).sub(noise(3), 1).out()
 ```
 
 ### layer()
 **Description:** Overlays one source on another.
-**Example:**
 ```javascript
 osc(10, 0.1, 1).layer(noise(3)).out()
 ```
 
-### blend()
+### blend(amount)
 **Description:** Blends two sources.
-**Example:**
 ```javascript
-osc(10, 0.1, 1).blend(noise(3)).out()
+osc(10, 0.1, 1).blend(noise(3), 0.5).out()
 ```
 
-### mult()
+### mult(amount)
 **Description:** Multiplies two sources.
-**Example:**
 ```javascript
-osc(10, 0.1, 1).mult(noise(3)).out()
+osc(10, 0.1, 1).mult(noise(3), 1).out()
 ```
 
 ### diff()
 **Description:** Calculates the difference between two sources.
-**Example:**
 ```javascript
 osc(10, 0.1, 1).diff(noise(3)).out()
 ```
 
 ### mask()
 **Description:** Applies a mask to the source.
-**Example:**
 ```javascript
 osc(10, 0.1, 1).mask(shape(4, 0.5, 0.1)).out()
 ```
@@ -459,21 +420,18 @@ osc(10, 0.1, 1).mask(shape(4, 0.5, 0.1)).out()
 
 ### out()
 **Description:** Outputs the current buffer.
-**Example:**
 ```javascript
 osc(10, 0.1, 1).out()
 ```
 
 ### render()
 **Description:** Renders the specified buffer.
-**Example:**
 ```javascript
 render(o1)
 ```
 
 ### initCam()
 **Description:** Initializes the webcam.
-**Example:**
 ```javascript
 s0.initCam()
 src(s0).out()
@@ -481,7 +439,6 @@ src(s0).out()
 
 ### initVideo()
 **Description:** Initializes a video source.
-**Example:**
 ```javascript
 s0.initVideo("path/to/video.mp4")
 src(s0).out()
@@ -489,71 +446,61 @@ src(s0).out()
 
 ### initImage()
 **Description:** Initializes an image source.
-**Example:**
 ```javascript
 s0.initImage("path/to/image.jpg")
 src(s0).out()
 ```
 
-### src()
+### src(texture)
 **Description:** Sets the source for the pipeline.
-**Example:**
 ```javascript
 src(o0).out()
 ```
 
 ### time
 **Description:** Global variable representing elapsed time.
-**Example:**
 ```javascript
 osc(10, 0.1, 1).rotate(() => time).out()
 ```
 
 ### speed
 **Description:** Global variable controlling playback speed.
-**Example:**
 ```javascript
 speed = 0.5
 ```
 
 ### mouse
 **Description:** Global variable representing mouse position.
-**Example:**
 ```javascript
 osc(10, 0.1, 1).rotate(() => mouse.x * 0.01).out()
 ```
 
 ### a.fft
 **Description:** Array representing audio frequency data.
-**Example:**
 ```javascript
 osc(10, 0.1, 1).modulate(noise(() => a.fft[0] * 10)).out()
 ```
 
 ### a.setSmooth()
 **Description:** Sets the smoothing for audio analysis.
-**Example:**
 ```javascript
 a.setSmooth(0.8)
 ```
 
 ### a.setBins()
 **Description:** Sets the number of frequency bins for audio analysis.
-**Example:**
 ```javascript
 a.setBins(4)
 ```
 
 ### a.setCutoff()
 **Description:** Sets the cutoff frequency for audio analysis.
-**Example:**
 ```javascript
 a.setCutoff(2)
 ```
 
 ### a.setScale()
 **Description:** Sets the scale for audio analysis.
-**Example:**
 ```javascript
 a.setScale(2)
 ```
