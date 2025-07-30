@@ -76,7 +76,7 @@ color = "" #color from the theme settings
 ### Teaching (10min)
 - **The power of chaining:** Everything connects with "."
 - **Write slowly and deliberately**
-- **Basic chain structure:** `source().transform().output()`
+- **Basic chain structure:** *source().transform().output()*
 - **Example progression:**
   ```javascript
   osc()           // just a source
@@ -100,10 +100,25 @@ color = "" #color from the theme settings
 
 ### Teaching (10min)
 - **Introduction to external modules**
+- **Modules icon:** Show how to add modules easily
+- **Hyper-Hydra:** A collection of advanced modules
 - **ShaderPark (glsl) integration demo:**
   - Navigate to: [ShaderPark Example](https://hydra.ojack.xyz/?code=Y29uc3QlMjAlN0IlMjBzY3VscHRUb0h5ZHJhUmVuZGVyZXIlMjAlN0QlMjAlM0QlMjBhd2FpdCUyMGltcG9ydCglMjJodHRwcyUzQSUyRiUyRnVucGtnLmNvbSUyRnNoYWRlci1wYXJrLWNvcmUlMkZkaXN0JTJGc2hhZGVyLXBhcmstY29yZS5lc20uanMlMjIp)
   - Show 3D sculptural possibilities
 - **Extensibility of Hydra**
+- **JavaScript tricks:** 
+
+```javascript
+  f = new Array(3).fill().reduce(
+  (acc, e) =>
+    acc.add(
+      shape(3,0.1)
+        .scroll((c += 0.1), 0.1)
+    ),
+  solid()
+  )
+  f.out()
+  ```
 
 ### Workshop 4 (20min)
 **Goal:** Explore advanced modules and understand performance
@@ -113,7 +128,7 @@ color = "" #color from the theme settings
   - Image loading functions
   - Canvas size modifications
   - CPU-intensive operations
-- Notice performance differences
+- Notice performance differences and how it affects visuals
 
 ---
 
@@ -440,14 +455,14 @@ src(s0).out()
 ### initVideo()
 **Description:** Initializes a video source.
 ```javascript
-s0.initVideo("path/to/video.mp4")
+s0.initVideo("https://6120.eu/public/storm.mp4")
 src(s0).out()
 ```
 
 ### initImage()
 **Description:** Initializes an image source.
 ```javascript
-s0.initImage("path/to/image.jpg")
+s0.initImage("file:///path/to/image.jpg")
 src(s0).out()
 ```
 
