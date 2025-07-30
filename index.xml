@@ -71,7 +71,7 @@ Lesson 1: Hydra 101 (10min + 20min) Teaching (10min) Objective: Get familiar wit
 &lt;ul>
 &lt;li>&lt;strong>The power of chaining:&lt;/strong> Everything connects with &amp;ldquo;.&amp;rdquo;&lt;/li>
 &lt;li>&lt;strong>Write slowly and deliberately&lt;/strong>&lt;/li>
-&lt;li>&lt;strong>Basic chain structure:&lt;/strong> &lt;code>source().transform().output()&lt;/code>&lt;/li>
+&lt;li>&lt;strong>Basic chain structure:&lt;/strong> &lt;em>source().transform().output()&lt;/em>&lt;/li>
 &lt;li>&lt;strong>Example progression:&lt;/strong>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">osc&lt;/span>() &lt;span style="color:#75715e">// just a source
 &lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#a6e22e">osc&lt;/span>().&lt;span style="color:#a6e22e">rotate&lt;/span>() &lt;span style="color:#75715e">// add transformation
@@ -97,6 +97,8 @@ Lesson 1: Hydra 101 (10min + 20min) Teaching (10min) Objective: Get familiar wit
 &lt;h3 id="teaching-10min-3">Teaching (10min)&lt;/h3>
 &lt;ul>
 &lt;li>&lt;strong>Introduction to external modules&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Modules icon:&lt;/strong> Show how to add modules easily&lt;/li>
+&lt;li>&lt;strong>Hyper-Hydra:&lt;/strong> A collection of advanced modules&lt;/li>
 &lt;li>&lt;strong>ShaderPark (glsl) integration demo:&lt;/strong>
 &lt;ul>
 &lt;li>Navigate to: &lt;a href="https://hydra.ojack.xyz/?code=Y29uc3QlMjAlN0IlMjBzY3VscHRUb0h5ZHJhUmVuZGVyZXIlMjAlN0QlMjAlM0QlMjBhd2FpdCUyMGltcG9ydCglMjJodHRwcyUzQSUyRiUyRnVucGtnLmNvbSUyRnNoYWRlci1wYXJrLWNvcmUlMkZkaXN0JTJGc2hhZGVyLXBhcmstY29yZS5lc20uanMlMjIp">ShaderPark Example&lt;/a>&lt;/li>
@@ -104,8 +106,18 @@ Lesson 1: Hydra 101 (10min + 20min) Teaching (10min) Objective: Get familiar wit
 &lt;/ul>
 &lt;/li>
 &lt;li>&lt;strong>Extensibility of Hydra&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>JavaScript tricks:&lt;/strong>&lt;/li>
 &lt;/ul>
-&lt;h3 id="workshop-4-20min">Workshop 4 (20min)&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript"> &lt;span style="color:#a6e22e">f&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> Array(&lt;span style="color:#ae81ff">3&lt;/span>).&lt;span style="color:#a6e22e">fill&lt;/span>().&lt;span style="color:#a6e22e">reduce&lt;/span>(
+(&lt;span style="color:#a6e22e">acc&lt;/span>, &lt;span style="color:#a6e22e">e&lt;/span>) =&amp;gt;
+&lt;span style="color:#a6e22e">acc&lt;/span>.&lt;span style="color:#a6e22e">add&lt;/span>(
+&lt;span style="color:#a6e22e">shape&lt;/span>(&lt;span style="color:#ae81ff">3&lt;/span>,&lt;span style="color:#ae81ff">0.1&lt;/span>)
+.&lt;span style="color:#a6e22e">scroll&lt;/span>((&lt;span style="color:#a6e22e">c&lt;/span> &lt;span style="color:#f92672">+=&lt;/span> &lt;span style="color:#ae81ff">0.1&lt;/span>), &lt;span style="color:#ae81ff">0.1&lt;/span>)
+),
+&lt;span style="color:#a6e22e">solid&lt;/span>()
+)
+&lt;span style="color:#a6e22e">f&lt;/span>.&lt;span style="color:#a6e22e">out&lt;/span>()
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="workshop-4-20min">Workshop 4 (20min)&lt;/h3>
 &lt;p>&lt;strong>Goal:&lt;/strong> Explore advanced modules and understand performance&lt;/p>
 &lt;ul>
 &lt;li>Reference: &lt;a href="https://github.com/geikha/hyper-hydra">Hyper-Hydra GitHub&lt;/a>&lt;/li>
@@ -117,7 +129,7 @@ Lesson 1: Hydra 101 (10min + 20min) Teaching (10min) Objective: Get familiar wit
 &lt;li>CPU-intensive operations&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>Notice performance differences&lt;/li>
+&lt;li>Notice performance differences and how it affects visuals&lt;/li>
 &lt;/ul>
 &lt;hr>
 &lt;h2 id="lesson-5-hydra-midi-integration-10min--20min">Lesson 5: Hydra-MIDI Integration (10min + 20min)&lt;/h2>
@@ -309,11 +321,11 @@ Lesson 1: Hydra 101 (10min + 20min) Teaching (10min) Objective: Get familiar wit
 &lt;span style="color:#a6e22e">src&lt;/span>(&lt;span style="color:#a6e22e">s0&lt;/span>).&lt;span style="color:#a6e22e">out&lt;/span>()
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="initvideo">initVideo()&lt;/h3>
 &lt;p>&lt;strong>Description:&lt;/strong> Initializes a video source.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">s0&lt;/span>.&lt;span style="color:#a6e22e">initVideo&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;path/to/video.mp4&amp;#34;&lt;/span>)
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">s0&lt;/span>.&lt;span style="color:#a6e22e">initVideo&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;https://6120.eu/public/storm.mp4&amp;#34;&lt;/span>)
 &lt;span style="color:#a6e22e">src&lt;/span>(&lt;span style="color:#a6e22e">s0&lt;/span>).&lt;span style="color:#a6e22e">out&lt;/span>()
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="initimage">initImage()&lt;/h3>
 &lt;p>&lt;strong>Description:&lt;/strong> Initializes an image source.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">s0&lt;/span>.&lt;span style="color:#a6e22e">initImage&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;path/to/image.jpg&amp;#34;&lt;/span>)
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="color:#a6e22e">s0&lt;/span>.&lt;span style="color:#a6e22e">initImage&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;file:///path/to/image.jpg&amp;#34;&lt;/span>)
 &lt;span style="color:#a6e22e">src&lt;/span>(&lt;span style="color:#a6e22e">s0&lt;/span>).&lt;span style="color:#a6e22e">out&lt;/span>()
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="srctexture">src(texture)&lt;/h3>
 &lt;p>&lt;strong>Description:&lt;/strong> Sets the source for the pipeline.&lt;/p>
