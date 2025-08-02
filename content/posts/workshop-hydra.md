@@ -139,7 +139,7 @@ color = "" #color from the theme settings
 - **Music visualization possibilities**
 - **Demo setup:**
   ```javascript
-  await loadScript("https://6120.eu/public/midi.js")
+  await loadScript("https://h.6120.eu/midi.js")
   await midi.start({ channel: '*', input: '*' })
   midi.show()
   ```
@@ -192,7 +192,7 @@ color = "" #color from the theme settings
 ### osc(frequency, sync, offset)
 **Description:** Generates an oscillating wave pattern.
 ```javascript
-osc(60, 0.1, 1).out()
+osc(60, 0.1, 0).out()
 ```
 
 ### noise(scale, offset)
@@ -230,49 +230,49 @@ solid(0, 0, 0, 1).out()
 ### modulate(amount)
 **Description:** Modulates the source using another texture.
 ```javascript
-osc(10, 0.1, 1).modulate(noise(3), 0.1).out()
+osc(60, 0.1, 0).modulate(noise(10, 0.1), 0.1).out()
 ```
 
 ### modulateScale(multiple, offset)
 **Description:** Modulates the scale of the source.
 ```javascript
-osc(10, 0.1, 1).modulateScale(noise(3), 1, 1).out()
+osc(60, 0.1, 0).modulateScale(noise(10, 0.1), 1, 1).out()
 ```
 
 ### modulateRotate(multiple, offset)
 **Description:** Modulates the rotation of the source.
 ```javascript
-osc(10, 0.1, 1).modulateRotate(noise(3), 1, 0).out()
+osc(60, 0.1, 0).modulateRotate(noise(10, 0.1), 1, 0).out()
 ```
 
 ### modulatePixelate(multiple, offset)
 **Description:** Modulates the pixelation of the source.
 ```javascript
-osc(10, 0.1, 1).modulatePixelate(noise(3), 10, 3).out()
+osc(60, 0.1, 0).modulatePixelate(noise(10, 0.1), 10, 3).out()
 ```
 
 ### modulateRepeat(repeatX, repeatY, offsetX, offsetY)
 **Description:** Modulates the repetition of the source.
 ```javascript
-osc(10, 0.1, 1).modulateRepeat(noise(3), 3, 3, 0.5, 0.5).out()
+osc(60, 0.1, 0).modulateRepeat(noise(10, 0.1), 3, 3, 0.5, 0.5).out()
 ```
 
 ### modulateScrollX(scrollX, speed)
 **Description:** Modulates horizontal scrolling.
 ```javascript
-osc(10, 0.1, 1).modulateScrollX(noise(3), 0.5, 0).out()
+osc(60, 0.1, 0).modulateScrollX(noise(10, 0.1), 0.5, 0).out()
 ```
 
 ### modulateScrollY(scrollY, speed)
 **Description:** Modulates vertical scrolling.
 ```javascript
-osc(10, 0.1, 1).modulateScrollY(noise(3), 0.5, 0).out()
+osc(60, 0.1, 0).modulateScrollY(noise(10, 0.1), 0.5, 0).out()
 ```
 
 ### modulateHue(amount)
 **Description:** Modulates the hue of the source.
 ```javascript
-osc(10, 0.1, 1).modulateHue(noise(3), 1).out()
+osc(60, 0.1, 0).modulateHue(noise(10, 0.1), 1).out()
 ```
 
 ## Color
@@ -280,49 +280,49 @@ osc(10, 0.1, 1).modulateHue(noise(3), 1).out()
 ### color(r, g, b, a)
 **Description:** Applies color to the source.
 ```javascript
-osc(10, 0.1, 1).color(1, 0, 0, 1).out()
+osc(60, 0.1, 0).color(1, 1, 1, 1).out()
 ```
 
 ### colorama(amount)
 **Description:** Applies a colorama effect.
 ```javascript
-osc(10, 0.1, 1).colorama(0.005).out()
+osc(60, 0.1, 0).colorama(0.005).out()
 ```
 
 ### saturate(amount)
 **Description:** Adjusts the saturation.
 ```javascript
-osc(10, 0.1, 1).saturate(2).out()
+osc(60, 0.1, 0).saturate(2).out()
 ```
 
 ### contrast(amount)
 **Description:** Adjusts the contrast.
 ```javascript
-osc(10, 0.1, 1).contrast(1.6).out()
+osc(60, 0.1, 0).contrast(1.6).out()
 ```
 
 ### brightness(amount)
 **Description:** Adjusts the brightness.
 ```javascript
-osc(10, 0.1, 1).brightness(0.4).out()
+osc(60, 0.1, 0).brightness(0.4).out()
 ```
 
 ### invert(amount)
 **Description:** Inverts the colors.
 ```javascript
-osc(10, 0.1, 1).invert(1).out()
+osc(60, 0.1, 0).invert(1).out()
 ```
 
 ### luma(threshold, tolerance)
 **Description:** Applies a luma key.
 ```javascript
-osc(10, 0.1, 1).luma(0.5, 0.1).out()
+osc(60, 0.1, 0).luma(0.5, 0.1).out()
 ```
 
 ### posterize(bins, gamma)
 **Description:** Applies a posterization effect.
 ```javascript
-osc(10, 0.1, 1).posterize(3, 0.6).out()
+osc(60, 0.1, 0).posterize(3, 0.6).out()
 ```
 
 ## Geometry
@@ -330,61 +330,61 @@ osc(10, 0.1, 1).posterize(3, 0.6).out()
 ### rotate(angle, speed)
 **Description:** Rotates the source.
 ```javascript
-osc(10, 0.1, 1).rotate(10, 0).out()
+osc(60, 0.1, 0).rotate(10, 0).out()
 ```
 
 ### scale(amount, xMult, yMult, offsetX, offsetY)
 **Description:** Scales the source.
 ```javascript
-osc(10, 0.1, 1).scale(1.5, 1, 1, 0.5, 0.5).out()
+osc(60, 0.1, 0).scale(1.5, 1, 1, 0.5, 0.5).out()
 ```
 
 ### pixelate(pixelX, pixelY)
 **Description:** Applies a pixelation effect.
 ```javascript
-osc(10, 0.1, 1).pixelate(20, 20).out()
+osc(60, 0.1, 0).pixelate(20, 20).out()
 ```
 
 ### repeat(repeatX, repeatY, offsetX, offsetY)
 **Description:** Repeats the source.
 ```javascript
-osc(10, 0.1, 1).repeat(3, 3, 0, 0).out()
+osc(60, 0.1, 0).repeat(3, 3, 0, 0).out()
 ```
 
 ### repeatX(reps, offset)
 **Description:** Repeats the source horizontally.
 ```javascript
-osc(10, 0.1, 1).repeatX(3, 0).out()
+osc(60, 0.1, 0).repeatX(3, 0).out()
 ```
 
 ### repeatY(reps, offset)
 **Description:** Repeats the source vertically.
 ```javascript
-osc(10, 0.1, 1).repeatY(3, 0).out()
+osc(60, 0.1, 0).repeatY(3, 0).out()
 ```
 
 ### scroll(scrollX, scrollY, speedX, speedY)
 **Description:** Scrolls the source.
 ```javascript
-osc(10, 0.1, 1).scroll(0.5, 0.5, 0, 0).out()
+osc(60, 0.1, 0).scroll(0.5, 0.5, 0, 0).out()
 ```
 
 ### scrollX(scrollX, speed)
 **Description:** Scrolls the source horizontally.
 ```javascript
-osc(10, 0.1, 1).scrollX(0.5, 0).out()
+osc(60, 0.1, 0).scrollX(0.5, 0).out()
 ```
 
 ### scrollY(scrollY, speed)
 **Description:** Scrolls the source vertically.
 ```javascript
-osc(10, 0.1, 1).scrollY(0.5, 0).out()
+osc(60, 0.1, 0).scrollY(0.5, 0).out()
 ```
 
 ### kaleid(nSides)
 **Description:** Applies a kaleidoscope effect.
 ```javascript
-osc(10, 0.1, 1).kaleid(4).out()
+osc(60, 0.1, 0).kaleid(4).out()
 ```
 
 ## Blending
@@ -392,43 +392,43 @@ osc(10, 0.1, 1).kaleid(4).out()
 ### add(amount)
 **Description:** Adds two sources.
 ```javascript
-osc(10, 0.1, 1).add(noise(3), 1).out()
+osc(60, 0.1, 0).add(noise(10, 0.1), 1).out()
 ```
 
 ### sub(amount)
 **Description:** Subtracts one source from another.
 ```javascript
-osc(10, 0.1, 1).sub(noise(3), 1).out()
+osc(60, 0.1, 0).sub(noise(10, 0.1), 1).out()
 ```
 
 ### layer()
 **Description:** Overlays one source on another.
 ```javascript
-osc(10, 0.1, 1).layer(noise(3)).out()
+osc(60, 0.1, 0).layer(noise(10, 0.1)).out()
 ```
 
 ### blend(amount)
 **Description:** Blends two sources.
 ```javascript
-osc(10, 0.1, 1).blend(noise(3), 0.5).out()
+osc(60, 0.1, 0).blend(noise(10, 0.1), 0.5).out()
 ```
 
 ### mult(amount)
 **Description:** Multiplies two sources.
 ```javascript
-osc(10, 0.1, 1).mult(noise(3), 1).out()
+osc(60, 0.1, 0).mult(noise(10, 0.1), 1).out()
 ```
 
 ### diff()
 **Description:** Calculates the difference between two sources.
 ```javascript
-osc(10, 0.1, 1).diff(noise(3)).out()
+osc(60, 0.1, 0).diff(noise(10, 0.1)).out()
 ```
 
 ### mask()
 **Description:** Applies a mask to the source.
 ```javascript
-osc(10, 0.1, 1).mask(shape(4, 0.5, 0.1)).out()
+osc(60, 0.1, 0).mask(shape(3, 0.3, 0.01)).out()
 ```
 
 ## Utilities
@@ -436,13 +436,13 @@ osc(10, 0.1, 1).mask(shape(4, 0.5, 0.1)).out()
 ### out()
 **Description:** Outputs the current buffer.
 ```javascript
-osc(10, 0.1, 1).out()
+osc(60, 0.1, 0).out()
 ```
 
 ### render()
 **Description:** Renders the specified buffer.
 ```javascript
-render(o1)
+render(o0)
 ```
 
 ### initCam()
@@ -475,7 +475,7 @@ src(o0).out()
 ### time
 **Description:** Global variable representing elapsed time.
 ```javascript
-osc(10, 0.1, 1).rotate(() => time).out()
+osc(60, 0.1, 0).rotate(() => time).out()
 ```
 
 ### speed
@@ -487,13 +487,19 @@ speed = 0.5
 ### mouse
 **Description:** Global variable representing mouse position.
 ```javascript
-osc(10, 0.1, 1).rotate(() => mouse.x * 0.01).out()
+osc(60, 0.1, 0).rotate(() => mouse.x * 0.01).out()
+```
+
+### a.show
+**Description:** Show FFT volume meter.
+```javascript
+a.show()
 ```
 
 ### a.fft
 **Description:** Array representing audio frequency data.
 ```javascript
-osc(10, 0.1, 1).modulate(noise(() => a.fft[0] * 10)).out()
+osc(60, 0.1, 0).modulate(noise(() => a.fft[0] * 10, 0.1), 0.1).out()
 ```
 
 ### a.setSmooth()
@@ -519,3 +525,38 @@ a.setCutoff(2)
 ```javascript
 a.setScale(2)
 ```
+
+## MIDI
+
+### await midi.start().show()
+**Description:** Start MIDI connection and display interface.
+```javascript
+await midi.start().show()
+```
+
+### note('*')
+**Description:** Get MIDI note value from any channel.
+```javascript
+solid(note('*'), 0, 1).out()
+```
+
+### cc(channel, controller)
+**Description:** Get MIDI CC (Continuous Controller) value.
+```javascript
+osc(cc(0, 1) * 100).out()
+```
+
+### aft('*')
+**Description:** Get MIDI aftertouch value from any channel.
+```javascript
+solid(aft('*'), 0, 1).out()
+```
+
+## Useful links
+
+- [Hydra Functions API](https://hydra.ojack.xyz/api/)
+- [Hydra Book](https://hydra-book.glitches.me/)
+- [MIDI Integration](https://github.com/arnoson/hydra-midi)
+- [Hydra Collaborative Editor (Flok)](https://flok.cc/)
+- [Hydra Discord Community](https://discord.com/invite/ZQjfHkNHXC)
+- [Updated Cheat Sheet](https://6120.eu/workshop-hydra)
