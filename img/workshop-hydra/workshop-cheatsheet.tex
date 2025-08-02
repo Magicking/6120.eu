@@ -5,6 +5,7 @@
 \usepackage{longtable}
 \usepackage{url}
 \usepackage{array}
+\usepackage{amsmath}
 
 \definecolor{lightyellow}{rgb}{1,0.98,0.9}
 
@@ -114,10 +115,10 @@ src(texture) & Set source & src(o0).out() \\
 \toprule
 \textbf{Variable} & \textbf{Description} & \textbf{Example} \\
 \midrule
-time & Elapsed time & osc().rotate(() =\> time).out() \\
+time & Elapsed time & osc().rotate(() =\textgreater  time).out() \\
 speed & Playback speed & speed = 0.5 \\
-mouse & Mouse position & osc().rotate(() =\> mouse.x * 0.01).out() \\
-a.fft & Audio frequency data & osc().modulate(noise(() =\> a.fft[0] * 10)).out() \\
+mouse & Mouse position & osc().rotate(() =\textgreater  mouse.x * 0.01).out() \\
+a.fft & Audio frequency data & osc().modulate(noise(() =\textgreater  a.fft[0] * 10)).out() \\
 \bottomrule
 \end{tabular}
 
@@ -154,7 +155,7 @@ aft(channel, controller) & MIDI aftertouch value & solid(aft('*'), 0, 1).out() \
 \item MIDI - \url{https://github.com/arnoson/hydra-midi}
 \item Hydra collaborative editor - \url{https://flok.cc/}
 \item Discord - \url{https://discord.com/invite/ZQjfHkNHXC}
-\item Updated Cheat Sheet - \url{https://6120.eu/workshop-hydra}
+\item Updated Cheat Sheet - \url{https://6120.eu/posts/workshop-hydra/}
 \end{itemize}
 
 Last updated: \today
