@@ -1,0 +1,162 @@
+\documentclass[9pt,oneside]{amsart}
+\usepackage[a4paper,left=10mm,width=170mm,top=18mm,bottom=22mm,includeheadfoot]{geometry}
+\usepackage{booktabs}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{longtable}
+\usepackage{url}
+\usepackage{array}
+
+\definecolor{lightyellow}{rgb}{1,0.98,0.9}
+
+\begin{document}
+
+\pagecolor{lightyellow}
+
+\section*{Hydra Cheat Sheet}
+
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+\subsection*{Sources}
+\begin{tabular}{L{0.25\linewidth}L{0.25\linewidth}L{0.40\linewidth}}
+\toprule
+\textbf{Function} & \textbf{Description} & \textbf{Example} \\
+\midrule
+osc(freq, sync, offset) & Oscillating wave pattern & osc(60, 0.1, 0).out() \\
+noise(scale, offset) & Noise texture & noise(10, 0.1).out() \\
+voronoi(scale, speed, blend) & Voronoi pattern & voronoi(5, 0.3, 0.3).out() \\
+shape(sides, radius, smooth) & Geometric shape & shape(3, 0.3, 0.01).out() \\
+gradient(speed) & Gradient pattern & gradient(0).out() \\
+solid(r, g, b, a) & Solid color & solid(1, 0, 0, 1).out() \\
+\bottomrule
+\end{tabular}
+
+\subsection*{Modulation}
+\begin{tabular}{L{0.28\linewidth}L{0.23\linewidth}L{0.40\linewidth}}
+\toprule
+\textbf{Function} & \textbf{Description} & \textbf{Example} \\
+\midrule
+modulate(amount) & Modulate with texture & osc().modulate(noise(), 0.1).out() \\
+modulateScale(mult, offset) & Modulate scale & osc().modulateScale(noise(), 1, 1).out() \\
+modulateRotate(mult, offset) & Modulate rotation & osc().modulateRotate(noise(), 1, 0).out() \\
+modulatePixelate(mult, offset) & Modulate pixelation & osc().modulatePixelate(noise(), 10, 3).out() \\
+modulateRepeat(rx, ry, ox, oy) & Modulate repetition & osc().modulateRepeat(osc(), 3, 3, 0.5, 0.5).out() \\
+modulateScrollX(scrollX, speed) & Modulate horizontal scroll & osc().modulateScrollX(noise(), 0.5, 0).out() \\
+modulateScrollY(scrollY, speed) & Modulate vertical scroll & osc().modulateScrollY(noise(), 0.5, 0).out() \\
+modulateHue(amount) & Modulate hue & osc().modulateHue(noise(), 1).out() \\
+\bottomrule
+\end{tabular}
+
+\subsection*{Color}
+\begin{tabular}{L{0.25\linewidth}L{0.20\linewidth}L{0.40\linewidth}}
+\toprule
+\textbf{Function} & \textbf{Description} & \textbf{Example} \\
+\midrule
+color(r, g, b, a) & Apply color & osc().color(1, 0, 0, 1).out() \\
+colorama(amount) & Colorama effect & osc().colorama(0.005).out() \\
+saturate(amount) & Adjust saturation & osc().saturate(2).out() \\
+contrast(amount) & Adjust contrast & osc().contrast(1.6).out() \\
+brightness(amount) & Adjust brightness & osc().brightness(0.4).out() \\
+invert(amount) & Invert colors & osc().invert(1).out() \\
+luma(threshold, tolerance) & Luma key & osc().luma(0.5, 0.1).out() \\
+posterize(bins, gamma) & Posterization & osc().posterize(3, 0.6).out() \\
+\bottomrule
+\end{tabular}
+
+\subsection*{Geometry}
+\begin{tabular}{L{0.40\linewidth}L{0.20\linewidth}L{0.34\linewidth}}
+\toprule
+\textbf{Function} & \textbf{Description} & \textbf{Example} \\
+\midrule
+rotate(angle, speed) & Rotate source & osc().rotate(10, 0).out() \\
+scale(amount, xMult, yMult, ox, oy) & Scale source & osc().scale(1.5, 1, 1, 0.5, 0.5).out() \\
+pixelate(pixelX, pixelY) & Pixelation effect & osc().pixelate(20, 20).out() \\
+repeat(repeatX, repeatY, offsetX, offsetY) & Repeat source & osc().repeat(3, 3, 0, 0).out() \\
+repeatX(reps, offset) & Horizontal repeat & osc().repeatX(3, 0).out() \\
+repeatY(reps, offset) & Vertical repeat & osc().repeatY(3, 0).out() \\
+scroll(scrollX, scrollY, speedX, speedY) & Scroll source & osc().scroll(0.5, 0.5, 0, 0).out() \\
+scrollX(scrollX, speed) & Horizontal scroll & osc().scrollX(0.5, 0).out() \\
+scrollY(scrollY, speed) & Vertical scroll & osc().scrollY(0.5, 0).out() \\
+kaleid(nSides) & Kaleidoscope effect & osc().kaleid(4).out() \\
+\bottomrule
+\end{tabular}
+
+\subsection*{Blending}
+\begin{tabular}{L{0.25\linewidth}L{0.23\linewidth}L{0.40\linewidth}}
+\toprule
+\textbf{Function} & \textbf{Description} & \textbf{Example} \\
+\midrule
+add(amount) & Add sources & osc().add(noise(), 1).out() \\
+sub(amount) & Subtract sources & osc().sub(noise(), 1).out() \\
+layer() & Overlay sources & osc().layer(noise()).out() \\
+blend(amount) & Blend sources & osc().blend(noise(), 0.5).out() \\
+mult(amount) & Multiply sources & osc().mult(noise(), 1).out() \\
+diff() & Difference between sources & osc().diff(noise()).out() \\
+mask() & Apply mask & osc().mask(shape(3)).out() \\
+\bottomrule
+\end{tabular}
+
+\subsection*{Utilities}
+\begin{tabular}{L{0.25\linewidth}L{0.20\linewidth}L{0.40\linewidth}}
+\toprule
+\textbf{Function} & \textbf{Description} & \textbf{Example} \\
+\midrule
+out() & Output buffer & osc().out() \\
+render() & Render buffer & render(o0) \\
+initCam(cameraNumber) & Initialize webcam & s0.initCam(0); src(s0).out() \\
+initVideo() & Initialize video & s0.initVideo("url"); src(s0).out() \\
+initImage() & Initialize image & s0.initImage("path"); src(s0).out() \\
+src(texture) & Set source & src(o0).out() \\
+\bottomrule
+\end{tabular}
+
+\subsection*{Global Variables}
+\begin{tabular}{L{0.25\linewidth}L{0.20\linewidth}L{0.40\linewidth}}
+\toprule
+\textbf{Variable} & \textbf{Description} & \textbf{Example} \\
+\midrule
+time & Elapsed time & osc().rotate(() =\> time).out() \\
+speed & Playback speed & speed = 0.5 \\
+mouse & Mouse position & osc().rotate(() =\> mouse.x * 0.01).out() \\
+a.fft & Audio frequency data & osc().modulate(noise(() =\> a.fft[0] * 10)).out() \\
+\bottomrule
+\end{tabular}
+
+\subsection*{Audio Functions}
+\begin{tabular}{L{0.25\linewidth}L{0.23\linewidth}L{0.40\linewidth}}
+\toprule
+\textbf{Function} & \textbf{Description} & \textbf{Example} \\
+\midrule
+a.show() & Show FFT volume meter & a.show() \\
+a.setSmooth() & Set audio smoothing & a.setSmooth(0.8) \\
+a.setBins() & Set frequency bins & a.setBins(4) \\
+a.setCutoff() & Set cutoff frequency & a.setCutoff(2) \\
+a.setScale() & Set audio scale & a.setScale(2) \\
+\bottomrule
+\end{tabular}
+
+\subsection*{MIDI Integration}
+\begin{tabular}{L{0.25\linewidth}L{0.20\linewidth}L{0.40\linewidth}}
+\toprule
+\textbf{Function} & \textbf{Description} & \textbf{Example} \\
+\midrule
+ & Load MIDI script & await loadScript('https://h.6120.eu/midi.js') \\
+await midi.start().show() & Start MIDI \& Display & await midi.start().show() \\
+note('*') & MIDI note value & solid(note('*'), 0, 1).out() \\
+cc(channel, controller) & MIDI CC value & osc(cc(0, 1) * 100).out() \\
+aft(channel, controller) & MIDI aftertouch value & solid(aft('*'), 0, 1).out() \\
+\bottomrule
+\end{tabular}
+
+\subsection*{Useful Links}
+\begin{itemize}
+\item Hydra Functions - \url{https://hydra.ojack.xyz/api/}
+\item Hydra Book - \url{https://hydra-book.glitches.me/}
+\item MIDI - \url{https://github.com/arnoson/hydra-midi}
+\item Hydra collaborative editor - \url{https://flok.cc/}
+\item Discord - \url{https://discord.com/invite/ZQjfHkNHXC}
+\item Updated Cheat Sheet - \url{https://6120.eu/workshop-hydra}
+\end{itemize}
+
+Last updated: \today
+
+\end{document}
