@@ -115,7 +115,7 @@ color = "" #color from the theme settings
 - **JavaScript tricks:** 
 
 ```javascript
-  f = new Array(3).fill().reduce(
+  c=0;f = new Array(3).fill().reduce(
   (acc, e) =>
     acc.add(
       shape(3,0.1)
