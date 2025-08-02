@@ -17,8 +17,14 @@ color = "" #color from the theme settings
 
 **Duration:** 2 hours + 1 hour bonus  
 **Format:** 5 lessons (30min each) with 10min teaching + 15-20min workshop
-
+**Cheat Sheet**: [Companion PDF](https://6120.eu/img/workshop-hydra/workshop-cheatsheet.pdf) ([Source](https://github.com/Magicking/6120.eu/blob/main/static/img/workshop-hydra/workshop-cheatsheet.tex))
 ---
+
+## Workshop Philosophy:
+- **Experimentation over perfection**
+- **Happy accidents are learning opportunities**
+- **Community and sharing enhances creativity**
+- **Start simple, build complexity gradually**
 
 ## Lesson 1: Hydra 101 (10min + 20min)
 
@@ -179,13 +185,7 @@ color = "" #color from the theme settings
 - [Hyper-Hydra Extensions](https://github.com/geikha/hyper-hydra)
 - [Main Hydra Site](https://hydra.ojack.xyz)
 
-## Workshop Philosophy:
-- **Experimentation over perfection**
-- **Happy accidents are learning opportunities**
-- **Community and sharing enhances creativity**
-- **Start simple, build complexity gradually**
-
-# Hydra Functions Cheat Sheet
+# Hydra Cheat Sheet
 
 ## Sources
 
@@ -445,10 +445,10 @@ osc(60, 0.1, 0).out()
 render(o0)
 ```
 
-### initCam()
+### initCam(cameraNumber)
 **Description:** Initializes the webcam.
 ```javascript
-s0.initCam()
+s0.initCam(0)
 src(s0).out()
 ```
 
