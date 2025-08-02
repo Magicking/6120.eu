@@ -1,10 +1,9 @@
 \documentclass[9pt,oneside]{amsart}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage[a4paper,width=170mm,top=18mm,bottom=22mm,includeheadfoot]{geometry}
+\usepackage[a4paper,left=10mm,width=170mm,top=18mm,bottom=22mm,includeheadfoot]{geometry}
 \usepackage{booktabs}
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage{longtable}
+\usepackage{url}
 \usepackage{array}
 
 \definecolor{lightyellow}{rgb}{1,0.98,0.9}
@@ -13,12 +12,12 @@
 
 \pagecolor{lightyellow}
 
-\section*{Hydra Functions Cheat Sheet}
+\section*{Hydra Cheat Sheet}
 
 \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
 
 \subsection*{Sources}
-\begin{tabular}{L{0.25\linewidth}L{0.25\linewidth}L{0.3\linewidth}}
+\begin{tabular}{L{0.25\linewidth}L{0.25\linewidth}L{0.40\linewidth}}
 \toprule
 \textbf{Function} & \textbf{Description} & \textbf{Example} \\
 \midrule
@@ -32,7 +31,7 @@ solid(r, g, b, a) & Solid color & solid(1, 0, 0, 1).out() \\
 \end{tabular}
 
 \subsection*{Modulation}
-\begin{tabular}{L{0.25\linewidth}L{0.25\linewidth}L{0.3\linewidth}}
+\begin{tabular}{L{0.28\linewidth}L{0.23\linewidth}L{0.40\linewidth}}
 \toprule
 \textbf{Function} & \textbf{Description} & \textbf{Example} \\
 \midrule
@@ -40,7 +39,7 @@ modulate(amount) & Modulate with texture & osc().modulate(noise(), 0.1).out() \\
 modulateScale(mult, offset) & Modulate scale & osc().modulateScale(noise(), 1, 1).out() \\
 modulateRotate(mult, offset) & Modulate rotation & osc().modulateRotate(noise(), 1, 0).out() \\
 modulatePixelate(mult, offset) & Modulate pixelation & osc().modulatePixelate(noise(), 10, 3).out() \\
-modulateRepeat(rx, ry, ox, oy) & Modulate repetition & osc().modulateRepeat(noise(), 3, 3, 0.5, 0.5).out() \\
+modulateRepeat(rx, ry, ox, oy) & Modulate repetition & osc().modulateRepeat(osc(), 3, 3, 0.5, 0.5).out() \\
 modulateScrollX(scrollX, speed) & Modulate horizontal scroll & osc().modulateScrollX(noise(), 0.5, 0).out() \\
 modulateScrollY(scrollY, speed) & Modulate vertical scroll & osc().modulateScrollY(noise(), 0.5, 0).out() \\
 modulateHue(amount) & Modulate hue & osc().modulateHue(noise(), 1).out() \\
@@ -48,7 +47,7 @@ modulateHue(amount) & Modulate hue & osc().modulateHue(noise(), 1).out() \\
 \end{tabular}
 
 \subsection*{Color}
-\begin{tabular}{L{0.25\linewidth}L{0.25\linewidth}L{0.3\linewidth}}
+\begin{tabular}{L{0.25\linewidth}L{0.20\linewidth}L{0.40\linewidth}}
 \toprule
 \textbf{Function} & \textbf{Description} & \textbf{Example} \\
 \midrule
@@ -64,7 +63,7 @@ posterize(bins, gamma) & Posterization & osc().posterize(3, 0.6).out() \\
 \end{tabular}
 
 \subsection*{Geometry}
-\begin{tabular}{L{0.25\linewidth}L{0.25\linewidth}L{0.3\linewidth}}
+\begin{tabular}{L{0.40\linewidth}L{0.20\linewidth}L{0.34\linewidth}}
 \toprule
 \textbf{Function} & \textbf{Description} & \textbf{Example} \\
 \midrule
@@ -82,7 +81,7 @@ kaleid(nSides) & Kaleidoscope effect & osc().kaleid(4).out() \\
 \end{tabular}
 
 \subsection*{Blending}
-\begin{tabular}{L{0.25\linewidth}L{0.25\linewidth}L{0.3\linewidth}}
+\begin{tabular}{L{0.25\linewidth}L{0.23\linewidth}L{0.40\linewidth}}
 \toprule
 \textbf{Function} & \textbf{Description} & \textbf{Example} \\
 \midrule
@@ -97,13 +96,13 @@ mask() & Apply mask & osc().mask(shape(3)).out() \\
 \end{tabular}
 
 \subsection*{Utilities}
-\begin{tabular}{L{0.25\linewidth}L{0.25\linewidth}L{0.3\linewidth}}
+\begin{tabular}{L{0.25\linewidth}L{0.20\linewidth}L{0.40\linewidth}}
 \toprule
 \textbf{Function} & \textbf{Description} & \textbf{Example} \\
 \midrule
 out() & Output buffer & osc().out() \\
 render() & Render buffer & render(o0) \\
-initCam() & Initialize webcam & s0.initCam(); src(s0).out() \\
+initCam(cameraNumber) & Initialize webcam & s0.initCam(0); src(s0).out() \\
 initVideo() & Initialize video & s0.initVideo("url"); src(s0).out() \\
 initImage() & Initialize image & s0.initImage("path"); src(s0).out() \\
 src(texture) & Set source & src(o0).out() \\
@@ -111,19 +110,19 @@ src(texture) & Set source & src(o0).out() \\
 \end{tabular}
 
 \subsection*{Global Variables}
-\begin{tabular}{L{0.25\linewidth}L{0.25\linewidth}L{0.3\linewidth}}
+\begin{tabular}{L{0.25\linewidth}L{0.20\linewidth}L{0.40\linewidth}}
 \toprule
 \textbf{Variable} & \textbf{Description} & \textbf{Example} \\
 \midrule
-time & Elapsed time & osc().rotate(() => time).out() \\
+time & Elapsed time & osc().rotate(() =\> time).out() \\
 speed & Playback speed & speed = 0.5 \\
-mouse & Mouse position & osc().rotate(() => mouse.x * 0.01).out() \\
-a.fft & Audio frequency data & osc().modulate(noise(() => a.fft[0] * 10)).out() \\
+mouse & Mouse position & osc().rotate(() =\> mouse.x * 0.01).out() \\
+a.fft & Audio frequency data & osc().modulate(noise(() =\> a.fft[0] * 10)).out() \\
 \bottomrule
 \end{tabular}
 
 \subsection*{Audio Functions}
-\begin{tabular}{L{0.25\linewidth}L{0.25\linewidth}L{0.3\linewidth}}
+\begin{tabular}{L{0.25\linewidth}L{0.23\linewidth}L{0.40\linewidth}}
 \toprule
 \textbf{Function} & \textbf{Description} & \textbf{Example} \\
 \midrule
@@ -136,11 +135,11 @@ a.setScale() & Set audio scale & a.setScale(2) \\
 \end{tabular}
 
 \subsection*{MIDI Integration}
-\begin{tabular}{L{0.25\linewidth}L{0.25\linewidth}L{0.3\linewidth}}
+\begin{tabular}{L{0.25\linewidth}L{0.20\linewidth}L{0.40\linewidth}}
 \toprule
 \textbf{Function} & \textbf{Description} & \textbf{Example} \\
 \midrule
-await loadScript('https://h.6120.eu/midi.js') & Load MIDI script & await loadScript('https://cdn.jsdelivr.net/npm/hydra-midi@latest/dist/hydra-midi.js') \\
+ & Load MIDI script & await loadScript('https://h.6120.eu/midi.js') \\
 await midi.start().show() & Start MIDI \& Display & await midi.start().show() \\
 note('*') & MIDI note value & solid(note('*'), 0, 1).out() \\
 cc(channel, controller) & MIDI CC value & osc(cc(0, 1) * 100).out() \\
