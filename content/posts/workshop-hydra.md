@@ -1,5 +1,5 @@
 +++
-title = "Hydra Workshop Plan"
+title = "Hydra Livecoding Workshop Plan"
 date = "2025-07-22T01:01:50+01:00"
 author = "Sylvain Laurent"
 authorTwitter = "magicking_" #do not include @
@@ -13,11 +13,15 @@ hideComments = false
 color = "" #color from the theme settings
 +++
 
-# Hydra Visual Coding Workshop
+# Hydra Visual Livecoding Workshop
 
 **Duration:** 2 hours + 1 hour bonus  
-**Format:** 5 lessons (30min each) with 10min teaching + 15-20min workshop
-**Cheat Sheet**: [Companion PDF](https://6120.eu/img/workshop-hydra/workshop-cheatsheet.pdf) ([Source](https://github.com/Magicking/6120.eu/blob/main/static/img/workshop-hydra/workshop-cheatsheet.tex))
+**Format:** :
+ - 5 lessons (30min each)
+ - 10min teaching
+ - 15-20min workshop
+
+**Cheat Sheet**: [Companion PDF](https://6120.eu/img/workshop-hydra/workshop-cheatsheet.pdf) ([source](https://github.com/Magicking/6120.eu/blob/main/static/img/workshop-hydra/workshop-cheatsheet.tex))
 ---
 
 ## Workshop Philosophy:
