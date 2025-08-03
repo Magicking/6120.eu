@@ -7,6 +7,8 @@
 \usepackage{array}
 \usepackage{amsmath}
 
+\usepackage{graphicx}
+\graphicspath{ {./} }
 \definecolor{lightyellow}{rgb}{1,0.98,0.9}
 
 \begin{document}
@@ -15,10 +17,10 @@
 
 \section*{Hydra Cheat Sheet}
 
+\section*{Sources}
 \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
 
-\subsection*{Sources}
-\begin{tabular}{L{0.25\linewidth}L{0.25\linewidth}L{0.40\linewidth}}
+\begin{tabular}{L{0.28\linewidth}L{0.23\linewidth}L{0.40\linewidth}}
 \toprule
 \textbf{Function} & \textbf{Description} & \textbf{Example} \\
 \midrule
@@ -31,7 +33,7 @@ solid(r, g, b, a) & Solid color & solid(1, 0, 0, 1).out() \\
 \bottomrule
 \end{tabular}
 
-\subsection*{Modulation}
+\section*{Modulation}
 \begin{tabular}{L{0.28\linewidth}L{0.23\linewidth}L{0.40\linewidth}}
 \toprule
 \textbf{Function} & \textbf{Description} & \textbf{Example} \\
@@ -47,8 +49,8 @@ modulateHue(amount) & Modulate hue & osc().modulateHue(noise(), 1).out() \\
 \bottomrule
 \end{tabular}
 
-\subsection*{Color}
-\begin{tabular}{L{0.25\linewidth}L{0.20\linewidth}L{0.40\linewidth}}
+\section*{Color}
+\begin{tabular}{L{0.28\linewidth}L{0.23\linewidth}L{0.40\linewidth}}
 \toprule
 \textbf{Function} & \textbf{Description} & \textbf{Example} \\
 \midrule
@@ -63,8 +65,8 @@ posterize(bins, gamma) & Posterization & osc().posterize(3, 0.6).out() \\
 \bottomrule
 \end{tabular}
 
-\subsection*{Geometry}
-\begin{tabular}{L{0.40\linewidth}L{0.20\linewidth}L{0.34\linewidth}}
+\section*{Geometry}
+\begin{tabular}{L{0.28\linewidth}L{0.23\linewidth}L{0.40\linewidth}}
 \toprule
 \textbf{Function} & \textbf{Description} & \textbf{Example} \\
 \midrule
@@ -81,8 +83,8 @@ kaleid(nSides) & Kaleidoscope effect & osc().kaleid(4).out() \\
 \bottomrule
 \end{tabular}
 
-\subsection*{Blending}
-\begin{tabular}{L{0.25\linewidth}L{0.23\linewidth}L{0.40\linewidth}}
+\section*{Blending}
+\begin{tabular}{L{0.28\linewidth}L{0.23\linewidth}L{0.40\linewidth}}
 \toprule
 \textbf{Function} & \textbf{Description} & \textbf{Example} \\
 \midrule
@@ -96,8 +98,8 @@ mask() & Apply mask & osc().mask(shape(3)).out() \\
 \bottomrule
 \end{tabular}
 
-\subsection*{Utilities}
-\begin{tabular}{L{0.25\linewidth}L{0.20\linewidth}L{0.40\linewidth}}
+\section*{Utilities}
+\begin{tabular}{L{0.28\linewidth}L{0.23\linewidth}L{0.40\linewidth}}
 \toprule
 \textbf{Function} & \textbf{Description} & \textbf{Example} \\
 \midrule
@@ -110,8 +112,8 @@ src(texture) & Set source & src(o0).out() \\
 \bottomrule
 \end{tabular}
 
-\subsection*{Global Variables}
-\begin{tabular}{L{0.25\linewidth}L{0.20\linewidth}L{0.40\linewidth}}
+\section*{Global Variables}
+\begin{tabular}{L{0.28\linewidth}L{0.23\linewidth}L{0.40\linewidth}}
 \toprule
 \textbf{Variable} & \textbf{Description} & \textbf{Example} \\
 \midrule
@@ -122,8 +124,8 @@ a.fft & Audio frequency data & osc().modulate(noise(() =\textgreater  a.fft[0] *
 \bottomrule
 \end{tabular}
 
-\subsection*{Audio Functions}
-\begin{tabular}{L{0.25\linewidth}L{0.23\linewidth}L{0.40\linewidth}}
+\section*{Audio Functions}
+\begin{tabular}{L{0.28\linewidth}L{0.23\linewidth}L{0.40\linewidth}}
 \toprule
 \textbf{Function} & \textbf{Description} & \textbf{Example} \\
 \midrule
@@ -135,8 +137,8 @@ a.setScale() & Set audio scale & a.setScale(2) \\
 \bottomrule
 \end{tabular}
 
-\subsection*{MIDI Integration}
-\begin{tabular}{L{0.25\linewidth}L{0.20\linewidth}L{0.40\linewidth}}
+\section*{MIDI Integration}
+\begin{tabular}{L{0.28\linewidth}L{0.23\linewidth}L{0.40\linewidth}}
 \toprule
 \textbf{Function} & \textbf{Description} & \textbf{Example} \\
 \midrule
@@ -152,12 +154,14 @@ aft(channel, controller) & MIDI aftertouch value & solid(aft('*'), 0, 1).out() \
 \begin{itemize}
 \item Hydra Functions - \url{https://hydra.ojack.xyz/api/}
 \item Hydra Book - \url{https://hydra-book.glitches.me/}
+\item Hyper Hydra - \url{https://github.com/geikha/hyper-hydra}
 \item MIDI - \url{https://github.com/arnoson/hydra-midi}
 \item Hydra collaborative editor - \url{https://flok.cc/}
 \item Discord - \url{https://discord.com/invite/ZQjfHkNHXC}
 \item Updated Cheat Sheet - \url{https://6120.eu/posts/workshop-hydra/}
 \end{itemize}
 
+% \includegraphics{fuzrelivecoding.png}
 Last updated: \today
 
 \end{document}
