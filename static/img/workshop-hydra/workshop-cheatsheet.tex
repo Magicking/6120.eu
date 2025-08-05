@@ -6,7 +6,7 @@
 \usepackage{url}
 \usepackage{array}
 \usepackage{amsmath}
-
+\usepackage{wrapfig}
 \usepackage{graphicx}
 \graphicspath{ {./} }
 \definecolor{lightyellow}{rgb}{1,0.98,0.9}
@@ -15,7 +15,7 @@
 
 \pagecolor{lightyellow}
 
-\section*{Hydra Cheat Sheet}
+\section*{Hydra Workshop Cheat Sheet}
 
 \section*{Sources}
 \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
@@ -160,8 +160,13 @@ aft(channel, controller) & MIDI aftertouch value & solid(aft('*'), 0, 1).out() \
 \item Discord - \url{https://discord.com/invite/ZQjfHkNHXC}
 \item Updated Cheat Sheet - \url{https://6120.eu/posts/workshop-hydra/}
 \end{itemize}
+Licensed with CC BY-NC-SA 4.0 \url{https://creativecommons.org/licenses/by-nc-sa/4.0/} \\
+Sylvain "Magicking" Laurent - \url{https://6120.eu} \\
+Last updated: \today\\
 
-% \includegraphics{fuzrelivecoding.png}
-Last updated: \today
-
+\begin{wrapfigure}{h}{0.25\textwidth}
+    \includegraphics[height=25mm]{fuzrelivecoding.png}
+    \caption{https://fuz.re}
+    \label{fig:wrapfig}
+    \end{wrapfigure}
 \end{document}
