@@ -106,7 +106,43 @@ color = "" #color from the theme settings
 
 ---
 
-## Lesson 4: Hyper-Hydra Modules (10min + 20min)
+## Lesson 4: Sources, Buffers
+
+### Teaching (10min)
+- **Sources**: Images, Webcams, Videos, HTML Canvas
+  - `s0.initCam(0)` for webcam
+  - `s0.initVideo("url")` for video
+  - `s0.initImage("url")` for image
+  - `src(s0).out()` to use source
+- **Buffers**: Intermediate space for complex visuals
+- **Only four of each**: s0,s1,s2,s3,o0,o1,o2,o3
+- **Using buffers**:
+  - `src(s0).out()` to display source 0
+  - `render(o0)` to display buffer 0
+```
++----------+----------+
+| Buffer 0 | Buffer 2 |
++----------+----------+
+| Buffer 1 | Buffer 3 |
++----------+----------+
+```
+
+
+### Workshop 4 (20min)
+**Goal:** Use the sources and buffers effectively to create complex visuals
+- Experiment with:
+  - Image loading functions
+  - Multiple buffers usage
+- Try:
+  ```javascript
+    s0.initCam()
+    src(s0).out(o1)
+    src(o1).diff(s0).out()
+  ```
+
+---
+
+## Lesson 5: Hyper-Hydra Modules (10min + 20min)
 
 ### Teaching (10min)
 - **Introduction to external modules**
@@ -130,19 +166,19 @@ color = "" #color from the theme settings
   f.out()
   ```
 
-### Workshop 4 (20min)
+### Workshop 5 (20min)
 **Goal:** Explore advanced modules and understand performance
 - Reference: [Hyper-Hydra GitHub](https://github.com/geikha/hyper-hydra)
 - Try the ShaderPark example
 - Experiment with:
-  - Image loading functions
+  - GIF loading functions
   - Canvas size modifications
   - CPU-intensive operations
 - Notice performance differences and how it affects visuals
 
 ---
 
-## Lesson 5: Hydra-MIDI Integration (10min + 20min)
+## Lesson 6: Hydra-MIDI Integration (10min + 20min)
 
 ### Teaching (10min)
 - **Real-time control with MIDI**
@@ -155,7 +191,7 @@ color = "" #color from the theme settings
   ```
 - Show how MIDI values can control visual parameters
 
-### Workshop 5 (20min)
+### Workshop 6 (20min)
 **Goal:** Connect MIDI to visuals
 - Navigate to: [MIDI Example](https://hydra.ojack.xyz/?code=YXdhaXQlMjBsb2FkU2NyaXB0KCUyMmh0dHBzJTNBJTJGJTJGNjEyMC5ldSUyRnB1YmxpYyUyRm1pZGkuanMlMjIp)
 - Set up MIDI connection (virtual MIDI if no hardware)
@@ -167,7 +203,7 @@ color = "" #color from the theme settings
 
 # BONUS CONTENT (1 hour)
 
-## Lesson 6: Collaborative Coding with Flok (10min + 20min)
+## Lesson 7: Collaborative Coding with Flok (10min + 20min)
 
 ### Teaching (10min)
 - **Collaborative live coding concept**
@@ -175,7 +211,7 @@ color = "" #color from the theme settings
 - **Sharing sessions and real-time collaboration**
 - **Community aspect of live coding**
 
-### Workshop 6 (20min)
+### Workshop 7 (20min)
 **Goal:** Experience collaborative visual coding
 - Set up shared Flok session
 - Practice collaborative etiquette
