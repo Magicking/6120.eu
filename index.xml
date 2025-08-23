@@ -105,8 +105,49 @@ Format: :
 &lt;li>Keep it simple, focus on the flow&lt;/li>
 &lt;/ul>
 &lt;hr>
-&lt;h2 id="lesson-4-hyper-hydra-modules-10min--20min">Lesson 4: Hyper-Hydra Modules (10min + 20min)&lt;/h2>
+&lt;h2 id="lesson-4-sources-buffers">Lesson 4: Sources, Buffers&lt;/h2>
 &lt;h3 id="teaching-10min-3">Teaching (10min)&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>Sources&lt;/strong>: Images, Webcams, Videos, HTML Canvas
+&lt;ul>
+&lt;li>&lt;code>s0.initCam(0)&lt;/code> for webcam&lt;/li>
+&lt;li>&lt;code>s0.initVideo(&amp;quot;url&amp;quot;)&lt;/code> for video&lt;/li>
+&lt;li>&lt;code>s0.initImage(&amp;quot;url&amp;quot;)&lt;/code> for image&lt;/li>
+&lt;li>&lt;code>src(s0).out()&lt;/code> to use source&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Buffers&lt;/strong>: Intermediate space for complex visuals&lt;/li>
+&lt;li>&lt;strong>Only four of each&lt;/strong>: s0,s1,s2,s3,o0,o1,o2,o3&lt;/li>
+&lt;li>&lt;strong>Using buffers&lt;/strong>:
+&lt;ul>
+&lt;li>&lt;code>src(s0).out()&lt;/code> to display source 0&lt;/li>
+&lt;li>&lt;code>render(o0)&lt;/code> to display buffer 0&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;pre tabindex="0">&lt;code>+----------+----------+
+| Buffer 0 | Buffer 2 |
++----------+----------+
+| Buffer 1 | Buffer 3 |
++----------+----------+
+&lt;/code>&lt;/pre>&lt;h3 id="workshop-4-20min">Workshop 4 (20min)&lt;/h3>
+&lt;p>&lt;strong>Goal:&lt;/strong> Use the sources and buffers effectively to create complex visuals&lt;/p>
+&lt;ul>
+&lt;li>Experiment with:
+&lt;ul>
+&lt;li>Image loading functions&lt;/li>
+&lt;li>Multiple buffers usage&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Try:
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-javascript" data-lang="javascript"> &lt;span style="color:#a6e22e">s0&lt;/span>.&lt;span style="color:#a6e22e">initCam&lt;/span>()
+&lt;span style="color:#a6e22e">src&lt;/span>(&lt;span style="color:#a6e22e">s0&lt;/span>).&lt;span style="color:#a6e22e">out&lt;/span>(&lt;span style="color:#a6e22e">o1&lt;/span>)
+&lt;span style="color:#a6e22e">src&lt;/span>(&lt;span style="color:#a6e22e">o1&lt;/span>).&lt;span style="color:#a6e22e">diff&lt;/span>(&lt;span style="color:#a6e22e">s0&lt;/span>).&lt;span style="color:#a6e22e">out&lt;/span>()
+&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="lesson-5-hyper-hydra-modules-10min--20min">Lesson 5: Hyper-Hydra Modules (10min + 20min)&lt;/h2>
+&lt;h3 id="teaching-10min-4">Teaching (10min)&lt;/h3>
 &lt;ul>
 &lt;li>&lt;strong>Introduction to external modules&lt;/strong>&lt;/li>
 &lt;li>&lt;strong>Modules icon:&lt;/strong> Show how to add modules easily&lt;/li>
@@ -129,14 +170,14 @@ Format: :
 &lt;span style="color:#a6e22e">solid&lt;/span>()
 )
 &lt;span style="color:#a6e22e">f&lt;/span>.&lt;span style="color:#a6e22e">out&lt;/span>()
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="workshop-4-20min">Workshop 4 (20min)&lt;/h3>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="workshop-5-20min">Workshop 5 (20min)&lt;/h3>
 &lt;p>&lt;strong>Goal:&lt;/strong> Explore advanced modules and understand performance&lt;/p>
 &lt;ul>
 &lt;li>Reference: &lt;a href="https://github.com/geikha/hyper-hydra">Hyper-Hydra GitHub&lt;/a>&lt;/li>
 &lt;li>Try the ShaderPark example&lt;/li>
 &lt;li>Experiment with:
 &lt;ul>
-&lt;li>Image loading functions&lt;/li>
+&lt;li>GIF loading functions&lt;/li>
 &lt;li>Canvas size modifications&lt;/li>
 &lt;li>CPU-intensive operations&lt;/li>
 &lt;/ul>
@@ -144,8 +185,8 @@ Format: :
 &lt;li>Notice performance differences and how it affects visuals&lt;/li>
 &lt;/ul>
 &lt;hr>
-&lt;h2 id="lesson-5-hydra-midi-integration-10min--20min">Lesson 5: Hydra-MIDI Integration (10min + 20min)&lt;/h2>
-&lt;h3 id="teaching-10min-4">Teaching (10min)&lt;/h3>
+&lt;h2 id="lesson-6-hydra-midi-integration-10min--20min">Lesson 6: Hydra-MIDI Integration (10min + 20min)&lt;/h2>
+&lt;h3 id="teaching-10min-5">Teaching (10min)&lt;/h3>
 &lt;ul>
 &lt;li>&lt;strong>Real-time control with MIDI&lt;/strong>&lt;/li>
 &lt;li>&lt;strong>Music visualization possibilities&lt;/strong>&lt;/li>
@@ -156,7 +197,7 @@ Format: :
 &lt;/code>&lt;/pre>&lt;/div>&lt;/li>
 &lt;li>Show how MIDI values can control visual parameters&lt;/li>
 &lt;/ul>
-&lt;h3 id="workshop-5-20min">Workshop 5 (20min)&lt;/h3>
+&lt;h3 id="workshop-6-20min">Workshop 6 (20min)&lt;/h3>
 &lt;p>&lt;strong>Goal:&lt;/strong> Connect MIDI to visuals&lt;/p>
 &lt;ul>
 &lt;li>Navigate to: &lt;a href="https://hydra.ojack.xyz/?code=YXdhaXQlMjBsb2FkU2NyaXB0KCUyMmh0dHBzJTNBJTJGJTJGNjEyMC5ldSUyRnB1YmxpYyUyRm1pZGkuanMlMjIp">MIDI Example&lt;/a>&lt;/li>
@@ -167,15 +208,15 @@ Format: :
 &lt;/ul>
 &lt;hr>
 &lt;h1 id="bonus-content-1-hour">BONUS CONTENT (1 hour)&lt;/h1>
-&lt;h2 id="lesson-6-collaborative-coding-with-flok-10min--20min">Lesson 6: Collaborative Coding with Flok (10min + 20min)&lt;/h2>
-&lt;h3 id="teaching-10min-5">Teaching (10min)&lt;/h3>
+&lt;h2 id="lesson-7-collaborative-coding-with-flok-10min--20min">Lesson 7: Collaborative Coding with Flok (10min + 20min)&lt;/h2>
+&lt;h3 id="teaching-10min-6">Teaching (10min)&lt;/h3>
 &lt;ul>
 &lt;li>&lt;strong>Collaborative live coding concept&lt;/strong>&lt;/li>
 &lt;li>&lt;strong>Flok platform introduction&lt;/strong>&lt;/li>
 &lt;li>&lt;strong>Sharing sessions and real-time collaboration&lt;/strong>&lt;/li>
 &lt;li>&lt;strong>Community aspect of live coding&lt;/strong>&lt;/li>
 &lt;/ul>
-&lt;h3 id="workshop-6-20min">Workshop 6 (20min)&lt;/h3>
+&lt;h3 id="workshop-7-20min">Workshop 7 (20min)&lt;/h3>
 &lt;p>&lt;strong>Goal:&lt;/strong> Experience collaborative visual coding&lt;/p>
 &lt;ul>
 &lt;li>Set up shared Flok session&lt;/li>

@@ -52,7 +52,7 @@ Magicking's notes
 [Updated :: 2025-07-22]
 </time>
 <span class=post-author>Sylvain Laurent</span>
-<span class=post-reading-time>:: 6 min read (1212 words)</span>
+<span class=post-reading-time>:: 7 min read (1303 words)</span>
 </div>
 <span class=post-tags>
 #<a href=https://6120.eu/tags/hydra/>hydra</a>&nbsp;
@@ -164,8 +164,49 @@ Magicking's notes
 <li>Keep it simple, focus on the flow</li>
 </ul>
 <hr>
-<h2 id=lesson-4-hyper-hydra-modules-10min--20min>Lesson 4: Hyper-Hydra Modules (10min + 20min)<a href=#lesson-4-hyper-hydra-modules-10min--20min class=hanchor arialabel=Anchor>&#8983;</a> </h2>
+<h2 id=lesson-4-sources-buffers>Lesson 4: Sources, Buffers<a href=#lesson-4-sources-buffers class=hanchor arialabel=Anchor>&#8983;</a> </h2>
 <h3 id=teaching-10min-3>Teaching (10min)<a href=#teaching-10min-3 class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<ul>
+<li><strong>Sources</strong>: Images, Webcams, Videos, HTML Canvas
+<ul>
+<li><code>s0.initCam(0)</code> for webcam</li>
+<li><code>s0.initVideo("url")</code> for video</li>
+<li><code>s0.initImage("url")</code> for image</li>
+<li><code>src(s0).out()</code> to use source</li>
+</ul>
+</li>
+<li><strong>Buffers</strong>: Intermediate space for complex visuals</li>
+<li><strong>Only four of each</strong>: s0,s1,s2,s3,o0,o1,o2,o3</li>
+<li><strong>Using buffers</strong>:
+<ul>
+<li><code>src(s0).out()</code> to display source 0</li>
+<li><code>render(o0)</code> to display buffer 0</li>
+</ul>
+</li>
+</ul>
+<pre tabindex=0><code>+----------+----------+
+| Buffer 0 | Buffer 2 |
++----------+----------+
+| Buffer 1 | Buffer 3 |
++----------+----------+
+</code></pre><h3 id=workshop-4-20min>Workshop 4 (20min)<a href=#workshop-4-20min class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<p><strong>Goal:</strong> Use the sources and buffers effectively to create complex visuals</p>
+<ul>
+<li>Experiment with:
+<ul>
+<li>Image loading functions</li>
+<li>Multiple buffers usage</li>
+</ul>
+</li>
+<li>Try:
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript>  <span style=color:#a6e22e>s0</span>.<span style=color:#a6e22e>initCam</span>()
+  <span style=color:#a6e22e>src</span>(<span style=color:#a6e22e>s0</span>).<span style=color:#a6e22e>out</span>(<span style=color:#a6e22e>o1</span>)
+  <span style=color:#a6e22e>src</span>(<span style=color:#a6e22e>o1</span>).<span style=color:#a6e22e>diff</span>(<span style=color:#a6e22e>s0</span>).<span style=color:#a6e22e>out</span>()
+</code></pre></div></li>
+</ul>
+<hr>
+<h2 id=lesson-5-hyper-hydra-modules-10min--20min>Lesson 5: Hyper-Hydra Modules (10min + 20min)<a href=#lesson-5-hyper-hydra-modules-10min--20min class=hanchor arialabel=Anchor>&#8983;</a> </h2>
+<h3 id=teaching-10min-4>Teaching (10min)<a href=#teaching-10min-4 class=hanchor arialabel=Anchor>&#8983;</a> </h3>
 <ul>
 <li><strong>Introduction to external modules</strong></li>
 <li><strong>Modules icon:</strong> Show how to add modules easily</li>
@@ -188,14 +229,14 @@ Magicking's notes
   <span style=color:#a6e22e>solid</span>()
   )
   <span style=color:#a6e22e>f</span>.<span style=color:#a6e22e>out</span>()
-</code></pre></div><h3 id=workshop-4-20min>Workshop 4 (20min)<a href=#workshop-4-20min class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+</code></pre></div><h3 id=workshop-5-20min>Workshop 5 (20min)<a href=#workshop-5-20min class=hanchor arialabel=Anchor>&#8983;</a> </h3>
 <p><strong>Goal:</strong> Explore advanced modules and understand performance</p>
 <ul>
 <li>Reference: <a href=https://github.com/geikha/hyper-hydra>Hyper-Hydra GitHub</a></li>
 <li>Try the ShaderPark example</li>
 <li>Experiment with:
 <ul>
-<li>Image loading functions</li>
+<li>GIF loading functions</li>
 <li>Canvas size modifications</li>
 <li>CPU-intensive operations</li>
 </ul>
@@ -203,8 +244,8 @@ Magicking's notes
 <li>Notice performance differences and how it affects visuals</li>
 </ul>
 <hr>
-<h2 id=lesson-5-hydra-midi-integration-10min--20min>Lesson 5: Hydra-MIDI Integration (10min + 20min)<a href=#lesson-5-hydra-midi-integration-10min--20min class=hanchor arialabel=Anchor>&#8983;</a> </h2>
-<h3 id=teaching-10min-4>Teaching (10min)<a href=#teaching-10min-4 class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<h2 id=lesson-6-hydra-midi-integration-10min--20min>Lesson 6: Hydra-MIDI Integration (10min + 20min)<a href=#lesson-6-hydra-midi-integration-10min--20min class=hanchor arialabel=Anchor>&#8983;</a> </h2>
+<h3 id=teaching-10min-5>Teaching (10min)<a href=#teaching-10min-5 class=hanchor arialabel=Anchor>&#8983;</a> </h3>
 <ul>
 <li><strong>Real-time control with MIDI</strong></li>
 <li><strong>Music visualization possibilities</strong></li>
@@ -215,7 +256,7 @@ Magicking's notes
 </code></pre></div></li>
 <li>Show how MIDI values can control visual parameters</li>
 </ul>
-<h3 id=workshop-5-20min>Workshop 5 (20min)<a href=#workshop-5-20min class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<h3 id=workshop-6-20min>Workshop 6 (20min)<a href=#workshop-6-20min class=hanchor arialabel=Anchor>&#8983;</a> </h3>
 <p><strong>Goal:</strong> Connect MIDI to visuals</p>
 <ul>
 <li>Navigate to: <a href="https://hydra.ojack.xyz/?code=YXdhaXQlMjBsb2FkU2NyaXB0KCUyMmh0dHBzJTNBJTJGJTJGNjEyMC5ldSUyRnB1YmxpYyUyRm1pZGkuanMlMjIp">MIDI Example</a></li>
@@ -226,15 +267,15 @@ Magicking's notes
 </ul>
 <hr>
 <h1 id=bonus-content-1-hour>BONUS CONTENT (1 hour)<a href=#bonus-content-1-hour class=hanchor arialabel=Anchor>&#8983;</a> </h1>
-<h2 id=lesson-6-collaborative-coding-with-flok-10min--20min>Lesson 6: Collaborative Coding with Flok (10min + 20min)<a href=#lesson-6-collaborative-coding-with-flok-10min--20min class=hanchor arialabel=Anchor>&#8983;</a> </h2>
-<h3 id=teaching-10min-5>Teaching (10min)<a href=#teaching-10min-5 class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<h2 id=lesson-7-collaborative-coding-with-flok-10min--20min>Lesson 7: Collaborative Coding with Flok (10min + 20min)<a href=#lesson-7-collaborative-coding-with-flok-10min--20min class=hanchor arialabel=Anchor>&#8983;</a> </h2>
+<h3 id=teaching-10min-6>Teaching (10min)<a href=#teaching-10min-6 class=hanchor arialabel=Anchor>&#8983;</a> </h3>
 <ul>
 <li><strong>Collaborative live coding concept</strong></li>
 <li><strong>Flok platform introduction</strong></li>
 <li><strong>Sharing sessions and real-time collaboration</strong></li>
 <li><strong>Community aspect of live coding</strong></li>
 </ul>
-<h3 id=workshop-6-20min>Workshop 6 (20min)<a href=#workshop-6-20min class=hanchor arialabel=Anchor>&#8983;</a> </h3>
+<h3 id=workshop-7-20min>Workshop 7 (20min)<a href=#workshop-7-20min class=hanchor arialabel=Anchor>&#8983;</a> </h3>
 <p><strong>Goal:</strong> Experience collaborative visual coding</p>
 <ul>
 <li>Set up shared Flok session</li>
