@@ -21,7 +21,7 @@ color = "" #color from the theme settings
  - 10min teaching
  - 15-20min workshop
 
-**Cheat Sheet**: [Companion PDF](https://6120.eu/img/workshop-hydra/workshop-cheatsheet.pdf) ([source](https://github.com/Magicking/6120.eu/blob/main/static/img/workshop-hydra/workshop-cheatsheet.tex))
+**Cheat Sheet**: [Companion PDF](https://6120.eu/img/workshop-hydra/workshop-cheatsheet.pdf)[FR](https://6120.eu/img/workshop-hydra/workshop-cheatsheet-fr.pdf) ([source](https://github.com/Magicking/6120.eu/blob/main/static/img/workshop-hydra/workshop-cheatsheet.tex))
 ---
 
 ## Workshop Philosophy:

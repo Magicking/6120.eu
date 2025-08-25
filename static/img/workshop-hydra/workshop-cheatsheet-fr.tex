@@ -1,0 +1,177 @@
+\documentclass[9pt,oneside]{amsart}
+\usepackage[a4paper,left=10mm,width=170mm,top=18mm,bottom=22mm,includeheadfoot]{geometry}
+\usepackage{booktabs}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{longtable}
+\usepackage{url}
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+\usepackage{graphicx}
+\graphicspath{ {./} }
+%
+
+\begin{document}
+
+%\pagecolor{lightyellow}
+
+\section*{Aide-mémoire Atelier Hydra}
+
+\section*{Sources}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+\begin{tabular}{L{0.28\linewidth}L{0.23\linewidth}L{0.40\linewidth}}
+\toprule
+	extbf{Fonction} & \textbf{Description} & \textbf{Exemple} \\
+\midrule
+osc(fréquence, synchronisation, décalage) & Motif d'onde oscillante & osc(60, 0.1, 0).out() \\
+noise(échelle, décalage) & Texture de bruit & noise(10, 0.1).out() \\
+voronoi(échelle, vitesse, mélange) & Motif Voronoi & voronoi(5, 0.3, 0.3).out() \\
+shape(côtés, rayon, lissage) & Forme géométrique & shape(3, 0.3, 0.01).out() \\
+gradient(vitesse) & Motif de dégradé & gradient(0).out() \\
+solid(r, v, b, a) & Couleur unie & solid(1, 0, 0, 1).out() \\
+\bottomrule
+\end{tabular}
+
+\section*{Modulation}
+\begin{tabular}{L{0.28\linewidth}L{0.23\linewidth}L{0.40\linewidth}}
+\toprule
+\textbf{Fonction} & \textbf{Description} & \textbf{Exemple} \\
+\midrule
+modulate(texture) & Moduler avec une texture & osc().modulate(noise(), 0.1).out() \\
+modulate(intensité) & Moduler avec une texture & osc().modulate(noise(), 0.1).out() \\
+modulateScale(multiplicateur, décalage) & Moduler l'échelle & osc().modulateScale(noise(), 1, 1).out() \\
+modulateRotate(multiplicateur, décalage) & Moduler la rotation & osc().modulateRotate(noise(), 1, 0).out() \\
+modulatePixelate(multiplicateur, décalage) & Moduler la pixellisation & osc().modulatePixelate(noise(), 10, 3).out() \\
+modulateRepeat(répX, répY, décalageX, décalageY) & Moduler la répétition & osc().modulateRepeat(osc(), 3, 3, 0.5, 0.5).out() \\
+modulateScrollX(défilementX, vitesse) & Moduler le défilement horizontal & osc().modulateScrollX(noise(), 0.5, 0).out() \\
+modulateScrollY(défilementY, vitesse) & Moduler le défilement vertical & osc().modulateScrollY(noise(), 0.5, 0).out() \\
+modulateHue(intensité) & Moduler la teinte & osc().modulateHue(noise(), 1).out() \\
+\bottomrule
+\end{tabular}
+
+\section*{Couleur}
+\begin{tabular}{L{0.28\linewidth}L{0.23\linewidth}L{0.40\linewidth}}
+\toprule
+\textbf{Fonction} & \textbf{Description} & \textbf{Exemple} \\
+\midrule
+color(r, g, b, a) & Appliquer une couleur & osc().color(1, 0, 0, 1).out() \\
+color(r, v, b, a) & Appliquer une couleur & osc().color(1, 0, 0, 1).out() \\
+colorama(intensité) & Effet colorama & osc().colorama(0.005).out() \\
+saturate(intensité) & Ajuster la saturation & osc().saturate(2).out() \\
+contrast(intensité) & Ajuster le contraste & osc().contrast(1.6).out() \\
+brightness(intensité) & Ajuster la luminosité & osc().brightness(0.4).out() \\
+invert(intensité) & Inverser les couleurs & osc().invert(1).out() \\
+luma(seuil, tolérance) & Clé de luma & osc().luma(0.5, 0.1).out() \\
+posterize(niveaux, gamma) & Postérisation & osc().posterize(3, 0.6).out() \\
+\bottomrule
+\end{tabular}
+
+\section*{Géométrie}
+\begin{tabular}{L{0.28\linewidth}L{0.23\linewidth}L{0.40\linewidth}}
+\toprule
+\textbf{Fonction} & \textbf{Description} & \textbf{Exemple} \\
+\midrule
+rotate(angle, speed) & Rotation de la source & osc().rotate(10, 0).out() \\
+rotate(angle, vitesse) & Rotation de la source & osc().rotate(10, 0).out() \\
+scale(intensité, multX, multY, décalageX, décalageY) & Mise à l'échelle de la source & osc().scale(1.5, 1, 1, 0.5, 0.5).out() \\
+pixelate(pixelX, pixelY) & Effet pixellisation & osc().pixelate(20, 20).out() \\
+repeat(répX, répY, décalageX, décalageY) & Répéter la source & osc().repeat(3, 3, 0, 0).out() \\
+repeatX(répétitions, décalage) & Répétition horizontale & osc().repeatX(3, 0).out() \\
+repeatY(répétitions, décalage) & Répétition verticale & osc().repeatY(3, 0).out() \\
+scroll(défilementX, défilementY, vitesseX, vitesseY) & Défilement de la source & osc().scroll(0.5, 0.5, 0, 0).out() \\
+scrollX(défilementX, vitesse) & Défilement horizontal & osc().scrollX(0.5, 0).out() \\
+scrollY(défilementY, vitesse) & Défilement vertical & osc().scrollY(0.5, 0).out() \\
+kaleid(nCôtés) & Effet kaléidoscope & osc().kaleid(4).out() \\
+\bottomrule
+\end{tabular}
+
+\section*{Fusion}
+\begin{tabular}{L{0.28\linewidth}L{0.23\linewidth}L{0.40\linewidth}}
+\toprule
+\textbf{Fonction} & \textbf{Description} & \textbf{Exemple} \\
+\midrule
+add(amount) & Additionner les sources & osc().add(noise(), 1).out() \\
+add(intensité) & Additionner les sources & osc().add(noise(), 1).out() \\
+sub(intensité) & Soustraire les sources & osc().sub(noise(), 1).out() \\
+layer() & Superposer les sources & osc().layer(noise()).out() \\
+blend(intensité) & Mélanger les sources & osc().blend(noise(), 0.5).out() \\
+mult(intensité) & Multiplier les sources & osc().mult(noise(), 1).out() \\
+diff() & Différence entre les sources & osc().diff(noise()).out() \\
+mask() & Appliquer un masque & osc().mask(shape(3)).out() \\
+\bottomrule
+\end{tabular}
+
+\section*{Utilitaires}
+\begin{tabular}{L{0.28\linewidth}L{0.23\linewidth}L{0.40\linewidth}}
+\toprule
+\textbf{Fonction} & \textbf{Description} & \textbf{Exemple} \\
+\midrule
+out() & Buffer de sortie & osc().out() \\
+render() & Rendu du buffer & render(o0) \\
+initCam(numCaméra) & Initialiser la webcam & s0.initCam(0); src(s0).out() \\
+initVideo() & Initialiser une vidéo & s0.initVideo("url"); src(s0).out() \\
+initImage() & Initialiser une image & s0.initImage("chemin"); src(s0).out() \\
+src(texture) & Définir la source & src(o0).out() \\
+\bottomrule
+\end{tabular}
+
+\section*{Variables globales}
+\begin{tabular}{L{0.28\linewidth}L{0.23\linewidth}L{0.40\linewidth}}
+\toprule
+\textbf{Variable} & \textbf{Description} & \textbf{Exemple} \\
+\midrule
+time & Temps écoulé & osc().rotate(() =\textgreater  time).out() \\
+speed & Vitesse de lecture & speed = 0.5 \\
+mouse & Position de la souris & osc().rotate(() =\textgreater  mouse.x * 0.01).out() \\
+a.fft & Données de fréquence audio & osc().modulate(noise(() =\textgreater  a.fft[0] * 10)).out() \\
+\bottomrule
+\end{tabular}
+
+\section*{Fonctions audio}
+\begin{tabular}{L{0.28\linewidth}L{0.23\linewidth}L{0.40\linewidth}}
+\toprule
+\textbf{Fonction} & \textbf{Description} & \textbf{Exemple} \\
+\midrule
+a.show() & Afficher le vumètre FFT & a.show() \\
+a.setSmooth() & Définir le lissage audio & a.setSmooth(0.8) \\
+a.setBins() & Définir les bandes de fréquence & a.setBins(4) \\
+a.setCutoff() & Définir la fréquence de coupure & a.setCutoff(2) \\
+a.setScale() & Définir l'échelle audio & a.setScale(2) \\
+\bottomrule
+\end{tabular}
+
+\section*{Intégration MIDI}
+\begin{tabular}{L{0.28\linewidth}L{0.23\linewidth}L{0.40\linewidth}}
+\toprule
+\textbf{Fonction} & \textbf{Description} & \textbf{Exemple} \\
+\midrule
+ & Charger le script MIDI & await loadScript('https://h.6120.eu/midi.js') \\
+await midi.start().show() & Démarrer MIDI et afficher & await midi.start().show() \\
+note('*') & Valeur de note MIDI & solid(note('*'), 0, 1).out() \\
+cc(canal, contrôleur) & Valeur CC MIDI & osc(cc(0, 1) * 100).out() \\
+aft(canal, contrôleur) & Valeur aftertouch MIDI & solid(aft('*'), 0, 1).out() \\
+\bottomrule
+\end{tabular}
+
+\subsection*{Liens utiles}
+\begin{itemize}
+\item Fonctions Hydra - \url{https://hydra.ojack.xyz/api/}
+\item Hydra Book - \url{https://hydra-book.glitches.me/}
+\item Hyper Hydra - \url{https://github.com/geikha/hyper-hydra}
+\item MIDI - \url{https://github.com/arnoson/hydra-midi}
+\item Éditeur collaboratif Hydra - \url{https://flok.cc/}
+\item Discord - \url{https://discord.com/invite/ZQjfHkNHXC}
+\item Aide-mémoire mis à jour - \url{https://6120.eu/posts/workshop-hydra/}
+\end{itemize}
+\vspace{2cm}
+Sous licence CC BY-NC-SA 4.0 \url{https://creativecommons.org/licenses/by-nc-sa/4.0/} \\
+Sylvain "Magicking" Laurent - \url{https://6120.eu} \\
+Dernière mise à jour : \today\\
+
+\begin{wrapfigure}{h}{0.25\textwidth}
+    \includegraphics[height=25mm]{fuzrelivecoding.png}
+    \caption{https://fuz.re}
+    \label{fig:wrapfig}
+    \end{wrapfigure}
+\end{document}
