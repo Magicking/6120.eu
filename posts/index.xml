@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on 6120's Notes</title><link>https://6120.eu/posts/</link><description>Recent content in Posts on 6120's Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright/><lastBuildDate>Tue, 22 Jul 2025 01:01:50 +0100</lastBuildDate><atom:link href="https://6120.eu/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Hydra Livecoding Workshop Plan</title><link>https://6120.eu/posts/workshop-hydra/</link><pubDate>Tue, 22 Jul 2025 01:01:50 +0100</pubDate><guid>https://6120.eu/posts/workshop-hydra/</guid><description>Hydra Visual Livecoding Workshop Duration: 2 hours + 1 hour bonus
 Format: :
-5 lessons (30min each) 10min teaching 15-20min workshop Cheat Sheet: Companion PDF (source) Workshop Philosophy: Experimentation over perfection Happy accidents are learning opportunities Community and sharing enhances creativity Start simple, build complexity gradually Lesson 1: Hydra 101 (10min + 20min) Teaching (10min) Objective: Get familiar with Hydra interface and basic workflow Navigate to https://hydra.</description><content>&lt;h1 id="hydra-visual-livecoding-workshop">Hydra Visual Livecoding Workshop&lt;/h1>
+5 lessons (30min each) 10min teaching 15-20min workshop Cheat Sheet: Companion PDFFR (source) Workshop Philosophy: Experimentation over perfection Happy accidents are learning opportunities Community and sharing enhances creativity Start simple, build complexity gradually Lesson 1: Hydra 101 (10min + 20min) Teaching (10min) Objective: Get familiar with Hydra interface and basic workflow Navigate to https://hydra.</description><content>&lt;h1 id="hydra-visual-livecoding-workshop">Hydra Visual Livecoding Workshop&lt;/h1>
 &lt;p>&lt;strong>Duration:&lt;/strong> 2 hours + 1 hour bonus&lt;br>
 &lt;strong>Format:&lt;/strong> :&lt;/p>
 &lt;ul>
@@ -8,7 +8,7 @@ Format: :
 &lt;li>10min teaching&lt;/li>
 &lt;li>15-20min workshop&lt;/li>
 &lt;/ul>
-&lt;h2 id="cheat-sheet-companion-pdfhttps6120euimgworkshop-hydraworkshop-cheatsheetpdf-sourcehttpsgithubcommagicking6120eublobmainstaticimgworkshop-hydraworkshop-cheatsheettex">&lt;strong>Cheat Sheet&lt;/strong>: &lt;a href="https://6120.eu/img/workshop-hydra/workshop-cheatsheet.pdf">Companion PDF&lt;/a> (&lt;a href="https://github.com/Magicking/6120.eu/blob/main/static/img/workshop-hydra/workshop-cheatsheet.tex">source&lt;/a>)&lt;/h2>
+&lt;h2 id="cheat-sheet-companion-pdfhttps6120euimgworkshop-hydraworkshop-cheatsheetpdffrhttps6120euimgworkshop-hydraworkshop-cheatsheet-frpdf-sourcehttpsgithubcommagicking6120eublobmainstaticimgworkshop-hydraworkshop-cheatsheettex">&lt;strong>Cheat Sheet&lt;/strong>: &lt;a href="https://6120.eu/img/workshop-hydra/workshop-cheatsheet.pdf">Companion PDF&lt;/a>&lt;a href="https://6120.eu/img/workshop-hydra/workshop-cheatsheet-fr.pdf">FR&lt;/a> (&lt;a href="https://github.com/Magicking/6120.eu/blob/main/static/img/workshop-hydra/workshop-cheatsheet.tex">source&lt;/a>)&lt;/h2>
 &lt;h2 id="workshop-philosophy">Workshop Philosophy:&lt;/h2>
 &lt;ul>
 &lt;li>&lt;strong>Experimentation over perfection&lt;/strong>&lt;/li>
