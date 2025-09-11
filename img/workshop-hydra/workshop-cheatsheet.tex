@@ -1,5 +1,5 @@
 \documentclass[9pt,oneside]{amsart}
-\usepackage[a4paper,left=10mm,width=170mm,top=18mm,bottom=22mm,includeheadfoot]{geometry}
+\usepackage[a4paper,left=10mm,width=170mm,top=7mm,bottom=7mm,includeheadfoot]{geometry}
 \usepackage{booktabs}
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage{longtable}
@@ -105,6 +105,7 @@ mask() & Apply mask & osc().mask(shape(3)).out() \\
 \midrule
 out() & Output buffer & osc().out() \\
 render() & Render buffer & render(o0) \\
+setResolution(width, height) & Set canvas size & setResolution(1920,1080) \\
 initCam(cameraNumber) & Initialize webcam & s0.initCam(0); src(s0).out() \\
 initVideo() & Initialize video & s0.initVideo("url"); src(s0).out() \\
 initImage() & Initialize image & s0.initImage("path"); src(s0).out() \\
@@ -165,9 +166,4 @@ Licensed with CC BY-NC-SA 4.0 \url{https://creativecommons.org/licenses/by-nc-sa
 Sylvain "Magicking" Laurent - \url{https://6120.eu} \\
 Last updated: \today\\
 
-\begin{wrapfigure}{h}{0.25\textwidth}
-    \includegraphics[height=25mm]{fuzrelivecoding.png}
-    \caption{https://fuz.re}
-    \label{fig:wrapfig}
-    \end{wrapfigure}
 \end{document}
