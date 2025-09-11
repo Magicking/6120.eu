@@ -479,6 +479,12 @@ osc(60, 0.1, 0).mask(shape(3, 0.3, 0.01)).out()
 osc(60, 0.1, 0).out()
 ```
 
+### setResolution(width, height)
+**Description:** Set canvas size.
+```javascript
+setResolution(1920,1080)
+```
+
 ### render()
 **Description:** Renders the specified buffer.
 ```javascript

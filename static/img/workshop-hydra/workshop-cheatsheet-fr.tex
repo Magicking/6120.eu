@@ -1,5 +1,5 @@
 \documentclass[9pt,oneside]{amsart}
-\usepackage[a4paper,left=10mm,width=170mm,top=18mm,bottom=22mm,includeheadfoot]{geometry}
+\usepackage[a4paper,left=10mm,width=170mm,top=7mm,bottom=7mm,includeheadfoot]{geometry}
 \usepackage{booktabs}
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage{longtable}
@@ -20,7 +20,7 @@
 \section*{Sources}
 \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
 
-\begin{tabular}{L{0.28\linewidth}L{0.23\linewidth}L{0.40\linewidth}}
+\begin{tabular}{L{0.36\linewidth}L{0.28\linewidth}L{0.40\linewidth}}
 \toprule
 	extbf{Fonction} & \textbf{Description} & \textbf{Exemple} \\
 \midrule
@@ -34,7 +34,7 @@ solid(r, v, b, a) & Couleur unie & solid(1, 0, 0, 1).out() \\
 \end{tabular}
 
 \section*{Modulation}
-\begin{tabular}{L{0.28\linewidth}L{0.23\linewidth}L{0.40\linewidth}}
+\begin{tabular}{L{0.36\linewidth}L{0.28\linewidth}L{0.40\linewidth}}
 \toprule
 \textbf{Fonction} & \textbf{Description} & \textbf{Exemple} \\
 \midrule
@@ -51,7 +51,7 @@ modulateHue(intensité) & Moduler la teinte & osc().modulateHue(noise(), 1).out(
 \end{tabular}
 
 \section*{Couleur}
-\begin{tabular}{L{0.28\linewidth}L{0.23\linewidth}L{0.40\linewidth}}
+\begin{tabular}{L{0.36\linewidth}L{0.28\linewidth}L{0.40\linewidth}}
 \toprule
 \textbf{Fonction} & \textbf{Description} & \textbf{Exemple} \\
 \midrule
@@ -68,7 +68,7 @@ posterize(niveaux, gamma) & Postérisation & osc().posterize(3, 0.6).out() \\
 \end{tabular}
 
 \section*{Géométrie}
-\begin{tabular}{L{0.28\linewidth}L{0.23\linewidth}L{0.40\linewidth}}
+\begin{tabular}{L{0.36\linewidth}L{0.28\linewidth}L{0.40\linewidth}}
 \toprule
 \textbf{Fonction} & \textbf{Description} & \textbf{Exemple} \\
 \midrule
@@ -87,7 +87,7 @@ kaleid(nCôtés) & Effet kaléidoscope & osc().kaleid(4).out() \\
 \end{tabular}
 
 \section*{Fusion}
-\begin{tabular}{L{0.28\linewidth}L{0.23\linewidth}L{0.40\linewidth}}
+\begin{tabular}{L{0.36\linewidth}L{0.28\linewidth}L{0.40\linewidth}}
 \toprule
 \textbf{Fonction} & \textbf{Description} & \textbf{Exemple} \\
 \midrule
@@ -103,12 +103,13 @@ mask() & Appliquer un masque & osc().mask(shape(3)).out() \\
 \end{tabular}
 
 \section*{Utilitaires}
-\begin{tabular}{L{0.28\linewidth}L{0.23\linewidth}L{0.40\linewidth}}
+\begin{tabular}{L{0.36\linewidth}L{0.28\linewidth}L{0.40\linewidth}}
 \toprule
 \textbf{Fonction} & \textbf{Description} & \textbf{Exemple} \\
 \midrule
 out() & Buffer de sortie & osc().out() \\
 render() & Rendu du buffer & render(o0) \\
+setResolution(width, height) & Définir la taille du canvas & setResolution(1920,1080) \\
 initCam(numCaméra) & Initialiser la webcam & s0.initCam(0); src(s0).out() \\
 initVideo() & Initialiser une vidéo & s0.initVideo("url"); src(s0).out() \\
 initImage() & Initialiser une image & s0.initImage("chemin"); src(s0).out() \\
@@ -117,7 +118,7 @@ src(texture) & Définir la source & src(o0).out() \\
 \end{tabular}
 
 \section*{Variables globales}
-\begin{tabular}{L{0.28\linewidth}L{0.23\linewidth}L{0.40\linewidth}}
+\begin{tabular}{L{0.36\linewidth}L{0.28\linewidth}L{0.40\linewidth}}
 \toprule
 \textbf{Variable} & \textbf{Description} & \textbf{Exemple} \\
 \midrule
@@ -129,7 +130,7 @@ a.fft & Données de fréquence audio & osc().modulate(noise(() =\textgreater  a.
 \end{tabular}
 
 \section*{Fonctions audio}
-\begin{tabular}{L{0.28\linewidth}L{0.23\linewidth}L{0.40\linewidth}}
+\begin{tabular}{L{0.36\linewidth}L{0.28\linewidth}L{0.40\linewidth}}
 \toprule
 \textbf{Fonction} & \textbf{Description} & \textbf{Exemple} \\
 \midrule
@@ -142,7 +143,7 @@ a.setScale() & Définir l'échelle audio & a.setScale(2) \\
 \end{tabular}
 
 \section*{Intégration MIDI}
-\begin{tabular}{L{0.28\linewidth}L{0.23\linewidth}L{0.40\linewidth}}
+\begin{tabular}{L{0.36\linewidth}L{0.28\linewidth}L{0.40\linewidth}}
 \toprule
 \textbf{Fonction} & \textbf{Description} & \textbf{Exemple} \\
 \midrule
@@ -169,9 +170,4 @@ Sous licence CC BY-NC-SA 4.0 \url{https://creativecommons.org/licenses/by-nc-sa/
 Sylvain "Magicking" Laurent - \url{https://6120.eu} \\
 Dernière mise à jour : \today\\
 
-\begin{wrapfigure}{h}{0.25\textwidth}
-    \includegraphics[height=25mm]{fuzrelivecoding.png}
-    \caption{https://fuz.re}
-    \label{fig:wrapfig}
-    \end{wrapfigure}
 \end{document}
