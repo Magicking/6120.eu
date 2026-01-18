@@ -11,21 +11,21 @@ color = "" #color from the theme settings
 
 ## Ingrédients:
 
-Pates:
- - Pates feuilleté
- - 1 jaune d'oeuf
+Pâtes:
+ - Pâtes feuilletées
+ - 1 jaune d'œuf
 
 Base frangipane:
- - 2 oeufs
+ - 2 œufs
  - 75g de beurre
- - 140g de poudre d'amande (+de poudre ou +petit oeuf)
+ - 140g de poudre d'amande (+de poudre ou +petit œuf)
  - 100g de sucre
  - 1 bouchon de rhum
 
-Base beurre de cacahuete:
- - 1 oeuf
+Base beurre de cacahuète:
+ - 1 œuf
  - 30g de beurre
- - 32g de beurre de cacahuete (Extra crunchy)
+ - 32g de beurre de cacahuète (Extra crunchy)
  - 70g de poudre d'amande
  - 50g de sucre
 
@@ -41,7 +41,7 @@ Base beurre de cacahuete:
 
 #### 1. Préparer la frangipane classique:
    - Dans un bol, mélanger le beurre mou (75g) avec le sucre (100g) jusqu'à obtenir une texture crémeuse
-   - Incorporer les 2 oeufs un par un
+   - Incorporer les 2 œufs un par un
    - Ajouter la poudre d'amande (140g) et mélanger jusqu'à homogénéité
    - Ajouter le bouchon de rhum
    - Réserver au frais
@@ -49,7 +49,7 @@ Base beurre de cacahuete:
 #### 2. Préparer la base beurre de cacahuète:
    - Dans un autre bol, mélanger le beurre mou (30g) avec le beurre de cacahuète (32g)
    - Ajouter le sucre (50g) et bien mélanger
-   - Incorporer l'oeuf
+   - Incorporer l'œuf
    - Ajouter la poudre d'amande (70g) et mélanger jusqu'à obtenir une crème lisse
    - Réserver au frais
 
@@ -66,7 +66,7 @@ Base beurre de cacahuete:
 #### 4. Décoration et finition:
    - Avec un couteau pointu, faire des dessins décoratifs sur le dessus (rosace, quadrillage)
    - Faire quelques petites incisions pour laisser la vapeur s'échapper
-   - Badigeonner le dessus avec le jaune d'oeuf battu pour la dorure
+   - Badigeonner le dessus avec le jaune d'œuf battu pour la dorure
    - Laisser reposer au réfrigérateur 30 minutes si possible (aide à avoir une belle levée)
 
 #### 5. Cuisson:
