@@ -1,93 +1,97 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>idea on 6120's Notes</title><link>https://6120.eu/tags/idea/</link><description>Recent content in idea on 6120's Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright/><lastBuildDate>Sat, 13 Feb 2021 19:00:03 +0100</lastBuildDate><atom:link href="https://6120.eu/tags/idea/index.xml" rel="self" type="application/rss+xml"/><item><title>Altfury a remote wallet provider (GSaaS*) design document - Work In Progress</title><link>https://6120.eu/posts/altfury/</link><pubDate>Sat, 13 Feb 2021 19:00:03 +0100</pubDate><guid>https://6120.eu/posts/altfury/</guid><description>Motivationale With around 2000 DApps and more than 60.000 users, the promise of 27.000 tx/s with Ethereum 2.0 and people arguing for Infura centralizing the public Ethereum world there is call for alternative! Altfury aims to provide to anyone the ability to interact with DApps and any smart contract without the need of paying gas.
-Your user don&amp;rsquo;t have a wallet?
-You can let us take care of your keys and the burden to not forget and secure them while enjoying the DeFi space faster than ever.</description><content>&lt;h2 id="motivationale">Motivationale&lt;/h2>
-&lt;p>With around &lt;a href="https://dappradar.com/rankings/protocol/ethereum/87">2000 DApps&lt;/a> and more than &lt;a href="https://dappradar.com/rankings/protocol/ethereum">60.000 users&lt;/a>, the promise of 27.000 tx/s with Ethereum 2.0 and people arguing for Infura centralizing the public Ethereum world there is call for alternative!
-Altfury aims to provide to anyone the ability to interact with DApps and any smart contract without the need of paying gas.&lt;/p>
-&lt;p>Your user don&amp;rsquo;t have a wallet?&lt;/p>
-&lt;p>You can let us take care of your keys and the burden to not forget and secure them while enjoying the DeFi space faster than ever.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Idea on 6120's Notes</title><link>https://6120.eu/tags/idea/</link><description>Recent content in Idea on 6120's Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright/><lastBuildDate>Sat, 13 Feb 2021 19:00:03 +0100</lastBuildDate><atom:link href="https://6120.eu/tags/idea/index.xml" rel="self" type="application/rss+xml"/><item><title>Altfury a remote wallet provider (GSaaS*) design document - Work In Progress</title><link>https://6120.eu/posts/altfury/</link><pubDate>Sat, 13 Feb 2021 19:00:03 +0100</pubDate><guid>https://6120.eu/posts/altfury/</guid><description>&lt;h2 id="motivationale"&gt;Motivationale&lt;/h2&gt;
+&lt;p&gt;With around &lt;a href="https://dappradar.com/rankings/protocol/ethereum/87"&gt;2000 DApps&lt;/a&gt; and more than &lt;a href="https://dappradar.com/rankings/protocol/ethereum"&gt;60.000 users&lt;/a&gt;, the promise of 27.000 tx/s with Ethereum 2.0 and people arguing for Infura centralizing the public Ethereum world there is call for alternative!
+Altfury aims to provide to anyone the ability to interact with DApps and any smart contract without the need of paying gas.&lt;/p&gt;
+&lt;p&gt;Your user don&amp;rsquo;t have a wallet?&lt;/p&gt;
+&lt;p&gt;You can let us take care of your keys and the burden to not forget and secure them while enjoying the DeFi space faster than ever.
 DApp developers, the Ethereum world to your users with only the change of your endpoint URL address.
-Users, hassle free access to the DeFi world&lt;/p>
-&lt;p>No burden to use a new SDK in your DApps, work with standard Wallet Connect (Uniswap &amp;amp; al)!
-Peepz, just to go the website (optional install browser extension) pair up and go!&lt;/p>
-&lt;p>*Gas Station As A Service (GSAAS)&lt;/p>
-&lt;h1 id="intro">Intro&lt;/h1>
-&lt;p>The goal of this document is to provide a design of a high-available service providing Ethereum JSON RPC endpoints over HTTP and HTTP WebSocket and other related services such as fee (tx) management to act as a drop-in repleacement (or plugin to existing wallet connectors).&lt;/p>
-&lt;h3 id="technical-note">Technical note&lt;/h3>
-&lt;p>In addition, the endpoint SHOULD allow:&lt;/p>
-&lt;ul>
-&lt;li>For unfunded Ethereum account to pass transaction on the blockchain under certain condition
-Withhold transaction then&lt;/li>
-&lt;li>Guaranteed transaction inclusion with low gas price fee
+Users, hassle free access to the DeFi world&lt;/p&gt;</description><content>&lt;h2 id="motivationale"&gt;Motivationale&lt;/h2&gt;
+&lt;p&gt;With around &lt;a href="https://dappradar.com/rankings/protocol/ethereum/87"&gt;2000 DApps&lt;/a&gt; and more than &lt;a href="https://dappradar.com/rankings/protocol/ethereum"&gt;60.000 users&lt;/a&gt;, the promise of 27.000 tx/s with Ethereum 2.0 and people arguing for Infura centralizing the public Ethereum world there is call for alternative!
+Altfury aims to provide to anyone the ability to interact with DApps and any smart contract without the need of paying gas.&lt;/p&gt;
+&lt;p&gt;Your user don&amp;rsquo;t have a wallet?&lt;/p&gt;
+&lt;p&gt;You can let us take care of your keys and the burden to not forget and secure them while enjoying the DeFi space faster than ever.
+DApp developers, the Ethereum world to your users with only the change of your endpoint URL address.
+Users, hassle free access to the DeFi world&lt;/p&gt;
+&lt;p&gt;No burden to use a new SDK in your DApps, work with standard Wallet Connect (Uniswap &amp;amp; al)!
+Peepz, just to go the website (optional install browser extension) pair up and go!&lt;/p&gt;
+&lt;p&gt;*Gas Station As A Service (GSAAS)&lt;/p&gt;
+&lt;h1 id="intro"&gt;Intro&lt;/h1&gt;
+&lt;p&gt;The goal of this document is to provide a design of a high-available service providing Ethereum JSON RPC endpoints over HTTP and HTTP WebSocket and other related services such as fee (tx) management to act as a drop-in repleacement (or plugin to existing wallet connectors).&lt;/p&gt;
+&lt;h3 id="technical-note"&gt;Technical note&lt;/h3&gt;
+&lt;p&gt;In addition, the endpoint SHOULD allow:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;For unfunded Ethereum account to pass transaction on the blockchain under certain condition
+Withhold transaction then&lt;/li&gt;
+&lt;li&gt;Guaranteed transaction inclusion with low gas price fee
 For this specific feature, there is multiple ways to achieve this
-Pass transaction off-band to a partner miner pool that would accept transaction with a &lt;strong>gasPrice&lt;/strong> set at &lt;strong>0&lt;/strong> &lt;em>or&lt;/em> fund the account via a faucet to the &lt;strong>gasLimit&lt;/strong> x &lt;strong>gasPrice&lt;/strong> while withholding
-the transaction until funding is done and then propagate it.&lt;/li>
-&lt;/ul>
-&lt;h2 id="definition">Definition&lt;/h2>
-&lt;p>A remote wallet provider is a service that aims to help distant services to execute(read calls), sign(key control) and transmit transaction(write calls)&lt;/p>
-&lt;p>It integrate seamlessly by emulating a blockchain state with a balance corresponding for the credit of each account creating an ephemeral blockchain network (next_view(state, account_balances)-&amp;gt;fork_view, a fork of the mainnet displaying accounts as if they have the corresponding amount making the experience seamless as&lt;/p>
-&lt;h2 id="customers">Customers&lt;/h2>
-&lt;ul>
-&lt;li>Bots&lt;/li>
-&lt;li>NoCode users&lt;/li>
-&lt;li>User that click on interface (browser extension, &lt;a href="https://twitter.com/P3b7_/status/1361345964259352580?s=19">https://twitter.com/P3b7_/status/1361345964259352580?s=19&lt;/a>)&lt;/li>
-&lt;li>User willing to invest to rely on this for automation&lt;/li>
-&lt;li>User that do their on smart contract automation&lt;/li>
-&lt;/ul>
-&lt;p>Todo do market research to describe personas&lt;/p>
-&lt;h2 id="future-of-work">Future of work&lt;/h2>
-&lt;ul>
-&lt;li>Provide services about key usage (defi liquidity mining, &amp;hellip;)&lt;/li>
-&lt;/ul>
-&lt;h2 id="architecture">Architecture&lt;/h2>
-&lt;p>SHOULD be as minimal as possible to have a low footprint/cost
+Pass transaction off-band to a partner miner pool that would accept transaction with a &lt;strong&gt;gasPrice&lt;/strong&gt; set at &lt;strong&gt;0&lt;/strong&gt; &lt;em&gt;or&lt;/em&gt; fund the account via a faucet to the &lt;strong&gt;gasLimit&lt;/strong&gt; x &lt;strong&gt;gasPrice&lt;/strong&gt; while withholding
+the transaction until funding is done and then propagate it.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="definition"&gt;Definition&lt;/h2&gt;
+&lt;p&gt;A remote wallet provider is a service that aims to help distant services to execute(read calls), sign(key control) and transmit transaction(write calls)&lt;/p&gt;
+&lt;p&gt;It integrate seamlessly by emulating a blockchain state with a balance corresponding for the credit of each account creating an ephemeral blockchain network (next_view(state, account_balances)-&amp;gt;fork_view, a fork of the mainnet displaying accounts as if they have the corresponding amount making the experience seamless as&lt;/p&gt;
+&lt;h2 id="customers"&gt;Customers&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Bots&lt;/li&gt;
+&lt;li&gt;NoCode users&lt;/li&gt;
+&lt;li&gt;User that click on interface (browser extension, &lt;a href="https://twitter.com/P3b7_/status/1361345964259352580?s=19"&gt;https://twitter.com/P3b7_/status/1361345964259352580?s=19&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;User willing to invest to rely on this for automation&lt;/li&gt;
+&lt;li&gt;User that do their on smart contract automation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Todo do market research to describe personas&lt;/p&gt;
+&lt;h2 id="future-of-work"&gt;Future of work&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Provide services about key usage (defi liquidity mining, &amp;hellip;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="architecture"&gt;Architecture&lt;/h2&gt;
+&lt;p&gt;SHOULD be as minimal as possible to have a low footprint/cost
 (front-end requests (administration, user management, &amp;hellip;)).
-Use go-ethereum as library to avoid technical debt as much as possible.&lt;/p>
-&lt;p>-&amp;gt; Wondering if serverless could be a benefit if it were handling execution read calls, this might be costly if not self-hosted&lt;/p>
-&lt;p>-&amp;gt; Browser extention to change the RPC endpoint easily
+Use go-ethereum as library to avoid technical debt as much as possible.&lt;/p&gt;
+&lt;p&gt;-&amp;gt; Wondering if serverless could be a benefit if it were handling execution read calls, this might be costly if not self-hosted&lt;/p&gt;
+&lt;p&gt;-&amp;gt; Browser extention to change the RPC endpoint easily
 -&amp;gt; Ledger device with dedicated credit app
--&amp;gt; Website where account can be toped-up by XXX means&lt;/p>
-&lt;h1 id="security">Security&lt;/h1>
-&lt;p>Per ethereum account (extracted from transaction signature) whitelisting.
+-&amp;gt; Website where account can be toped-up by XXX means&lt;/p&gt;
+&lt;h1 id="security"&gt;Security&lt;/h1&gt;
+&lt;p&gt;Per ethereum account (extracted from transaction signature) whitelisting.
 Per application(what), per logged user (who)
-Anonymous user SHOULD be limited by IP(Handle IPv6 per /64 block?):&lt;/p>
-&lt;ul>
-&lt;li>Rate in second&lt;/li>
-&lt;li>Total number of concurrent connection&lt;/li>
-&lt;li>Time limit on connection&lt;/li>
-&lt;/ul>
-&lt;p>USER_TYPE:&lt;/p>
-&lt;ul>
-&lt;li>LOW_GASER&lt;/li>
-&lt;li>TO_FUND_ACCOUNT&lt;/li>
-&lt;li>ANONYMOUS&lt;/li>
-&lt;/ul>
-&lt;h1 id="new-usages-possible-out-of-that">New usages possible out of that&lt;/h1>
-&lt;ul>
-&lt;li>Send NFT anonymously via TornadoCash integration&lt;/li>
-&lt;/ul>
-&lt;h2 id="allowed-usage-pattern">Allowed usage pattern&lt;/h2>
-&lt;ul>
-&lt;li>Authorize (max amount?)&lt;/li>
-&lt;li>Trade&lt;/li>
-&lt;li>Trade&lt;/li>
-&lt;li>&amp;hellip; max amount before security callbacks?&lt;/li>
-&lt;/ul>
-&lt;h2 id="regulatory-limits">Regulatory limits&lt;/h2>
-&lt;p>Is this such a thing for DeFi?
-Tax?&lt;/p>
-&lt;h2 id="fraud-prevention--whitelisting-system">Fraud prevention / whitelisting system&lt;/h2>
-&lt;p>Smart-contract based?&lt;/p>
-&lt;h3 id="providing-an-ephemeral-ethereum-state">Providing an ephemeral ethereum state&lt;/h3>
-&lt;ul>
-&lt;li>Modify &lt;a href="https://github.com/ledgerwatch/turbo-geth/blob/master/consensus/ethash/sealer.go#L166">https://github.com/ledgerwatch/turbo-geth/blob/master/consensus/ethash/sealer.go#L166&lt;/a> to wait on a channel instead of searching for the nonce and set a MAGIC MixDigest to permit identification of a special block to be included on the canonical chain without verification&lt;/li>
-&lt;li>Prevent MAGIC block propagation throught&lt;/li>
-&lt;/ul>
-&lt;h1 id="transaction-payment-to-miner">Transaction payment to miner&lt;/h1>
-&lt;p>The payment is distributed to the block.coinbase each block containing private transaction (and potentially a lower than usual gas price)&lt;/p>
-&lt;p>Todo expand idea of private transaction via on-chain payment -&amp;gt; find a settlement cost minimal (ticket+payment channel)&lt;/p>
-&lt;h3 id="transaction-flow">Transaction flow&lt;/h3>
-&lt;h4 id="write-flows">Write flows&lt;/h4>
-&lt;pre tabindex="0">&lt;code class="language-mermaid" data-lang="mermaid">sequenceDiagram
+Anonymous user SHOULD be limited by IP(Handle IPv6 per /64 block?):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Rate in second&lt;/li&gt;
+&lt;li&gt;Total number of concurrent connection&lt;/li&gt;
+&lt;li&gt;Time limit on connection&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;USER_TYPE:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;LOW_GASER&lt;/li&gt;
+&lt;li&gt;TO_FUND_ACCOUNT&lt;/li&gt;
+&lt;li&gt;ANONYMOUS&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="new-usages-possible-out-of-that"&gt;New usages possible out of that&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Send NFT anonymously via TornadoCash integration&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="allowed-usage-pattern"&gt;Allowed usage pattern&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Authorize (max amount?)&lt;/li&gt;
+&lt;li&gt;Trade&lt;/li&gt;
+&lt;li&gt;Trade&lt;/li&gt;
+&lt;li&gt;&amp;hellip; max amount before security callbacks?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="regulatory-limits"&gt;Regulatory limits&lt;/h2&gt;
+&lt;p&gt;Is this such a thing for DeFi?
+Tax?&lt;/p&gt;
+&lt;h2 id="fraud-prevention--whitelisting-system"&gt;Fraud prevention / whitelisting system&lt;/h2&gt;
+&lt;p&gt;Smart-contract based?&lt;/p&gt;
+&lt;h3 id="providing-an-ephemeral-ethereum-state"&gt;Providing an ephemeral ethereum state&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Modify &lt;a href="https://github.com/ledgerwatch/turbo-geth/blob/master/consensus/ethash/sealer.go#L166"&gt;https://github.com/ledgerwatch/turbo-geth/blob/master/consensus/ethash/sealer.go#L166&lt;/a&gt; to wait on a channel instead of searching for the nonce and set a MAGIC MixDigest to permit identification of a special block to be included on the canonical chain without verification&lt;/li&gt;
+&lt;li&gt;Prevent MAGIC block propagation throught&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="transaction-payment-to-miner"&gt;Transaction payment to miner&lt;/h1&gt;
+&lt;p&gt;The payment is distributed to the block.coinbase each block containing private transaction (and potentially a lower than usual gas price)&lt;/p&gt;
+&lt;p&gt;Todo expand idea of private transaction via on-chain payment -&amp;gt; find a settlement cost minimal (ticket+payment channel)&lt;/p&gt;
+&lt;h3 id="transaction-flow"&gt;Transaction flow&lt;/h3&gt;
+&lt;h4 id="write-flows"&gt;Write flows&lt;/h4&gt;
+&lt;pre tabindex="0"&gt;&lt;code class="language-mermaid" data-lang="mermaid"&gt;sequenceDiagram
 participant User
 participant EVM Service
 participant Eth node
@@ -112,137 +116,137 @@ else
 EVM Service--&amp;gt;&amp;gt;Miner pool: Dispatch transaction for LOW_GASER user
 end
 deactivate EVM Service
-&lt;/code>&lt;/pre>&lt;h4 id="read-flows">Read flows&lt;/h4>
-&lt;p>Todo&lt;/p>
-&lt;h2 id="documentation">Documentation&lt;/h2>
-&lt;p>&lt;a href="https://docs.google.com/spreadsheets/d/1iOHnC1MkwcXxN-Gisk9nWeWIRfR6ZaWAXLtYL37NCzE/edit?pli=1#gid=0">Pricing&lt;/a>
-&lt;a href="https://github.com/ethereum/wiki/wiki/JSON-RPC">https://github.com/ethereum/wiki/wiki/JSON-RPC&lt;/a>
-&lt;a href="https://www.stateofthedapps.com/stats">https://www.stateofthedapps.com/stats&lt;/a>&lt;/p>
-&lt;h2 id="ethereum-rpc">Ethereum RPC&lt;/h2>
-&lt;h3 id="modified-rpc">Modified RPC&lt;/h3>
-&lt;p>&lt;strong>eth_call&lt;/strong> due to &lt;code>gasPrice&lt;/code> parameter
-&lt;strong>eth_estimateGas&lt;/strong> due to &lt;code>gasPrice&lt;/code> parameter&lt;/p>
-&lt;h4 id="eth_gasprice">eth_gasPrice&lt;/h4>
-&lt;p>Should reflect the gasPrice we want either low or high depending of the kind of transaction we expect to see either through a miner pool or pre-funding.&lt;/p>
-&lt;h4 id="eth_sendrawtransaction">eth_sendRawTransaction&lt;/h4>
-&lt;p>Custom implementation of this RPC, depending on USER_TYPE&lt;/p>
-&lt;h3 id="non-stream-rpc">Non stream RPC&lt;/h3>
-&lt;ul>
-&lt;li>
-&lt;p>eth_accounts&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>eth_blockNumber&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>eth_call&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>eth_chainId&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>eth_getBalance&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>eth_getBlockByHash&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>eth_getBlockByNumber&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>eth_getBlockTransactionCountByHash&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>eth_getBlockTransactionCountByNumber&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>eth_getCode&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>eth_getLogs&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>eth_getStorageAt&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>eth_getTransactionByBlockHashAndIndex&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>eth_getTransactionByBlockNumberAndIndex&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>eth_getTransactionByHash&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>eth_getTransactionCount&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>eth_getTransactionReceipt&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>eth_getUncleByBlockHashAndIndex&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>eth_getUncleByBlockNumberAndIndex&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>eth_getUncleCountByBlockHash&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>eth_getUncleCountByBlockNumber&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>eth_getWork&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>eth_hashrate&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>eth_mining&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>eth_protocolVersion&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>eth_submitWork&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>eth_syncing&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>net_listening&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>net_peerCount&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>net_version&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>web3_clientVersion&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;h3 id="streams-rpc">Streams RPC&lt;/h3>
-&lt;ul>
-&lt;li>eth_newFilter&lt;/li>
-&lt;li>eth_newPendingTransactionFilter&lt;/li>
-&lt;li>eth_getFilterChanges&lt;/li>
-&lt;li>eth_getFilterLogs&lt;/li>
-&lt;li>eth_uninstallFilter&lt;/li>
-&lt;li>eth_subscribe&lt;/li>
-&lt;li>eth_unsubscribe&lt;/li>
-&lt;/ul>
-&lt;h2 id="notes">Notes&lt;/h2>
-&lt;ul>
-&lt;li>Fast Transaction Pool, low latency viewer / transaction sender&lt;/li>
-&lt;li>Connect to peers, fetch memory pool, behave as light relay node&lt;/li>
-&lt;li>Provide transaction mempool view and fast transaction dispatching&lt;/li>
-&lt;li>Populate a central database for constant time access via API (paid access ?)&lt;/li>
-&lt;li>Monitor transaction to addresses, on update&lt;/li>
-&lt;li>Callback to backend customers through a fast protocol (GRPC?REST?&amp;hellip;?)&lt;/li>
-&lt;li>Trigger registered function (e.g: send transaction)&lt;/li>
-&lt;li>World infrastructure required (node in each world, potentially costly + dev ops)&lt;/li>
-&lt;li>Dashboard with world view of ethereum compatible blockchain&lt;/li>
-&lt;li>Speed transaction sending for quick transaction dispatching&lt;/li>
-&lt;li>Would require ethereum node modification&lt;/li>
-&lt;/ul></content></item></channel></rss>
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id="read-flows"&gt;Read flows&lt;/h4&gt;
+&lt;p&gt;Todo&lt;/p&gt;
+&lt;h2 id="documentation"&gt;Documentation&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://docs.google.com/spreadsheets/d/1iOHnC1MkwcXxN-Gisk9nWeWIRfR6ZaWAXLtYL37NCzE/edit?pli=1#gid=0"&gt;Pricing&lt;/a&gt;
+&lt;a href="https://github.com/ethereum/wiki/wiki/JSON-RPC"&gt;https://github.com/ethereum/wiki/wiki/JSON-RPC&lt;/a&gt;
+&lt;a href="https://www.stateofthedapps.com/stats"&gt;https://www.stateofthedapps.com/stats&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="ethereum-rpc"&gt;Ethereum RPC&lt;/h2&gt;
+&lt;h3 id="modified-rpc"&gt;Modified RPC&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;eth_call&lt;/strong&gt; due to &lt;code&gt;gasPrice&lt;/code&gt; parameter
+&lt;strong&gt;eth_estimateGas&lt;/strong&gt; due to &lt;code&gt;gasPrice&lt;/code&gt; parameter&lt;/p&gt;
+&lt;h4 id="eth_gasprice"&gt;eth_gasPrice&lt;/h4&gt;
+&lt;p&gt;Should reflect the gasPrice we want either low or high depending of the kind of transaction we expect to see either through a miner pool or pre-funding.&lt;/p&gt;
+&lt;h4 id="eth_sendrawtransaction"&gt;eth_sendRawTransaction&lt;/h4&gt;
+&lt;p&gt;Custom implementation of this RPC, depending on USER_TYPE&lt;/p&gt;
+&lt;h3 id="non-stream-rpc"&gt;Non stream RPC&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;eth_accounts&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;eth_blockNumber&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;eth_call&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;eth_chainId&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;eth_getBalance&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;eth_getBlockByHash&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;eth_getBlockByNumber&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;eth_getBlockTransactionCountByHash&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;eth_getBlockTransactionCountByNumber&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;eth_getCode&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;eth_getLogs&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;eth_getStorageAt&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;eth_getTransactionByBlockHashAndIndex&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;eth_getTransactionByBlockNumberAndIndex&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;eth_getTransactionByHash&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;eth_getTransactionCount&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;eth_getTransactionReceipt&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;eth_getUncleByBlockHashAndIndex&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;eth_getUncleByBlockNumberAndIndex&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;eth_getUncleCountByBlockHash&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;eth_getUncleCountByBlockNumber&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;eth_getWork&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;eth_hashrate&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;eth_mining&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;eth_protocolVersion&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;eth_submitWork&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;eth_syncing&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;net_listening&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;net_peerCount&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;net_version&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;web3_clientVersion&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="streams-rpc"&gt;Streams RPC&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;eth_newFilter&lt;/li&gt;
+&lt;li&gt;eth_newPendingTransactionFilter&lt;/li&gt;
+&lt;li&gt;eth_getFilterChanges&lt;/li&gt;
+&lt;li&gt;eth_getFilterLogs&lt;/li&gt;
+&lt;li&gt;eth_uninstallFilter&lt;/li&gt;
+&lt;li&gt;eth_subscribe&lt;/li&gt;
+&lt;li&gt;eth_unsubscribe&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="notes"&gt;Notes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Fast Transaction Pool, low latency viewer / transaction sender&lt;/li&gt;
+&lt;li&gt;Connect to peers, fetch memory pool, behave as light relay node&lt;/li&gt;
+&lt;li&gt;Provide transaction mempool view and fast transaction dispatching&lt;/li&gt;
+&lt;li&gt;Populate a central database for constant time access via API (paid access ?)&lt;/li&gt;
+&lt;li&gt;Monitor transaction to addresses, on update&lt;/li&gt;
+&lt;li&gt;Callback to backend customers through a fast protocol (GRPC?REST?&amp;hellip;?)&lt;/li&gt;
+&lt;li&gt;Trigger registered function (e.g: send transaction)&lt;/li&gt;
+&lt;li&gt;World infrastructure required (node in each world, potentially costly + dev ops)&lt;/li&gt;
+&lt;li&gt;Dashboard with world view of ethereum compatible blockchain&lt;/li&gt;
+&lt;li&gt;Speed transaction sending for quick transaction dispatching&lt;/li&gt;
+&lt;li&gt;Would require ethereum node modification&lt;/li&gt;
+&lt;/ul&gt;</content></item></channel></rss>

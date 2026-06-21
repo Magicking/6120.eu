@@ -1,58 +1,60 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Drafts on 6120's Notes</title><link>https://6120.eu/drafts/</link><description>Recent content in Drafts on 6120's Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright/><lastBuildDate>Mon, 07 Aug 2023 21:50:00 +0100</lastBuildDate><atom:link href="https://6120.eu/drafts/index.xml" rel="self" type="application/rss+xml"/><item><title>Note technique du paypal coin</title><link>https://6120.eu/drafts/pyusd/</link><pubDate>Mon, 07 Aug 2023 21:50:00 +0100</pubDate><guid>https://6120.eu/drafts/pyusd/</guid><description>Introduction Après être tombé sur la news https://newsroom.paypal-corp.com/2023-08-07-PayPal-Launches-U-S-Dollar-Stablecoin qui annonce la sortie d&amp;rsquo;un jeton ERC20 par PayPal et Paxos ainsi qu&amp;rsquo;après une recherche sur Twitter on tombe sur quelques informations techniques intéressantes.
-C&amp;rsquo;est un jeton de type ERC20 qui peut-être mis en pause, dont la destruction (Burn) et la création (Mint) de sa quantité est régi par une entitée centralisée.
-Composition du jeton Le proxy du jeton avec lequel les utilisateurs vont interragir est 0x6c3ea9036406852006290770BEdFcAbA0e23A0e8, en oscultant un peu plus le smart-contract, on s&amp;rsquo;aperçoit qu&amp;rsquo;il y&amp;rsquo;a eu plusieurs implémentation du jeton au cours du passé</description><content>&lt;h1 id="introduction">Introduction&lt;/h1>
-&lt;p>Après être tombé sur la news &lt;a href="https://newsroom.paypal-corp.com/2023-08-07-PayPal-Launches-U-S-Dollar-Stablecoin">https://newsroom.paypal-corp.com/2023-08-07-PayPal-Launches-U-S-Dollar-Stablecoin&lt;/a> qui annonce la sortie d&amp;rsquo;un jeton ERC20 par PayPal et Paxos ainsi qu&amp;rsquo;après une recherche sur Twitter on tombe sur quelques informations techniques intéressantes.&lt;/p>
-&lt;p>C&amp;rsquo;est un jeton de type ERC20 qui peut-être mis en pause, dont la destruction (Burn) et la création (Mint) de sa quantité est régi par une entitée centralisée.&lt;/p>
-&lt;h1 id="composition-du-jeton">Composition du jeton&lt;/h1>
-&lt;p>Le &lt;a href="https://ethereum.org/en/developers/docs/smart-contracts/upgrading/">proxy&lt;/a> du jeton avec lequel les utilisateurs vont interragir est &lt;a href="https://etherscan.io/token/0x6c3ea9036406852006290770bedfcaba0e23a0e8">0x6c3ea9036406852006290770BEdFcAbA0e23A0e8&lt;/a>, en oscultant un peu plus le smart-contract, on s&amp;rsquo;aperçoit qu&amp;rsquo;il y&amp;rsquo;a eu plusieurs implémentation du jeton au cours du passé&lt;/p>
-&lt;p>&lt;img src="https://6120.eu/img/posts/pyusd/1.png" alt="">&lt;/p>
-&lt;p>et que l&amp;rsquo;ensemble des smart-contracts existent depuis environ 1 an, probablement une phase test avant l&amp;rsquo;annonce du 2023-08-07 étant donné un volume important de transaction précédant celle-ci.&lt;/p>
-&lt;p>TODO SCREENSHOT OF PROXY DEPLOYMENT&lt;/p>
-&lt;p>L&amp;rsquo;implémentation actuel du jeton étant &lt;a href="https://etherscan.io/address/0xe17b8adf8e46b15f3f9ab4bb9e3b6e31db09126e">0xe17b8adf8e46b15f3f9ab4bb9e3b6e31db09126e&lt;/a> la différence majeure avec le code source de l&amp;rsquo;implémentation précédente était le masquage des termes PayPal/PYUSD par Hopper USD/XYZ.&lt;/p>
-&lt;p>C&amp;rsquo;est cette dernière que nous allons étudier, le proxy ne servant qu&amp;rsquo;à stocker l&amp;rsquo;état du smart-contract en lieu et place de l&amp;rsquo;implémentation.&lt;/p>
-&lt;h1 id="analyse-technique">Analyse technique&lt;/h1>
-&lt;p>En préambule, on observe que le contrat utilise une très ancienne version du langage Solidity &lt;code>0.4.24&lt;/code> en spécifiant la nécéssité des fonctions expérimentales de la version &lt;code>0.5&lt;/code>.&lt;/p>
-&lt;p>Le smart-contract est plutôt généreux en commentaire notamment avec une annotation &lt;a href="">NatSpec&lt;/a> orienté développeur et plusieurs lignes au sein de chaque fonction.&lt;/p>
-&lt;h2 id="fonctions">Fonctions&lt;/h2>
-&lt;p>Les fonctionnalités présentes dans le smart-contract peuvent être regroupées en 6 familles différentes détaillé ci-dessous.&lt;/p>
-&lt;h3 id="proxy">Proxy&lt;/h3>
-&lt;h4 id="constructor">constructor&lt;/h4>
-&lt;p>Fonction executée lors du déploiement de l&amp;rsquo;implémentation du smart-contract, ici l&amp;rsquo;implémentation est initializé puis mis en pause pour éviter toute erreur.&lt;/p>
-&lt;h4 id="initialize">initialize&lt;/h4>
-&lt;p>Fonction initialisant l&amp;rsquo;état du smart-contract tout en prévenant une ré-initialisation lors d&amp;rsquo;une mise à jour, appelle notamment une autre fonction privée &lt;code>initializeDomainSeparator&lt;/code> en charge de définir le prefix de délégation (le smart-contract et son nom).&lt;/p>
-&lt;h3 id="erc20">ERC20&lt;/h3>
-&lt;p>Les fonctions ci-desous ne sont pas utilisables si l&amp;rsquo;émetteur ou le récepteur des fonds ont été gelé.&lt;/p>
-&lt;h4 id="allowance">allowance&lt;/h4>
-&lt;p>Accesseur sur la limite de dépense d&amp;rsquo;un compte Ethereum pour un autre compte.&lt;/p>
-&lt;h4 id="approve">approve&lt;/h4>
-&lt;p>Définie la limite de dépense d&amp;rsquo;un compte Ethereum pour un autre compte.&lt;/p>
-&lt;h4 id="decreaseapproval">decreaseApproval&lt;/h4>
-&lt;p>Décroie la limite de dépense d&amp;rsquo;un compte Ethereum pour un autre compte.&lt;/p>
-&lt;h4 id="increaseapproval">increaseApproval&lt;/h4>
-&lt;p>Accroie la limite de dépense d&amp;rsquo;un compte Ethereum pour un autre compte.&lt;/p>
-&lt;h4 id="balanceof">balanceOf&lt;/h4>
-&lt;p>Retourne la quantité de jeton pour un compte Ethereum.&lt;/p>
-&lt;h4 id="totalsupply">totalSupply&lt;/h4>
-&lt;p>Retourne la quantité total de jeton.&lt;/p>
-&lt;h4 id="transfer">transfer&lt;/h4>
-&lt;p>Transfère la quantité de jeton d&amp;rsquo;un compte Ethereum vers un autre compte.&lt;/p>
-&lt;h4 id="transferfrom">transferFrom&lt;/h4>
-&lt;p>Transfère la quantité de jeton d&amp;rsquo;un compte Ethereum vers un autre compte au travers par le biais d&amp;rsquo;un tiers compte autorisé.&lt;/p>
-&lt;h3 id="owner-admin">Owner Admin&lt;/h3>
-&lt;p>Toutes les fonctions ci-dessous sont accessibles uniquement par le possesseur du smart-contract.&lt;/p>
-&lt;h4 id="proposeowner">proposeOwner&lt;/h4>
-&lt;p>Définie le potentiel nouveau compte possesseur du smart-contract.&lt;/p>
-&lt;h4 id="disregardproposeowner">disregardProposeOwner&lt;/h4>
-&lt;p>Annule le potentiel nouveau compte possesseur du smart-contract&lt;/p>
-&lt;h4 id="claimownership">claimOwnership&lt;/h4>
-&lt;p>Promeut le potentiel compte possesseur en nouveau possesseur.&lt;/p>
-&lt;h4 id="reclaimpyusd">reclaimPYUSD&lt;/h4>
-&lt;p>Transfère les jetons affectés au contrat au possesseur.&lt;/p>
-&lt;h4 id="pause">pause&lt;/h4>
-&lt;p>Mets en pause&lt;/p>
-&lt;h4 id="unpause">unpause&lt;/h4>
-&lt;h3 id="asset-protection-owner">Asset protection owner&lt;/h3>
-&lt;pre>&lt;code>setAssetProtectionRole
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Drafts on 6120's Notes</title><link>https://6120.eu/drafts/</link><description>Recent content in Drafts on 6120's Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright/><lastBuildDate>Mon, 07 Aug 2023 21:50:00 +0100</lastBuildDate><atom:link href="https://6120.eu/drafts/index.xml" rel="self" type="application/rss+xml"/><item><title>Note technique du paypal coin</title><link>https://6120.eu/drafts/pyusd/</link><pubDate>Mon, 07 Aug 2023 21:50:00 +0100</pubDate><guid>https://6120.eu/drafts/pyusd/</guid><description>&lt;h1 id="introduction"&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;Après être tombé sur la news &lt;a href="https://newsroom.paypal-corp.com/2023-08-07-PayPal-Launches-U-S-Dollar-Stablecoin"&gt;https://newsroom.paypal-corp.com/2023-08-07-PayPal-Launches-U-S-Dollar-Stablecoin&lt;/a&gt; qui annonce la sortie d&amp;rsquo;un jeton ERC20 par PayPal et Paxos ainsi qu&amp;rsquo;après une recherche sur Twitter on tombe sur quelques informations techniques intéressantes.&lt;/p&gt;
+&lt;p&gt;C&amp;rsquo;est un jeton de type ERC20 qui peut-être mis en pause, dont la destruction (Burn) et la création (Mint) de sa quantité est régi par une entitée centralisée.&lt;/p&gt;
+&lt;h1 id="composition-du-jeton"&gt;Composition du jeton&lt;/h1&gt;
+&lt;p&gt;Le &lt;a href="https://ethereum.org/en/developers/docs/smart-contracts/upgrading/"&gt;proxy&lt;/a&gt; du jeton avec lequel les utilisateurs vont interragir est &lt;a href="https://etherscan.io/token/0x6c3ea9036406852006290770bedfcaba0e23a0e8"&gt;0x6c3ea9036406852006290770BEdFcAbA0e23A0e8&lt;/a&gt;, en oscultant un peu plus le smart-contract, on s&amp;rsquo;aperçoit qu&amp;rsquo;il y&amp;rsquo;a eu plusieurs implémentation du jeton au cours du passé&lt;/p&gt;</description><content>&lt;h1 id="introduction"&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;Après être tombé sur la news &lt;a href="https://newsroom.paypal-corp.com/2023-08-07-PayPal-Launches-U-S-Dollar-Stablecoin"&gt;https://newsroom.paypal-corp.com/2023-08-07-PayPal-Launches-U-S-Dollar-Stablecoin&lt;/a&gt; qui annonce la sortie d&amp;rsquo;un jeton ERC20 par PayPal et Paxos ainsi qu&amp;rsquo;après une recherche sur Twitter on tombe sur quelques informations techniques intéressantes.&lt;/p&gt;
+&lt;p&gt;C&amp;rsquo;est un jeton de type ERC20 qui peut-être mis en pause, dont la destruction (Burn) et la création (Mint) de sa quantité est régi par une entitée centralisée.&lt;/p&gt;
+&lt;h1 id="composition-du-jeton"&gt;Composition du jeton&lt;/h1&gt;
+&lt;p&gt;Le &lt;a href="https://ethereum.org/en/developers/docs/smart-contracts/upgrading/"&gt;proxy&lt;/a&gt; du jeton avec lequel les utilisateurs vont interragir est &lt;a href="https://etherscan.io/token/0x6c3ea9036406852006290770bedfcaba0e23a0e8"&gt;0x6c3ea9036406852006290770BEdFcAbA0e23A0e8&lt;/a&gt;, en oscultant un peu plus le smart-contract, on s&amp;rsquo;aperçoit qu&amp;rsquo;il y&amp;rsquo;a eu plusieurs implémentation du jeton au cours du passé&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://6120.eu/img/posts/pyusd/1.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;et que l&amp;rsquo;ensemble des smart-contracts existent depuis environ 1 an, probablement une phase test avant l&amp;rsquo;annonce du 2023-08-07 étant donné un volume important de transaction précédant celle-ci.&lt;/p&gt;
+&lt;p&gt;TODO SCREENSHOT OF PROXY DEPLOYMENT&lt;/p&gt;
+&lt;p&gt;L&amp;rsquo;implémentation actuel du jeton étant &lt;a href="https://etherscan.io/address/0xe17b8adf8e46b15f3f9ab4bb9e3b6e31db09126e"&gt;0xe17b8adf8e46b15f3f9ab4bb9e3b6e31db09126e&lt;/a&gt; la différence majeure avec le code source de l&amp;rsquo;implémentation précédente était le masquage des termes PayPal/PYUSD par Hopper USD/XYZ.&lt;/p&gt;
+&lt;p&gt;C&amp;rsquo;est cette dernière que nous allons étudier, le proxy ne servant qu&amp;rsquo;à stocker l&amp;rsquo;état du smart-contract en lieu et place de l&amp;rsquo;implémentation.&lt;/p&gt;
+&lt;h1 id="analyse-technique"&gt;Analyse technique&lt;/h1&gt;
+&lt;p&gt;En préambule, on observe que le contrat utilise une très ancienne version du langage Solidity &lt;code&gt;0.4.24&lt;/code&gt; en spécifiant la nécéssité des fonctions expérimentales de la version &lt;code&gt;0.5&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Le smart-contract est plutôt généreux en commentaire notamment avec une annotation &lt;a href=""&gt;NatSpec&lt;/a&gt; orienté développeur et plusieurs lignes au sein de chaque fonction.&lt;/p&gt;
+&lt;h2 id="fonctions"&gt;Fonctions&lt;/h2&gt;
+&lt;p&gt;Les fonctionnalités présentes dans le smart-contract peuvent être regroupées en 6 familles différentes détaillé ci-dessous.&lt;/p&gt;
+&lt;h3 id="proxy"&gt;Proxy&lt;/h3&gt;
+&lt;h4 id="constructor"&gt;constructor&lt;/h4&gt;
+&lt;p&gt;Fonction executée lors du déploiement de l&amp;rsquo;implémentation du smart-contract, ici l&amp;rsquo;implémentation est initializé puis mis en pause pour éviter toute erreur.&lt;/p&gt;
+&lt;h4 id="initialize"&gt;initialize&lt;/h4&gt;
+&lt;p&gt;Fonction initialisant l&amp;rsquo;état du smart-contract tout en prévenant une ré-initialisation lors d&amp;rsquo;une mise à jour, appelle notamment une autre fonction privée &lt;code&gt;initializeDomainSeparator&lt;/code&gt; en charge de définir le prefix de délégation (le smart-contract et son nom).&lt;/p&gt;
+&lt;h3 id="erc20"&gt;ERC20&lt;/h3&gt;
+&lt;p&gt;Les fonctions ci-desous ne sont pas utilisables si l&amp;rsquo;émetteur ou le récepteur des fonds ont été gelé.&lt;/p&gt;
+&lt;h4 id="allowance"&gt;allowance&lt;/h4&gt;
+&lt;p&gt;Accesseur sur la limite de dépense d&amp;rsquo;un compte Ethereum pour un autre compte.&lt;/p&gt;
+&lt;h4 id="approve"&gt;approve&lt;/h4&gt;
+&lt;p&gt;Définie la limite de dépense d&amp;rsquo;un compte Ethereum pour un autre compte.&lt;/p&gt;
+&lt;h4 id="decreaseapproval"&gt;decreaseApproval&lt;/h4&gt;
+&lt;p&gt;Décroie la limite de dépense d&amp;rsquo;un compte Ethereum pour un autre compte.&lt;/p&gt;
+&lt;h4 id="increaseapproval"&gt;increaseApproval&lt;/h4&gt;
+&lt;p&gt;Accroie la limite de dépense d&amp;rsquo;un compte Ethereum pour un autre compte.&lt;/p&gt;
+&lt;h4 id="balanceof"&gt;balanceOf&lt;/h4&gt;
+&lt;p&gt;Retourne la quantité de jeton pour un compte Ethereum.&lt;/p&gt;
+&lt;h4 id="totalsupply"&gt;totalSupply&lt;/h4&gt;
+&lt;p&gt;Retourne la quantité total de jeton.&lt;/p&gt;
+&lt;h4 id="transfer"&gt;transfer&lt;/h4&gt;
+&lt;p&gt;Transfère la quantité de jeton d&amp;rsquo;un compte Ethereum vers un autre compte.&lt;/p&gt;
+&lt;h4 id="transferfrom"&gt;transferFrom&lt;/h4&gt;
+&lt;p&gt;Transfère la quantité de jeton d&amp;rsquo;un compte Ethereum vers un autre compte au travers par le biais d&amp;rsquo;un tiers compte autorisé.&lt;/p&gt;
+&lt;h3 id="owner-admin"&gt;Owner Admin&lt;/h3&gt;
+&lt;p&gt;Toutes les fonctions ci-dessous sont accessibles uniquement par le possesseur du smart-contract.&lt;/p&gt;
+&lt;h4 id="proposeowner"&gt;proposeOwner&lt;/h4&gt;
+&lt;p&gt;Définie le potentiel nouveau compte possesseur du smart-contract.&lt;/p&gt;
+&lt;h4 id="disregardproposeowner"&gt;disregardProposeOwner&lt;/h4&gt;
+&lt;p&gt;Annule le potentiel nouveau compte possesseur du smart-contract&lt;/p&gt;
+&lt;h4 id="claimownership"&gt;claimOwnership&lt;/h4&gt;
+&lt;p&gt;Promeut le potentiel compte possesseur en nouveau possesseur.&lt;/p&gt;
+&lt;h4 id="reclaimpyusd"&gt;reclaimPYUSD&lt;/h4&gt;
+&lt;p&gt;Transfère les jetons affectés au contrat au possesseur.&lt;/p&gt;
+&lt;h4 id="pause"&gt;pause&lt;/h4&gt;
+&lt;p&gt;Mets en pause&lt;/p&gt;
+&lt;h4 id="unpause"&gt;unpause&lt;/h4&gt;
+&lt;h3 id="asset-protection-owner"&gt;Asset protection owner&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;setAssetProtectionRole
 - Définie le gestionnaire de protection des biens
 freeze
 - Gèle une addresse
@@ -62,17 +64,17 @@ wipeFrozenAddress
 - Détruit les fonds d'une addresse gelée
 isFrozen
 - Accesseur des addresses gelées
-&lt;/code>&lt;/pre>
-&lt;h3 id="gestion-de-la-quantité">Gestion de la quantité&lt;/h3>
-&lt;pre>&lt;code>setSupplyController
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id="gestion-de-la-quantité"&gt;Gestion de la quantité&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;setSupplyController
 - Définie le gestionnaire de quantité
 increaseSupply
 - Créé et transfère des jetons au gestionnaire de quantité
 decreaseSupply
 - Détruit des jetons du gestionnaire de quantité.
-&lt;/code>&lt;/pre>
-&lt;h3 id="gestion-de-la-délégation">Gestion de la délégation&lt;/h3>
-&lt;pre>&lt;code>nextSeqOf
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id="gestion-de-la-délégation"&gt;Gestion de la délégation&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;nextSeqOf
 - Accesseur du nonce (nombre )
 betaDelegatedTransfer
 - Transfère des fonds au travers d'un tiers
@@ -84,117 +86,117 @@ isWhitelistedBetaDelegate
 setBetaDelegateWhitelister
 whitelistBetaDelegate
 unwhitelistBetaDelegate
-&lt;/code>&lt;/pre>
-&lt;h2 id="notes">Notes&lt;/h2>
-&lt;ul>
-&lt;li>Utilisation d&amp;rsquo;accesseur qui sont déjà rajouté par défaut&lt;/li>
-&lt;li>Fonction qui retourne toujours les mêmes constantes (vrai)&lt;/li>
-&lt;/ul>
-&lt;h1 id="conclusion">Conclusion&lt;/h1></content></item><item><title>In on Chain</title><link>https://6120.eu/drafts/in-on-chain/</link><pubDate>Sun, 29 Jan 2023 02:30:51 +0100</pubDate><guid>https://6120.eu/drafts/in-on-chain/</guid><description>In-chain refers to something that is stored and processed on the blockchain, while on-chain refers to something that is stored on the blockchain but processed off-chain. In the case of NFT artwork, in-chain would refer to the media being processed to its final form by the first execution layer, such as the EVM in Ethereum. On-chain would refer to the media being stored on the blockchain, but the processing and rendering of the artwork happens off-chain using JavaScript, for example, in real-time.</description><content>&lt;p>In-chain refers to something that is stored and processed on the blockchain, while on-chain refers to something that is stored on the blockchain but processed off-chain. In the case of NFT artwork, in-chain would refer to the media being processed to its final form by the first execution layer, such as the EVM in Ethereum. On-chain would refer to the media being stored on the blockchain, but the processing and rendering of the artwork happens off-chain using JavaScript, for example, in real-time.&lt;/p>
-&lt;p>Some media formats, such as SVG, contain multiple data streams that may require different levels of processing, it can be rendered using rasterization techniques, but it can also be enhanced with CSS and/or JavaScript. This means that some parts of the image may be processed in-chain, while others may be processed off-chain.&lt;/p>
-&lt;p>Additionally, depending on the context, the final form of the media may be different, it can be a raster image or a interactive vector image, so the processing can be different for each context and each final form. This can make it challenging to determine the appropriate level of in-chain and off-chain processing for certain types of media, and may require careful consideration of the specific requirements and constraints of the use case.&lt;/p>
-&lt;p>Thus we can define in-chain NFT where the artwork does not require* turing complete processing post first on-chain execution (e.g: when tokenURI function return embbed audio/video in metadatas)
-(as in mandatory). The processing capability being brought by the human user, and therefore, a NFT can be considered in-chain when it does not require post-chain processing, for example, in wallets, twitter profile pictures, and so on. On the other hand, NFTs that require Post-Chain Processing(PCP), for example, in browsers, desktop apps, or games, are considered on-chain NFTs.&lt;/p>
-&lt;p>Example of possible artwork media types with possible Post-Chain Processing:&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Media&lt;/th>
-&lt;th>Audio&lt;/th>
-&lt;th>Image&lt;/th>
-&lt;th>PCP&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;a href="https://en.wikipedia.org/wiki/Audio_Video_Interleave#">AVI&lt;/a>&lt;/td>
-&lt;td>X&lt;/td>
-&lt;td>X&lt;/td>
-&lt;td>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;a href="https://en.wikipedia.org/wiki/BMP_file_format">BMP&lt;/a>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>X&lt;/td>
-&lt;td>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;a href="https://en.wikipedia.org/wiki/GIF#File_format">GIF&lt;/a>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>X&lt;/td>
-&lt;td>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;a href="https://en.wikipedia.org/wiki/GlTF#GLB">GLB&lt;/a>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>X&lt;/td>
-&lt;td>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;a href="https://www.khronos.org/assets/uploads/developers/library/overview/gltf-overview.pdf">GLTF&lt;/a>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>X&lt;/td>
-&lt;td>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;a href="https://en.wikipedia.org/wiki/JPEG#Syntax_and_structure">JPG&lt;/a>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>X&lt;/td>
-&lt;td>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;a href="https://https://en.wikipedia.org/wiki/MP4_file_format#Data_streams">MP4&lt;/a>&lt;/td>
-&lt;td>X&lt;/td>
-&lt;td>X&lt;/td>
-&lt;td>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;a href="https://en.wikipedia.org/wiki/WAV#">WAV&lt;/a>&lt;/td>
-&lt;td>X&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;a href="https://en.wikipedia.org/wiki/WebM#">WebM&lt;/a>&lt;/td>
-&lt;td>X&lt;/td>
-&lt;td>X&lt;/td>
-&lt;td>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;a href="https://en.wikipedia.org/wiki/Ogg#">OGG&lt;/a>&lt;/td>
-&lt;td>X&lt;/td>
-&lt;td>X&lt;/td>
-&lt;td>&lt;a href="https://en.wikipedia.org/wiki/Continuous_Media_Markup_Language">X&lt;/a>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;a href="https://en.wikipedia.org/wiki/HTML#">HTML&lt;/a>&lt;/td>
-&lt;td>X&lt;/td>
-&lt;td>X&lt;/td>
-&lt;td>X&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;a href="https://en.wikipedia.org/wiki/SVG">SVG&lt;/a>&lt;/td>
-&lt;td>X&lt;/td>
-&lt;td>X&lt;/td>
-&lt;td>&lt;a href="https://en.wikipedia.org/wiki/SVG_animation">X&lt;/a>&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;p>Examples projects by media type:&lt;/p>
-&lt;p>Add OpenSea Link&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;p>In-chain BMP NFT is &lt;a href="https://etherscan.deth.net/address/0xd31fc221d2b0e0321c43e9f6824b26ebfff01d7d#code">Brotchain&lt;/a> NFT processing image&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>In-chain WAV NFT is the &lt;a href="https://etherscan.deth.net/address/0xE114DCe59A333f8D351371F54188F92C287b73E6#code">Bleeps&lt;/a> NFT Waveform synthetizer&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;p>(It&amp;rsquo;s worth noting that the table is not an exhaustive list of all media types that can be used for NFT artwork)&lt;/p>
-&lt;p>The concept of in-chain and on-chain NFTs refers to the storage and processing of digital artwork on the blockchain by smart-contracts following NFT standards. In-chain NFTs are those where the artwork does not require Post-Chain Processing and can be viewed using standard software or hardware. On the other hand, on-chain NFTs require post-chain processing, such as in browsers or desktop apps. The broad spectrum of possibilities for In-chain NFTs allows for greater compatibility across devices and opens up unexplored possibilities for on-chain computation, such as the ability to create more interactive and dynamic artwork, or the ability to use smart contracts to create unique, one-of-a-kind pieces.&lt;/p>
-&lt;p>INSERT DIAGRAM from DRAW.IO&lt;/p>
-&lt;p>NB: We could use the &lt;a href="https://arxiv.org/pdf/2109.14534.pdf">StarkNet Cairo CPU&lt;/a> intercheangibly with the EVM as long as the smart-contract follows NFT standards.&lt;/p>
-&lt;p>More ressources:&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="https://blog.simondlr.com/posts/flavours-of-on-chain-svg-nfts-on-ethereum">Simon de la Rouviere&amp;rsquo;s Flavours of on-chain SVG blog post&lt;/a>&lt;/li>
-&lt;/ul></content></item></channel></rss>
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="notes"&gt;Notes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Utilisation d&amp;rsquo;accesseur qui sont déjà rajouté par défaut&lt;/li&gt;
+&lt;li&gt;Fonction qui retourne toujours les mêmes constantes (vrai)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="conclusion"&gt;Conclusion&lt;/h1&gt;</content></item><item><title>In on Chain</title><link>https://6120.eu/drafts/in-on-chain/</link><pubDate>Sun, 29 Jan 2023 02:30:51 +0100</pubDate><guid>https://6120.eu/drafts/in-on-chain/</guid><description>&lt;p&gt;In-chain refers to something that is stored and processed on the blockchain, while on-chain refers to something that is stored on the blockchain but processed off-chain. In the case of NFT artwork, in-chain would refer to the media being processed to its final form by the first execution layer, such as the EVM in Ethereum. On-chain would refer to the media being stored on the blockchain, but the processing and rendering of the artwork happens off-chain using JavaScript, for example, in real-time.&lt;/p&gt;</description><content>&lt;p&gt;In-chain refers to something that is stored and processed on the blockchain, while on-chain refers to something that is stored on the blockchain but processed off-chain. In the case of NFT artwork, in-chain would refer to the media being processed to its final form by the first execution layer, such as the EVM in Ethereum. On-chain would refer to the media being stored on the blockchain, but the processing and rendering of the artwork happens off-chain using JavaScript, for example, in real-time.&lt;/p&gt;
+&lt;p&gt;Some media formats, such as SVG, contain multiple data streams that may require different levels of processing, it can be rendered using rasterization techniques, but it can also be enhanced with CSS and/or JavaScript. This means that some parts of the image may be processed in-chain, while others may be processed off-chain.&lt;/p&gt;
+&lt;p&gt;Additionally, depending on the context, the final form of the media may be different, it can be a raster image or a interactive vector image, so the processing can be different for each context and each final form. This can make it challenging to determine the appropriate level of in-chain and off-chain processing for certain types of media, and may require careful consideration of the specific requirements and constraints of the use case.&lt;/p&gt;
+&lt;p&gt;Thus we can define in-chain NFT where the artwork does not require* turing complete processing post first on-chain execution (e.g: when tokenURI function return embbed audio/video in metadatas)
+(as in mandatory). The processing capability being brought by the human user, and therefore, a NFT can be considered in-chain when it does not require post-chain processing, for example, in wallets, twitter profile pictures, and so on. On the other hand, NFTs that require Post-Chain Processing(PCP), for example, in browsers, desktop apps, or games, are considered on-chain NFTs.&lt;/p&gt;
+&lt;p&gt;Example of possible artwork media types with possible Post-Chain Processing:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Media&lt;/th&gt;
+&lt;th&gt;Audio&lt;/th&gt;
+&lt;th&gt;Image&lt;/th&gt;
+&lt;th&gt;PCP&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href="https://en.wikipedia.org/wiki/Audio_Video_Interleave"&gt;AVI&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href="https://en.wikipedia.org/wiki/BMP_file_format"&gt;BMP&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href="https://en.wikipedia.org/wiki/GIF#File_format"&gt;GIF&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href="https://en.wikipedia.org/wiki/GlTF#GLB"&gt;GLB&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href="https://www.khronos.org/assets/uploads/developers/library/overview/gltf-overview.pdf"&gt;GLTF&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href="https://en.wikipedia.org/wiki/JPEG#Syntax_and_structure"&gt;JPG&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href="https://https://en.wikipedia.org/wiki/MP4_file_format#Data_streams"&gt;MP4&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href="https://en.wikipedia.org/wiki/WAV"&gt;WAV&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href="https://en.wikipedia.org/wiki/WebM"&gt;WebM&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href="https://en.wikipedia.org/wiki/Ogg"&gt;OGG&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://en.wikipedia.org/wiki/Continuous_Media_Markup_Language"&gt;X&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href="https://en.wikipedia.org/wiki/HTML"&gt;HTML&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href="https://en.wikipedia.org/wiki/SVG"&gt;SVG&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;td&gt;X&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://en.wikipedia.org/wiki/SVG_animation"&gt;X&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Examples projects by media type:&lt;/p&gt;
+&lt;p&gt;Add OpenSea Link&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;In-chain BMP NFT is &lt;a href="https://etherscan.deth.net/address/0xd31fc221d2b0e0321c43e9f6824b26ebfff01d7d#code"&gt;Brotchain&lt;/a&gt; NFT processing image&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;In-chain WAV NFT is the &lt;a href="https://etherscan.deth.net/address/0xE114DCe59A333f8D351371F54188F92C287b73E6#code"&gt;Bleeps&lt;/a&gt; NFT Waveform synthetizer&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;(It&amp;rsquo;s worth noting that the table is not an exhaustive list of all media types that can be used for NFT artwork)&lt;/p&gt;
+&lt;p&gt;The concept of in-chain and on-chain NFTs refers to the storage and processing of digital artwork on the blockchain by smart-contracts following NFT standards. In-chain NFTs are those where the artwork does not require Post-Chain Processing and can be viewed using standard software or hardware. On the other hand, on-chain NFTs require post-chain processing, such as in browsers or desktop apps. The broad spectrum of possibilities for In-chain NFTs allows for greater compatibility across devices and opens up unexplored possibilities for on-chain computation, such as the ability to create more interactive and dynamic artwork, or the ability to use smart contracts to create unique, one-of-a-kind pieces.&lt;/p&gt;
+&lt;p&gt;INSERT DIAGRAM from DRAW.IO&lt;/p&gt;
+&lt;p&gt;NB: We could use the &lt;a href="https://arxiv.org/pdf/2109.14534.pdf"&gt;StarkNet Cairo CPU&lt;/a&gt; intercheangibly with the EVM as long as the smart-contract follows NFT standards.&lt;/p&gt;
+&lt;p&gt;More ressources:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://blog.simondlr.com/posts/flavours-of-on-chain-svg-nfts-on-ethereum"&gt;Simon de la Rouviere&amp;rsquo;s Flavours of on-chain SVG blog post&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content></item></channel></rss>

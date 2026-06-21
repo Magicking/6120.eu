@@ -1,126 +1,138 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>gpt on 6120's Notes</title><link>https://6120.eu/tags/gpt/</link><description>Recent content in gpt on 6120's Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright/><lastBuildDate>Thu, 23 Mar 2023 04:19:55 +0100</lastBuildDate><atom:link href="https://6120.eu/tags/gpt/index.xml" rel="self" type="application/rss+xml"/><item><title>Analyzing Ordinal GitHub issues</title><link>https://6120.eu/posts/analyzing-ordinal-github-issues-p2/</link><pubDate>Thu, 23 Mar 2023 04:19:55 +0100</pubDate><guid>https://6120.eu/posts/analyzing-ordinal-github-issues-p2/</guid><description>This article is a working draft; I will update it as I go.
-If you have yet to read the first part of this series, you can find it here.
-We built a tool to help us analyze GitHub issues. Below is the result in action or a page.
-Regarding the output:
-Titles are not passed through GPT, and they are raw user entries. Normalizing the title is a good next step.</description><content>&lt;p>This article is a working draft; I will update it as I go.&lt;/p>
-&lt;p>If you have yet to read the first part of this series, you can find it &lt;a href="https://6120.eu/posts/analyzing-ordinal-github-issues/">here&lt;/a>.&lt;/p>
-&lt;p>We built a tool to help us analyze GitHub issues. Below is the result in action or a &lt;a href="https://6120.eu/codes/analyzing-ordinal-github-issues-p2/issues-display.html">page&lt;/a>.&lt;/p>
-&lt;iframe width="600" height="600" frameborder="0" src="https://6120.eu/codes/analyzing-ordinal-github-issues-p2/issues-display.html" allowfullscreen>&lt;/iframe>
-&lt;p>Regarding the output:&lt;/p>
-&lt;ul>
-&lt;li>Titles are not passed through GPT, and they are raw user entries. Normalizing the title is a good next step.&lt;/li>
-&lt;li>The body is more evident than the title most of the time.&lt;/li>
-&lt;li>Red boxes are issues that need to be classified correctly.&lt;/li>
-&lt;/ul>
-&lt;p>Sampling over 31 issues &amp;ldquo;user-support&amp;rdquo; (10%) and doing this classification manually, assisted by
-the AI tool, we make this classification:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="color:#f92672">documentation&lt;/span>: &lt;span style="color:#ae81ff">1062&lt;/span>,&lt;span style="color:#ae81ff">1575&lt;/span>,&lt;span style="color:#ae81ff">1675&lt;/span>,&lt;span style="color:#ae81ff">1709&lt;/span>,&lt;span style="color:#ae81ff">1770&lt;/span>,&lt;span style="color:#ae81ff">1816&lt;/span>,&lt;span style="color:#ae81ff">1845&lt;/span>,&lt;span style="color:#ae81ff">1924&lt;/span>
-&lt;span style="color:#f92672">new-feature&lt;/span>: &lt;span style="color:#ae81ff">1322&lt;/span>,&lt;span style="color:#ae81ff">1071&lt;/span>,&lt;span style="color:#ae81ff">1519&lt;/span>,&lt;span style="color:#ae81ff">1764&lt;/span>,&lt;span style="color:#ae81ff">1333&lt;/span>
-&lt;span style="color:#f92672">wallet&lt;/span>: &lt;span style="color:#ae81ff">1071&lt;/span>,&lt;span style="color:#ae81ff">1519&lt;/span>
-&lt;span style="color:#f92672">api&lt;/span>: &lt;span style="color:#ae81ff">1322&lt;/span>
-&lt;span style="color:#f92672">user-support&lt;/span>: &lt;span style="color:#ae81ff">1379&lt;/span>,&lt;span style="color:#ae81ff">1623&lt;/span>,&lt;span style="color:#ae81ff">1672&lt;/span>,&lt;span style="color:#ae81ff">1770&lt;/span>,&lt;span style="color:#ae81ff">1774&lt;/span>,&lt;span style="color:#ae81ff">1796&lt;/span>,&lt;span style="color:#ae81ff">1837&lt;/span>,&lt;span style="color:#ae81ff">1850&lt;/span>,&lt;span style="color:#ae81ff">1915&lt;/span>,&lt;span style="color:#ae81ff">1930&lt;/span>,&lt;span style="color:#ae81ff">1932&lt;/span>
-&lt;span style="color:#f92672">packaging&lt;/span>: &lt;span style="color:#ae81ff">1379&lt;/span>
-&lt;span style="color:#f92672">frontend&lt;/span>: &lt;span style="color:#ae81ff">1437&lt;/span>
-&lt;span style="color:#f92672">mime-content&lt;/span>: &lt;span style="color:#ae81ff">1468&lt;/span>,&lt;span style="color:#ae81ff">1438&lt;/span>
-&lt;span style="color:#f92672">naming&lt;/span>: &lt;span style="color:#ae81ff">1518&lt;/span>,&lt;span style="color:#ae81ff">1709&lt;/span>
-&lt;span style="color:#f92672">to-be-closed&lt;/span>: &lt;span style="color:#ae81ff">1709&lt;/span>,&lt;span style="color:#ae81ff">1779&lt;/span>,&lt;span style="color:#ae81ff">1816&lt;/span>,&lt;span style="color:#ae81ff">1925&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>We see that the classification could be better. The model is not able to classify issues accurately. We have only ~10 out of ~30 issues classified correctly over a sample of 10% in the « user-support » label. It does help to read quickly over an issue; direct integration of this kind of tool is to be expected soon.&lt;/p>
-&lt;p>The prompt of the model needs to be reworked to get the model to classify issues more accurately.&lt;/p>
-&lt;p>Recommendations:&lt;/p>
-&lt;ul>
-&lt;li>Closure of old issues of non-contributor if there is no activity up to a determined amount of time.
-&lt;ul>
-&lt;li>A gitbot could help with this.&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>Labelling seems to be useful, at least for filtering.&lt;/li>
-&lt;li>Issues templating with different models with an example of what to include could fast-track issue triaging in the future.&lt;/li>
-&lt;/ul></content></item><item><title>Efficient Issue Analysis: Harnessing the Power of GPT-4 and GPT-3.5 for GitHub Repository Insights</title><link>https://6120.eu/posts/analyzing-ordinal-github-issues/</link><pubDate>Sat, 18 Mar 2023 08:38:51 +0100</pubDate><guid>https://6120.eu/posts/analyzing-ordinal-github-issues/</guid><description>TL;DR This post showcases a creative approach to analyzing issues in the Ordinal GitHub repository by leveraging the GitHub API, GPT-3.5, and GPT-4. The author demonstrates how to obtain the necessary data using the GitHub CLI, then uses GPT-4 to generate a prompt for GPT-3.5 to analyze the repository&amp;rsquo;s issues further.
-Some key takeaways from this analysis include the following:
-Automating the collection and analysis of issues and pull requests can save time and effort.</description><content>&lt;h1 id="tldr">TL;DR&lt;/h1>
-&lt;p>This post showcases a creative approach to analyzing issues in the Ordinal GitHub repository by leveraging the GitHub API, GPT-3.5, and GPT-4. The author demonstrates how to obtain the necessary data using the GitHub CLI, then uses GPT-4 to generate a prompt for GPT-3.5 to analyze the repository&amp;rsquo;s issues further.&lt;/p>
-&lt;p>Some key takeaways from this analysis include the following:&lt;/p>
-&lt;p>Automating the collection and analysis of issues and pull requests can save time and effort.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Gpt on 6120's Notes</title><link>https://6120.eu/tags/gpt/</link><description>Recent content in Gpt on 6120's Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright/><lastBuildDate>Thu, 23 Mar 2023 04:19:55 +0100</lastBuildDate><atom:link href="https://6120.eu/tags/gpt/index.xml" rel="self" type="application/rss+xml"/><item><title>Analyzing Ordinal GitHub issues</title><link>https://6120.eu/posts/analyzing-ordinal-github-issues-p2/</link><pubDate>Thu, 23 Mar 2023 04:19:55 +0100</pubDate><guid>https://6120.eu/posts/analyzing-ordinal-github-issues-p2/</guid><description>&lt;p&gt;This article is a working draft; I will update it as I go.&lt;/p&gt;
+&lt;p&gt;If you have yet to read the first part of this series, you can find it &lt;a href="https://6120.eu/posts/analyzing-ordinal-github-issues/"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We built a tool to help us analyze GitHub issues. Below is the result in action or a &lt;a href="https://6120.eu/codes/analyzing-ordinal-github-issues-p2/issues-display.html"&gt;page&lt;/a&gt;.&lt;/p&gt;
+&lt;iframe width="600" height="600" frameborder="0" src="https://6120.eu/codes/analyzing-ordinal-github-issues-p2/issues-display.html" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;Regarding the output:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Titles are not passed through GPT, and they are raw user entries. Normalizing the title is a good next step.&lt;/li&gt;
+&lt;li&gt;The body is more evident than the title most of the time.&lt;/li&gt;
+&lt;li&gt;Red boxes are issues that need to be classified correctly.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Sampling over 31 issues &amp;ldquo;user-support&amp;rdquo; (10%) and doing this classification manually, assisted by
+the AI tool, we make this classification:&lt;/p&gt;</description><content>&lt;p&gt;This article is a working draft; I will update it as I go.&lt;/p&gt;
+&lt;p&gt;If you have yet to read the first part of this series, you can find it &lt;a href="https://6120.eu/posts/analyzing-ordinal-github-issues/"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We built a tool to help us analyze GitHub issues. Below is the result in action or a &lt;a href="https://6120.eu/codes/analyzing-ordinal-github-issues-p2/issues-display.html"&gt;page&lt;/a&gt;.&lt;/p&gt;
+&lt;iframe width="600" height="600" frameborder="0" src="https://6120.eu/codes/analyzing-ordinal-github-issues-p2/issues-display.html" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;Regarding the output:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Titles are not passed through GPT, and they are raw user entries. Normalizing the title is a good next step.&lt;/li&gt;
+&lt;li&gt;The body is more evident than the title most of the time.&lt;/li&gt;
+&lt;li&gt;Red boxes are issues that need to be classified correctly.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Sampling over 31 issues &amp;ldquo;user-support&amp;rdquo; (10%) and doing this classification manually, assisted by
+the AI tool, we make this classification:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;documentation&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;1062&lt;/span&gt;,&lt;span style="color:#ae81ff"&gt;1575&lt;/span&gt;,&lt;span style="color:#ae81ff"&gt;1675&lt;/span&gt;,&lt;span style="color:#ae81ff"&gt;1709&lt;/span&gt;,&lt;span style="color:#ae81ff"&gt;1770&lt;/span&gt;,&lt;span style="color:#ae81ff"&gt;1816&lt;/span&gt;,&lt;span style="color:#ae81ff"&gt;1845&lt;/span&gt;,&lt;span style="color:#ae81ff"&gt;1924&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;new-feature&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;1322&lt;/span&gt;,&lt;span style="color:#ae81ff"&gt;1071&lt;/span&gt;,&lt;span style="color:#ae81ff"&gt;1519&lt;/span&gt;,&lt;span style="color:#ae81ff"&gt;1764&lt;/span&gt;,&lt;span style="color:#ae81ff"&gt;1333&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;wallet&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;1071&lt;/span&gt;,&lt;span style="color:#ae81ff"&gt;1519&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;api&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;1322&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;user-support&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;1379&lt;/span&gt;,&lt;span style="color:#ae81ff"&gt;1623&lt;/span&gt;,&lt;span style="color:#ae81ff"&gt;1672&lt;/span&gt;,&lt;span style="color:#ae81ff"&gt;1770&lt;/span&gt;,&lt;span style="color:#ae81ff"&gt;1774&lt;/span&gt;,&lt;span style="color:#ae81ff"&gt;1796&lt;/span&gt;,&lt;span style="color:#ae81ff"&gt;1837&lt;/span&gt;,&lt;span style="color:#ae81ff"&gt;1850&lt;/span&gt;,&lt;span style="color:#ae81ff"&gt;1915&lt;/span&gt;,&lt;span style="color:#ae81ff"&gt;1930&lt;/span&gt;,&lt;span style="color:#ae81ff"&gt;1932&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;packaging&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;1379&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;frontend&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;1437&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;mime-content&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;1468&lt;/span&gt;,&lt;span style="color:#ae81ff"&gt;1438&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;naming&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;1518&lt;/span&gt;,&lt;span style="color:#ae81ff"&gt;1709&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;to-be-closed&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;1709&lt;/span&gt;,&lt;span style="color:#ae81ff"&gt;1779&lt;/span&gt;,&lt;span style="color:#ae81ff"&gt;1816&lt;/span&gt;,&lt;span style="color:#ae81ff"&gt;1925&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;We see that the classification could be better. The model is not able to classify issues accurately. We have only ~10 out of ~30 issues classified correctly over a sample of 10% in the « user-support » label. It does help to read quickly over an issue; direct integration of this kind of tool is to be expected soon.&lt;/p&gt;
+&lt;p&gt;The prompt of the model needs to be reworked to get the model to classify issues more accurately.&lt;/p&gt;
+&lt;p&gt;Recommendations:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Closure of old issues of non-contributor if there is no activity up to a determined amount of time.
+&lt;ul&gt;
+&lt;li&gt;A gitbot could help with this.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Labelling seems to be useful, at least for filtering.&lt;/li&gt;
+&lt;li&gt;Issues templating with different models with an example of what to include could fast-track issue triaging in the future.&lt;/li&gt;
+&lt;/ul&gt;</content></item><item><title>Efficient Issue Analysis: Harnessing the Power of GPT-4 and GPT-3.5 for GitHub Repository Insights</title><link>https://6120.eu/posts/analyzing-ordinal-github-issues/</link><pubDate>Sat, 18 Mar 2023 08:38:51 +0100</pubDate><guid>https://6120.eu/posts/analyzing-ordinal-github-issues/</guid><description>&lt;h1 id="tldr"&gt;TL;DR&lt;/h1&gt;
+&lt;p&gt;This post showcases a creative approach to analyzing issues in the Ordinal GitHub repository by leveraging the GitHub API, GPT-3.5, and GPT-4. The author demonstrates how to obtain the necessary data using the GitHub CLI, then uses GPT-4 to generate a prompt for GPT-3.5 to analyze the repository&amp;rsquo;s issues further.&lt;/p&gt;
+&lt;p&gt;Some key takeaways from this analysis include the following:&lt;/p&gt;
+&lt;p&gt;Automating the collection and analysis of issues and pull requests can save time and effort.
 AI models like GPT-4 and GPT-3.5 can help generate valuable insights and overviews of the issues.
 This approach has certain limitations, such as model availability and token limits. However, overall, the method proves to be efficient and cost-effective.
-The author provides links to the source code and the raw output of the analysis, along with examples of how to filter the result using jq play. This solution offers a practical way to quickly gain an understanding of a large corpus of issues in a repository, making it easier to identify and prioritize tasks.&lt;/p>
-&lt;p>If you are still here, follow along.&lt;/p>
-&lt;h1 id="why">Why&lt;/h1>
-&lt;p>The &lt;a href="https://sky-light-sl.com/">SkyLight&lt;/a> collective is actively building on Ordinals; as part of our R&amp;amp;D process in creating our artworks, we contribute when we can.
+The author provides links to the source code and the raw output of the analysis, along with examples of how to filter the result using jq play. This solution offers a practical way to quickly gain an understanding of a large corpus of issues in a repository, making it easier to identify and prioritize tasks.&lt;/p&gt;</description><content>&lt;h1 id="tldr"&gt;TL;DR&lt;/h1&gt;
+&lt;p&gt;This post showcases a creative approach to analyzing issues in the Ordinal GitHub repository by leveraging the GitHub API, GPT-3.5, and GPT-4. The author demonstrates how to obtain the necessary data using the GitHub CLI, then uses GPT-4 to generate a prompt for GPT-3.5 to analyze the repository&amp;rsquo;s issues further.&lt;/p&gt;
+&lt;p&gt;Some key takeaways from this analysis include the following:&lt;/p&gt;
+&lt;p&gt;Automating the collection and analysis of issues and pull requests can save time and effort.
+AI models like GPT-4 and GPT-3.5 can help generate valuable insights and overviews of the issues.
+This approach has certain limitations, such as model availability and token limits. However, overall, the method proves to be efficient and cost-effective.
+The author provides links to the source code and the raw output of the analysis, along with examples of how to filter the result using jq play. This solution offers a practical way to quickly gain an understanding of a large corpus of issues in a repository, making it easier to identify and prioritize tasks.&lt;/p&gt;
+&lt;p&gt;If you are still here, follow along.&lt;/p&gt;
+&lt;h1 id="why"&gt;Why&lt;/h1&gt;
+&lt;p&gt;The &lt;a href="https://sky-light-sl.com/"&gt;SkyLight&lt;/a&gt; collective is actively building on Ordinals; as part of our R&amp;amp;D process in creating our artworks, we contribute when we can.
 We are taking our first baby steps in this land towards the reference implementation, trying to understand where it is and where it goes so that we can plant the seeds of our work.
 When discovering a new project, the issues are great places to start leaning in, as they are an excellent and diverse source of information related to the project.
-So we went into the &lt;a href="https://github.com/casey/ord">Ordinal GitHub repository&lt;/a> to understand what @casey, Ordinals developers, and everyday folks had to say about it.&lt;/p>
-&lt;p>At the time of writing (2023-03-18), there are &lt;a href="https://github.com/casey/ord/issues">329 issues and 46 pull requests&lt;/a>. As &lt;a href="https://en.wikipedia.org/wiki/Lazy_evaluation">lazy&lt;/a> developers, we wanted to automate getting the issues, pull requests, and have an initial analysis. We had to make it so we could easily update the issues and re-run the analysis if needed.&lt;/p>
-&lt;h1 id="getting-the-data">Getting the data&lt;/h1>
-&lt;p>Using the &lt;a href="https://cli.github.com/">GitHub CLI&lt;/a>, we fetched ~1MB worth of data related to the Ordinal repository issues in the JSON format extracting the information we fed to our AI using the following format:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">gh issue list --json number,title,body,labels,updatedAt,comments,reactionGroups -L &lt;span style="color:#ae81ff">400&lt;/span> &amp;gt; issues.json
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://6120.eu/img/posts/analyzing-ordinal-github-issues/2023-03-18-090742_1308x84_scrot.png" alt="gh issue list &amp;ndash;json number,title,body,labels,updatedAt,comments,reactionGroups -L 400 | pv > issues.json">&lt;/p>
-&lt;p>The how-to is pretty simple; we used the GitHub Command Line Interface (GH CLI) to get the issues and specified the flags to get the issue number, title, body, and comments,&amp;hellip; in JSON format. The -L flag limits the number of issues to 400 items, and pv(screenshot) gets us a progress bar while we redirect the output to a file called issues.json.&lt;/p>
-&lt;h1 id="analyzing-the-json-data">Analyzing the JSON data&lt;/h1>
-&lt;p>Example issue:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json"> {
-&lt;span style="color:#f92672">&amp;#34;body&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;For the very first time, it was successful to create one inscription, now transactions are not confirmed, I suspect because of the small fee rate\r\n\r\n&amp;lt;img width=\&amp;#34;557\&amp;#34; alt=\&amp;#34;Снимок экрана 2023-03-11 в 21 30 29\&amp;#34; src=\&amp;#34;https://user-images.githubusercontent.com/53757772/224508408-186dad47-3935-4ad7-8032-5985409a87ff.png\&amp;#34;&amp;gt;\r\n\r\n&amp;lt;img width=\&amp;#34;804\&amp;#34; alt=\&amp;#34;Снимок экрана 2023-03-11 в 21 35 40\&amp;#34; src=\&amp;#34;https://user-images.githubusercontent.com/53757772/224508424-16d5f897-0e83-4a04-8c32-73930e2527fe.png\&amp;#34;&amp;gt;\r\n\r\nThe balance is completely debited\r\n\r\n&amp;lt;img width=\&amp;#34;563\&amp;#34; alt=\&amp;#34;Снимок экрана 2023-03-11 в 21 36 35\&amp;#34; src=\&amp;#34;https://user-images.githubusercontent.com/53757772/224508755-b202f4e0-dd2e-40cc-bea2-cdd10522bbe8.png\&amp;#34;&amp;gt;\r\n\r\n&amp;lt;img width=\&amp;#34;570\&amp;#34; alt=\&amp;#34;Снимок экрана 2023-03-11 в 21 37 04\&amp;#34; src=\&amp;#34;https://user-images.githubusercontent.com/53757772/224508790-e461a21c-8f2e-4a51-962f-cf6171d4b56e.png\&amp;#34;&amp;gt;\r\n\r\nhttps://mempool.space/tx/b8d7cd6ba8e2c3387d6c1dfd33ef542ed82aa36425a9a7c2f903a803aaca7015\r\n\r\n\r\n\r\n\r\n\r\nHelp me )&amp;#34;&lt;/span>,
-&lt;span style="color:#f92672">&amp;#34;comments&amp;#34;&lt;/span>: [
-{
-&lt;span style="color:#f92672">&amp;#34;id&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;IC_kwDOGhOAhc5XuYTN&amp;#34;&lt;/span>,
-&lt;span style="color:#f92672">&amp;#34;author&amp;#34;&lt;/span>: {
-&lt;span style="color:#f92672">&amp;#34;login&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;ysw1011&amp;#34;&lt;/span>
-},
-&lt;span style="color:#f92672">&amp;#34;authorAssociation&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;NONE&amp;#34;&lt;/span>,
-&lt;span style="color:#f92672">&amp;#34;body&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;你需要设置fee：./ord --wallet tord wallet inscribe 1.html --fee-rate 6，但是你没有，所以你只能等，有一个清除本地内存池交易的bitcoin cli命令，但是我不建议你用，因为会把你钱包里数据给搞丢。所以你只能等。或者创建一个新钱包，把当前钱包余额转过去 同来产生新的UTXO&amp;#34;&lt;/span>,
-&lt;span style="color:#f92672">&amp;#34;createdAt&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;2023-03-16T11:26:11Z&amp;#34;&lt;/span>,
-&lt;span style="color:#f92672">&amp;#34;includesCreatedEdit&amp;#34;&lt;/span>: &lt;span style="color:#66d9ef">false&lt;/span>,
-&lt;span style="color:#f92672">&amp;#34;isMinimized&amp;#34;&lt;/span>: &lt;span style="color:#66d9ef">false&lt;/span>,
-&lt;span style="color:#f92672">&amp;#34;minimizedReason&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>,
-&lt;span style="color:#f92672">&amp;#34;reactionGroups&amp;#34;&lt;/span>: [{
-&lt;span style="color:#f92672">&amp;#34;content&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;THUMBS_UP&amp;#34;&lt;/span>,
-&lt;span style="color:#f92672">&amp;#34;users&amp;#34;&lt;/span>: {
-&lt;span style="color:#f92672">&amp;#34;totalCount&amp;#34;&lt;/span>: &lt;span style="color:#ae81ff">1&lt;/span>
-}}],
-&lt;span style="color:#f92672">&amp;#34;url&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;https://github.com/casey/ord/issues/1917#issuecomment-1471775949&amp;#34;&lt;/span>,
-&lt;span style="color:#f92672">&amp;#34;viewerDidAuthor&amp;#34;&lt;/span>: &lt;span style="color:#66d9ef">false&lt;/span>
-}
-],
-&lt;span style="color:#f92672">&amp;#34;labels&amp;#34;&lt;/span>: [],
-&lt;span style="color:#f92672">&amp;#34;number&amp;#34;&lt;/span>: &lt;span style="color:#ae81ff">1917&lt;/span>,
-&lt;span style="color:#f92672">&amp;#34;title&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;Transactions are not confirmed&amp;#34;&lt;/span>,
-&lt;span style="color:#f92672">&amp;#34;updatedAt&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;2023-03-16T11:26:11Z&amp;#34;&lt;/span>
-}&lt;span style="color:#960050;background-color:#1e0010">,&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>The above JSON data explicit long strings of text containing the issue&amp;rsquo;s body, comments, and reaction 👍.
-It is a good issue as it showcases multiple difficulties, contains various languages, and the title needs to be more explicit about the problem, which could be a challenge for the reviewer at first glance. More defined guidelines and issues templating could help make a more straightforward pathway for users to interact with the project.&lt;/p>
-&lt;h1 id="ai-for-the-rescue">AI for the rescue&lt;/h1>
-&lt;p>After learning much about prompt engineering over the last months, we wrote the prompt to generate the overview analysis. But after fiddling with &lt;a href="https://github.com/Magicking/awesome-chatgpt">a few prompt(s)&lt;/a> for a while, we were not able to get a decent result in the JSON output formatting by GPT-3.5; sentiment and labeling were working fine, though.&lt;/p>
-&lt;p>Instead, we used GPT-4 to generate the prompt to be used by GPT-3.5 to produce the analysis, as, unfortunately, GPT-4 is yet to be available over the API.&lt;/p>
-&lt;p>Who knows better to talk to a robot than another robot?&lt;/p>
-&lt;p>&lt;img src="https://6120.eu/img/posts/analyzing-ordinal-github-issues/2023-03-18-090255_1180x1594_scrot.png" alt="Only robots can understand me.">&lt;/p>
-&lt;p>The above ChatGPT-GPT-4 conversation showcases the ask and the returned prompt proposed as input for GPT-3.5.
+So we went into the &lt;a href="https://github.com/casey/ord"&gt;Ordinal GitHub repository&lt;/a&gt; to understand what @casey, Ordinals developers, and everyday folks had to say about it.&lt;/p&gt;
+&lt;p&gt;At the time of writing (2023-03-18), there are &lt;a href="https://github.com/casey/ord/issues"&gt;329 issues and 46 pull requests&lt;/a&gt;. As &lt;a href="https://en.wikipedia.org/wiki/Lazy_evaluation"&gt;lazy&lt;/a&gt; developers, we wanted to automate getting the issues, pull requests, and have an initial analysis. We had to make it so we could easily update the issues and re-run the analysis if needed.&lt;/p&gt;
+&lt;h1 id="getting-the-data"&gt;Getting the data&lt;/h1&gt;
+&lt;p&gt;Using the &lt;a href="https://cli.github.com/"&gt;GitHub CLI&lt;/a&gt;, we fetched ~1MB worth of data related to the Ordinal repository issues in the JSON format extracting the information we fed to our AI using the following format:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;gh issue list --json number,title,body,labels,updatedAt,comments,reactionGroups -L &lt;span style="color:#ae81ff"&gt;400&lt;/span&gt; &amp;gt; issues.json
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src="https://6120.eu/img/posts/analyzing-ordinal-github-issues/2023-03-18-090742_1308x84_scrot.png" alt="gh issue list –json number,title,body,labels,updatedAt,comments,reactionGroups -L 400 | pv &amp;gt; issues.json"&gt;&lt;/p&gt;
+&lt;p&gt;The how-to is pretty simple; we used the GitHub Command Line Interface (GH CLI) to get the issues and specified the flags to get the issue number, title, body, and comments,&amp;hellip; in JSON format. The -L flag limits the number of issues to 400 items, and pv(screenshot) gets us a progress bar while we redirect the output to a file called issues.json.&lt;/p&gt;
+&lt;h1 id="analyzing-the-json-data"&gt;Analyzing the JSON data&lt;/h1&gt;
+&lt;p&gt;Example issue:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-json" data-lang="json"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;body&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;For the very first time, it was successful to create one inscription, now transactions are not confirmed, I suspect because of the small fee rate\r\n\r\n&amp;lt;img width=\&amp;#34;557\&amp;#34; alt=\&amp;#34;Снимок экрана 2023-03-11 в 21 30 29\&amp;#34; src=\&amp;#34;https://user-images.githubusercontent.com/53757772/224508408-186dad47-3935-4ad7-8032-5985409a87ff.png\&amp;#34;&amp;gt;\r\n\r\n&amp;lt;img width=\&amp;#34;804\&amp;#34; alt=\&amp;#34;Снимок экрана 2023-03-11 в 21 35 40\&amp;#34; src=\&amp;#34;https://user-images.githubusercontent.com/53757772/224508424-16d5f897-0e83-4a04-8c32-73930e2527fe.png\&amp;#34;&amp;gt;\r\n\r\nThe balance is completely debited\r\n\r\n&amp;lt;img width=\&amp;#34;563\&amp;#34; alt=\&amp;#34;Снимок экрана 2023-03-11 в 21 36 35\&amp;#34; src=\&amp;#34;https://user-images.githubusercontent.com/53757772/224508755-b202f4e0-dd2e-40cc-bea2-cdd10522bbe8.png\&amp;#34;&amp;gt;\r\n\r\n&amp;lt;img width=\&amp;#34;570\&amp;#34; alt=\&amp;#34;Снимок экрана 2023-03-11 в 21 37 04\&amp;#34; src=\&amp;#34;https://user-images.githubusercontent.com/53757772/224508790-e461a21c-8f2e-4a51-962f-cf6171d4b56e.png\&amp;#34;&amp;gt;\r\n\r\nhttps://mempool.space/tx/b8d7cd6ba8e2c3387d6c1dfd33ef542ed82aa36425a9a7c2f903a803aaca7015\r\n\r\n\r\n\r\n\r\n\r\nHelp me )&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;comments&amp;#34;&lt;/span&gt;: [
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;id&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;IC_kwDOGhOAhc5XuYTN&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;author&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;login&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;ysw1011&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; },
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;authorAssociation&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;NONE&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;body&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;你需要设置fee：./ord --wallet tord wallet inscribe 1.html --fee-rate 6，但是你没有，所以你只能等，有一个清除本地内存池交易的bitcoin cli命令，但是我不建议你用，因为会把你钱包里数据给搞丢。所以你只能等。或者创建一个新钱包，把当前钱包余额转过去 同来产生新的UTXO&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;createdAt&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;2023-03-16T11:26:11Z&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;includesCreatedEdit&amp;#34;&lt;/span&gt;: &lt;span style="color:#66d9ef"&gt;false&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;isMinimized&amp;#34;&lt;/span&gt;: &lt;span style="color:#66d9ef"&gt;false&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;minimizedReason&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;reactionGroups&amp;#34;&lt;/span&gt;: [{
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;content&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;THUMBS_UP&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;users&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;totalCount&amp;#34;&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }}],
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;url&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;https://github.com/casey/ord/issues/1917#issuecomment-1471775949&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;viewerDidAuthor&amp;#34;&lt;/span&gt;: &lt;span style="color:#66d9ef"&gt;false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ],
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;labels&amp;#34;&lt;/span&gt;: [],
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;number&amp;#34;&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;1917&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;title&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;Transactions are not confirmed&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;updatedAt&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;2023-03-16T11:26:11Z&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }&lt;span style="color:#960050;background-color:#1e0010"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The above JSON data explicit long strings of text containing the issue&amp;rsquo;s body, comments, and reaction &amp;#x1f44d;.
+It is a good issue as it showcases multiple difficulties, contains various languages, and the title needs to be more explicit about the problem, which could be a challenge for the reviewer at first glance. More defined guidelines and issues templating could help make a more straightforward pathway for users to interact with the project.&lt;/p&gt;
+&lt;h1 id="ai-for-the-rescue"&gt;AI for the rescue&lt;/h1&gt;
+&lt;p&gt;After learning much about prompt engineering over the last months, we wrote the prompt to generate the overview analysis. But after fiddling with &lt;a href="https://github.com/Magicking/awesome-chatgpt"&gt;a few prompt(s)&lt;/a&gt; for a while, we were not able to get a decent result in the JSON output formatting by GPT-3.5; sentiment and labeling were working fine, though.&lt;/p&gt;
+&lt;p&gt;Instead, we used GPT-4 to generate the prompt to be used by GPT-3.5 to produce the analysis, as, unfortunately, GPT-4 is yet to be available over the API.&lt;/p&gt;
+&lt;p&gt;Who knows better to talk to a robot than another robot?&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://6120.eu/img/posts/analyzing-ordinal-github-issues/2023-03-18-090255_1180x1594_scrot.png" alt="Only robots can understand me."&gt;&lt;/p&gt;
+&lt;p&gt;The above ChatGPT-GPT-4 conversation showcases the ask and the returned prompt proposed as input for GPT-3.5.
 It gives a prompt that&amp;rsquo;s quite effective at generating usable JSON outputs.
 With a few logic rules and simple use of the OpenAI python package.
-&lt;img src="https://6120.eu/img/posts/analyzing-ordinal-github-issues/2023-03-18-094526_1579x209_scrot.png" alt="simple openai api call">&lt;/p>
-&lt;p>We generated an overview of the issues with the title rewritten to embed comments and other pieces of information.&lt;/p>
-&lt;p>&lt;img src="https://6120.eu/img/posts/analyzing-ordinal-github-issues/2023-03-18-080232_3650x783_scrot.png" alt="">&lt;/p>
-&lt;p>And even get some insights about which issues are hot topics.&lt;/p>
-&lt;p>&lt;img src="https://6120.eu/img/posts/analyzing-ordinal-github-issues/2023-03-18-090208_1272x258_scrot.png" alt="">&lt;/p>
-&lt;p>And give a clearer short overview of the above issue.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-json" data-lang="json">{
-&lt;span style="color:#f92672">&amp;#34;number&amp;#34;&lt;/span>: &lt;span style="color:#ae81ff">1917&lt;/span>,
-&lt;span style="color:#f92672">&amp;#34;title&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;Transactions are not confirmed&amp;#34;&lt;/span>,
-&lt;span style="color:#f92672">&amp;#34;summary&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;{\&amp;#34;summary\&amp;#34;: \&amp;#34;User is experiencing issues with unconfirmed transactions due to small fee rate\&amp;#34;, \&amp;#34;sentiment\&amp;#34;: \&amp;#34;frustrated\&amp;#34;, \&amp;#34;labels\&amp;#34;: [\&amp;#34;wallet\&amp;#34;, \&amp;#34;user-support\&amp;#34;, \&amp;#34;transaction\&amp;#34;]}
-&lt;/span>&lt;span style="color:#e6db74"> The user is frustrated because their transactions are not confirmed due to a small fee rate. They have included screenshots of their balance being debited without confirmation. The comment suggests setting the fee rate and waiting for confirmation, but the user is still looking for assistance. Relevant labels would be wallet, user-support, and transaction.&amp;#34;&lt;/span>,
-&lt;span style="color:#f92672">&amp;#34;reactionGroups&amp;#34;&lt;/span>: {}
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="conclusion">Conclusion&lt;/h1>
-&lt;p>It&amp;rsquo;s a simple tool to help get an overview of the issues in a repository. It helps to get in the know before diving into the details, but there is some limitation to this simple example:&lt;/p>
-&lt;ul>
-&lt;li>The limitation encountered was the model, the only one available is GPT-3.5 which is the legacy one.&lt;/li>
-&lt;li>The number of tokens you can feed the model; even with a larger model, there is a limitation. Therefore a compression on the body and comments could be applied when the number of tokens fed is close to the model limitation or some chunking.&lt;/li>
-&lt;li>The prompt could be better, sometimes, it does not generate a valid JSON output, and labeling is too diverse, but it&amp;rsquo;s a good start; the required features are present.&lt;/li>
-&lt;/ul>
-&lt;p>Was it worth it? Yes, discovering a project is time-consuming and not very productive regarding deliverables.
-It took ~6 hours to get a deliverable (classification) and the software to produce it (another deliverable). It gave us a quick overview of a large corpus of various issues in the repository. And the OPEX development cost was almost zero.&lt;/p>
-&lt;p>&lt;img src="https://6120.eu/img/posts/analyzing-ordinal-github-issues/2023-03-18-090227_857x138_scrot.png" alt="cost">&lt;/p>
-&lt;h2 id="links">Links&lt;/h2>
-&lt;ul>
-&lt;li>&lt;a href="https://github.com/Magicking/openai-issues-analysis/">Source code&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://github.com/Magicking/openai-issues-analysis/blob/main/classifiedIssue.json">Raw output of the analysis&lt;/a>, you can use &lt;a href="https://jqplay.org/s/6w5H0bE1uXi">jq play&lt;/a> to play with filtering to explore the data or your favorite JSON editor.&lt;/li>
-&lt;/ul></content></item></channel></rss>
+&lt;img src="https://6120.eu/img/posts/analyzing-ordinal-github-issues/2023-03-18-094526_1579x209_scrot.png" alt="simple openai api call"&gt;&lt;/p&gt;
+&lt;p&gt;We generated an overview of the issues with the title rewritten to embed comments and other pieces of information.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://6120.eu/img/posts/analyzing-ordinal-github-issues/2023-03-18-080232_3650x783_scrot.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;And even get some insights about which issues are hot topics.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://6120.eu/img/posts/analyzing-ordinal-github-issues/2023-03-18-090208_1272x258_scrot.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;And give a clearer short overview of the above issue.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-json" data-lang="json"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;number&amp;#34;&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;1917&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;title&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;Transactions are not confirmed&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;summary&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;{\&amp;#34;summary\&amp;#34;: \&amp;#34;User is experiencing issues with unconfirmed transactions due to small fee rate\&amp;#34;, \&amp;#34;sentiment\&amp;#34;: \&amp;#34;frustrated\&amp;#34;, \&amp;#34;labels\&amp;#34;: [\&amp;#34;wallet\&amp;#34;, \&amp;#34;user-support\&amp;#34;, \&amp;#34;transaction\&amp;#34;]}
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#e6db74"&gt; The user is frustrated because their transactions are not confirmed due to a small fee rate. They have included screenshots of their balance being debited without confirmation. The comment suggests setting the fee rate and waiting for confirmation, but the user is still looking for assistance. Relevant labels would be wallet, user-support, and transaction.&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;reactionGroups&amp;#34;&lt;/span&gt;: {}
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id="conclusion"&gt;Conclusion&lt;/h1&gt;
+&lt;p&gt;It&amp;rsquo;s a simple tool to help get an overview of the issues in a repository. It helps to get in the know before diving into the details, but there is some limitation to this simple example:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The limitation encountered was the model, the only one available is GPT-3.5 which is the legacy one.&lt;/li&gt;
+&lt;li&gt;The number of tokens you can feed the model; even with a larger model, there is a limitation. Therefore a compression on the body and comments could be applied when the number of tokens fed is close to the model limitation or some chunking.&lt;/li&gt;
+&lt;li&gt;The prompt could be better, sometimes, it does not generate a valid JSON output, and labeling is too diverse, but it&amp;rsquo;s a good start; the required features are present.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Was it worth it? Yes, discovering a project is time-consuming and not very productive regarding deliverables.
+It took ~6 hours to get a deliverable (classification) and the software to produce it (another deliverable). It gave us a quick overview of a large corpus of various issues in the repository. And the OPEX development cost was almost zero.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://6120.eu/img/posts/analyzing-ordinal-github-issues/2023-03-18-090227_857x138_scrot.png" alt="cost"&gt;&lt;/p&gt;
+&lt;h2 id="links"&gt;Links&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/Magicking/openai-issues-analysis/"&gt;Source code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/Magicking/openai-issues-analysis/blob/main/classifiedIssue.json"&gt;Raw output of the analysis&lt;/a&gt;, you can use &lt;a href="https://jqplay.org/s/6w5H0bE1uXi"&gt;jq play&lt;/a&gt; to play with filtering to explore the data or your favorite JSON editor.&lt;/li&gt;
+&lt;/ul&gt;</content></item></channel></rss>

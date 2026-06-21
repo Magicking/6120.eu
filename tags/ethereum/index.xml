@@ -1,100 +1,105 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ethereum on 6120's Notes</title><link>https://6120.eu/tags/ethereum/</link><description>Recent content in ethereum on 6120's Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright/><lastBuildDate>Mon, 06 May 2024 14:32:03 +0100</lastBuildDate><atom:link href="https://6120.eu/tags/ethereum/index.xml" rel="self" type="application/rss+xml"/><item><title>Graffiti NFT</title><link>https://6120.eu/posts/graffiti/</link><pubDate>Mon, 06 May 2024 14:32:03 +0100</pubDate><guid>https://6120.eu/posts/graffiti/</guid><description>Graffiti NFT
-About The Project Introducing Graffiti NFT: A New Frontier in Digital Graffiti NFT Art Welcome to Graffiti NFT, an innovative project revolutionizing the nft digital art world! With our unique approach, we combine creativity, accessibility, and interactivity in a way that sets us apart from other NFT projects. Let’s dive into the core aspects that make Graffiti NFT a game-changer.
-Make Graffiti: Unleash Your Creativity At the heart of Graffiti NFT is the &amp;lsquo;Make Art&amp;rsquo; feature.</description><content>&lt;p>&lt;a href="https://g.6120.eu">Graffiti NFT&lt;/a>&lt;/p>
-&lt;h1 id="about-the-project">About The Project&lt;/h1>
-&lt;h2 id="introducing-graffiti-nft-a-new-frontier-in-digital-graffiti-nft-art">Introducing Graffiti NFT: A New Frontier in Digital Graffiti NFT Art&lt;/h2>
-&lt;p>Welcome to Graffiti NFT, an innovative project revolutionizing the nft digital art world! With our unique approach, we combine creativity, accessibility, and interactivity in a way that sets us apart from other NFT projects. Let’s dive into the core aspects that make Graffiti NFT a game-changer.&lt;/p>
-&lt;h2 id="make-graffiti-unleash-your-creativity">Make Graffiti: Unleash Your Creativity&lt;/h2>
-&lt;p>At the heart of Graffiti NFT is the &amp;lsquo;Make Art&amp;rsquo; feature. This feature offers a 128-pixel square canvas on which you can create your masterpiece using a single color from the entire RGB palette. This minimalist approach challenges graffiters to think outside the box and create truly unique and expressive works of a graffiti. The simplicity of the tools amplifies creativity, pushing artists to explore new possibilities within tight constraints.&lt;/p>
-&lt;p>@TODO: ADD VIDEO OF THE MAKING OF AN ARTWORK&lt;/p>
-&lt;h2 id="free-to-mint-art-for-everyone">Free-to-Mint: Art for Everyone&lt;/h2>
-&lt;p>We believe that art should be accessible to everyone. That’s why we’ve made minting nfts on Graffiti NFT completely free (except gas). You can mint your creations without worrying about upfront costs. By lowering the barrier to entry, we aim to foster a diverse and vibrant community of creators.&lt;/p>
-&lt;h2 id="pay-to-gain-the-thrill-of-the-chase">Pay-to-Gain: The Thrill of the Chase&lt;/h2>
-&lt;p>Our &amp;lsquo;Pay-to-Steal&amp;rsquo; feature introduces a thrilling dynamic to the nft marketplace. Here&amp;rsquo;s how it works: nfts can be bought, sold, or traded like on any other platform, but there&amp;rsquo;s a twist. Someone can pay the collection floor price to claim your NFT. This adds an exciting layer of competition and strategy, encouraging users to stay engaged and keep an eye on their favorite pieces.&lt;/p>
-&lt;h2 id="farm-gold-rewarding-creativity">Farm Gold: Rewarding Creativity&lt;/h2>
-&lt;p>Creating Graffitis isn’t just about expression; it’s also about earning rewards. Enter &amp;lsquo;Farm Gold,&amp;rsquo; our unique point system that rewards artists based on the popularity and engagement of their NFTs. Gold points are redistributed to creators when there&amp;rsquo;s sufficient activity, providing ongoing incentives for artists to continue producing amazing work. It&amp;rsquo;s our way of ensuring that creativity and effort are continually recognized and rewarded.&lt;/p>
-&lt;h2 id="why-graffiti-nft">Why Graffiti NFT?&lt;/h2>
-&lt;p>In a rapidly evolving NFT landscape, Graffiti NFT stands out by making art creation and ownership more interactive and rewarding. Our project is built on the principles of accessibility, creativity, and community. By offering free minting, dynamic market interactions, and continuous rewards, we’re creating a platform where artists and collectors alike can thrive.&lt;/p>
-&lt;h2 id="get-involved">Get Involved&lt;/h2>
-&lt;p>Are you ready to be part of this exciting new venture? Whether you&amp;rsquo;re a graffiter eager to showcase your work or a collector looking for unique pieces, Graffiti NFT has something for everyone. Stay tuned for more updates, and get ready to unleash your creativity in the world of Graffiti NFT!&lt;/p>
-&lt;p>&lt;a href="https://g.6120.eu/mint">Paint your Graffiti&lt;/a>&lt;/p>
-&lt;h1 id="technical-details">Technical Details&lt;/h1>
-&lt;h2 id="artwork">Artwork&lt;/h2>
-&lt;ul>
-&lt;li>Canvas size: 128x128 pixels&lt;/li>
-&lt;li>Color: monocolor, 1 out of 16,777,214 (RGB) for each NFT&lt;/li>
-&lt;li>Image format: BMP&lt;/li>
-&lt;li>Storage: Blast blockchain state&lt;/li>
-&lt;/ul>
-&lt;h2 id="smart-contract">Smart Contract&lt;/h2>
-&lt;p>The Graffiti NFT smart contract is deployed on the Blast mainnet at the address &lt;a href="https://blastscan.io/address/0x971b2d96efc3cffb8bace89a17abfed0b8743cd1">0x971b2d96efc3cffb8bace89a17abfed0b8743cd1&lt;/a>. The contract is written in Solidity, follows the ERC-721 standard for non-fungible tokens and is upgradable, it has no storage necessity for the artworks, they will stay forever on the Blast blockchain state. You can view the contract source code on &lt;a href="https://blastscan.io/address/0x971b2d96efc3cffb8bace89a17abfed0b8743cd1#readProxyContract">Blastscan&lt;/a>.&lt;/p>
-&lt;h2 id="tokenomics">Tokenomics&lt;/h2>
-&lt;p>Currently the smart contract is accruing eth from the Pay-to-gain feature, updates will add redistribution of the eth to the minters.
-Gold points will be redistributed to the minters and Pay-to-gain enjoyers.&lt;/p>
-&lt;p>@TODO: ADD TOKENOMICS GRAPH&lt;/p>
-&lt;h1 id="roadmap">Roadmap&lt;/h1>
-&lt;ul>
-&lt;li>2024-04-15: Launch of the Graffiti NFT project on Blast&lt;/li>
-&lt;li>XXXX-XX-XX: Anonymous minting&lt;/li>
-&lt;li>2024-07-14: Update of the tokenomics&lt;/li>
-&lt;/ul>
-&lt;h3 id="paint-your-graffitihttpsg6120eumint">&lt;a href="https://g.6120.eu/mint">Paint your Graffiti&lt;/a>&lt;/h3>
-&lt;h3 id="skylighthttpssky-light-slcom">&lt;a href="https://sky-light-sl.com">Sky.Light&lt;/a>&lt;/h3>
-&lt;h3 id="xtwitterhttpsxcomgraffitiblkchn">&lt;a href="https://x.com/GraffitiBLKCHN">X/Twitter&lt;/a>&lt;/h3></content></item><item><title>Note technique du paypal coin</title><link>https://6120.eu/drafts/pyusd/</link><pubDate>Mon, 07 Aug 2023 21:50:00 +0100</pubDate><guid>https://6120.eu/drafts/pyusd/</guid><description>Introduction Après être tombé sur la news https://newsroom.paypal-corp.com/2023-08-07-PayPal-Launches-U-S-Dollar-Stablecoin qui annonce la sortie d&amp;rsquo;un jeton ERC20 par PayPal et Paxos ainsi qu&amp;rsquo;après une recherche sur Twitter on tombe sur quelques informations techniques intéressantes.
-C&amp;rsquo;est un jeton de type ERC20 qui peut-être mis en pause, dont la destruction (Burn) et la création (Mint) de sa quantité est régi par une entitée centralisée.
-Composition du jeton Le proxy du jeton avec lequel les utilisateurs vont interragir est 0x6c3ea9036406852006290770BEdFcAbA0e23A0e8, en oscultant un peu plus le smart-contract, on s&amp;rsquo;aperçoit qu&amp;rsquo;il y&amp;rsquo;a eu plusieurs implémentation du jeton au cours du passé</description><content>&lt;h1 id="introduction">Introduction&lt;/h1>
-&lt;p>Après être tombé sur la news &lt;a href="https://newsroom.paypal-corp.com/2023-08-07-PayPal-Launches-U-S-Dollar-Stablecoin">https://newsroom.paypal-corp.com/2023-08-07-PayPal-Launches-U-S-Dollar-Stablecoin&lt;/a> qui annonce la sortie d&amp;rsquo;un jeton ERC20 par PayPal et Paxos ainsi qu&amp;rsquo;après une recherche sur Twitter on tombe sur quelques informations techniques intéressantes.&lt;/p>
-&lt;p>C&amp;rsquo;est un jeton de type ERC20 qui peut-être mis en pause, dont la destruction (Burn) et la création (Mint) de sa quantité est régi par une entitée centralisée.&lt;/p>
-&lt;h1 id="composition-du-jeton">Composition du jeton&lt;/h1>
-&lt;p>Le &lt;a href="https://ethereum.org/en/developers/docs/smart-contracts/upgrading/">proxy&lt;/a> du jeton avec lequel les utilisateurs vont interragir est &lt;a href="https://etherscan.io/token/0x6c3ea9036406852006290770bedfcaba0e23a0e8">0x6c3ea9036406852006290770BEdFcAbA0e23A0e8&lt;/a>, en oscultant un peu plus le smart-contract, on s&amp;rsquo;aperçoit qu&amp;rsquo;il y&amp;rsquo;a eu plusieurs implémentation du jeton au cours du passé&lt;/p>
-&lt;p>&lt;img src="https://6120.eu/img/posts/pyusd/1.png" alt="">&lt;/p>
-&lt;p>et que l&amp;rsquo;ensemble des smart-contracts existent depuis environ 1 an, probablement une phase test avant l&amp;rsquo;annonce du 2023-08-07 étant donné un volume important de transaction précédant celle-ci.&lt;/p>
-&lt;p>TODO SCREENSHOT OF PROXY DEPLOYMENT&lt;/p>
-&lt;p>L&amp;rsquo;implémentation actuel du jeton étant &lt;a href="https://etherscan.io/address/0xe17b8adf8e46b15f3f9ab4bb9e3b6e31db09126e">0xe17b8adf8e46b15f3f9ab4bb9e3b6e31db09126e&lt;/a> la différence majeure avec le code source de l&amp;rsquo;implémentation précédente était le masquage des termes PayPal/PYUSD par Hopper USD/XYZ.&lt;/p>
-&lt;p>C&amp;rsquo;est cette dernière que nous allons étudier, le proxy ne servant qu&amp;rsquo;à stocker l&amp;rsquo;état du smart-contract en lieu et place de l&amp;rsquo;implémentation.&lt;/p>
-&lt;h1 id="analyse-technique">Analyse technique&lt;/h1>
-&lt;p>En préambule, on observe que le contrat utilise une très ancienne version du langage Solidity &lt;code>0.4.24&lt;/code> en spécifiant la nécéssité des fonctions expérimentales de la version &lt;code>0.5&lt;/code>.&lt;/p>
-&lt;p>Le smart-contract est plutôt généreux en commentaire notamment avec une annotation &lt;a href="">NatSpec&lt;/a> orienté développeur et plusieurs lignes au sein de chaque fonction.&lt;/p>
-&lt;h2 id="fonctions">Fonctions&lt;/h2>
-&lt;p>Les fonctionnalités présentes dans le smart-contract peuvent être regroupées en 6 familles différentes détaillé ci-dessous.&lt;/p>
-&lt;h3 id="proxy">Proxy&lt;/h3>
-&lt;h4 id="constructor">constructor&lt;/h4>
-&lt;p>Fonction executée lors du déploiement de l&amp;rsquo;implémentation du smart-contract, ici l&amp;rsquo;implémentation est initializé puis mis en pause pour éviter toute erreur.&lt;/p>
-&lt;h4 id="initialize">initialize&lt;/h4>
-&lt;p>Fonction initialisant l&amp;rsquo;état du smart-contract tout en prévenant une ré-initialisation lors d&amp;rsquo;une mise à jour, appelle notamment une autre fonction privée &lt;code>initializeDomainSeparator&lt;/code> en charge de définir le prefix de délégation (le smart-contract et son nom).&lt;/p>
-&lt;h3 id="erc20">ERC20&lt;/h3>
-&lt;p>Les fonctions ci-desous ne sont pas utilisables si l&amp;rsquo;émetteur ou le récepteur des fonds ont été gelé.&lt;/p>
-&lt;h4 id="allowance">allowance&lt;/h4>
-&lt;p>Accesseur sur la limite de dépense d&amp;rsquo;un compte Ethereum pour un autre compte.&lt;/p>
-&lt;h4 id="approve">approve&lt;/h4>
-&lt;p>Définie la limite de dépense d&amp;rsquo;un compte Ethereum pour un autre compte.&lt;/p>
-&lt;h4 id="decreaseapproval">decreaseApproval&lt;/h4>
-&lt;p>Décroie la limite de dépense d&amp;rsquo;un compte Ethereum pour un autre compte.&lt;/p>
-&lt;h4 id="increaseapproval">increaseApproval&lt;/h4>
-&lt;p>Accroie la limite de dépense d&amp;rsquo;un compte Ethereum pour un autre compte.&lt;/p>
-&lt;h4 id="balanceof">balanceOf&lt;/h4>
-&lt;p>Retourne la quantité de jeton pour un compte Ethereum.&lt;/p>
-&lt;h4 id="totalsupply">totalSupply&lt;/h4>
-&lt;p>Retourne la quantité total de jeton.&lt;/p>
-&lt;h4 id="transfer">transfer&lt;/h4>
-&lt;p>Transfère la quantité de jeton d&amp;rsquo;un compte Ethereum vers un autre compte.&lt;/p>
-&lt;h4 id="transferfrom">transferFrom&lt;/h4>
-&lt;p>Transfère la quantité de jeton d&amp;rsquo;un compte Ethereum vers un autre compte au travers par le biais d&amp;rsquo;un tiers compte autorisé.&lt;/p>
-&lt;h3 id="owner-admin">Owner Admin&lt;/h3>
-&lt;p>Toutes les fonctions ci-dessous sont accessibles uniquement par le possesseur du smart-contract.&lt;/p>
-&lt;h4 id="proposeowner">proposeOwner&lt;/h4>
-&lt;p>Définie le potentiel nouveau compte possesseur du smart-contract.&lt;/p>
-&lt;h4 id="disregardproposeowner">disregardProposeOwner&lt;/h4>
-&lt;p>Annule le potentiel nouveau compte possesseur du smart-contract&lt;/p>
-&lt;h4 id="claimownership">claimOwnership&lt;/h4>
-&lt;p>Promeut le potentiel compte possesseur en nouveau possesseur.&lt;/p>
-&lt;h4 id="reclaimpyusd">reclaimPYUSD&lt;/h4>
-&lt;p>Transfère les jetons affectés au contrat au possesseur.&lt;/p>
-&lt;h4 id="pause">pause&lt;/h4>
-&lt;p>Mets en pause&lt;/p>
-&lt;h4 id="unpause">unpause&lt;/h4>
-&lt;h3 id="asset-protection-owner">Asset protection owner&lt;/h3>
-&lt;pre>&lt;code>setAssetProtectionRole
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ethereum on 6120's Notes</title><link>https://6120.eu/tags/ethereum/</link><description>Recent content in Ethereum on 6120's Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright/><lastBuildDate>Mon, 06 May 2024 14:32:03 +0100</lastBuildDate><atom:link href="https://6120.eu/tags/ethereum/index.xml" rel="self" type="application/rss+xml"/><item><title>Graffiti NFT</title><link>https://6120.eu/posts/graffiti/</link><pubDate>Mon, 06 May 2024 14:32:03 +0100</pubDate><guid>https://6120.eu/posts/graffiti/</guid><description>&lt;p&gt;&lt;a href="https://g.6120.eu"&gt;Graffiti NFT&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id="about-the-project"&gt;About The Project&lt;/h1&gt;
+&lt;h2 id="introducing-graffiti-nft-a-new-frontier-in-digital-graffiti-nft-art"&gt;Introducing Graffiti NFT: A New Frontier in Digital Graffiti NFT Art&lt;/h2&gt;
+&lt;p&gt;Welcome to Graffiti NFT, an innovative project revolutionizing the nft digital art world! With our unique approach, we combine creativity, accessibility, and interactivity in a way that sets us apart from other NFT projects. Let’s dive into the core aspects that make Graffiti NFT a game-changer.&lt;/p&gt;
+&lt;h2 id="make-graffiti-unleash-your-creativity"&gt;Make Graffiti: Unleash Your Creativity&lt;/h2&gt;
+&lt;p&gt;At the heart of Graffiti NFT is the &amp;lsquo;Make Art&amp;rsquo; feature. This feature offers a 128-pixel square canvas on which you can create your masterpiece using a single color from the entire RGB palette. This minimalist approach challenges graffiters to think outside the box and create truly unique and expressive works of a graffiti. The simplicity of the tools amplifies creativity, pushing artists to explore new possibilities within tight constraints.&lt;/p&gt;</description><content>&lt;p&gt;&lt;a href="https://g.6120.eu"&gt;Graffiti NFT&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id="about-the-project"&gt;About The Project&lt;/h1&gt;
+&lt;h2 id="introducing-graffiti-nft-a-new-frontier-in-digital-graffiti-nft-art"&gt;Introducing Graffiti NFT: A New Frontier in Digital Graffiti NFT Art&lt;/h2&gt;
+&lt;p&gt;Welcome to Graffiti NFT, an innovative project revolutionizing the nft digital art world! With our unique approach, we combine creativity, accessibility, and interactivity in a way that sets us apart from other NFT projects. Let’s dive into the core aspects that make Graffiti NFT a game-changer.&lt;/p&gt;
+&lt;h2 id="make-graffiti-unleash-your-creativity"&gt;Make Graffiti: Unleash Your Creativity&lt;/h2&gt;
+&lt;p&gt;At the heart of Graffiti NFT is the &amp;lsquo;Make Art&amp;rsquo; feature. This feature offers a 128-pixel square canvas on which you can create your masterpiece using a single color from the entire RGB palette. This minimalist approach challenges graffiters to think outside the box and create truly unique and expressive works of a graffiti. The simplicity of the tools amplifies creativity, pushing artists to explore new possibilities within tight constraints.&lt;/p&gt;
+&lt;p&gt;@TODO: ADD VIDEO OF THE MAKING OF AN ARTWORK&lt;/p&gt;
+&lt;h2 id="free-to-mint-art-for-everyone"&gt;Free-to-Mint: Art for Everyone&lt;/h2&gt;
+&lt;p&gt;We believe that art should be accessible to everyone. That’s why we’ve made minting nfts on Graffiti NFT completely free (except gas). You can mint your creations without worrying about upfront costs. By lowering the barrier to entry, we aim to foster a diverse and vibrant community of creators.&lt;/p&gt;
+&lt;h2 id="pay-to-gain-the-thrill-of-the-chase"&gt;Pay-to-Gain: The Thrill of the Chase&lt;/h2&gt;
+&lt;p&gt;Our &amp;lsquo;Pay-to-Steal&amp;rsquo; feature introduces a thrilling dynamic to the nft marketplace. Here&amp;rsquo;s how it works: nfts can be bought, sold, or traded like on any other platform, but there&amp;rsquo;s a twist. Someone can pay the collection floor price to claim your NFT. This adds an exciting layer of competition and strategy, encouraging users to stay engaged and keep an eye on their favorite pieces.&lt;/p&gt;
+&lt;h2 id="farm-gold-rewarding-creativity"&gt;Farm Gold: Rewarding Creativity&lt;/h2&gt;
+&lt;p&gt;Creating Graffitis isn’t just about expression; it’s also about earning rewards. Enter &amp;lsquo;Farm Gold,&amp;rsquo; our unique point system that rewards artists based on the popularity and engagement of their NFTs. Gold points are redistributed to creators when there&amp;rsquo;s sufficient activity, providing ongoing incentives for artists to continue producing amazing work. It&amp;rsquo;s our way of ensuring that creativity and effort are continually recognized and rewarded.&lt;/p&gt;
+&lt;h2 id="why-graffiti-nft"&gt;Why Graffiti NFT?&lt;/h2&gt;
+&lt;p&gt;In a rapidly evolving NFT landscape, Graffiti NFT stands out by making art creation and ownership more interactive and rewarding. Our project is built on the principles of accessibility, creativity, and community. By offering free minting, dynamic market interactions, and continuous rewards, we’re creating a platform where artists and collectors alike can thrive.&lt;/p&gt;
+&lt;h2 id="get-involved"&gt;Get Involved&lt;/h2&gt;
+&lt;p&gt;Are you ready to be part of this exciting new venture? Whether you&amp;rsquo;re a graffiter eager to showcase your work or a collector looking for unique pieces, Graffiti NFT has something for everyone. Stay tuned for more updates, and get ready to unleash your creativity in the world of Graffiti NFT!&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://g.6120.eu/mint"&gt;Paint your Graffiti&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id="technical-details"&gt;Technical Details&lt;/h1&gt;
+&lt;h2 id="artwork"&gt;Artwork&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Canvas size: 128x128 pixels&lt;/li&gt;
+&lt;li&gt;Color: monocolor, 1 out of 16,777,214 (RGB) for each NFT&lt;/li&gt;
+&lt;li&gt;Image format: BMP&lt;/li&gt;
+&lt;li&gt;Storage: Blast blockchain state&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="smart-contract"&gt;Smart Contract&lt;/h2&gt;
+&lt;p&gt;The Graffiti NFT smart contract is deployed on the Blast mainnet at the address &lt;a href="https://blastscan.io/address/0x971b2d96efc3cffb8bace89a17abfed0b8743cd1"&gt;0x971b2d96efc3cffb8bace89a17abfed0b8743cd1&lt;/a&gt;. The contract is written in Solidity, follows the ERC-721 standard for non-fungible tokens and is upgradable, it has no storage necessity for the artworks, they will stay forever on the Blast blockchain state. You can view the contract source code on &lt;a href="https://blastscan.io/address/0x971b2d96efc3cffb8bace89a17abfed0b8743cd1#readProxyContract"&gt;Blastscan&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id="tokenomics"&gt;Tokenomics&lt;/h2&gt;
+&lt;p&gt;Currently the smart contract is accruing eth from the Pay-to-gain feature, updates will add redistribution of the eth to the minters.
+Gold points will be redistributed to the minters and Pay-to-gain enjoyers.&lt;/p&gt;
+&lt;p&gt;@TODO: ADD TOKENOMICS GRAPH&lt;/p&gt;
+&lt;h1 id="roadmap"&gt;Roadmap&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;2024-04-15: Launch of the Graffiti NFT project on Blast&lt;/li&gt;
+&lt;li&gt;XXXX-XX-XX: Anonymous minting&lt;/li&gt;
+&lt;li&gt;2024-07-14: Update of the tokenomics&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="paint-your-graffiti"&gt;&lt;a href="https://g.6120.eu/mint"&gt;Paint your Graffiti&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="skylight"&gt;&lt;a href="https://sky-light-sl.com"&gt;Sky.Light&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="xtwitter"&gt;&lt;a href="https://x.com/GraffitiBLKCHN"&gt;X/Twitter&lt;/a&gt;&lt;/h3&gt;</content></item><item><title>Note technique du paypal coin</title><link>https://6120.eu/drafts/pyusd/</link><pubDate>Mon, 07 Aug 2023 21:50:00 +0100</pubDate><guid>https://6120.eu/drafts/pyusd/</guid><description>&lt;h1 id="introduction"&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;Après être tombé sur la news &lt;a href="https://newsroom.paypal-corp.com/2023-08-07-PayPal-Launches-U-S-Dollar-Stablecoin"&gt;https://newsroom.paypal-corp.com/2023-08-07-PayPal-Launches-U-S-Dollar-Stablecoin&lt;/a&gt; qui annonce la sortie d&amp;rsquo;un jeton ERC20 par PayPal et Paxos ainsi qu&amp;rsquo;après une recherche sur Twitter on tombe sur quelques informations techniques intéressantes.&lt;/p&gt;
+&lt;p&gt;C&amp;rsquo;est un jeton de type ERC20 qui peut-être mis en pause, dont la destruction (Burn) et la création (Mint) de sa quantité est régi par une entitée centralisée.&lt;/p&gt;
+&lt;h1 id="composition-du-jeton"&gt;Composition du jeton&lt;/h1&gt;
+&lt;p&gt;Le &lt;a href="https://ethereum.org/en/developers/docs/smart-contracts/upgrading/"&gt;proxy&lt;/a&gt; du jeton avec lequel les utilisateurs vont interragir est &lt;a href="https://etherscan.io/token/0x6c3ea9036406852006290770bedfcaba0e23a0e8"&gt;0x6c3ea9036406852006290770BEdFcAbA0e23A0e8&lt;/a&gt;, en oscultant un peu plus le smart-contract, on s&amp;rsquo;aperçoit qu&amp;rsquo;il y&amp;rsquo;a eu plusieurs implémentation du jeton au cours du passé&lt;/p&gt;</description><content>&lt;h1 id="introduction"&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;Après être tombé sur la news &lt;a href="https://newsroom.paypal-corp.com/2023-08-07-PayPal-Launches-U-S-Dollar-Stablecoin"&gt;https://newsroom.paypal-corp.com/2023-08-07-PayPal-Launches-U-S-Dollar-Stablecoin&lt;/a&gt; qui annonce la sortie d&amp;rsquo;un jeton ERC20 par PayPal et Paxos ainsi qu&amp;rsquo;après une recherche sur Twitter on tombe sur quelques informations techniques intéressantes.&lt;/p&gt;
+&lt;p&gt;C&amp;rsquo;est un jeton de type ERC20 qui peut-être mis en pause, dont la destruction (Burn) et la création (Mint) de sa quantité est régi par une entitée centralisée.&lt;/p&gt;
+&lt;h1 id="composition-du-jeton"&gt;Composition du jeton&lt;/h1&gt;
+&lt;p&gt;Le &lt;a href="https://ethereum.org/en/developers/docs/smart-contracts/upgrading/"&gt;proxy&lt;/a&gt; du jeton avec lequel les utilisateurs vont interragir est &lt;a href="https://etherscan.io/token/0x6c3ea9036406852006290770bedfcaba0e23a0e8"&gt;0x6c3ea9036406852006290770BEdFcAbA0e23A0e8&lt;/a&gt;, en oscultant un peu plus le smart-contract, on s&amp;rsquo;aperçoit qu&amp;rsquo;il y&amp;rsquo;a eu plusieurs implémentation du jeton au cours du passé&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://6120.eu/img/posts/pyusd/1.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;et que l&amp;rsquo;ensemble des smart-contracts existent depuis environ 1 an, probablement une phase test avant l&amp;rsquo;annonce du 2023-08-07 étant donné un volume important de transaction précédant celle-ci.&lt;/p&gt;
+&lt;p&gt;TODO SCREENSHOT OF PROXY DEPLOYMENT&lt;/p&gt;
+&lt;p&gt;L&amp;rsquo;implémentation actuel du jeton étant &lt;a href="https://etherscan.io/address/0xe17b8adf8e46b15f3f9ab4bb9e3b6e31db09126e"&gt;0xe17b8adf8e46b15f3f9ab4bb9e3b6e31db09126e&lt;/a&gt; la différence majeure avec le code source de l&amp;rsquo;implémentation précédente était le masquage des termes PayPal/PYUSD par Hopper USD/XYZ.&lt;/p&gt;
+&lt;p&gt;C&amp;rsquo;est cette dernière que nous allons étudier, le proxy ne servant qu&amp;rsquo;à stocker l&amp;rsquo;état du smart-contract en lieu et place de l&amp;rsquo;implémentation.&lt;/p&gt;
+&lt;h1 id="analyse-technique"&gt;Analyse technique&lt;/h1&gt;
+&lt;p&gt;En préambule, on observe que le contrat utilise une très ancienne version du langage Solidity &lt;code&gt;0.4.24&lt;/code&gt; en spécifiant la nécéssité des fonctions expérimentales de la version &lt;code&gt;0.5&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Le smart-contract est plutôt généreux en commentaire notamment avec une annotation &lt;a href=""&gt;NatSpec&lt;/a&gt; orienté développeur et plusieurs lignes au sein de chaque fonction.&lt;/p&gt;
+&lt;h2 id="fonctions"&gt;Fonctions&lt;/h2&gt;
+&lt;p&gt;Les fonctionnalités présentes dans le smart-contract peuvent être regroupées en 6 familles différentes détaillé ci-dessous.&lt;/p&gt;
+&lt;h3 id="proxy"&gt;Proxy&lt;/h3&gt;
+&lt;h4 id="constructor"&gt;constructor&lt;/h4&gt;
+&lt;p&gt;Fonction executée lors du déploiement de l&amp;rsquo;implémentation du smart-contract, ici l&amp;rsquo;implémentation est initializé puis mis en pause pour éviter toute erreur.&lt;/p&gt;
+&lt;h4 id="initialize"&gt;initialize&lt;/h4&gt;
+&lt;p&gt;Fonction initialisant l&amp;rsquo;état du smart-contract tout en prévenant une ré-initialisation lors d&amp;rsquo;une mise à jour, appelle notamment une autre fonction privée &lt;code&gt;initializeDomainSeparator&lt;/code&gt; en charge de définir le prefix de délégation (le smart-contract et son nom).&lt;/p&gt;
+&lt;h3 id="erc20"&gt;ERC20&lt;/h3&gt;
+&lt;p&gt;Les fonctions ci-desous ne sont pas utilisables si l&amp;rsquo;émetteur ou le récepteur des fonds ont été gelé.&lt;/p&gt;
+&lt;h4 id="allowance"&gt;allowance&lt;/h4&gt;
+&lt;p&gt;Accesseur sur la limite de dépense d&amp;rsquo;un compte Ethereum pour un autre compte.&lt;/p&gt;
+&lt;h4 id="approve"&gt;approve&lt;/h4&gt;
+&lt;p&gt;Définie la limite de dépense d&amp;rsquo;un compte Ethereum pour un autre compte.&lt;/p&gt;
+&lt;h4 id="decreaseapproval"&gt;decreaseApproval&lt;/h4&gt;
+&lt;p&gt;Décroie la limite de dépense d&amp;rsquo;un compte Ethereum pour un autre compte.&lt;/p&gt;
+&lt;h4 id="increaseapproval"&gt;increaseApproval&lt;/h4&gt;
+&lt;p&gt;Accroie la limite de dépense d&amp;rsquo;un compte Ethereum pour un autre compte.&lt;/p&gt;
+&lt;h4 id="balanceof"&gt;balanceOf&lt;/h4&gt;
+&lt;p&gt;Retourne la quantité de jeton pour un compte Ethereum.&lt;/p&gt;
+&lt;h4 id="totalsupply"&gt;totalSupply&lt;/h4&gt;
+&lt;p&gt;Retourne la quantité total de jeton.&lt;/p&gt;
+&lt;h4 id="transfer"&gt;transfer&lt;/h4&gt;
+&lt;p&gt;Transfère la quantité de jeton d&amp;rsquo;un compte Ethereum vers un autre compte.&lt;/p&gt;
+&lt;h4 id="transferfrom"&gt;transferFrom&lt;/h4&gt;
+&lt;p&gt;Transfère la quantité de jeton d&amp;rsquo;un compte Ethereum vers un autre compte au travers par le biais d&amp;rsquo;un tiers compte autorisé.&lt;/p&gt;
+&lt;h3 id="owner-admin"&gt;Owner Admin&lt;/h3&gt;
+&lt;p&gt;Toutes les fonctions ci-dessous sont accessibles uniquement par le possesseur du smart-contract.&lt;/p&gt;
+&lt;h4 id="proposeowner"&gt;proposeOwner&lt;/h4&gt;
+&lt;p&gt;Définie le potentiel nouveau compte possesseur du smart-contract.&lt;/p&gt;
+&lt;h4 id="disregardproposeowner"&gt;disregardProposeOwner&lt;/h4&gt;
+&lt;p&gt;Annule le potentiel nouveau compte possesseur du smart-contract&lt;/p&gt;
+&lt;h4 id="claimownership"&gt;claimOwnership&lt;/h4&gt;
+&lt;p&gt;Promeut le potentiel compte possesseur en nouveau possesseur.&lt;/p&gt;
+&lt;h4 id="reclaimpyusd"&gt;reclaimPYUSD&lt;/h4&gt;
+&lt;p&gt;Transfère les jetons affectés au contrat au possesseur.&lt;/p&gt;
+&lt;h4 id="pause"&gt;pause&lt;/h4&gt;
+&lt;p&gt;Mets en pause&lt;/p&gt;
+&lt;h4 id="unpause"&gt;unpause&lt;/h4&gt;
+&lt;h3 id="asset-protection-owner"&gt;Asset protection owner&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;setAssetProtectionRole
 - Définie le gestionnaire de protection des biens
 freeze
 - Gèle une addresse
@@ -104,17 +109,17 @@ wipeFrozenAddress
 - Détruit les fonds d'une addresse gelée
 isFrozen
 - Accesseur des addresses gelées
-&lt;/code>&lt;/pre>
-&lt;h3 id="gestion-de-la-quantité">Gestion de la quantité&lt;/h3>
-&lt;pre>&lt;code>setSupplyController
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id="gestion-de-la-quantité"&gt;Gestion de la quantité&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;setSupplyController
 - Définie le gestionnaire de quantité
 increaseSupply
 - Créé et transfère des jetons au gestionnaire de quantité
 decreaseSupply
 - Détruit des jetons du gestionnaire de quantité.
-&lt;/code>&lt;/pre>
-&lt;h3 id="gestion-de-la-délégation">Gestion de la délégation&lt;/h3>
-&lt;pre>&lt;code>nextSeqOf
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id="gestion-de-la-délégation"&gt;Gestion de la délégation&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;nextSeqOf
 - Accesseur du nonce (nombre )
 betaDelegatedTransfer
 - Transfère des fonds au travers d'un tiers
@@ -126,223 +131,234 @@ isWhitelistedBetaDelegate
 setBetaDelegateWhitelister
 whitelistBetaDelegate
 unwhitelistBetaDelegate
-&lt;/code>&lt;/pre>
-&lt;h2 id="notes">Notes&lt;/h2>
-&lt;ul>
-&lt;li>Utilisation d&amp;rsquo;accesseur qui sont déjà rajouté par défaut&lt;/li>
-&lt;li>Fonction qui retourne toujours les mêmes constantes (vrai)&lt;/li>
-&lt;/ul>
-&lt;h1 id="conclusion">Conclusion&lt;/h1></content></item><item><title>Support cours Ethereum Virtual Machine</title><link>https://6120.eu/posts/support-evm/</link><pubDate>Thu, 17 Mar 2022 21:50:00 +0100</pubDate><guid>https://6120.eu/posts/support-evm/</guid><description>Ceci est un support de cours sur l&amp;rsquo;EVM (Ethereum Virtual Machine) pour le cours de l&amp;rsquo;Ecole Supérieure d&amp;rsquo;Ingénieurs Léonard de Vinci (ESILV).
-Il comprend du matériel de cours, des illustrations et des liens vers des ressources.
-La durée du cours est de 3h, séparé en une lesson de 1h15 et des travaux dirigés de 1h15. La première partie est une introduction à la machine de Turing et sa correspondance aux processeurs de nos jours (rappel des connaissances), la seconde partie est une introduction à l&amp;rsquo;EVM et sa correspondance avec la machine de Turing.</description><content>&lt;p>Ceci est un support de cours sur l&amp;rsquo;EVM (Ethereum Virtual Machine) pour le cours de l&amp;rsquo;Ecole Supérieure d&amp;rsquo;Ingénieurs Léonard de Vinci (ESILV).&lt;/p>
-&lt;p>Il comprend du matériel de cours, des illustrations et des liens vers des ressources.&lt;/p>
-&lt;p>La durée du cours est de 3h, séparé en une lesson de 1h15 et des travaux dirigés de 1h15.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="notes"&gt;Notes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Utilisation d&amp;rsquo;accesseur qui sont déjà rajouté par défaut&lt;/li&gt;
+&lt;li&gt;Fonction qui retourne toujours les mêmes constantes (vrai)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="conclusion"&gt;Conclusion&lt;/h1&gt;</content></item><item><title>Support cours Ethereum Virtual Machine</title><link>https://6120.eu/posts/support-evm/</link><pubDate>Thu, 17 Mar 2022 21:50:00 +0100</pubDate><guid>https://6120.eu/posts/support-evm/</guid><description>&lt;p&gt;Ceci est un support de cours sur l&amp;rsquo;EVM (Ethereum Virtual Machine) pour le cours de l&amp;rsquo;Ecole Supérieure d&amp;rsquo;Ingénieurs Léonard de Vinci (ESILV).&lt;/p&gt;
+&lt;p&gt;Il comprend du matériel de cours, des illustrations et des liens vers des ressources.&lt;/p&gt;
+&lt;p&gt;La durée du cours est de 3h, séparé en une lesson de 1h15 et des travaux dirigés de 1h15.
 La première partie est une introduction à la machine de Turing et sa correspondance aux processeurs de nos jours (rappel des connaissances),
-la seconde partie est une introduction à l&amp;rsquo;EVM et sa correspondance avec la machine de Turing.&lt;/p>
-&lt;p>Les travaux pratiques consistent à observer le fonctionnement de l&amp;rsquo;EVM ainsi que la lecture des &lt;a href="https://www.evm.codes/">opcodes&lt;/a> au travers du debugger &lt;a href="https://remix.ethereum.org/">Remix&lt;/a> et à implémenter des opcodes directement dans un second temps.&lt;/p>
-&lt;p>NB: Tenderly peut-être utilisé pour une meilleure observervation du fonctionnement de l&amp;rsquo;EVM sur la blockchain Ethereum mais est un peu plus long à mettre en place.&lt;/p>
-&lt;h1 id="machine-de-turing">Machine de Turing&lt;/h1>
-&lt;p>Machine de Turing
-&lt;img src="https://6120.eu/img/posts/support-evm/mThs6b2.jpg" alt="">
-&lt;a href="https://www.youtube.com/watch?v=L5O04P2ASRc&amp;amp;t=647s">https://www.youtube.com/watch?v=L5O04P2ASRc&amp;amp;t=647s&lt;/a>&lt;/p>
-&lt;h1 id="ethereum-virtual-machine-evm">Ethereum Virtual Machine (EVM)&lt;/h1>
-&lt;p>&lt;img src="https://6120.eu/img/posts/support-evm/ysIsVUG.png" alt="">&lt;/p>
-&lt;hr>
-&lt;p>&lt;img src="https://6120.eu/img/posts/support-evm/Xba9Jwb.png" alt="">&lt;/p>
-&lt;hr>
-&lt;p>Lexiques
-&lt;a href="https://github.com/asseth/yellowpaper/blob/7dd3ed26b6fe4b7a1b0394194ef268d01f9955b4/Paper.pdf">https://github.com/asseth/yellowpaper/blob/7dd3ed26b6fe4b7a1b0394194ef268d01f9955b4/Paper.pdf&lt;/a> Page 17&lt;/p>
-&lt;hr>
-&lt;p>&lt;img src="https://6120.eu/img/posts/support-evm/Lo0fP89.png" alt="">&lt;/p>
-&lt;hr>
-&lt;p>&lt;img src="https://6120.eu/img/posts/support-evm/8cOg89m.png" alt="">&lt;/p>
-&lt;hr>
-&lt;p>&lt;img src="https://6120.eu/img/posts/support-evm/vRJgorg.png" alt="">&lt;/p>
-&lt;hr>
-&lt;p>&lt;img src="https://6120.eu/img/posts/support-evm/tMgjFeK.png" alt="">&lt;/p>
-&lt;hr>
-&lt;p>&lt;img src="https://6120.eu/img/posts/support-evm/cnV0k5f.png" alt="">&lt;/p>
-&lt;hr>
-&lt;p>&lt;img src="https://6120.eu/img/posts/support-evm/0J3imfd.png" alt="">&lt;/p>
-&lt;hr>
-&lt;p>Dive in &lt;a href="http://takenobu-hs.github.io/downloads/ethereum_evm_illustrated.pdf">http://takenobu-hs.github.io/downloads/ethereum_evm_illustrated.pdf&lt;/a>&lt;/p>
-&lt;h2 id="illustration">Illustration&lt;/h2>
-&lt;ul>
-&lt;li>Illustration Turing machine =&amp;gt; &lt;a href="https://medium.com/creative-automata/classic-turing-machine-with-tape-erasure-e14870ad154e">https://medium.com/creative-automata/classic-turing-machine-with-tape-erasure-e14870ad154e&lt;/a>&lt;/li>
-&lt;li>&lt;a href="http://takenobu-hs.github.io/downloads/ethereum_evm_illustrated.pdf">http://takenobu-hs.github.io/downloads/ethereum_evm_illustrated.pdf&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;h2 id="bibliography">Bibliography&lt;/h2>
-&lt;ul>
-&lt;li>
-&lt;p>🇫🇷 &lt;a href="https://github.com/asseth/yellowpaper/blob/7dd3ed26b6fe4b7a1b0394194ef268d01f9955b4/Paper.pdf">EIP-150 Yellowpaper&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>🇬🇧 &lt;a href="https://ethereum.github.io/yellowpaper/paper.pdf">Updated Yellowpaper&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;a href="https://github.com/benjaminion/YellowPaper_CheatSheet">Yellowpaper Cheat Sheet&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;a href="http://takenobu-hs.github.io/downloads/ethereum_evm_illustrated.pdf">Ethereum EVM Illustrated&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Execution model Page 56&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;h2 id="implementation">Implementation&lt;/h2>
-&lt;ul>
-&lt;li>&lt;a href="https://github.com/ethereum/go-ethereum/blob/master/core/vm/interpreter.go#L138">Implementation allocation&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;h1 id="travaux-dirigés">Travaux dirigés&lt;/h1>
-&lt;ul>
-&lt;li>&lt;a href="https://remix.ethereum.org/">Remix&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://www.evm.codes/">EVM opcodes&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;p>Solidity sources to analyze:&lt;/p>
-&lt;ul>
-&lt;li>Goal, observe the behavior of the EVM between the differents implementation functions of the same algorithm:
-&lt;ul>
-&lt;li>Sum of an array of uint.&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-solidity" data-lang="solidity">&lt;span style="color:#75715e">// SPDX-License-Identifier: GPL-3.0
-&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">pragma solidity&lt;/span> &lt;span style="color:#f92672">&amp;gt;=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>.&lt;span style="color:#ae81ff">4&lt;/span>.&lt;span style="color:#ae81ff">16&lt;/span> &lt;span style="color:#f92672">&amp;lt;&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>.&lt;span style="color:#ae81ff">9&lt;/span>.&lt;span style="color:#ae81ff">0&lt;/span>;
-&lt;span style="color:#66d9ef">library&lt;/span> VectorSum {
-&lt;span style="color:#75715e">// This function is less efficient because the optimizer currently fails to
-&lt;/span>&lt;span style="color:#75715e">// remove the bounds checks in array access.
-&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">sumSolidity&lt;/span>(&lt;span style="color:#66d9ef">uint&lt;/span>[] &lt;span style="color:#66d9ef">memory&lt;/span> data) &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">pure&lt;/span> &lt;span style="color:#66d9ef">returns&lt;/span> (&lt;span style="color:#66d9ef">uint&lt;/span> sum) {
-&lt;span style="color:#66d9ef">for&lt;/span> (&lt;span style="color:#66d9ef">uint&lt;/span> i &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>; i &lt;span style="color:#f92672">&amp;lt;&lt;/span> data.length; &lt;span style="color:#f92672">++&lt;/span>i)
-sum &lt;span style="color:#f92672">+=&lt;/span> data[i];
-}
-&lt;span style="color:#75715e">// We know that we only access the array in bounds, so we can avoid the check.
-&lt;/span>&lt;span style="color:#75715e">// 0x20 needs to be added to an array because the first slot contains the
-&lt;/span>&lt;span style="color:#75715e">// array length.
-&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">sumAsm&lt;/span>(&lt;span style="color:#66d9ef">uint&lt;/span>[] &lt;span style="color:#66d9ef">memory&lt;/span> data) &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">pure&lt;/span> &lt;span style="color:#66d9ef">returns&lt;/span> (&lt;span style="color:#66d9ef">uint&lt;/span> sum) {
-&lt;span style="color:#66d9ef">for&lt;/span> (&lt;span style="color:#66d9ef">uint&lt;/span> i &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>; i &lt;span style="color:#f92672">&amp;lt;&lt;/span> data.length; &lt;span style="color:#f92672">++&lt;/span>i) {
-&lt;span style="color:#66d9ef">assembly&lt;/span> {
-sum &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">add&lt;/span>(sum, &lt;span style="color:#a6e22e">mload&lt;/span>(&lt;span style="color:#a6e22e">add&lt;/span>(&lt;span style="color:#a6e22e">add&lt;/span>(data, &lt;span style="color:#ae81ff">0x20&lt;/span>), &lt;span style="color:#a6e22e">mul&lt;/span>(i, &lt;span style="color:#ae81ff">0x20&lt;/span>))))
-}
-}
-}
-&lt;span style="color:#75715e">// Same as above, but accomplish the entire code within inline assembly.
-&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">sumPureAsm&lt;/span>(&lt;span style="color:#66d9ef">uint&lt;/span>[] &lt;span style="color:#66d9ef">memory&lt;/span> data) &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">pure&lt;/span> &lt;span style="color:#66d9ef">returns&lt;/span> (&lt;span style="color:#66d9ef">uint&lt;/span> sum) {
-&lt;span style="color:#66d9ef">assembly&lt;/span> {
-&lt;span style="color:#75715e">// Load the length (first 32 bytes)
-&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#f92672">let&lt;/span> len &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">mload&lt;/span>(data)
-&lt;span style="color:#75715e">// Skip over the length field.
-&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#75715e">//
-&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#75715e">// Keep temporary variable so it can be incremented in place.
-&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#75715e">//
-&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#75715e">// NOTE: incrementing data would result in an unusable
-&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#75715e">// data variable after this assembly block
-&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#f92672">let&lt;/span> dataElementLocation &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">add&lt;/span>(data, &lt;span style="color:#ae81ff">0x20&lt;/span>)
-&lt;span style="color:#75715e">// Iterate until the bound is not met.
-&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#a6e22e">for&lt;/span>
-{ &lt;span style="color:#f92672">let&lt;/span> end &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">add&lt;/span>(dataElementLocation, &lt;span style="color:#a6e22e">mul&lt;/span>(len, &lt;span style="color:#ae81ff">0x20&lt;/span>)) }
-&lt;span style="color:#a6e22e">lt&lt;/span>(dataElementLocation, end)
-{ data &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">add&lt;/span>(dataElementLocation, &lt;span style="color:#ae81ff">0x20&lt;/span>) }
-{
-sum &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">add&lt;/span>(sum, &lt;span style="color:#a6e22e">mload&lt;/span>(dataElementLocation))
-}
-}
-}
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="contact">Contact&lt;/h1>
-&lt;ul>
-&lt;li>&lt;a href="https://twitter.com/magicking_">@magicking_&lt;/a>&lt;/li>
-&lt;li>&lt;a href="mailto:s@6120.eu">s@6120.eu&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://6120.eu">https://6120.eu&lt;/a>&lt;/li>
-&lt;/ul></content></item><item><title>Altfury a remote wallet provider (GSaaS*) design document - Work In Progress</title><link>https://6120.eu/posts/altfury/</link><pubDate>Sat, 13 Feb 2021 19:00:03 +0100</pubDate><guid>https://6120.eu/posts/altfury/</guid><description>Motivationale With around 2000 DApps and more than 60.000 users, the promise of 27.000 tx/s with Ethereum 2.0 and people arguing for Infura centralizing the public Ethereum world there is call for alternative! Altfury aims to provide to anyone the ability to interact with DApps and any smart contract without the need of paying gas.
-Your user don&amp;rsquo;t have a wallet?
-You can let us take care of your keys and the burden to not forget and secure them while enjoying the DeFi space faster than ever.</description><content>&lt;h2 id="motivationale">Motivationale&lt;/h2>
-&lt;p>With around &lt;a href="https://dappradar.com/rankings/protocol/ethereum/87">2000 DApps&lt;/a> and more than &lt;a href="https://dappradar.com/rankings/protocol/ethereum">60.000 users&lt;/a>, the promise of 27.000 tx/s with Ethereum 2.0 and people arguing for Infura centralizing the public Ethereum world there is call for alternative!
-Altfury aims to provide to anyone the ability to interact with DApps and any smart contract without the need of paying gas.&lt;/p>
-&lt;p>Your user don&amp;rsquo;t have a wallet?&lt;/p>
-&lt;p>You can let us take care of your keys and the burden to not forget and secure them while enjoying the DeFi space faster than ever.
+la seconde partie est une introduction à l&amp;rsquo;EVM et sa correspondance avec la machine de Turing.&lt;/p&gt;</description><content>&lt;p&gt;Ceci est un support de cours sur l&amp;rsquo;EVM (Ethereum Virtual Machine) pour le cours de l&amp;rsquo;Ecole Supérieure d&amp;rsquo;Ingénieurs Léonard de Vinci (ESILV).&lt;/p&gt;
+&lt;p&gt;Il comprend du matériel de cours, des illustrations et des liens vers des ressources.&lt;/p&gt;
+&lt;p&gt;La durée du cours est de 3h, séparé en une lesson de 1h15 et des travaux dirigés de 1h15.
+La première partie est une introduction à la machine de Turing et sa correspondance aux processeurs de nos jours (rappel des connaissances),
+la seconde partie est une introduction à l&amp;rsquo;EVM et sa correspondance avec la machine de Turing.&lt;/p&gt;
+&lt;p&gt;Les travaux pratiques consistent à observer le fonctionnement de l&amp;rsquo;EVM ainsi que la lecture des &lt;a href="https://www.evm.codes/"&gt;opcodes&lt;/a&gt; au travers du debugger &lt;a href="https://remix.ethereum.org/"&gt;Remix&lt;/a&gt; et à implémenter des opcodes directement dans un second temps.&lt;/p&gt;
+&lt;p&gt;NB: Tenderly peut-être utilisé pour une meilleure observervation du fonctionnement de l&amp;rsquo;EVM sur la blockchain Ethereum mais est un peu plus long à mettre en place.&lt;/p&gt;
+&lt;h1 id="machine-de-turing"&gt;Machine de Turing&lt;/h1&gt;
+&lt;p&gt;Machine de Turing
+&lt;img src="https://6120.eu/img/posts/support-evm/mThs6b2.jpg" alt=""&gt;
+&lt;a href="https://www.youtube.com/watch?v=L5O04P2ASRc&amp;amp;t=647s"&gt;https://www.youtube.com/watch?v=L5O04P2ASRc&amp;t=647s&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id="ethereum-virtual-machine-evm"&gt;Ethereum Virtual Machine (EVM)&lt;/h1&gt;
+&lt;p&gt;&lt;img src="https://6120.eu/img/posts/support-evm/ysIsVUG.png" alt=""&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src="https://6120.eu/img/posts/support-evm/Xba9Jwb.png" alt=""&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Lexiques
+&lt;a href="https://github.com/asseth/yellowpaper/blob/7dd3ed26b6fe4b7a1b0394194ef268d01f9955b4/Paper.pdf"&gt;https://github.com/asseth/yellowpaper/blob/7dd3ed26b6fe4b7a1b0394194ef268d01f9955b4/Paper.pdf&lt;/a&gt; Page 17&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src="https://6120.eu/img/posts/support-evm/Lo0fP89.png" alt=""&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src="https://6120.eu/img/posts/support-evm/8cOg89m.png" alt=""&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src="https://6120.eu/img/posts/support-evm/vRJgorg.png" alt=""&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src="https://6120.eu/img/posts/support-evm/tMgjFeK.png" alt=""&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src="https://6120.eu/img/posts/support-evm/cnV0k5f.png" alt=""&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src="https://6120.eu/img/posts/support-evm/0J3imfd.png" alt=""&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Dive in &lt;a href="http://takenobu-hs.github.io/downloads/ethereum_evm_illustrated.pdf"&gt;http://takenobu-hs.github.io/downloads/ethereum_evm_illustrated.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="illustration"&gt;Illustration&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Illustration Turing machine =&amp;gt; &lt;a href="https://medium.com/creative-automata/classic-turing-machine-with-tape-erasure-e14870ad154e"&gt;https://medium.com/creative-automata/classic-turing-machine-with-tape-erasure-e14870ad154e&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://takenobu-hs.github.io/downloads/ethereum_evm_illustrated.pdf"&gt;http://takenobu-hs.github.io/downloads/ethereum_evm_illustrated.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="bibliography"&gt;Bibliography&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&amp;#x1f1eb;&amp;#x1f1f7; &lt;a href="https://github.com/asseth/yellowpaper/blob/7dd3ed26b6fe4b7a1b0394194ef268d01f9955b4/Paper.pdf"&gt;EIP-150 Yellowpaper&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&amp;#x1f1ec;&amp;#x1f1e7; &lt;a href="https://ethereum.github.io/yellowpaper/paper.pdf"&gt;Updated Yellowpaper&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://github.com/benjaminion/YellowPaper_CheatSheet"&gt;Yellowpaper Cheat Sheet&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="http://takenobu-hs.github.io/downloads/ethereum_evm_illustrated.pdf"&gt;Ethereum EVM Illustrated&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Execution model Page 56&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="implementation"&gt;Implementation&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/ethereum/go-ethereum/blob/master/core/vm/interpreter.go#L138"&gt;Implementation allocation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="travaux-dirigés"&gt;Travaux dirigés&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://remix.ethereum.org/"&gt;Remix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.evm.codes/"&gt;EVM opcodes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Solidity sources to analyze:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Goal, observe the behavior of the EVM between the differents implementation functions of the same algorithm:
+&lt;ul&gt;
+&lt;li&gt;Sum of an array of uint.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-solidity" data-lang="solidity"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;// SPDX-License-Identifier: GPL-3.0
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;pragma solidity&lt;/span&gt; &lt;span style="color:#f92672"&gt;&amp;gt;=&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;.&lt;span style="color:#ae81ff"&gt;4&lt;/span&gt;.&lt;span style="color:#ae81ff"&gt;16&lt;/span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;.&lt;span style="color:#ae81ff"&gt;9&lt;/span&gt;.&lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;library&lt;/span&gt; VectorSum {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;// This function is less efficient because the optimizer currently fails to
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;// remove the bounds checks in array access.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;function&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;sumSolidity&lt;/span&gt;(&lt;span style="color:#66d9ef"&gt;uint&lt;/span&gt;[] &lt;span style="color:#66d9ef"&gt;memory&lt;/span&gt; data) &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;pure&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;returns&lt;/span&gt; (&lt;span style="color:#66d9ef"&gt;uint&lt;/span&gt; sum) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;for&lt;/span&gt; (&lt;span style="color:#66d9ef"&gt;uint&lt;/span&gt; i &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;; i &lt;span style="color:#f92672"&gt;&amp;lt;&lt;/span&gt; data.length; &lt;span style="color:#f92672"&gt;++&lt;/span&gt;i)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; sum &lt;span style="color:#f92672"&gt;+=&lt;/span&gt; data[i];
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;// We know that we only access the array in bounds, so we can avoid the check.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;// 0x20 needs to be added to an array because the first slot contains the
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;// array length.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;function&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;sumAsm&lt;/span&gt;(&lt;span style="color:#66d9ef"&gt;uint&lt;/span&gt;[] &lt;span style="color:#66d9ef"&gt;memory&lt;/span&gt; data) &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;pure&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;returns&lt;/span&gt; (&lt;span style="color:#66d9ef"&gt;uint&lt;/span&gt; sum) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;for&lt;/span&gt; (&lt;span style="color:#66d9ef"&gt;uint&lt;/span&gt; i &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;; i &lt;span style="color:#f92672"&gt;&amp;lt;&lt;/span&gt; data.length; &lt;span style="color:#f92672"&gt;++&lt;/span&gt;i) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;assembly&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; sum &lt;span style="color:#f92672"&gt;:=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;add&lt;/span&gt;(sum, &lt;span style="color:#a6e22e"&gt;mload&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;add&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;add&lt;/span&gt;(data, &lt;span style="color:#ae81ff"&gt;0x20&lt;/span&gt;), &lt;span style="color:#a6e22e"&gt;mul&lt;/span&gt;(i, &lt;span style="color:#ae81ff"&gt;0x20&lt;/span&gt;))))
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;// Same as above, but accomplish the entire code within inline assembly.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;function&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;sumPureAsm&lt;/span&gt;(&lt;span style="color:#66d9ef"&gt;uint&lt;/span&gt;[] &lt;span style="color:#66d9ef"&gt;memory&lt;/span&gt; data) &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;pure&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;returns&lt;/span&gt; (&lt;span style="color:#66d9ef"&gt;uint&lt;/span&gt; sum) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;assembly&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;// Load the length (first 32 bytes)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;let&lt;/span&gt; len &lt;span style="color:#f92672"&gt;:=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;mload&lt;/span&gt;(data)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;// Skip over the length field.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;//
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;// Keep temporary variable so it can be incremented in place.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;//
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;// NOTE: incrementing data would result in an unusable
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;// data variable after this assembly block
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;let&lt;/span&gt; dataElementLocation &lt;span style="color:#f92672"&gt;:=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;add&lt;/span&gt;(data, &lt;span style="color:#ae81ff"&gt;0x20&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;// Iterate until the bound is not met.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;for&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; { &lt;span style="color:#f92672"&gt;let&lt;/span&gt; end &lt;span style="color:#f92672"&gt;:=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;add&lt;/span&gt;(dataElementLocation, &lt;span style="color:#a6e22e"&gt;mul&lt;/span&gt;(len, &lt;span style="color:#ae81ff"&gt;0x20&lt;/span&gt;)) }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;lt&lt;/span&gt;(dataElementLocation, end)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; { data &lt;span style="color:#f92672"&gt;:=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;add&lt;/span&gt;(dataElementLocation, &lt;span style="color:#ae81ff"&gt;0x20&lt;/span&gt;) }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; sum &lt;span style="color:#f92672"&gt;:=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;add&lt;/span&gt;(sum, &lt;span style="color:#a6e22e"&gt;mload&lt;/span&gt;(dataElementLocation))
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id="contact"&gt;Contact&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://twitter.com/magicking_"&gt;@magicking_&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="mailto:s@6120.eu"&gt;s@6120.eu&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://6120.eu"&gt;https://6120.eu&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content></item><item><title>Altfury a remote wallet provider (GSaaS*) design document - Work In Progress</title><link>https://6120.eu/posts/altfury/</link><pubDate>Sat, 13 Feb 2021 19:00:03 +0100</pubDate><guid>https://6120.eu/posts/altfury/</guid><description>&lt;h2 id="motivationale"&gt;Motivationale&lt;/h2&gt;
+&lt;p&gt;With around &lt;a href="https://dappradar.com/rankings/protocol/ethereum/87"&gt;2000 DApps&lt;/a&gt; and more than &lt;a href="https://dappradar.com/rankings/protocol/ethereum"&gt;60.000 users&lt;/a&gt;, the promise of 27.000 tx/s with Ethereum 2.0 and people arguing for Infura centralizing the public Ethereum world there is call for alternative!
+Altfury aims to provide to anyone the ability to interact with DApps and any smart contract without the need of paying gas.&lt;/p&gt;
+&lt;p&gt;Your user don&amp;rsquo;t have a wallet?&lt;/p&gt;
+&lt;p&gt;You can let us take care of your keys and the burden to not forget and secure them while enjoying the DeFi space faster than ever.
 DApp developers, the Ethereum world to your users with only the change of your endpoint URL address.
-Users, hassle free access to the DeFi world&lt;/p>
-&lt;p>No burden to use a new SDK in your DApps, work with standard Wallet Connect (Uniswap &amp;amp; al)!
-Peepz, just to go the website (optional install browser extension) pair up and go!&lt;/p>
-&lt;p>*Gas Station As A Service (GSAAS)&lt;/p>
-&lt;h1 id="intro">Intro&lt;/h1>
-&lt;p>The goal of this document is to provide a design of a high-available service providing Ethereum JSON RPC endpoints over HTTP and HTTP WebSocket and other related services such as fee (tx) management to act as a drop-in repleacement (or plugin to existing wallet connectors).&lt;/p>
-&lt;h3 id="technical-note">Technical note&lt;/h3>
-&lt;p>In addition, the endpoint SHOULD allow:&lt;/p>
-&lt;ul>
-&lt;li>For unfunded Ethereum account to pass transaction on the blockchain under certain condition
-Withhold transaction then&lt;/li>
-&lt;li>Guaranteed transaction inclusion with low gas price fee
+Users, hassle free access to the DeFi world&lt;/p&gt;</description><content>&lt;h2 id="motivationale"&gt;Motivationale&lt;/h2&gt;
+&lt;p&gt;With around &lt;a href="https://dappradar.com/rankings/protocol/ethereum/87"&gt;2000 DApps&lt;/a&gt; and more than &lt;a href="https://dappradar.com/rankings/protocol/ethereum"&gt;60.000 users&lt;/a&gt;, the promise of 27.000 tx/s with Ethereum 2.0 and people arguing for Infura centralizing the public Ethereum world there is call for alternative!
+Altfury aims to provide to anyone the ability to interact with DApps and any smart contract without the need of paying gas.&lt;/p&gt;
+&lt;p&gt;Your user don&amp;rsquo;t have a wallet?&lt;/p&gt;
+&lt;p&gt;You can let us take care of your keys and the burden to not forget and secure them while enjoying the DeFi space faster than ever.
+DApp developers, the Ethereum world to your users with only the change of your endpoint URL address.
+Users, hassle free access to the DeFi world&lt;/p&gt;
+&lt;p&gt;No burden to use a new SDK in your DApps, work with standard Wallet Connect (Uniswap &amp;amp; al)!
+Peepz, just to go the website (optional install browser extension) pair up and go!&lt;/p&gt;
+&lt;p&gt;*Gas Station As A Service (GSAAS)&lt;/p&gt;
+&lt;h1 id="intro"&gt;Intro&lt;/h1&gt;
+&lt;p&gt;The goal of this document is to provide a design of a high-available service providing Ethereum JSON RPC endpoints over HTTP and HTTP WebSocket and other related services such as fee (tx) management to act as a drop-in repleacement (or plugin to existing wallet connectors).&lt;/p&gt;
+&lt;h3 id="technical-note"&gt;Technical note&lt;/h3&gt;
+&lt;p&gt;In addition, the endpoint SHOULD allow:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;For unfunded Ethereum account to pass transaction on the blockchain under certain condition
+Withhold transaction then&lt;/li&gt;
+&lt;li&gt;Guaranteed transaction inclusion with low gas price fee
 For this specific feature, there is multiple ways to achieve this
-Pass transaction off-band to a partner miner pool that would accept transaction with a &lt;strong>gasPrice&lt;/strong> set at &lt;strong>0&lt;/strong> &lt;em>or&lt;/em> fund the account via a faucet to the &lt;strong>gasLimit&lt;/strong> x &lt;strong>gasPrice&lt;/strong> while withholding
-the transaction until funding is done and then propagate it.&lt;/li>
-&lt;/ul>
-&lt;h2 id="definition">Definition&lt;/h2>
-&lt;p>A remote wallet provider is a service that aims to help distant services to execute(read calls), sign(key control) and transmit transaction(write calls)&lt;/p>
-&lt;p>It integrate seamlessly by emulating a blockchain state with a balance corresponding for the credit of each account creating an ephemeral blockchain network (next_view(state, account_balances)-&amp;gt;fork_view, a fork of the mainnet displaying accounts as if they have the corresponding amount making the experience seamless as&lt;/p>
-&lt;h2 id="customers">Customers&lt;/h2>
-&lt;ul>
-&lt;li>Bots&lt;/li>
-&lt;li>NoCode users&lt;/li>
-&lt;li>User that click on interface (browser extension, &lt;a href="https://twitter.com/P3b7_/status/1361345964259352580?s=19">https://twitter.com/P3b7_/status/1361345964259352580?s=19&lt;/a>)&lt;/li>
-&lt;li>User willing to invest to rely on this for automation&lt;/li>
-&lt;li>User that do their on smart contract automation&lt;/li>
-&lt;/ul>
-&lt;p>Todo do market research to describe personas&lt;/p>
-&lt;h2 id="future-of-work">Future of work&lt;/h2>
-&lt;ul>
-&lt;li>Provide services about key usage (defi liquidity mining, &amp;hellip;)&lt;/li>
-&lt;/ul>
-&lt;h2 id="architecture">Architecture&lt;/h2>
-&lt;p>SHOULD be as minimal as possible to have a low footprint/cost
+Pass transaction off-band to a partner miner pool that would accept transaction with a &lt;strong&gt;gasPrice&lt;/strong&gt; set at &lt;strong&gt;0&lt;/strong&gt; &lt;em&gt;or&lt;/em&gt; fund the account via a faucet to the &lt;strong&gt;gasLimit&lt;/strong&gt; x &lt;strong&gt;gasPrice&lt;/strong&gt; while withholding
+the transaction until funding is done and then propagate it.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="definition"&gt;Definition&lt;/h2&gt;
+&lt;p&gt;A remote wallet provider is a service that aims to help distant services to execute(read calls), sign(key control) and transmit transaction(write calls)&lt;/p&gt;
+&lt;p&gt;It integrate seamlessly by emulating a blockchain state with a balance corresponding for the credit of each account creating an ephemeral blockchain network (next_view(state, account_balances)-&amp;gt;fork_view, a fork of the mainnet displaying accounts as if they have the corresponding amount making the experience seamless as&lt;/p&gt;
+&lt;h2 id="customers"&gt;Customers&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Bots&lt;/li&gt;
+&lt;li&gt;NoCode users&lt;/li&gt;
+&lt;li&gt;User that click on interface (browser extension, &lt;a href="https://twitter.com/P3b7_/status/1361345964259352580?s=19"&gt;https://twitter.com/P3b7_/status/1361345964259352580?s=19&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;User willing to invest to rely on this for automation&lt;/li&gt;
+&lt;li&gt;User that do their on smart contract automation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Todo do market research to describe personas&lt;/p&gt;
+&lt;h2 id="future-of-work"&gt;Future of work&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Provide services about key usage (defi liquidity mining, &amp;hellip;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="architecture"&gt;Architecture&lt;/h2&gt;
+&lt;p&gt;SHOULD be as minimal as possible to have a low footprint/cost
 (front-end requests (administration, user management, &amp;hellip;)).
-Use go-ethereum as library to avoid technical debt as much as possible.&lt;/p>
-&lt;p>-&amp;gt; Wondering if serverless could be a benefit if it were handling execution read calls, this might be costly if not self-hosted&lt;/p>
-&lt;p>-&amp;gt; Browser extention to change the RPC endpoint easily
+Use go-ethereum as library to avoid technical debt as much as possible.&lt;/p&gt;
+&lt;p&gt;-&amp;gt; Wondering if serverless could be a benefit if it were handling execution read calls, this might be costly if not self-hosted&lt;/p&gt;
+&lt;p&gt;-&amp;gt; Browser extention to change the RPC endpoint easily
 -&amp;gt; Ledger device with dedicated credit app
--&amp;gt; Website where account can be toped-up by XXX means&lt;/p>
-&lt;h1 id="security">Security&lt;/h1>
-&lt;p>Per ethereum account (extracted from transaction signature) whitelisting.
+-&amp;gt; Website where account can be toped-up by XXX means&lt;/p&gt;
+&lt;h1 id="security"&gt;Security&lt;/h1&gt;
+&lt;p&gt;Per ethereum account (extracted from transaction signature) whitelisting.
 Per application(what), per logged user (who)
-Anonymous user SHOULD be limited by IP(Handle IPv6 per /64 block?):&lt;/p>
-&lt;ul>
-&lt;li>Rate in second&lt;/li>
-&lt;li>Total number of concurrent connection&lt;/li>
-&lt;li>Time limit on connection&lt;/li>
-&lt;/ul>
-&lt;p>USER_TYPE:&lt;/p>
-&lt;ul>
-&lt;li>LOW_GASER&lt;/li>
-&lt;li>TO_FUND_ACCOUNT&lt;/li>
-&lt;li>ANONYMOUS&lt;/li>
-&lt;/ul>
-&lt;h1 id="new-usages-possible-out-of-that">New usages possible out of that&lt;/h1>
-&lt;ul>
-&lt;li>Send NFT anonymously via TornadoCash integration&lt;/li>
-&lt;/ul>
-&lt;h2 id="allowed-usage-pattern">Allowed usage pattern&lt;/h2>
-&lt;ul>
-&lt;li>Authorize (max amount?)&lt;/li>
-&lt;li>Trade&lt;/li>
-&lt;li>Trade&lt;/li>
-&lt;li>&amp;hellip; max amount before security callbacks?&lt;/li>
-&lt;/ul>
-&lt;h2 id="regulatory-limits">Regulatory limits&lt;/h2>
-&lt;p>Is this such a thing for DeFi?
-Tax?&lt;/p>
-&lt;h2 id="fraud-prevention--whitelisting-system">Fraud prevention / whitelisting system&lt;/h2>
-&lt;p>Smart-contract based?&lt;/p>
-&lt;h3 id="providing-an-ephemeral-ethereum-state">Providing an ephemeral ethereum state&lt;/h3>
-&lt;ul>
-&lt;li>Modify &lt;a href="https://github.com/ledgerwatch/turbo-geth/blob/master/consensus/ethash/sealer.go#L166">https://github.com/ledgerwatch/turbo-geth/blob/master/consensus/ethash/sealer.go#L166&lt;/a> to wait on a channel instead of searching for the nonce and set a MAGIC MixDigest to permit identification of a special block to be included on the canonical chain without verification&lt;/li>
-&lt;li>Prevent MAGIC block propagation throught&lt;/li>
-&lt;/ul>
-&lt;h1 id="transaction-payment-to-miner">Transaction payment to miner&lt;/h1>
-&lt;p>The payment is distributed to the block.coinbase each block containing private transaction (and potentially a lower than usual gas price)&lt;/p>
-&lt;p>Todo expand idea of private transaction via on-chain payment -&amp;gt; find a settlement cost minimal (ticket+payment channel)&lt;/p>
-&lt;h3 id="transaction-flow">Transaction flow&lt;/h3>
-&lt;h4 id="write-flows">Write flows&lt;/h4>
-&lt;pre tabindex="0">&lt;code class="language-mermaid" data-lang="mermaid">sequenceDiagram
+Anonymous user SHOULD be limited by IP(Handle IPv6 per /64 block?):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Rate in second&lt;/li&gt;
+&lt;li&gt;Total number of concurrent connection&lt;/li&gt;
+&lt;li&gt;Time limit on connection&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;USER_TYPE:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;LOW_GASER&lt;/li&gt;
+&lt;li&gt;TO_FUND_ACCOUNT&lt;/li&gt;
+&lt;li&gt;ANONYMOUS&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="new-usages-possible-out-of-that"&gt;New usages possible out of that&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Send NFT anonymously via TornadoCash integration&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="allowed-usage-pattern"&gt;Allowed usage pattern&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Authorize (max amount?)&lt;/li&gt;
+&lt;li&gt;Trade&lt;/li&gt;
+&lt;li&gt;Trade&lt;/li&gt;
+&lt;li&gt;&amp;hellip; max amount before security callbacks?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="regulatory-limits"&gt;Regulatory limits&lt;/h2&gt;
+&lt;p&gt;Is this such a thing for DeFi?
+Tax?&lt;/p&gt;
+&lt;h2 id="fraud-prevention--whitelisting-system"&gt;Fraud prevention / whitelisting system&lt;/h2&gt;
+&lt;p&gt;Smart-contract based?&lt;/p&gt;
+&lt;h3 id="providing-an-ephemeral-ethereum-state"&gt;Providing an ephemeral ethereum state&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Modify &lt;a href="https://github.com/ledgerwatch/turbo-geth/blob/master/consensus/ethash/sealer.go#L166"&gt;https://github.com/ledgerwatch/turbo-geth/blob/master/consensus/ethash/sealer.go#L166&lt;/a&gt; to wait on a channel instead of searching for the nonce and set a MAGIC MixDigest to permit identification of a special block to be included on the canonical chain without verification&lt;/li&gt;
+&lt;li&gt;Prevent MAGIC block propagation throught&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="transaction-payment-to-miner"&gt;Transaction payment to miner&lt;/h1&gt;
+&lt;p&gt;The payment is distributed to the block.coinbase each block containing private transaction (and potentially a lower than usual gas price)&lt;/p&gt;
+&lt;p&gt;Todo expand idea of private transaction via on-chain payment -&amp;gt; find a settlement cost minimal (ticket+payment channel)&lt;/p&gt;
+&lt;h3 id="transaction-flow"&gt;Transaction flow&lt;/h3&gt;
+&lt;h4 id="write-flows"&gt;Write flows&lt;/h4&gt;
+&lt;pre tabindex="0"&gt;&lt;code class="language-mermaid" data-lang="mermaid"&gt;sequenceDiagram
 participant User
 participant EVM Service
 participant Eth node
@@ -367,137 +383,137 @@ else
 EVM Service--&amp;gt;&amp;gt;Miner pool: Dispatch transaction for LOW_GASER user
 end
 deactivate EVM Service
-&lt;/code>&lt;/pre>&lt;h4 id="read-flows">Read flows&lt;/h4>
-&lt;p>Todo&lt;/p>
-&lt;h2 id="documentation">Documentation&lt;/h2>
-&lt;p>&lt;a href="https://docs.google.com/spreadsheets/d/1iOHnC1MkwcXxN-Gisk9nWeWIRfR6ZaWAXLtYL37NCzE/edit?pli=1#gid=0">Pricing&lt;/a>
-&lt;a href="https://github.com/ethereum/wiki/wiki/JSON-RPC">https://github.com/ethereum/wiki/wiki/JSON-RPC&lt;/a>
-&lt;a href="https://www.stateofthedapps.com/stats">https://www.stateofthedapps.com/stats&lt;/a>&lt;/p>
-&lt;h2 id="ethereum-rpc">Ethereum RPC&lt;/h2>
-&lt;h3 id="modified-rpc">Modified RPC&lt;/h3>
-&lt;p>&lt;strong>eth_call&lt;/strong> due to &lt;code>gasPrice&lt;/code> parameter
-&lt;strong>eth_estimateGas&lt;/strong> due to &lt;code>gasPrice&lt;/code> parameter&lt;/p>
-&lt;h4 id="eth_gasprice">eth_gasPrice&lt;/h4>
-&lt;p>Should reflect the gasPrice we want either low or high depending of the kind of transaction we expect to see either through a miner pool or pre-funding.&lt;/p>
-&lt;h4 id="eth_sendrawtransaction">eth_sendRawTransaction&lt;/h4>
-&lt;p>Custom implementation of this RPC, depending on USER_TYPE&lt;/p>
-&lt;h3 id="non-stream-rpc">Non stream RPC&lt;/h3>
-&lt;ul>
-&lt;li>
-&lt;p>eth_accounts&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>eth_blockNumber&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>eth_call&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>eth_chainId&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>eth_getBalance&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>eth_getBlockByHash&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>eth_getBlockByNumber&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>eth_getBlockTransactionCountByHash&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>eth_getBlockTransactionCountByNumber&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>eth_getCode&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>eth_getLogs&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>eth_getStorageAt&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>eth_getTransactionByBlockHashAndIndex&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>eth_getTransactionByBlockNumberAndIndex&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>eth_getTransactionByHash&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>eth_getTransactionCount&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>eth_getTransactionReceipt&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>eth_getUncleByBlockHashAndIndex&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>eth_getUncleByBlockNumberAndIndex&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>eth_getUncleCountByBlockHash&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>eth_getUncleCountByBlockNumber&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>eth_getWork&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>eth_hashrate&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>eth_mining&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>eth_protocolVersion&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>eth_submitWork&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>eth_syncing&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>net_listening&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>net_peerCount&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>net_version&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>web3_clientVersion&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;h3 id="streams-rpc">Streams RPC&lt;/h3>
-&lt;ul>
-&lt;li>eth_newFilter&lt;/li>
-&lt;li>eth_newPendingTransactionFilter&lt;/li>
-&lt;li>eth_getFilterChanges&lt;/li>
-&lt;li>eth_getFilterLogs&lt;/li>
-&lt;li>eth_uninstallFilter&lt;/li>
-&lt;li>eth_subscribe&lt;/li>
-&lt;li>eth_unsubscribe&lt;/li>
-&lt;/ul>
-&lt;h2 id="notes">Notes&lt;/h2>
-&lt;ul>
-&lt;li>Fast Transaction Pool, low latency viewer / transaction sender&lt;/li>
-&lt;li>Connect to peers, fetch memory pool, behave as light relay node&lt;/li>
-&lt;li>Provide transaction mempool view and fast transaction dispatching&lt;/li>
-&lt;li>Populate a central database for constant time access via API (paid access ?)&lt;/li>
-&lt;li>Monitor transaction to addresses, on update&lt;/li>
-&lt;li>Callback to backend customers through a fast protocol (GRPC?REST?&amp;hellip;?)&lt;/li>
-&lt;li>Trigger registered function (e.g: send transaction)&lt;/li>
-&lt;li>World infrastructure required (node in each world, potentially costly + dev ops)&lt;/li>
-&lt;li>Dashboard with world view of ethereum compatible blockchain&lt;/li>
-&lt;li>Speed transaction sending for quick transaction dispatching&lt;/li>
-&lt;li>Would require ethereum node modification&lt;/li>
-&lt;/ul></content></item></channel></rss>
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id="read-flows"&gt;Read flows&lt;/h4&gt;
+&lt;p&gt;Todo&lt;/p&gt;
+&lt;h2 id="documentation"&gt;Documentation&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://docs.google.com/spreadsheets/d/1iOHnC1MkwcXxN-Gisk9nWeWIRfR6ZaWAXLtYL37NCzE/edit?pli=1#gid=0"&gt;Pricing&lt;/a&gt;
+&lt;a href="https://github.com/ethereum/wiki/wiki/JSON-RPC"&gt;https://github.com/ethereum/wiki/wiki/JSON-RPC&lt;/a&gt;
+&lt;a href="https://www.stateofthedapps.com/stats"&gt;https://www.stateofthedapps.com/stats&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="ethereum-rpc"&gt;Ethereum RPC&lt;/h2&gt;
+&lt;h3 id="modified-rpc"&gt;Modified RPC&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;eth_call&lt;/strong&gt; due to &lt;code&gt;gasPrice&lt;/code&gt; parameter
+&lt;strong&gt;eth_estimateGas&lt;/strong&gt; due to &lt;code&gt;gasPrice&lt;/code&gt; parameter&lt;/p&gt;
+&lt;h4 id="eth_gasprice"&gt;eth_gasPrice&lt;/h4&gt;
+&lt;p&gt;Should reflect the gasPrice we want either low or high depending of the kind of transaction we expect to see either through a miner pool or pre-funding.&lt;/p&gt;
+&lt;h4 id="eth_sendrawtransaction"&gt;eth_sendRawTransaction&lt;/h4&gt;
+&lt;p&gt;Custom implementation of this RPC, depending on USER_TYPE&lt;/p&gt;
+&lt;h3 id="non-stream-rpc"&gt;Non stream RPC&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;eth_accounts&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;eth_blockNumber&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;eth_call&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;eth_chainId&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;eth_getBalance&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;eth_getBlockByHash&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;eth_getBlockByNumber&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;eth_getBlockTransactionCountByHash&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;eth_getBlockTransactionCountByNumber&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;eth_getCode&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;eth_getLogs&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;eth_getStorageAt&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;eth_getTransactionByBlockHashAndIndex&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;eth_getTransactionByBlockNumberAndIndex&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;eth_getTransactionByHash&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;eth_getTransactionCount&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;eth_getTransactionReceipt&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;eth_getUncleByBlockHashAndIndex&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;eth_getUncleByBlockNumberAndIndex&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;eth_getUncleCountByBlockHash&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;eth_getUncleCountByBlockNumber&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;eth_getWork&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;eth_hashrate&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;eth_mining&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;eth_protocolVersion&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;eth_submitWork&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;eth_syncing&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;net_listening&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;net_peerCount&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;net_version&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;web3_clientVersion&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="streams-rpc"&gt;Streams RPC&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;eth_newFilter&lt;/li&gt;
+&lt;li&gt;eth_newPendingTransactionFilter&lt;/li&gt;
+&lt;li&gt;eth_getFilterChanges&lt;/li&gt;
+&lt;li&gt;eth_getFilterLogs&lt;/li&gt;
+&lt;li&gt;eth_uninstallFilter&lt;/li&gt;
+&lt;li&gt;eth_subscribe&lt;/li&gt;
+&lt;li&gt;eth_unsubscribe&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="notes"&gt;Notes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Fast Transaction Pool, low latency viewer / transaction sender&lt;/li&gt;
+&lt;li&gt;Connect to peers, fetch memory pool, behave as light relay node&lt;/li&gt;
+&lt;li&gt;Provide transaction mempool view and fast transaction dispatching&lt;/li&gt;
+&lt;li&gt;Populate a central database for constant time access via API (paid access ?)&lt;/li&gt;
+&lt;li&gt;Monitor transaction to addresses, on update&lt;/li&gt;
+&lt;li&gt;Callback to backend customers through a fast protocol (GRPC?REST?&amp;hellip;?)&lt;/li&gt;
+&lt;li&gt;Trigger registered function (e.g: send transaction)&lt;/li&gt;
+&lt;li&gt;World infrastructure required (node in each world, potentially costly + dev ops)&lt;/li&gt;
+&lt;li&gt;Dashboard with world view of ethereum compatible blockchain&lt;/li&gt;
+&lt;li&gt;Speed transaction sending for quick transaction dispatching&lt;/li&gt;
+&lt;li&gt;Would require ethereum node modification&lt;/li&gt;
+&lt;/ul&gt;</content></item></channel></rss>
