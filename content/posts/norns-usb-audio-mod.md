@@ -6,7 +6,6 @@ description = "Tracking down a weird noise on my DIY Norns DAC outputs, and the 
 showFullContent = false
 readingTime = true
 hideComments = false
-draft = true
 color = "" #color from the theme settings
 +++
 
